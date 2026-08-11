@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Side Quest Expeditions</title>
+
+  <style>
+    :root {
+      --green-dark: #203b28;
+      --green: #3f642f;
+      --cream: #f5f1e8;
+      --white: #ffffff;
+      --text: #172019;
+      --muted: #626a63;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+      background: white;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* TOP BAR */
+
+    .top-bar {
+      background: var(--green-dark);
+      color: white;
+      padding: 7px 6%;
+      font-size: 13px;
+      text-align: center;
+    }
+
+    /* NAVIGATION */
+
+    header {
+      background: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,.06);
+    }
+
+    nav {
+      min-height: 68px;
+      padding: 6px 6%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .logo img {
+      width: 220px;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .nav-links a:hover {
+      color: var(--green);
+    }
+
+    .donate-btn {
+      background: var(--green);
+      color: white !important;
+      padding: 11px 20px;
+      border-radius: 4px;
+    }
+
+    /* ABOUT HERO */
+
+    .about-hero {
+      background: var(--green-dark);
+      color: white;
+      padding: 80px 8%;
+    }
+
+    .about-hero h1 {
+      font-size: clamp(48px, 6vw, 76px);
+      text-transform: uppercase;
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+
+    .about-hero p {
+      max-width: 700px;
+      font-size: 20px;
+      opacity: .9;
+    }
+
+    /* GENERAL SECTIONS */
+
+    .section {
+      padding: 75px 8%;
+    }
+
+    .section-inner {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section-label {
+      color: var(--green);
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      color: var(--green-dark);
+      font-size: 36px;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+    }
+
+    .large-text {
+      font-size: 23px;
+      line-height: 1.7;
+      max-width: 900px;
+    }
+
+    /* MISSION */
+
+    .mission {
+      background: var(--cream);
+    }
+
+    .mission-statement {
+      font-size: 29px;
+      line-height: 1.55;
+      color: var(--green-dark);
+      max-width: 950px;
+      font-weight: 600;
+    }
+
+    /* STORY */
+
+    .story p {
+      max-width: 850px;
+      margin-bottom: 18px;
+      font-size: 17px;
+    }
+
+    /* TEAM */
+
+    .team {
+      background: var(--cream);
+    }
+
+    .team-intro {
+      max-width: 750px;
+      margin-bottom: 45px;
+      font-size: 17px;
+    }
+
+    .staff-card {
+      background: white;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      max-width: 950px;
+      box-shadow: 0 4px 18px rgba(0,0,0,.07);
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    .staff-photo {
+      min-height: 340px;
+      background: #d8ddd4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--green-dark);
+      text-align: center;
+      padding: 30px;
+      font-weight: bold;
+    }
+
+    .staff-content {
+      padding: 40px;
+    }
+
+    .staff-content h3 {
+      color: var(--green-dark);
+      text-transform: uppercase;
+      font-size: 26px;
+    }
+
+    .staff-title {
+      color: var(--green);
+      font-weight: bold;
+      margin: 4px 0 20px;
+    }
+
+    .staff-content p {
+      margin-bottom: 15px;
+    }
+
+    /* VALUES */
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .value {
+      border-top: 4px solid var(--green);
+      padding-top: 20px;
+    }
+
+    .value h3 {
+      text-transform: uppercase;
+      color: var(--green-dark);
+      margin-bottom: 10px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #14271a;
+      color: rgba(255,255,255,.75);
+      text-align: center;
+      padding: 25px;
+      font-size: 12px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 850px) {
+
+      nav {
+        flex-direction: column;
+        padding: 15px;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+      }
+
+      .staff-card {
+        grid-template-columns: 1fr;
+      }
+
+      .staff-photo {
+        min-height: 260px;
+      }
+
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="top-bar">
+    Empowering San Francisco youth through outdoor education, community, and adventure.
+  </div>
+
+  <header>
+    <nav>
+
+      <a href="index.html" class="logo">
+        <img src="side-quest-logo.png" alt="Side Quest Expeditions">
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="student-trips.html">Student Trips</a>
+        <a href="public-trips.html">Public Trips</a>
+        <a href="support.html">Support Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="support.html" class="donate-btn">Donate</a>
+      </div>
+
+    </nav>
+  </header>
+
+
+  <section class="about-hero">
+    <h1>About Side Quest</h1>
+
+    <p>
+      We believe some of life's most important lessons happen outside
+      the classroom.
+    </p>
+  </section>
+
+
+  <!-- MISSION -->
+
+  <section class="section mission">
+    <div class="section-inner">
+
+      <div class="section-label">Our Mission</div>
+
+      <h2>Adventure With Purpose</h2>
+
+      <p class="mission-statement">
+        Side Quest Expeditions expands access to meaningful outdoor
+        education for San Francisco public school students through
+        progressive outdoor experiences that build confidence,
+        leadership, community, environmental stewardship, and a
+        lifelong connection to the natural world.
+      </p>
+
+    </div>
+  </section>
+
+
+  <!-- OUR STORY -->
+
+  <section class="section story">
+    <div class="section-inner">
+
+      <div class="section-label">Who We Are</div>
+
+      <h2>Our Story</h2>
+
+      <p>
+        Side Quest Expeditions was created around a simple idea:
+        young people should have access to meaningful outdoor
+        experiences regardless of their family's ability to pay
+        for them.
+      </p>
+
+      <p>
+        We begin close to home, introducing students to the incredible
+        public lands and outdoor spaces surrounding San Francisco.
+        As students gain experience, confidence, and outdoor skills,
+        those opportunities grow into larger adventures including
+        camping, backpacking, rock climbing, and whitewater rafting.
+      </p>
+
+      <p>
+        Our goal is not simply to take students outside. We want
+        young people to develop the skills, confidence, relationships,
+        and sense of belonging that allow them to see the outdoors
+        as a place where they belong.
+      </p>
+
+    </div>
+  </section>
+
+
+  <!-- STAFF -->
+
+  <section class="section team">
+    <div class="section-inner">
+
+      <div class="section-label">Our Team</div>
+
+      <h2>Meet the People Behind Side Quest</h2>
+
+      <p class="team-intro">
+        Our programs are led by experienced outdoor educators who
+        bring together technical outdoor skills, risk management,
+        education, and a deep commitment to working with young people.
+      </p>
+
+
+      <div class="staff-card">
+
+        <div class="staff-photo">
+          Staff Photo<br>
+          Coming Soon
+        </div>
+
+        <div class="staff-content">
+
+          <h3>Kyle Murphy</h3>
+
+          <div class="staff-title">
+            Founder &amp; Director
+          </div>
+
+          <p>
+            Kyle is an outdoor educator, river guide, and educator
+            with more than a decade of experience leading people
+            in outdoor environments.
+          </p>
+
+          <p>
+            His background includes whitewater rafting, backpacking,
+            rock climbing, challenge course facilitation, outdoor
+            leadership, staff training, and wilderness risk management.
+            He has led programs ranging from local day experiences
+            to multi-week wilderness expeditions.
+          </p>
+
+          <p>
+            Kyle holds a degree in Communication with a focus on
+            small-group communication and conflict resolution, as
+            well as formal education in wilderness studies. His work
+            in outdoor education and public schools ultimately led
+            to the creation of Side Quest Expeditions.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- VALUES -->
+
+  <section class="section">
+    <div class="section-inner">
+
+      <div class="section-label">Our Approach</div>
+
+      <h2>What Guides Us</h2>
+
+      <div class="values-grid">
+
+        <div class="value">
+          <h3>Know Yourself</h3>
+          <p>
+            Challenge, reflection, and adventure help students discover
+            their strengths, capabilities, and confidence.
+          </p>
+        </div>
+
+        <div class="value">
+          <h3>Know Each Other</h3>
+          <p>
+            Shared experiences create opportunities for teamwork,
+            communication, trust, and stronger communities.
+          </p>
+        </div>
+
+        <div class="value">
+          <h3>Know This Place</h3>
+          <p>
+            Understanding the landscapes, communities, histories,
+            and ecosystems around us creates a deeper relationship
+            with the places we explore.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <footer>
+    © 2026 Side Quest Expeditions · San Francisco, California
+  </footer>
+
+</body>
+</html>
