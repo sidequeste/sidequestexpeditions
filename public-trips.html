@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Public Trips | Side Quest Expeditions</title>
+
+  <style>
+    :root {
+      --green-dark: #203b28;
+      --green: #3f642f;
+      --cream: #f5f1e8;
+      --white: #ffffff;
+      --text: #172019;
+      --muted: #626a63;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+      background: white;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .top-bar {
+      background: var(--green-dark);
+      color: white;
+      padding: 7px 6%;
+      font-size: 13px;
+      text-align: center;
+    }
+
+    header {
+      background: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,.06);
+    }
+
+    nav {
+      min-height: 68px;
+      padding: 6px 6%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .logo img {
+      width: 220px;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .nav-links a:hover {
+      color: var(--green);
+    }
+
+    .donate-btn {
+      background: var(--green);
+      color: white !important;
+      padding: 11px 20px;
+      border-radius: 4px;
+    }
+
+    .hero {
+      background: var(--green-dark);
+      color: white;
+      padding: 85px 8%;
+    }
+
+    .hero h1 {
+      font-size: clamp(48px, 6vw, 76px);
+      text-transform: uppercase;
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      max-width: 760px;
+      font-size: 20px;
+      opacity: .92;
+    }
+
+    .intro {
+      background: var(--cream);
+      padding: 65px 8%;
+    }
+
+    .section-inner {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section-label {
+      color: var(--green);
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      color: var(--green-dark);
+      font-size: 36px;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    .intro p {
+      max-width: 850px;
+      font-size: 19px;
+      margin-bottom: 16px;
+    }
+
+    .trips {
+      padding: 70px 8%;
+    }
+
+    .trip-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .trip-card {
+      background: white;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 4px 18px rgba(0,0,0,.08);
+    }
+
+    .trip-image {
+      height: 250px;
+      background: #b7c3b2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--green-dark);
+      font-weight: bold;
+      padding: 30px;
+    }
+
+    .trip-content {
+      padding: 28px;
+    }
+
+    .trip-content h3 {
+      color: var(--green-dark);
+      text-transform: uppercase;
+      font-size: 23px;
+      margin-bottom: 8px;
+    }
+
+    .trip-meta {
+      color: var(--green);
+      font-weight: bold;
+      margin-bottom: 15px;
+      font-size: 14px;
+    }
+
+    .trip-content p {
+      font-size: 15px;
+      margin-bottom: 15px;
+    }
+
+    .mission-box {
+      background: var(--green-dark);
+      color: white;
+      padding: 65px 8%;
+      text-align: center;
+    }
+
+    .mission-box h2 {
+      color: white;
+    }
+
+    .mission-box p {
+      max-width: 760px;
+      margin: auto;
+      font-size: 18px;
+    }
+
+    .cta {
+      background: var(--cream);
+      text-align: center;
+      padding: 65px 8%;
+    }
+
+    .cta p {
+      max-width: 700px;
+      margin: 0 auto 25px;
+      font-size: 18px;
+    }
+
+    .button {
+      display: inline-block;
+      background: var(--green);
+      color: white;
+      padding: 14px 28px;
+      border-radius: 4px;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 13px;
+    }
+
+    footer {
+      background: #14271a;
+      color: rgba(255,255,255,.75);
+      text-align: center;
+      padding: 25px;
+      font-size: 12px;
+    }
+
+    @media (max-width: 900px) {
+      nav {
+        flex-direction: column;
+        padding: 15px;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+      }
+
+      .trip-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="top-bar">
+    Empowering San Francisco youth through outdoor education, community, and adventure.
+  </div>
+
+  <header>
+    <nav>
+
+      <a href="index.html" class="logo">
+        <img src="side-quest-logo.png" alt="Side Quest Expeditions">
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="student-trips.html">Student Trips</a>
+        <a href="public-trips.html">Public Trips</a>
+        <a href="support.html">Support Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="support.html" class="donate-btn">Donate</a>
+      </div>
+
+    </nav>
+  </header>
+
+  <section class="hero">
+
+    <h1>Public Trips</h1>
+
+    <p>
+      Explore some of the Bay Area's most remarkable outdoor spaces
+      while helping support meaningful outdoor opportunities for
+      local students.
+    </p>
+
+  </section>
+
+  <section class="intro">
+    <div class="section-inner">
+
+      <div class="section-label">Adventure That Gives Back</div>
+
+      <h2>Explore With Side Quest</h2>
+
+      <p>
+        Side Quest Expeditions offers guided outdoor experiences for
+        members of the general public who want to explore incredible
+        places, learn something new, and spend meaningful time outside.
+      </p>
+
+      <p>
+        Revenue generated through public trips helps support our nonprofit
+        mission and contributes toward making student outdoor programs
+        more accessible.
+      </p>
+
+    </div>
+  </section>
+
+  <section class="trips">
+    <div class="section-inner">
+
+      <div class="section-label">Trips & Experiences</div>
+
+      <h2>Public Adventures</h2>
+
+      <div class="trip-grid">
+
+        <div class="trip-card">
+
+          <div class="trip-image">
+            Lands End Photo<br>
+            Coming Soon
+          </div>
+
+          <div class="trip-content">
+
+            <h3>Lands End</h3>
+
+            <div class="trip-meta">
+              San Francisco, California
+            </div>
+
+            <p>
+              Explore San Francisco's rugged western coastline through
+              scenic trails, coastal history, dramatic overlooks, and
+              stories that connect the city to the Pacific.
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="trip-card">
+
+          <div class="trip-image">
+            Marin Headlands Photo<br>
+            Coming Soon
+          </div>
+
+          <div class="trip-content">
+
+            <h3>Marin Headlands</h3>
+
+            <div class="trip-meta">
+              Golden Gate National Recreation Area
+            </div>
+
+            <p>
+              Discover sweeping views, coastal ecology, historic sites,
+              and some of the most iconic landscapes surrounding the
+              Golden Gate.
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="trip-card">
+
+          <div class="trip-image">
+            Coastal Adventure Photo<br>
+            Coming Soon
+          </div>
+
+          <div class="trip-content">
+
+            <h3>Coastal Adventures</h3>
+
+            <div class="trip-meta">
+              San Francisco Bay Area
+            </div>
+
+            <p>
+              Join seasonal guided experiences exploring beaches,
+              headlands, tide pools, coastal trails, and other remarkable
+              places around the Bay Area.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section class="mission-box">
+
+    <h2>Your Adventure Supports Theirs</h2>
+
+    <p>
+      When you join a Side Quest public trip, you are doing more than
+      purchasing a guided experience. You are helping us build the
+      resources, equipment, and programming needed to create outdoor
+      opportunities for public school students.
+    </p>
+
+  </section>
+
+  <section class="cta">
+
+    <h2>Public Trips Coming Soon</h2>
+
+    <p>
+      We are currently developing our first public trip offerings.
+      Contact us if you would like to hear about upcoming experiences,
+      private group trips, or future dates.
+    </p>
+
+    <a href="contact.html" class="button">
+      Contact Us
+    </a>
+
+  </section>
+
+  <footer>
+    © 2026 Side Quest Expeditions · San Francisco, California
+  </footer>
+
+</body>
+</html>
