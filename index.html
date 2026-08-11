@@ -241,6 +241,53 @@ background-position: center 45%;
       grid-template-columns: 3fr 1fr;
       gap: 50px;
     }
+    .trip-pathways {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+.pathway-card {
+  background: var(--cream);
+  border-radius: 6px;
+  padding: 38px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.pathway-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,.10);
+}
+
+.pathway-label {
+  color: var(--green);
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.pathway-card h3 {
+  color: var(--green-dark);
+  text-transform: uppercase;
+  font-size: 27px;
+  margin-bottom: 15px;
+}
+
+.pathway-card p {
+  margin-bottom: 22px;
+  line-height: 1.7;
+}
+
+.pathway-card span {
+  color: var(--green);
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 13px;
+}
 
     .section-title {
       color: var(--green-dark);
@@ -505,7 +552,6 @@ background-position: center 45%;
       <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
-        <a href="programs.html">Programs</a>
         <a href="student-trips.html">Student Trips</a>
         <a href="public-trips.html">Public Trips</a>
         <a href="support.html">Support Us</a>
@@ -588,106 +634,62 @@ background-position: center 45%;
 
 
   <!-- PROGRAMS + GET INVOLVED -->
-  <section class="main-section">
 
-    <div>
+      <!-- STUDENT & PUBLIC TRIPS -->
 
-      <h2 class="section-title">
-        Our Programs
-      </h2>
+<section class="main-section">
 
-      <div class="program-grid">
+  <div>
 
+    <h2 class="section-title">Explore Side Quest</h2>
 
-        <!-- DAY ADVENTURES -->
-        <a href="programs.html" class="program-card">
+    <div class="trip-pathways">
 
-          <div class="program-image">
-            🥾
-          </div>
+      <a href="student-trips.html" class="pathway-card">
 
-          <div class="program-content">
-            <h3>Day Adventures</h3>
+        <div class="pathway-content">
+          <div class="pathway-label">For Students</div>
 
-            <p>
-              Local hikes, coastal exploration, environmental
-              education, and adventures close to home.
-            </p>
-          </div>
+          <h3>Student Trips</h3>
 
-        </a>
+          <p>
+            Outdoor experiences designed for young people, from
+            camping on the California coast to backpacking in the
+            High Sierra, sea kayaking, and whitewater guide school.
+          </p>
 
+          <span>Explore Student Trips →</span>
+        </div>
 
-        <!-- OVERNIGHT -->
-        <a href="student-trips.html" class="program-card">
-
-          <div class="program-image">
-            ⛺
-          </div>
-
-          <div class="program-content">
-            <h3>Overnight Trips</h3>
-
-            <p>
-              Building independence, resilience, leadership,
-              and community through overnight experiences.
-            </p>
-          </div>
-
-        </a>
+      </a>
 
 
-        <!-- SKILLS -->
-        <a href="programs.html" class="program-card">
+      <a href="public-trips.html" class="pathway-card">
 
-          <div class="program-image">
-            🚣
-          </div>
+        <div class="pathway-content">
+          <div class="pathway-label">For Everyone</div>
 
-          <div class="program-content">
-            <h3>Skills & Courses</h3>
+          <h3>Public Trips</h3>
 
-            <p>
-              Hands-on programs in backpacking, rock climbing,
-              whitewater rafting, navigation, and outdoor skills.
-            </p>
-          </div>
+          <p>
+            Guided outdoor experiences for the public that explore
+            remarkable places while helping support Side Quest's
+            student programs.
+          </p>
 
-        </a>
+          <span>Explore Public Trips →</span>
+        </div>
 
-
-        <!-- PUBLIC TRIPS -->
-        <a href="public-trips.html" class="program-card">
-
-          <div class="program-image">
-            🌊
-          </div>
-
-          <div class="program-content">
-            <h3>Public Trips</h3>
-
-            <p>
-              Outdoor adventures for the general public that
-              explore incredible places while supporting our mission.
-            </p>
-          </div>
-
-        </a>
-
-      </div>
-
-
-      <div class="program-button-wrap">
-
-        <a href="programs.html" class="button">
-          View All Programs
-        </a>
-
-      </div>
+      </a>
 
     </div>
 
+  </div>
 
+</section>
+
+
+  
     <!-- GET INVOLVED -->
     <aside class="get-involved">
 
