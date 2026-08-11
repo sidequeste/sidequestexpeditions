@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Trips | Side Quest Expeditions</title>
+
+  <style>
+    :root {
+      --green-dark: #203b28;
+      --green: #3f642f;
+      --cream: #f5f1e8;
+      --white: #ffffff;
+      --text: #172019;
+      --muted: #626a63;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+      background: white;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .top-bar {
+      background: var(--green-dark);
+      color: white;
+      padding: 7px 6%;
+      font-size: 13px;
+      text-align: center;
+    }
+
+    header {
+      background: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,.06);
+    }
+
+    nav {
+      min-height: 68px;
+      padding: 6px 6%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .logo img {
+      width: 220px;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .nav-links a:hover {
+      color: var(--green);
+    }
+
+    .donate-btn {
+      background: var(--green);
+      color: white !important;
+      padding: 11px 20px;
+      border-radius: 4px;
+    }
+
+    .hero {
+      background: var(--green-dark);
+      color: white;
+      padding: 85px 8%;
+    }
+
+    .hero h1 {
+      font-size: clamp(48px, 6vw, 76px);
+      text-transform: uppercase;
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      max-width: 760px;
+      font-size: 20px;
+      opacity: .92;
+    }
+
+    .intro {
+      background: var(--cream);
+      padding: 65px 8%;
+    }
+
+    .intro-inner {
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .section-label {
+      color: var(--green);
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      color: var(--green-dark);
+      font-size: 36px;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    .intro p {
+      font-size: 19px;
+      max-width: 850px;
+    }
+
+    .trips {
+      padding: 70px 8%;
+    }
+
+    .trips-inner {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .trip-card {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      margin-bottom: 50px;
+      background: white;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 4px 18px rgba(0,0,0,.08);
+    }
+
+    .trip-image {
+      min-height: 340px;
+      background:
+        linear-gradient(
+          rgba(32,59,40,.18),
+          rgba(32,59,40,.18)
+        ),
+        #b7c3b2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--green-dark);
+      font-weight: bold;
+      font-size: 18px;
+      padding: 30px;
+    }
+
+    .trip-content {
+      padding: 42px;
+    }
+
+    .trip-content h3 {
+      color: var(--green-dark);
+      text-transform: uppercase;
+      font-size: 30px;
+      margin-bottom: 8px;
+    }
+
+    .trip-meta {
+      color: var(--green);
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .trip-content p {
+      margin-bottom: 18px;
+      font-size: 16px;
+    }
+
+    .trip-content h4 {
+      text-transform: uppercase;
+      color: var(--green-dark);
+      font-size: 15px;
+      margin-bottom: 8px;
+    }
+
+    .trip-content ul {
+      padding-left: 20px;
+      margin-bottom: 10px;
+    }
+
+    .trip-content li {
+      margin-bottom: 6px;
+    }
+
+    .cta {
+      background: var(--cream);
+      text-align: center;
+      padding: 65px 8%;
+    }
+
+    .cta p {
+      max-width: 700px;
+      margin: 0 auto 25px;
+      font-size: 18px;
+    }
+
+    .button {
+      display: inline-block;
+      background: var(--green);
+      color: white;
+      padding: 14px 28px;
+      border-radius: 4px;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 13px;
+    }
+
+    footer {
+      background: #14271a;
+      color: rgba(255,255,255,.75);
+      text-align: center;
+      padding: 25px;
+      font-size: 12px;
+    }
+
+    @media (max-width: 850px) {
+
+      nav {
+        flex-direction: column;
+        padding: 15px;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+      }
+
+      .trip-card {
+        grid-template-columns: 1fr;
+      }
+
+      .trip-image {
+        min-height: 240px;
+      }
+
+      .trip-content {
+        padding: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="top-bar">
+    Empowering San Francisco youth through outdoor education, community, and adventure.
+  </div>
+
+  <header>
+    <nav>
+
+      <a href="index.html" class="logo">
+        <img src="side-quest-logo.png" alt="Side Quest Expeditions">
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="student-trips.html">Student Trips</a>
+        <a href="public-trips.html">Public Trips</a>
+        <a href="support.html">Support Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="support.html" class="donate-btn">Donate</a>
+      </div>
+
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Student Trips</h1>
+
+    <p>
+      Side Quest Expeditions offers a range of outdoor programs designed
+      to give students meaningful, hands-on experiences in wild and
+      adventurous places.
+    </p>
+  </section>
+
+  <section class="intro">
+    <div class="intro-inner">
+
+      <div class="section-label">Explore With Us</div>
+
+      <h2>Different Adventures. Different Skills.</h2>
+
+      <p>
+        Our student trips are not designed as a required sequence. Each
+        program stands on its own and offers a different way for students
+        to build confidence, learn outdoor skills, work as a team, and
+        connect with the natural world.
+      </p>
+
+    </div>
+  </section>
+
+  <section class="trips">
+    <div class="trips-inner">
+
+      <!-- KERBY COVE -->
+
+      <div class="trip-card">
+
+        <div class="trip-image">
+          Kerby Cove Basecamp Photo<br>
+          Coming Soon
+        </div>
+
+        <div class="trip-content">
+
+          <h3>Kerby Cove Basecamp</h3>
+
+          <div class="trip-meta">
+            Marin Headlands, California
+          </div>
+
+          <p>
+            A local overnight experience designed to introduce students
+            to camping, outdoor living, and exploration in one of the Bay
+            Area's most remarkable coastal landscapes.
+          </p>
+
+          <h4>Students may explore:</h4>
+
+          <ul>
+            <li>Camp setup and outdoor living skills</li>
+            <li>Hiking and coastal exploration</li>
+            <li>Teamwork and community building</li>
+            <li>Leave No Trace principles</li>
+            <li>Natural and cultural history of the Marin Headlands</li>
+          </ul>
+
+        </div>
+      </div>
+
+
+      <!-- HIGH SIERRA -->
+
+      <div class="trip-card">
+
+        <div class="trip-image">
+          High Sierra Backpacking Photo<br>
+          Coming Soon
+        </div>
+
+        <div class="trip-content">
+
+          <h3>High Sierra Backpacking</h3>
+
+          <div class="trip-meta">
+            Sierra Nevada, California
+          </div>
+
+          <p>
+            A multi-day wilderness experience that gives students the
+            opportunity to travel through the Sierra Nevada while learning
+            the skills needed to live and travel responsibly in the
+            backcountry.
+          </p>
+
+          <h4>Students may explore:</h4>
+
+          <ul>
+            <li>Backpacking and wilderness travel</li>
+            <li>Navigation and route finding</li>
+            <li>Backcountry cooking and campcraft</li>
+            <li>Leadership and group decision-making</li>
+            <li>Resilience, independence, and teamwork</li>
+            <li>Leave No Trace ethics</li>
+          </ul>
+
+        </div>
+      </div>
+
+
+      <!-- MORRO BAY -->
+
+      <div class="trip-card">
+
+        <div class="trip-image">
+          Morro Bay Sea Kayaking Photo<br>
+          Coming Soon
+        </div>
+
+        <div class="trip-content">
+
+          <h3>Morro Bay Sea Kayaking</h3>
+
+          <div class="trip-meta">
+            Morro Bay, California
+          </div>
+
+          <p>
+            A coastal paddling experience that introduces students to
+            sea kayaking while exploring the ecology and unique marine
+            environment of Morro Bay.
+          </p>
+
+          <h4>Students may explore:</h4>
+
+          <ul>
+            <li>Sea kayak paddling techniques</li>
+            <li>Boat handling and water safety</li>
+            <li>Navigation and weather awareness</li>
+            <li>Marine and estuary ecology</li>
+            <li>Teamwork and communication on the water</li>
+          </ul>
+
+        </div>
+      </div>
+
+
+      <!-- GUIDE SCHOOL -->
+
+      <div class="trip-card">
+
+        <div class="trip-image">
+          Whitewater Guide School Photo<br>
+          Coming Soon
+        </div>
+
+        <div class="trip-content">
+
+          <h3>Whitewater Guide School</h3>
+
+          <div class="trip-meta">
+            South Fork American River, California
+          </div>
+
+          <p>
+            A hands-on introduction to the skills, responsibilities,
+            teamwork, and decision-making involved in whitewater raft
+            guiding.
+          </p>
+
+          <p>
+            Guide school instruction is led by seasoned river guides
+            with extensive professional experience and current wilderness
+            medical and swiftwater rescue training.
+          </p>
+
+          <h4>Students may explore:</h4>
+
+          <ul>
+            <li>Rafting fundamentals and paddle commands</li>
+            <li>Boat handling and river navigation</li>
+            <li>River safety and hazard awareness</li>
+            <li>Guide communication and leadership</li>
+            <li>Team-based problem solving</li>
+            <li>Introduction to rescue concepts and river systems</li>
+          </ul>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="cta">
+
+    <h2>Interested in a Student Program?</h2>
+
+    <p>
+      We are currently developing upcoming Side Quest Expeditions
+      student programs and school partnerships. Contact us to learn
+      more about future opportunities.
+    </p>
+
+    <a href="contact.html" class="button">
+      Contact Side Quest
+    </a>
+
+  </section>
+
+  <footer>
+    © 2026 Side Quest Expeditions · San Francisco, California
+  </footer>
+
+</body>
+</html>
