@@ -193,16 +193,22 @@ background-position: center 38%;
     }
 
     /* VALUES STRIP */
-
-    .values-strip {
+    
+.topo-background {
   background:
-    linear-gradient(rgba(245,241,232,.35), rgba(245,241,232,.35)),
+    linear-gradient(
+      rgba(245,241,232,.28),
+      rgba(245,241,232,.28)
+    ),
     url("mountdarwin.jpg");
 
   background-size: cover;
-  background-position: center 32%;
+  background-position: center center;
   background-repeat: no-repeat;
-
+}
+    
+    .values-strip {
+  background: transparent;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   padding: 28px 7%;
@@ -249,14 +255,7 @@ background-position: center 38%;
 
     .main-section {
   padding: 50px 7%;
-
-  background:
-    linear-gradient(rgba(245,241,232,.35), rgba(245,241,232,.35)),
-    url("mountdarwin.jpg");
-
-  background-size: cover;
-  background-position: center 58%;
-  background-repeat: no-repeat;
+  background: transparent;
 
   display: grid;
   grid-template-columns: 3fr 1fr;
@@ -754,7 +753,9 @@ background-position: center 38%;
 
 
   <!-- VALUES -->
-  <section class="values-strip">
+  <div class="topo-background">
+
+    <section class="values-strip">
 
     <div class="value">
       <div class="value-icon">➤</div>
@@ -908,10 +909,12 @@ background-position: center 38%;
 
     </aside>
 
-  </section>
+</section>
+
+</div>
 
 
-  <!-- QUOTE -->
+<!-- QUOTE -->
   <section class="quote-section">
 
     <blockquote>
