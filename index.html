@@ -190,64 +190,53 @@ background-position: center 38%;
 }
 
     /* VALUES STRIP */
-    
-.topo-background {
-  background:
-    linear-gradient(
-      rgba(245,241,232,.18),
-      rgba(245,241,232,.18)
-    ),
-    url("mountdarwin.jpg");
 
-  background-size: 100% auto;
-  background-position: center 44%;
-  background-repeat: no-repeat;›
-  background-color: #f5f1e8;
-}
-    
-    .values-strip {
+.values-strip {
   background: transparent;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  padding: 28px 7%;
+  gap: 18px;
+  padding: 22px 7%;
 }
 
-    .value {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      padding: 8px 35px;
-      border-right: 1px solid #ccc7ba;
-    }
+.value {
+  background: rgba(245, 241, 232, 0.94);
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 18px 22px;
+  border: none;
+  border-radius: 4px;
+}
 
-    .value:last-child {
-      border-right: none;
-    }
+.value-icon {
+  width: 72px;
+  height: 72px;
+  min-width: 72px;
+  object-fit: contain;
 
-    .value-icon {
-      width: 70px;
-      height: 70px;
-      min-width: 70px;
-      border: 2px solid var(--green-dark);
-      color: var(--green-dark);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 30px;
-    }
+  border: none;
+  border-radius: 0;
+  background: transparent;
+}
 
-    .value h3 {
-      text-transform: uppercase;
-      font-size: 16px;
-      margin-bottom: 5px;
-      color: var(--green-dark);
-    }
+.value-text {
+  flex: 1;
+}
 
-    .value p {
-      font-size: 14px;
-      color: #333;
-    }
+.value h3 {
+  color: #000;
+  text-transform: uppercase;
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.value p {
+  color: #000;
+  font-size: 13px;
+  line-height: 1.45;
+  margin: 0;
+}
 
     /* PROGRAM SECTION */
 
@@ -756,50 +745,47 @@ a.outline-button:hover {
 
 
   <!-- VALUES -->
-  <div class="topo-background">
+<section class="values-strip">
 
-    <section class="values-strip">
+  <div class="value">
+    <img src="compass.png" alt="Compass" class="value-icon">
 
-    <div class="value">
-      <div class="value-icon">➤</div>
-
-      <div>
-        <h3>Know Yourself</h3>
-        <p>
-          We challenge students to step outside their comfort zones
-          and discover their strengths and potential.
-        </p>
-      </div>
+    <div class="value-text">
+      <h3>Know Yourself</h3>
+      <p>
+        We challenge students to step outside their comfort zones
+        and discover their strengths and potential.
+      </p>
     </div>
+  </div>
 
 
-    <div class="value">
-      <div class="value-icon">♧</div>
+  <div class="value">
+    <img src="campfire.png" alt="Campfire" class="value-icon">
 
-      <div>
-        <h3>Know Each Other</h3>
-        <p>
-          We build community through shared experiences, respect,
-          teamwork, and time outdoors.
-        </p>
-      </div>
+    <div class="value-text">
+      <h3>Know Each Other</h3>
+      <p>
+        We build community through shared experiences, respect,
+        teamwork, and time outdoors.
+      </p>
     </div>
+  </div>
 
 
-    <div class="value">
-      <div class="value-icon">△</div>
+  <div class="value">
+    <img src="tree.png" alt="Tree" class="value-icon">
 
-      <div>
-        <h3>Know This Place</h3>
-        <p>
-          We cultivate a deeper connection to local and wild places
-          and the stories they hold.
-        </p>
-      </div>
+    <div class="value-text">
+      <h3>Know This Place</h3>
+      <p>
+        We cultivate a deeper connection to local and wild places
+        and the stories they hold.
+      </p>
     </div>
+  </div>
 
-  </section>
-
+</section>
 
   <!-- PROGRAMS + GET INVOLVED -->
 
