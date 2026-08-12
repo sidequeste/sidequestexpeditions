@@ -699,22 +699,28 @@ background-position: center 38%;
     font-size: 10px;
   }
       
-/* BLACK BUTTONS */
-
+/* FORCE ALL CTA BUTTONS BLACK */
+a.donate-btn,
+a.button,
+a.outline-button,
 .donate-btn,
 .button,
-.outline-button {
+.outline-button,
+.hero a.button,
+.get-involved .outline-button {
+  background-color: #000 !important;
   background: #000 !important;
-  color: #fff !important;
   border-color: #000 !important;
+  color: #fff !important;
 }
 
-.donate-btn:hover,
-.button:hover,
-.outline-button:hover {
+a.donate-btn:hover,
+a.button:hover,
+a.outline-button:hover {
+  background-color: #222 !important;
   background: #222 !important;
-  color: #fff !important;
   border-color: #222 !important;
+  color: #fff !important;
 }
       
   </style>
