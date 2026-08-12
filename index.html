@@ -337,7 +337,14 @@
       padding: 28px 22px;
       font-size: 12px;
     }
-
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+    
    /* TABLET */
 @media (max-width: 1000px) and (min-width: 651px) {
 
@@ -419,43 +426,75 @@
 
     /* MOBILE */
     @media (max-width: 650px) {
-      header { position: relative; }
+      header {
+  position: relative;
+  top: auto;
+  background: #fff;
+}
 
-      nav {
-        min-height: auto;
-        padding: 10px 16px 12px;
-        flex-direction: column;
-        gap: 8px;
-      }
+nav {
+  min-height: auto;
+  padding: 12px 18px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
 
-      .logo {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-      }
+.logo {
+  width: auto;
+}
 
-      .logo img {
-        width: 150px;
-        max-width: 65vw;
-        margin: 0;
-      }
+.logo img {
+  width: 170px;
+  max-width: 65vw;
+}
 
-      .nav-links {
-        width: 100%;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 3px 10px;
-        font-size: 10px;
-        line-height: 1.2;
-      }
+.menu-toggle {
+  display: block;
+  color: #000;
+  font-size: 30px;
+  line-height: 1;
+}
 
-      .nav-links a { padding: 6px 8px; }
+.nav-links {
+  display: none;
 
-      .nav-links .donate-btn {
-        width: auto;
-        padding: 8px 16px;
-        margin-top: 2px;
-      }
+  position: absolute;
+  top: 100%;
+  left: 0;
+
+  width: 100%;
+  background: #fff;
+
+  flex-direction: column;
+  align-items: stretch;
+
+  padding: 10px 18px 18px;
+
+  color: #000;
+
+  box-shadow: 0 8px 15px rgba(0,0,0,.12);
+}
+
+.nav-links.open {
+  display: flex;
+}
+
+.nav-links a {
+  color: #000;
+  padding: 12px 8px;
+  font-size: 13px;
+  border-bottom: 1px solid rgba(0,0,0,.08);
+}
+
+.nav-links .donate-btn {
+  background: #000;
+  color: #fff;
+  text-align: center;
+  margin-top: 10px;
+  padding: 12px 16px;
+  border-bottom: none;
+}
 
       .hero {
         min-height: 460px;
@@ -578,15 +617,19 @@
         <img src="side-quest-logo.png" alt="Side Quest Expeditions">
       </a>
 
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="student-trips.html">Student Trips</a>
-        <a href="public-trips.html">Public Trips</a>
-        <a href="support.html">Support Us</a>
-        <a href="contact.html">Contact</a>
-        <a href="support.html" class="donate-btn">Donate</a>
-      </div>
+      <button class="menu-toggle" aria-label="Open menu">
+  ☰
+</button>
+
+<div class="nav-links">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="student-trips.html">Student Trips</a>
+  <a href="public-trips.html">Public Trips</a>
+  <a href="support.html">Support Us</a>
+  <a href="contact.html">Contact</a>
+  <a href="support.html" class="donate-btn">Donate</a>
+</div>
     </nav>
   </header>
 
@@ -725,5 +768,13 @@
     </footer>
 
   </div>
+  <script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+  });
+</script>
 </body>
 </html>
