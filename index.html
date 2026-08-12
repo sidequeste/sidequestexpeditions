@@ -118,29 +118,29 @@
     /* HERO */
 
     .hero {
-  height: 650px;
   min-height: 0;
+  aspect-ratio: 3 / 2;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 55px 8%;
+  color: white;
+
+  background:
+    linear-gradient(
+      270deg,
+      rgba(15,31,21,.38) 0%,
+      rgba(15,31,21,.18) 40%,
+      rgba(15,31,21,.02) 72%
+    ),
+    url("sidequestwebsitebackground.jpg");
 
   background-size: cover;
-  background-position: center center;
+  background-position: center 95%;
   background-repeat: no-repeat;
+  overflow: hidden;
 }
-     
-
-     background:
-  linear-gradient(
-    270deg,
-    rgba(15,31,21,.38) 0%,
-    rgba(15,31,21,.18) 40%,
-    rgba(15,31,21,.02) 72%
-  ),
-  url("sidequestwebsitebackground.jpg");
-
-background-size: cover;
-background-position: center 120%;
-      overflow: hidden;
-    }
-
     .hero::after {
       content: "";
       position: absolute;
