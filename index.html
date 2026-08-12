@@ -195,11 +195,18 @@ background-position: center 38%;
     /* VALUES STRIP */
 
     .values-strip {
-      background: var(--cream);
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      padding: 28px 7%;
-    }
+  background:
+    linear-gradient(rgba(245,241,232,.78), rgba(245,241,232,.78)),
+    url("mount-darwin-topo-bg.jpg");
+
+  background-size: 155% auto;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 28px 7%;
+}
 
     .value {
       display: flex;
@@ -241,11 +248,20 @@ background-position: center 38%;
     /* PROGRAM SECTION */
 
     .main-section {
-      padding: 50px 7%;
-      display: grid;
-      grid-template-columns: 3fr 1fr;
-      gap: 50px;
-    }
+  padding: 50px 7%;
+
+  background:
+    linear-gradient(rgba(245,241,232,.78), rgba(245,241,232,.78)),
+    url("mount-darwin-topo-bg.jpg");
+
+  background-size: 155% auto;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 50px;
+}
     .trip-pathways {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
