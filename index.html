@@ -3,17 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Side Quest Expeditions</title>
-  
-  
   <style>
     :root {
       --green-dark: #203b28;
       --green: #3f642f;
-      --green-light: #6f9149;
       --cream: #f5f1e8;
-      --white: #ffffff;
       --text: #172019;
       --muted: #626a63;
     }
@@ -24,14 +19,12 @@
       padding: 0;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       font-family: Arial, Helvetica, sans-serif;
       color: var(--text);
-      background: white;
+      background: #fff;
       line-height: 1.5;
     }
 
@@ -40,104 +33,82 @@
       text-decoration: none;
     }
 
-    /* TOP BAR */
+    /* NAVIGATION */
+    header {
+      position: absolute;
+      top: 22px;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      background: transparent;
+    }
 
-    .top-bar {
-      background: var(--green-dark);
-      color: white;
-      padding: 8px 6%;
+    nav {
+      min-height: 70px;
+      padding: 8px 4%;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      font-size: 13px;
+      justify-content: space-between;
+      gap: 30px;
     }
-
-    .social-links {
-      display: flex;
-      gap: 15px;
-      font-weight: bold;
-    }
-
-    /* NAV */
-
-  header {
-  position: absolute;
-  top: 22px;
-  left: 0;
-  width: 100%;
-  z-index: 100;
-  background: transparent;
-  box-shadow: none;
-}
-
-nav {
-  min-height: 70px;
-  padding: 8px 4%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 30px;
-}
 
     .logo img {
-  width: 220px;
-  display: block;
-}
-
-    .nav-links {
-  display: flex;
-  align-items: center;
-  gap: 28px;
-  font-size: 13px;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: white;
-}
-
-    .nav-links a {
-      padding: 10px 0;
+      width: 220px;
+      display: block;
     }
 
-    .nav-links a:hover {
-  color: #dfe8da;
-}
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: white;
+    }
 
-.donate-btn {
-  background: #000;
-  color: white !important;
-  padding: 12px 22px !important;
-  border-radius: 4px;
-}
+    .nav-links a { padding: 10px 0; }
+
+    .nav-links a:hover { color: #dfe8da; }
+
+    .nav-links .donate-btn {
+      background: #000;
+      color: #fff;
+      padding: 12px 22px;
+      border-radius: 4px;
+    }
+
+    .nav-links .donate-btn:hover {
+      background: #222;
+      color: #fff;
+    }
 
     /* HERO */
-
     .hero {
-  min-height: 0;
- aspect-ratio: 16 / 6.5;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding: 40px 5%;
-  color: white;
+      min-height: 0;
+      aspect-ratio: 16 / 6.5;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 40px 5%;
+      color: white;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(255, 155, 55, .28) 0%,
+          rgba(255, 185, 95, .18) 30%,
+          rgba(255, 210, 150, .05) 55%,
+          rgba(15, 20, 20, .16) 100%
+        ),
+        url("sidequestwebsitebackground.jpg");
+      background-blend-mode: screen;
+      background-size: 108% auto;
+      background-position: center 38%;
+      background-repeat: no-repeat;
+      overflow: hidden;
+    }
 
-  background:
-  linear-gradient(
-    90deg,
-    rgba(255, 155, 55, .28) 0%,
-    rgba(255, 185, 95, .18) 30%,
-    rgba(255, 210, 150, .05) 55%,
-    rgba(15, 20, 20, .16) 100%
-  ),
-  url("sidequestwebsitebackground.jpg");
-
-background-blend-mode: screen;
-
- background-size: 108% auto;
-background-position: center 38%;
-  background-repeat: no-repeat;
-  overflow: hidden;
-}
     .hero::after {
       content: "";
       position: absolute;
@@ -145,34 +116,36 @@ background-position: center 38%;
       right: -5%;
       bottom: -70px;
       height: 170px;
-      background: rgba(255,255,255,.035);
+      background: rgba(255, 255, 255, .035);
       transform: rotate(-2deg);
+      pointer-events: none;
     }
 
-   .hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 470px;
-  text-align: left;
-  margin-left: auto;
-  margin-right: -1%;
-  transform: translateY(-10px);
-}
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 470px;
+      text-align: left;
+      margin-left: auto;
+      margin-right: -1%;
+      transform: translateY(-10px);
+    }
 
     .hero h1 {
-  font-size: clamp(40px, 4.5vw, 64px);
+      font-size: clamp(40px, 4.5vw, 64px);
       line-height: .92;
       text-transform: uppercase;
       letter-spacing: -3px;
       margin-bottom: 25px;
     }
 
-   .hero p {
-  font-size: 15px;
-  max-width: 470px;
-  line-height: 1.5;
-  margin-bottom: 22px;
-}
+    .hero p {
+      font-size: 15px;
+      max-width: 470px;
+      line-height: 1.5;
+      margin-bottom: 22px;
+    }
+
     .button {
       display: inline-block;
       background: #000;
@@ -185,124 +158,67 @@ background-position: center 38%;
       letter-spacing: .5px;
     }
 
-    .button:hover {
-  background: #222;
-}
+    .button:hover { background: #222; }
 
-    /* TOPO MAP BACKGROUND */
+    /* CONTINUOUS TOPO BACKGROUND */
+    .topo-background {
+      background-image: url("mountdarwin.jpg");
+      background-size: 100% auto;
+      background-position: center top;
+      background-repeat: repeat-y;
+    }
 
-.topo-background {
-  background-image: url("mountdarwin.jpg");
-  background-size: 100% auto;
-  background-position: center top;
-  background-repeat: repeat-y;
-}
-    /* VALUES STRIP */
+    /* PHILOSOPHY */
+    .values-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      padding: 22px 7%;
+      background: transparent;
+    }
 
-.values-strip {
-  background: transparent;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-  padding: 22px 7%;
-}
+    .value {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding: 18px 22px;
+      background: rgba(245, 241, 232, .94);
+      border: none;
+      border-radius: 4px;
+    }
 
-.value {
-  background: rgba(245, 241, 232, 0.94);
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  padding: 18px 22px;
-  border: none;
-  border-radius: 4px;
-}
+    .value-icon {
+      width: 72px;
+      height: 72px;
+      min-width: 72px;
+      object-fit: contain;
+      border: none;
+      background: transparent;
+    }
 
-.value-icon {
-  width: 72px;
-  height: 72px;
-  min-width: 72px;
-  object-fit: contain;
+    .value-text { flex: 1; }
 
-  border: none;
-  border-radius: 0;
-  background: transparent;
-}
+    .value h3 {
+      color: #000;
+      text-transform: uppercase;
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
 
-.value-text {
-  flex: 1;
-}
+    .value p {
+      color: #000;
+      font-size: 13px;
+      line-height: 1.45;
+    }
 
-.value h3 {
-  color: #000;
-  text-transform: uppercase;
-  font-size: 16px;
-  margin-bottom: 6px;
-}
-
-.value p {
-  color: #000;
-  font-size: 13px;
-  line-height: 1.45;
-  margin: 0;
-}
-
-    /* PROGRAM SECTION */
-
+    /* EXPLORE + GET INVOLVED */
     .main-section {
-  padding: 50px 7%;
-  background: transparent;
-
-  display: grid;
-  grid-template-columns: 3fr 1fr;
-  gap: 50px;
-}
-    .trip-pathways {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 25px;
-}
-
-.pathway-card {
-  background: var(--cream);
-  border-radius: 6px;
-  padding: 38px;
-  text-decoration: none;
-  color: inherit;
-  transition: transform .2s ease, box-shadow .2s ease;
-}
-
-.pathway-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0,0,0,.10);
-}
-
-.pathway-label {
-  color: var(--green);
-  text-transform: uppercase;
-  font-size: 12px;
-  font-weight: bold;
-  letter-spacing: 2px;
-  margin-bottom: 10px;
-}
-
-.pathway-card h3 {
-  color: var(--green-dark);
-  text-transform: uppercase;
-  font-size: 27px;
-  margin-bottom: 15px;
-}
-
-.pathway-card p {
-  margin-bottom: 22px;
-  line-height: 1.7;
-}
-
-.pathway-card span {
-  color: var(--green);
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 13px;
-}
+      padding: 50px 7%;
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+      gap: 50px;
+      background: transparent;
+    }
 
     .section-title {
       color: var(--green-dark);
@@ -311,71 +227,58 @@ background-position: center 38%;
       margin-bottom: 20px;
     }
 
-    .program-grid {
+    .trip-pathways {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
     }
 
-    .program-card {
-      border-radius: 5px;
-      overflow: hidden;
-      box-shadow: 0 4px 15px rgba(0,0,0,.08);
-      background: white;
-      transition: transform .2s ease;
+    .pathway-card {
+      background: var(--cream);
+      border-radius: 6px;
+      padding: 38px;
+      color: inherit;
+      transition: transform .2s ease, box-shadow .2s ease;
     }
 
-    .program-card:hover {
+    .pathway-card:hover {
       transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .10);
     }
 
-    .program-image {
-      height: 175px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 65px;
-      color: white;
-      background:
-        linear-gradient(
-          145deg,
-          rgba(32,59,40,.65),
-          rgba(110,130,84,.45)
-        ),
-        #607451;
-    }
-
-    .program-content {
-      background: var(--green-dark);
-      color: white;
-      padding: 18px;
-      min-height: 130px;
-    }
-
-    .program-content h3 {
+    .pathway-label {
+      color: var(--green);
       text-transform: uppercase;
-      font-size: 17px;
-      margin-bottom: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
     }
 
-    .program-content p {
+    .pathway-card h3 {
+      color: var(--green-dark);
+      text-transform: uppercase;
+      font-size: 27px;
+      margin-bottom: 15px;
+    }
+
+    .pathway-card p {
+      margin-bottom: 22px;
+      line-height: 1.7;
+    }
+
+    .pathway-card span {
+      color: var(--green);
+      font-weight: 700;
+      text-transform: uppercase;
       font-size: 13px;
-      opacity: .9;
     }
-
-    .program-button-wrap {
-      text-align: center;
-      margin-top: 25px;
-    }
-
-    /* GET INVOLVED */
 
     .get-involved {
-  background: var(--cream);
-  border-radius: 6px;
-  padding: 38px;
-  margin-bottom: 0;
-}
+      background: var(--cream);
+      border-radius: 6px;
+      padding: 38px;
+    }
 
     .involve-item {
       display: flex;
@@ -412,7 +315,7 @@ background-position: center 38%;
       display: block;
       text-align: center;
       border: 2px solid #000;
-color: #000;
+      color: #000;
       padding: 12px 20px;
       font-weight: 700;
       text-transform: uppercase;
@@ -422,25 +325,21 @@ color: #000;
     }
 
     .outline-button:hover {
-  background: #000;
-  color: white;
-}
-
+      background: #000;
+      color: white;
+    }
 
     /* FOOTER */
-
     footer {
-  background: transparent;
-  color: #111;
-  text-align: center;
-  padding: 28px 22px;
-  font-size: 12px;
-}
+      background: transparent;
+      color: #111;
+      text-align: center;
+      padding: 28px 22px;
+      font-size: 12px;
+    }
 
-    /* MOBILE */
-
+    /* TABLET */
     @media (max-width: 1000px) {
-
       nav {
         flex-direction: column;
         padding-bottom: 20px;
@@ -457,259 +356,175 @@ color: #000;
         gap: 17px;
       }
 
-      .values-strip {
-        grid-template-columns: 1fr;
-      }
+      .values-strip { grid-template-columns: 1fr; }
 
       .value {
-        border-right: none;
-        border-bottom: 1px solid #ccc7ba;
+        border: none;
         padding: 20px;
       }
 
-      .value:last-child {
-        border-bottom: none;
-      }
-
-      .main-section {
-        grid-template-columns: 1fr;
-      }
-
-      .program-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
+      .main-section { grid-template-columns: 1fr; }
     }
 
+    /* MOBILE */
     @media (max-width: 650px) {
+      header { position: relative; }
 
-  .top-bar {
-    font-size: 10px;
-    line-height: 1.3;
-    padding: 6px 14px;
-    text-align: center;
-  }
+      nav {
+        min-height: auto;
+        padding: 10px 16px 12px;
+        flex-direction: column;
+        gap: 8px;
+      }
 
-  .social-links {
-    display: none;
-  }
+      .logo {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
 
-  header {
-    position: relative;
-    box-shadow: none;
-  }
+      .logo img {
+        width: 150px;
+        max-width: 65vw;
+        margin: 0;
+      }
 
-  nav {
-    min-height: auto;
-    padding: 10px 16px 12px;
-    flex-direction: column;
-    gap: 8px;
-  }
+      .nav-links {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 3px 10px;
+        font-size: 10px;
+        line-height: 1.2;
+      }
 
-  .logo {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
+      .nav-links a { padding: 6px 8px; }
 
-  .logo img {
-    width: 150px;
-    max-width: 65vw;
-    margin: 0;
-  }
+      .nav-links .donate-btn {
+        width: auto;
+        padding: 8px 16px;
+        margin-top: 2px;
+      }
 
-  .nav-links {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 3px 10px;
-    font-size: 10px;
-    line-height: 1.2;
-  }
+      .hero {
+        min-height: 460px;
+        aspect-ratio: auto;
+        padding: 0;
+        align-items: flex-end;
+        justify-content: flex-start;
+        background-position: 40% center;
+      }
 
-  .nav-links a {
-    padding: 6px 8px;
-  }
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, .05) 25%,
+          rgba(0, 0, 0, .18) 55%,
+          rgba(0, 0, 0, .62) 100%
+        );
+        z-index: 1;
+      }
 
-  .donate-btn {
-    width: auto;
-    padding: 8px 16px !important;
-    margin-top: 2px;
-  }
+      .hero-content {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding: 28px 22px 30px;
+        transform: none;
+      }
 
-  .hero {
-    min-height: 460px;
-    padding: 0;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-start;
-    background-position: 40% center;
-  }
+      .hero h1 {
+        font-size: 34px;
+        line-height: .94;
+        letter-spacing: -1px;
+        margin-bottom: 14px;
+        max-width: 330px;
+      }
 
-  .hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background:
-      linear-gradient(
-        180deg,
-        rgba(0,0,0,.05) 25%,
-        rgba(0,0,0,.18) 55%,
-        rgba(0,0,0,.62) 100%
-      );
-    z-index: 1;
-  }
+      .hero p {
+        font-size: 14px;
+        line-height: 1.45;
+        max-width: 330px;
+        margin-bottom: 18px;
+      }
 
-  .hero-content {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    max-width: none;
-    margin: 0;
-    padding: 28px 22px 30px;
-    text-align: left;
-  }
+      .button {
+        padding: 10px 18px;
+        font-size: 10px;
+      }
 
-  .hero h1 {
-    font-size: 34px;
-    line-height: .94;
-    letter-spacing: -1px;
-    margin-bottom: 14px;
-    max-width: 330px;
-  }
+      .topo-background {
+        background-size: auto 100%;
+        background-position: center top;
+      }
 
-  .hero p {
-    font-size: 14px;
-    line-height: 1.45;
-    max-width: 330px;
-    margin-bottom: 18px;
-  }
+      .values-strip {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 18px;
+      }
 
-  .button {
-    padding: 10px 18px;
-    font-size: 10px;
-  }
+      .value {
+        padding: 16px 18px;
+        gap: 15px;
+        border: none;
+      }
 
-  .values-strip {
-    grid-template-columns: 1fr;
-    padding: 8px 18px;
-  }
+      .value-icon {
+        width: 62px;
+        height: 62px;
+        min-width: 62px;
+      }
 
-  .value {
-    padding: 16px 0;
-    border-right: none;
-    border-bottom: 1px solid #ccc7ba;
-  }
+      .value h3 { font-size: 14px; }
 
-  .value:last-child {
-    border-bottom: none;
-  }
+      .value p { font-size: 12px; }
 
-  .value-icon {
-    width: 54px;
-    height: 54px;
-    min-width: 54px;
-    font-size: 22px;
-  }
+      .main-section {
+        display: block;
+        padding: 30px 18px;
+      }
 
-  .value h3 {
-    font-size: 14px;
-  }
+      .section-title {
+        font-size: 22px;
+        margin-bottom: 14px;
+      }
 
-  .value p {
-    font-size: 12px;
-  }
+      .trip-pathways {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
 
-  .main-section {
-    display: block;
-    padding: 30px 18px;
-  }
+      .pathway-card { padding: 22px; }
 
-  .section-title {
-    font-size: 22px;
-    margin-bottom: 14px;
-  }
+      .pathway-card h3 { font-size: 22px; }
 
-  .trip-pathways {
-    grid-template-columns: 1fr;
-    gap: 14px;
-  }
+      .pathway-card p { font-size: 13px; }
 
-  .pathway-card {
-    padding: 22px;
-  }
+      .get-involved {
+        margin-top: 16px;
+        padding: 22px;
+      }
 
-  .pathway-card h3 {
-    font-size: 22px;
-  }
+      .involve-item { margin: 14px 0; }
 
-  .pathway-card p {
-    font-size: 13px;
-  }
-
-  .get-involved {
-    margin-top: 16px;
-    padding: 22px;
-  }
-
-  .involve-item {
-    margin: 14px 0;
-  }
-
-  .quote-section {
-    padding: 24px 18px;
-  }
-
-  .quote-section blockquote {
-    font-size: 14px;
-    line-height: 1.45;
-  }
-
-  footer {
-    padding: 16px;
-    font-size: 10px;
-  }
-      
-/* FORCE ALL CTA BUTTONS BLACK */
-a.donate-btn,
-a.button,
-a.outline-button,
-.donate-btn,
-.button,
-.outline-button,
-.hero a.button,
-.get-involved .outline-button {
-  background-color: #000 !important;
-  background: #000 !important;
-  border-color: #000 !important;
-  color: #fff !important;
-}
-
-a.donate-btn:hover,
-a.button:hover,
-a.outline-button:hover {
-  background-color: #222 !important;
-  background: #222 !important;
-  border-color: #222 !important;
-  color: #fff !important;
-}
-      
+      footer {
+        padding: 16px;
+        font-size: 10px;
+      }
+    }
   </style>
 </head>
-
 <body>
-
-
 
   <!-- NAVIGATION -->
   <header>
     <nav>
-
       <a href="index.html" class="logo">
-        <img
-          src="side-quest-logo.png"
-          alt="Side Quest Expeditions"
-        >
+        <img src="side-quest-logo.png" alt="Side Quest Expeditions">
       </a>
 
       <div class="nav-links">
@@ -721,16 +536,12 @@ a.outline-button:hover {
         <a href="contact.html">Contact</a>
         <a href="support.html" class="donate-btn">Donate</a>
       </div>
-
     </nav>
   </header>
 
-
   <!-- HERO -->
   <section class="hero">
-
     <div class="hero-content">
-
       <h1>
         Train.<br>
         Adventure.<br>
@@ -743,186 +554,125 @@ a.outline-button:hover {
         leadership, and a deeper connection to the natural world.
       </p>
 
-      <a href="about.html" class="button">
-        Learn More
-      </a>
-
+      <a href="about.html" class="button">Learn More</a>
     </div>
-
   </section>
 
-
-  <!-- VALUES -->
-  
+  <!-- CONTINUOUS TOPOGRAPHIC BACKGROUND -->
   <div class="topo-background">
-    
-<section class="values-strip">
 
-  <div class="value">
-    <img src="compass.png" alt="Compass" class="value-icon">
-
-    <div class="value-text">
-      <h3>Know Yourself</h3>
-      <p>
-        We challenge students to step outside their comfort zones
-        and discover their strengths and potential.
-      </p>
-    </div>
-  </div>
-
-
-  <div class="value">
-    <img src="campfire.png" alt="Campfire" class="value-icon">
-
-    <div class="value-text">
-      <h3>Know Each Other</h3>
-      <p>
-        We build community through shared experiences, respect,
-        teamwork, and time outdoors.
-      </p>
-    </div>
-  </div>
-
-
-  <div class="value">
-    <img src="tree.png" alt="Tree" class="value-icon">
-
-    <div class="value-text">
-      <h3>Know This Place</h3>
-      <p>
-        We cultivate a deeper connection to local and wild places
-        and the stories they hold.
-      </p>
-    </div>
-  </div>
-
-</section>
-
-  <!-- PROGRAMS + GET INVOLVED -->
-
-      <!-- STUDENT & PUBLIC TRIPS -->
-
-<section class="main-section">
-
-  <div>
-
-    <h2 class="section-title">Explore Side Quest</h2>
-
-    <div class="trip-pathways">
-
-      <a href="student-trips.html" class="pathway-card">
-
-        <div class="pathway-content">
-          <div class="pathway-label">For Students</div>
-
-          <h3>Student Trips</h3>
-
+    <!-- PHILOSOPHY -->
+    <section class="values-strip">
+      <div class="value">
+        <img src="compass.png" alt="Compass" class="value-icon">
+        <div class="value-text">
+          <h3>Know Yourself</h3>
           <p>
-            Outdoor experiences designed for young people, from
-            camping on the California coast to backpacking in the
-            High Sierra, sea kayaking, and whitewater guide school.
+            We challenge students to step outside their comfort zones
+            and discover their strengths and potential.
           </p>
-
-          <span>Explore Student Trips →</span>
         </div>
+      </div>
 
-      </a>
-
-
-      <a href="public-trips.html" class="pathway-card">
-
-        <div class="pathway-content">
-          <div class="pathway-label">For Everyone</div>
-
-          <h3>Public Trips</h3>
-
+      <div class="value">
+        <img src="campfire.png" alt="Campfire" class="value-icon">
+        <div class="value-text">
+          <h3>Know Each Other</h3>
           <p>
-            Guided outdoor experiences for the public that explore
-            remarkable places while helping support Side Quest's
-            student programs.
+            We build community through shared experiences, respect,
+            teamwork, and time outdoors.
           </p>
+        </div>
+      </div>
 
-          <span>Explore Public Trips →</span>
+      <div class="value">
+        <img src="tree.png" alt="Tree" class="value-icon">
+        <div class="value-text">
+          <h3>Know This Place</h3>
+          <p>
+            We cultivate a deeper connection to local and wild places
+            and the stories they hold.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPLORE SIDE QUEST + GET INVOLVED -->
+    <section class="main-section">
+      <div>
+        <h2 class="section-title">Explore Side Quest</h2>
+
+        <div class="trip-pathways">
+          <a href="student-trips.html" class="pathway-card">
+            <div class="pathway-content">
+              <div class="pathway-label">For Students</div>
+              <h3>Student Trips</h3>
+              <p>
+                Outdoor experiences designed for young people, from
+                camping on the California coast to backpacking in the
+                High Sierra, sea kayaking, and whitewater guide school.
+              </p>
+              <span>Explore Student Trips →</span>
+            </div>
+          </a>
+
+          <a href="public-trips.html" class="pathway-card">
+            <div class="pathway-content">
+              <div class="pathway-label">For Everyone</div>
+              <h3>Public Trips</h3>
+              <p>
+                Guided outdoor experiences for the public that explore
+                remarkable places while helping support Side Quest's
+                student programs.
+              </p>
+              <span>Explore Public Trips →</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <aside class="get-involved">
+        <h2 class="section-title">Get Involved</h2>
+
+        <p>
+          Your support helps us remove barriers and create
+          life-changing outdoor opportunities for students
+          across San Francisco.
+        </p>
+
+        <div class="involve-item">
+          <div class="involve-icon">♡</div>
+          <div>
+            <h4>Donate</h4>
+            <p>Help fund student adventures.</p>
+          </div>
         </div>
 
-      </a>
+        <div class="involve-item">
+          <div class="involve-icon">♧</div>
+          <div>
+            <h4>Volunteer</h4>
+            <p>Share your skills and time.</p>
+          </div>
+        </div>
 
-    </div>
+        <div class="involve-item">
+          <div class="involve-icon">⚙</div>
+          <div>
+            <h4>Partner</h4>
+            <p>Help us expand our impact.</p>
+          </div>
+        </div>
+
+        <a href="support.html" class="outline-button">Support Our Mission</a>
+      </aside>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      © 2026 Side Quest Expeditions · San Francisco, California
+    </footer>
 
   </div>
-
-
-  
-    <!-- GET INVOLVED -->
-    <aside class="get-involved">
-
-      <h2 class="section-title">
-        Get Involved
-      </h2>
-
-      <p>
-        Your support helps us remove barriers and create
-        life-changing outdoor opportunities for students
-        across San Francisco.
-      </p>
-
-
-      <div class="involve-item">
-
-        <div class="involve-icon">♡</div>
-
-        <div>
-          <h4>Donate</h4>
-          <p>Help fund student adventures.</p>
-        </div>
-
-      </div>
-
-
-      <div class="involve-item">
-
-        <div class="involve-icon">♧</div>
-
-        <div>
-          <h4>Volunteer</h4>
-          <p>Share your skills and time.</p>
-        </div>
-
-      </div>
-
-
-      <div class="involve-item">
-
-        <div class="involve-icon">⚙</div>
-
-        <div>
-          <h4>Partner</h4>
-          <p>Help us expand our impact.</p>
-        </div>
-
-      </div>
-
-
-      <a href="support.html" class="outline-button">
-        Support Our Mission
-      </a>
-
-    </aside>
-
-</section>
-
-
-
-
-
-
-<!-- FOOTER -->
-
-<footer>
-  © 2026 Side Quest Expeditions · San Francisco, California
-</footer>
-
-</div>
-
 </body>
 </html>
