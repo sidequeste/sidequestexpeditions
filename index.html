@@ -489,7 +489,13 @@ margin-right: -4%;
 
   .top-bar {
     font-size: 11px;
-    padding: 7px 15px;
+    line-height: 1.35;
+    padding: 8px 18px;
+    justify-content: center;
+  }
+
+  .social-links {
+    display: none;
   }
 
   header {
@@ -497,58 +503,66 @@ margin-right: -4%;
   }
 
   nav {
-    flex-direction: column;
-    padding: 10px 15px 14px;
-    gap: 10px;
+    min-height: auto;
+    padding: 10px 18px 14px;
+    gap: 8px;
   }
 
   .logo img {
-    width: 180px;
-    max-width: 85vw;
+    width: 165px;
+    max-width: 70vw;
+    margin: 0 auto 6px;
   }
 
   .nav-links {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
-    text-align: center;
+    gap: 4px 12px;
     font-size: 11px;
   }
 
   .nav-links a {
-    padding: 8px 4px;
+    padding: 7px 4px;
   }
 
   .donate-btn {
-    grid-column: span 2;
+    grid-column: 1 / -1;
+    margin-top: 5px;
+    padding: 11px !important;
   }
 
   .hero {
-    min-height: 420px;
-    padding: 35px 24px;
+    min-height: 390px;
+    padding: 32px 24px 28px;
     align-items: flex-end;
     justify-content: flex-end;
-    background-position: 42% center;
+    background-position: 32% center;
   }
 
   .hero-content {
-    max-width: 100%;
-    width: 100%;
-    margin: 0;
+    width: 72%;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: 0;
   }
 
   .hero h1 {
-    font-size: clamp(38px, 12vw, 52px);
-    line-height: .95;
-    letter-spacing: -2px;
-    margin-bottom: 18px;
+    font-size: 36px;
+    line-height: .92;
+    letter-spacing: -1.5px;
+    margin-bottom: 16px;
   }
 
   .hero p {
-    font-size: 16px;
-    line-height: 1.5;
-    margin-bottom: 22px;
+    font-size: 14px;
+    line-height: 1.45;
+    margin-bottom: 18px;
+  }
+
+  .button {
+    padding: 11px 20px;
+    font-size: 11px;
   }
 
   .values-strip {
@@ -557,39 +571,31 @@ margin-right: -4%;
   }
 
   .value {
-    padding: 18px 0;
+    padding: 16px 0;
   }
 
   .main-section {
     grid-template-columns: 1fr;
-    padding: 40px 20px;
-    gap: 25px;
+    padding: 35px 20px;
+    gap: 22px;
   }
 
   .trip-pathways {
     grid-template-columns: 1fr;
   }
 
-  .pathway-card {
-    padding: 28px;
-  }
-
+  .pathway-card,
   .get-involved {
-    padding: 28px;
+    padding: 25px;
   }
 
   .quote-section {
-    padding: 30px 20px;
+    padding: 28px 20px;
   }
 
   .quote-section blockquote {
-    font-size: 16px;
+    font-size: 15px;
   }
-
-  footer {
-    padding: 18px;
-  }
-}
 
   </style>
 </head>
