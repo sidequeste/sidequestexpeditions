@@ -338,33 +338,84 @@
       font-size: 12px;
     }
 
-    /* TABLET */
-    @media (max-width: 1000px) {
-      nav {
-        flex-direction: column;
-        padding-bottom: 20px;
-      }
+   /* TABLET */
+@media (max-width: 1000px) and (min-width: 651px) {
 
-      .logo img {
-        max-width: 320px;
-        width: 80vw;
-      }
+  header {
+    top: 12px;
+  }
 
-      .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 17px;
-      }
+  nav {
+    min-height: 60px;
+    padding: 6px 4%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+  }
 
-      .values-strip { grid-template-columns: 1fr; }
+  .logo img {
+    width: 160px;
+    max-width: none;
+  }
 
-      .value {
-        border: none;
-        padding: 20px;
-      }
+  .nav-links {
+    flex: 1;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    gap: 13px;
+    font-size: 10px;
+  }
 
-      .main-section { grid-template-columns: 1fr; }
-    }
+  .nav-links a {
+    white-space: nowrap;
+    padding: 8px 0;
+  }
+
+  .nav-links .donate-btn {
+    padding: 10px 15px;
+  }
+
+  .hero {
+    aspect-ratio: 16 / 8;
+    padding: 90px 5% 35px;
+    align-items: center;
+  }
+
+  .hero-content {
+    width: 42%;
+    max-width: 390px;
+    margin-left: auto;
+    margin-right: 0;
+    transform: none;
+  }
+
+  .hero h1 {
+    font-size: clamp(36px, 5vw, 50px);
+    line-height: .92;
+    letter-spacing: -2px;
+    margin-bottom: 18px;
+  }
+
+  .hero p {
+    font-size: 13px;
+    line-height: 1.45;
+    margin-bottom: 18px;
+  }
+
+  .values-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .value {
+    border: none;
+    padding: 20px;
+  }
+
+  .main-section {
+    grid-template-columns: 1fr;
+  }
+}
 
     /* MOBILE */
     @media (max-width: 650px) {
