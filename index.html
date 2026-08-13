@@ -344,6 +344,82 @@
   font-size: 30px;
   cursor: pointer;
 }
+/* SMALL DESKTOP */
+@media (max-width: 1250px) and (min-width: 1001px) {
+
+  header {
+    top: 14px;
+  }
+
+  nav {
+    padding: 6px 3%;
+    gap: 18px;
+  }
+
+  .logo img {
+    width: 180px;
+  }
+
+  .nav-links {
+    gap: 17px;
+    font-size: 11px;
+  }
+
+  .nav-links a {
+    white-space: nowrap;
+  }
+
+  .nav-links .donate-btn {
+    padding: 10px 16px;
+  }
+
+  .hero {
+    aspect-ratio: 16 / 7.2;
+    padding: 90px 4% 35px;
+  }
+
+  .hero-content {
+    max-width: 410px;
+    margin-right: 1%;
+    transform: none;
+  }
+
+  .hero h1 {
+    font-size: clamp(42px, 4.7vw, 54px);
+    line-height: .92;
+    letter-spacing: -2px;
+    margin-bottom: 18px;
+  }
+
+  .hero p {
+    font-size: 13px;
+    max-width: 410px;
+    margin-bottom: 18px;
+  }
+
+  .values-strip {
+    padding-left: 6%;
+    padding-right: 6%;
+    gap: 14px;
+  }
+
+  .value {
+    padding: 16px 18px;
+    gap: 14px;
+  }
+
+  .value-icon {
+    width: 62px;
+    height: 62px;
+    min-width: 62px;
+  }
+
+  .main-section {
+    padding-left: 6%;
+    padding-right: 6%;
+    gap: 32px;
+  }
+}
     
    /* TABLET */
 @media (max-width: 1000px) and (min-width: 651px) {
@@ -617,6 +693,50 @@ nav {
         font-size: 10px;
       }
     }
+    /* SMALL PHONES */
+@media (max-width: 390px) {
+
+  nav {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .logo img {
+    width: 150px;
+  }
+
+  .menu-toggle {
+    font-size: 27px;
+  }
+
+  .hero {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 28px;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+    line-height: .9;
+    letter-spacing: -1.5px;
+  }
+
+  .hero p {
+    font-size: 15px;
+    line-height: 1.4;
+  }
+
+  .value {
+    padding: 16px;
+    gap: 14px;
+  }
+
+  .value-icon {
+    width: 64px;
+    height: 64px;
+    min-width: 64px;
+  }
+}
   </style>
 </head>
 <body>
