@@ -106,51 +106,53 @@
 
     /* ABOUT HERO */
 
-    .about-hero {
-      min-height: 560px;
-      position: relative;
+.about-hero {
+  min-height: 720px;
+  position: relative;
 
-      display: flex;
-      align-items: flex-end;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 
-      padding: 120px 7% 65px;
+  padding: 120px 7% 65px;
 
-      color: #fff;
+  color: #fff;
 
-      background:
-        linear-gradient(
-          180deg,
-          rgba(0,0,0,.04) 20%,
-          rgba(0,0,0,.18) 55%,
-          rgba(0,0,0,.62) 100%
-        ),
-        url("sidequestwebsitebackground.jpg");
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0,0,0,0) 35%,
+      rgba(0,0,0,.08) 55%,
+      rgba(0,0,0,.42) 100%
+    ),
+    url("sidequestwebsitebackground.jpg");
 
-      background-size: cover;
-      background-position: center 43%;
-      background-repeat: no-repeat;
-    }
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
 
-    .about-hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 700px;
-    }
+.about-hero-content {
+  position: relative;
+  z-index: 2;
+  width: 42%;
+  max-width: 600px;
+  margin-left: auto;
+}
 
     .about-hero h1 {
-      font-size: clamp(52px, 7vw, 82px);
-      text-transform: uppercase;
-      line-height: .92;
-      letter-spacing: -3px;
-      margin-bottom: 20px;
-    }
+  font-size: clamp(52px, 5.5vw, 76px);
+  text-transform: uppercase;
+  line-height: .92;
+  letter-spacing: -3px;
+  margin-bottom: 24px;
+}
 
-    .about-hero p {
-      max-width: 650px;
-      font-size: 20px;
-      line-height: 1.5;
-    }
-
+.about-hero p {
+  max-width: 560px;
+  font-size: 20px;
+  line-height: 1.5;
+}
 
     /* TOPO BACKGROUND */
 
