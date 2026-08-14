@@ -109,7 +109,6 @@
     }
 
 
-    /* ABOUT HERO */
 
 /* ABOUT HERO */
 
@@ -123,13 +122,19 @@
   padding: 40px 5%;
   color: white;
 
-  background-image: url("aboutgroup.png");
-  background-size: 108% auto;
-  background-position: center 38%;
-  background-repeat: no-repeat;
   overflow: hidden;
 }
-
+.about-hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  z-index: 0;
+}
+    
 .about-hero::after {
   content: "";
   position: absolute;
@@ -575,7 +580,7 @@
 }
 
 .about-hero-bg {
-  object-position: 82% center;
+  object-position: 65% center;
 }      
 .about-hero-content {
   position: relative;
@@ -766,7 +771,13 @@
 
   <section class="about-hero">
 
-    <div class="about-hero-content">
+  <img
+    src="aboutgroup.png"
+    alt=""
+    class="about-hero-bg"
+  >
+
+  <div class="about-hero-content">
 
       <h1>
         About<br>
