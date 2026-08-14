@@ -576,19 +576,21 @@
 
 
       .about-hero {
-        min-height: 78svh;
+  width: 100%;
+  min-height: 78svh;
+  aspect-ratio: auto;
 
-        padding:
-          0
-          24px
-          40px;
+  padding:
+    0
+    24px
+    40px;
 
-        align-items: flex-end;
+  align-items: flex-end;
 }
 
 .about-hero-bg {
-  object-fit: contain;
-  object-position: center top;
+  object-fit: cover;
+  object-position: center center;
 }
 .about-hero-content {
   position: relative;
