@@ -99,7 +99,76 @@ nav {
   color: #fff;
   opacity: 1;
 }
+/* PROGRAMS DROPDOWN */
 
+.nav-dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-trigger {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dropdown-arrow {
+  font-size: 11px;
+  line-height: 1;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+
+  min-width: 230px;
+
+  background: var(--cream);
+  border-radius: 4px;
+
+  padding: 8px 0;
+
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .16);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    opacity .15s ease,
+    visibility .15s ease;
+
+  z-index: 2000;
+}
+
+.dropdown-menu a {
+  display: block;
+  width: 100%;
+
+  padding: 11px 18px;
+
+  color: #000;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  white-space: nowrap;
+}
+
+.dropdown-menu a:hover {
+  background: rgba(0, 0, 0, .06);
+  opacity: 1;
+}
+
+.nav-dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+    
     /* HERO */
     .hero {
     height: calc(100vh - 72px);
@@ -772,13 +841,62 @@ nav {
 </button>
 
 <div class="nav-links">
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="student-trips.html">Student Trips</a>
-  <a href="public-trips.html">Public Trips</a>
-  <a href="support.html">Support Us</a>
-  <a href="contact.html">Contact</a>
-  <a href="support.html" class="donate-btn">Donate</a>
+
+  <a href="about.html">
+    About
+  </a>
+
+
+  <div class="nav-dropdown">
+
+    <a href="#" class="dropdown-trigger">
+      Programs
+      <span class="dropdown-arrow">▾</span>
+    </a>
+
+    <div class="dropdown-menu">
+
+      <a href="student-trips.html">
+        Student Expeditions
+      </a>
+
+      <a href="public-trips.html">
+        Local Tours
+      </a>
+
+      <a href="#">
+        Wilderness Medicine
+      </a>
+
+      <a href="#">
+        Whitewater Guide School
+      </a>
+
+      <a href="#">
+        Outdoor Skills
+      </a>
+
+      <a href="#">
+        Custom Adventures
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <a href="support.html">
+    Support Us
+  </a>
+
+  <a href="contact.html">
+    Contact
+  </a>
+
+  <a href="support.html" class="donate-btn">
+    Donate
+  </a>
+
 </div>
     </nav>
   </header>
