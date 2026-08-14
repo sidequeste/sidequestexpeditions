@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Support Us | Side Quest Expeditions</title>
 
   <style>
+
     :root {
       --green-dark: #203b28;
       --green: #3f642f;
       --cream: #f5f1e8;
-      --white: #ffffff;
       --text: #172019;
+      --muted: #626a63;
     }
 
     * {
@@ -20,10 +23,21 @@
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
     body {
       font-family: Arial, Helvetica, sans-serif;
       color: var(--text);
+      background: #fff;
       line-height: 1.6;
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
     }
 
     a {
@@ -31,22 +45,21 @@
       text-decoration: none;
     }
 
-    .top-bar {
-      background: var(--green-dark);
-      color: white;
-      padding: 7px 6%;
-      font-size: 13px;
-      text-align: center;
-    }
+
+    /* NAVIGATION */
 
     header {
-      background: white;
-      box-shadow: 0 2px 10px rgba(0,0,0,.06);
+      position: absolute;
+      top: 22px;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      background: transparent;
     }
 
     nav {
-      min-height: 68px;
-      padding: 6px 6%;
+      min-height: 70px;
+      padding: 8px 4%;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -65,40 +78,137 @@
       font-size: 13px;
       font-weight: 700;
       text-transform: uppercase;
+      color: #fff;
+    }
+
+    .nav-links a {
+      padding: 10px 0;
+      white-space: nowrap;
     }
 
     .nav-links a:hover {
-      color: var(--green);
+      color: #dfe8da;
     }
 
-    .donate-btn {
-      background: var(--green);
-      color: white !important;
-      padding: 11px 20px;
+    .nav-links .donate-btn {
+      background: #000;
+      color: #fff;
+      padding: 12px 22px;
       border-radius: 4px;
     }
 
-    .hero {
-      background: var(--green-dark);
+    .nav-links .donate-btn:hover {
+      background: #222;
+      color: #fff;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+
+    /* SUPPORT HERO */
+
+    .support-hero {
+      min-height: 0;
+      aspect-ratio: 16 / 6.5;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 40px 5%;
       color: white;
-      padding: 85px 8%;
+      overflow: hidden;
     }
 
-    .hero h1 {
-      font-size: clamp(48px, 6vw, 76px);
+    .support-hero-picture {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      z-index: 0;
+    }
+
+    .support-hero-bg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      display: block;
+    }
+
+    .support-hero::after {
+      content: "";
+      position: absolute;
+      left: -5%;
+      right: -5%;
+      bottom: -70px;
+      height: 170px;
+      background: rgba(255,255,255,.035);
+      transform: rotate(-2deg);
+      pointer-events: none;
+    }
+
+    .support-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 470px;
+      text-align: left;
+      margin-left: auto;
+      margin-right: -1%;
+      transform: translateY(-10px);
+    }
+
+    .support-hero h1 {
+      font-size: clamp(40px, 4.5vw, 64px);
+      line-height: .92;
       text-transform: uppercase;
-      line-height: 1;
-      margin-bottom: 20px;
+      letter-spacing: -3px;
+      margin-bottom: 25px;
     }
 
-    .hero p {
-      max-width: 760px;
-      font-size: 20px;
-      opacity: .92;
+    .support-hero p {
+      font-size: 15px;
+      max-width: 470px;
+      line-height: 1.5;
+      margin-bottom: 22px;
     }
+
+    .button {
+      display: inline-block;
+      background: #000;
+      color: #fff;
+      padding: 14px 28px;
+      border-radius: 4px;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 13px;
+    }
+
+    .button:hover {
+      background: #222;
+    }
+
+
+    /* TOPO BACKGROUND */
+
+    .topo-background {
+      background-image: url("mountdarwin.jpg");
+      background-size: 100% auto;
+      background-position: center top;
+      background-repeat: repeat-y;
+    }
+
+
+    /* GENERAL SECTIONS */
 
     .section {
-      padding: 70px 8%;
+      padding: 65px 7%;
     }
 
     .section-inner {
@@ -106,10 +216,16 @@
       margin: auto;
     }
 
+    .content-panel {
+      background: rgba(245, 241, 232, .95);
+      border-radius: 6px;
+      padding: 48px;
+    }
+
     .section-label {
       color: var(--green);
       font-size: 13px;
-      font-weight: bold;
+      font-weight: 700;
       letter-spacing: 2px;
       text-transform: uppercase;
       margin-bottom: 10px;
@@ -119,332 +235,572 @@
       color: var(--green-dark);
       font-size: 36px;
       text-transform: uppercase;
-      margin-bottom: 22px;
+      margin-bottom: 25px;
+      line-height: 1.1;
     }
 
-    .intro {
-      background: var(--cream);
+
+    /* INTRO */
+
+    .support-intro {
+      font-size: 24px;
+      line-height: 1.55;
+      color: var(--green-dark);
+      max-width: 900px;
+      font-weight: 600;
     }
 
-    .intro p {
-      max-width: 850px;
-      font-size: 19px;
-    }
+
+    /* SUPPORT OPTIONS */
 
     .support-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
+      gap: 24px;
     }
 
     .support-card {
-      padding: 35px;
-      border-top: 5px solid var(--green);
-      box-shadow: 0 4px 18px rgba(0,0,0,.08);
-      border-radius: 5px;
+      background: rgba(245, 241, 232, .97);
+      border-radius: 6px;
+      padding: 34px;
+      display: flex;
+      flex-direction: column;
     }
 
     .support-card h3 {
       color: var(--green-dark);
       text-transform: uppercase;
-      font-size: 22px;
+      font-size: 24px;
+      line-height: 1.1;
       margin-bottom: 15px;
     }
 
     .support-card p {
       margin-bottom: 22px;
+      font-size: 16px;
+      flex-grow: 1;
     }
 
-    .button {
-      display: inline-block;
-      background: var(--green);
-      color: white;
-      padding: 13px 24px;
-      border-radius: 4px;
-      font-weight: 700;
-      text-transform: uppercase;
-      font-size: 13px;
-    }
 
-    .impact {
-      background: var(--green-dark);
-      color: white;
-    }
+    /* WHAT SUPPORT MAKES POSSIBLE */
 
-    .impact h2 {
-      color: white;
-    }
-
-    .impact p {
-      max-width: 850px;
-      font-size: 19px;
-      margin-bottom: 20px;
-    }
-
-    .impact-list {
+    .impact-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 18px 40px;
-      max-width: 900px;
-      margin-top: 30px;
+      gap: 22px;
     }
 
     .impact-item {
-      border-left: 3px solid white;
-      padding-left: 18px;
+      background: rgba(245, 241, 232, .97);
+      border-radius: 6px;
+      padding: 32px;
     }
 
-    .equipment {
-      background: var(--cream);
+    .impact-item h3 {
+      color: var(--green-dark);
+      text-transform: uppercase;
+      font-size: 21px;
+      margin-bottom: 10px;
     }
 
-    .equipment p {
+    .impact-item p {
+      font-size: 16px;
+    }
+
+
+    /* PARTNERS */
+
+    .partners-text {
       max-width: 850px;
-      font-size: 18px;
-      margin-bottom: 18px;
+      font-size: 17px;
+      margin-bottom: 24px;
     }
 
-    .final-cta {
+
+    /* CTA */
+
+    .cta {
       text-align: center;
     }
 
-    .final-cta p {
+    .cta .content-panel {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .cta p {
       max-width: 700px;
       margin: 0 auto 25px;
       font-size: 18px;
     }
 
+
+    /* FOOTER */
+
     footer {
-      background: #14271a;
-      color: rgba(255,255,255,.75);
+      background: transparent;
+      color: #111;
       text-align: center;
-      padding: 25px;
+      padding: 28px 22px;
       font-size: 12px;
     }
 
-    @media (max-width: 850px) {
+
+    /* SMALL DESKTOP */
+
+    @media (max-width: 1250px) and (min-width: 1001px) {
+
+      header {
+        top: 14px;
+      }
 
       nav {
-        flex-direction: column;
-        padding: 15px;
+        padding: 6px 3%;
+        gap: 18px;
+      }
+
+      .logo img {
+        width: 180px;
       }
 
       .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 16px;
+        gap: 17px;
+        font-size: 11px;
       }
 
-      .support-grid,
-      .impact-list {
+      .nav-links .donate-btn {
+        padding: 10px 16px;
+      }
+
+      .support-hero {
+        aspect-ratio: 16 / 7.2;
+        padding: 90px 4% 35px;
+      }
+
+      .support-hero-content {
+        max-width: 380px;
+        margin-left: auto;
+        margin-right: 1%;
+        transform: translateY(55px);
+      }
+
+      .support-hero h1 {
+        font-size: clamp(38px, 4.2vw, 48px);
+        line-height: .92;
+        letter-spacing: -2px;
+        margin-bottom: 18px;
+      }
+
+      .support-hero p {
+        font-size: 13px;
+        max-width: 380px;
+        line-height: 1.45;
+        margin-bottom: 18px;
+      }
+
+      .section {
+        padding-left: 6%;
+        padding-right: 6%;
+      }
+    }
+
+
+    /* TABLET */
+
+    @media (max-width: 1000px) and (min-width: 651px) {
+
+      header {
+        top: 12px;
+      }
+
+      nav {
+        min-height: 60px;
+        padding: 6px 4%;
+        flex-direction: row;
+        gap: 18px;
+      }
+
+      .logo img {
+        width: 160px;
+      }
+
+      .nav-links {
+        flex: 1;
+        justify-content: flex-end;
+        gap: 13px;
+        font-size: 10px;
+      }
+
+      .support-hero {
+        aspect-ratio: 16 / 8;
+        padding: 90px 5% 35px;
+        align-items: center;
+      }
+
+      .support-hero-content {
+        width: 42%;
+        max-width: 390px;
+        margin-left: auto;
+        margin-right: 0;
+        transform: none;
+      }
+
+      .support-hero h1 {
+        font-size: clamp(36px, 5vw, 50px);
+        line-height: .92;
+        letter-spacing: -2px;
+        margin-bottom: 18px;
+      }
+
+      .support-hero p {
+        font-size: 13px;
+        line-height: 1.45;
+        margin-bottom: 18px;
+      }
+
+      .support-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .impact-grid {
         grid-template-columns: 1fr;
       }
     }
+
+
+    /* MOBILE */
+
+    @media (max-width: 650px) {
+
+      header {
+        position: absolute;
+        top: -12px;
+        left: 0;
+        width: 100%;
+        background: transparent;
+        z-index: 100;
+      }
+
+      nav {
+        min-height: auto;
+        padding: 12px 18px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .logo {
+        width: auto;
+      }
+
+      .logo img {
+        width: 170px;
+        max-width: 58vw;
+        height: auto;
+      }
+
+      .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        color: #000;
+        font-size: 30px;
+        line-height: 1;
+        cursor: pointer;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 10px 18px 18px;
+        color: #000;
+        box-shadow: 0 8px 15px rgba(0,0,0,.12);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        color: #000;
+        padding: 12px 8px;
+        font-size: 13px;
+        border-bottom: 1px solid rgba(0,0,0,.08);
+      }
+
+      .nav-links .donate-btn {
+        background: #000;
+        color: #fff;
+        text-align: center;
+        margin-top: 10px;
+        padding: 12px 16px;
+        border-bottom: none;
+      }
+
+
+      /* IMPORTANT:
+         Reset desktop hero geometry on mobile */
+
+      .support-hero {
+        width: 100%;
+        min-height: 78svh;
+        aspect-ratio: auto;
+
+        padding:
+          0
+          24px
+          40px;
+
+        align-items: flex-end;
+      }
+
+      .support-hero-bg {
+        object-fit: cover;
+        object-position: center center;
+      }
+
+      .support-hero-content {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding: 0;
+        transform: none;
+        text-align: left;
+        color: white;
+      }
+
+      .support-hero h1 {
+        font-size: 48px;
+        line-height: .9;
+        letter-spacing: -2px;
+        margin-bottom: 16px;
+      }
+
+      .support-hero p {
+        font-size: 16px;
+        max-width: 340px;
+        line-height: 1.45;
+        margin-bottom: 22px;
+      }
+
+
+      .section {
+        padding: 28px 18px;
+      }
+
+      .section-inner,
+      .content-panel,
+      .support-grid,
+      .support-card,
+      .impact-grid,
+      .impact-item {
+        width: 100%;
+        max-width: 100%;
+      }
+
+      .content-panel {
+        padding: 26px 22px;
+      }
+
+      h2 {
+        font-size: 27px;
+        margin-bottom: 18px;
+      }
+
+      .support-intro {
+        font-size: 20px;
+        line-height: 1.5;
+      }
+
+      .support-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .support-card {
+        padding: 24px 22px;
+      }
+
+      .support-card h3 {
+        font-size: 22px;
+      }
+
+      .support-card p {
+        font-size: 15px;
+      }
+
+      .impact-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .impact-item {
+        padding: 22px;
+      }
+
+      .partners-text {
+        font-size: 15px;
+      }
+
+      .cta p {
+        font-size: 16px;
+      }
+
+      footer {
+        padding: 16px;
+        font-size: 10px;
+      }
+    }
+
+
+    /* SMALL PHONES */
+
+    @media (max-width: 390px) {
+
+      nav {
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+
+      .logo img {
+        width: 150px;
+      }
+
+      .menu-toggle {
+        font-size: 27px;
+      }
+
+      .support-hero {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 28px;
+      }
+
+      .support-hero h1 {
+        font-size: 42px;
+      }
+
+      .support-hero p {
+        font-size: 15px;
+      }
+    }
+
   </style>
 </head>
 
+
 <body>
 
-  <div class="top-bar">
-    Empowering San Francisco youth through outdoor education, community, and adventure.
-  </div>
+
+  <!-- NAVIGATION -->
 
   <header>
+
     <nav>
 
       <a href="index.html" class="logo">
-        <img src="side-quest-logo.png" alt="Side Quest Expeditions">
+        <img
+          src="side-quest-logo.png"
+          alt="Side Quest Expeditions"
+        >
       </a>
 
+
+      <button
+        class="menu-toggle"
+        aria-label="Open menu"
+      >
+        ☰
+      </button>
+
+
       <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="student-trips.html">Student Trips</a>
-        <a href="public-trips.html">Public Trips</a>
-        <a href="support.html">Support Us</a>
-        <a href="contact.html">Contact</a>
-        <a href="#donate" class="donate-btn">Donate</a>
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="about.html">
+          About
+        </a>
+
+        <a href="student-trips.html">
+          Student Trips
+        </a>
+
+        <a href="public-trips.html">
+          Public Trips
+        </a>
+
+        <a href="support.html">
+          Support Us
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
+        <a
+          href="#donate"
+          class="donate-btn"
+        >
+          Donate
+        </a>
+
       </div>
 
     </nav>
+
   </header>
 
 
-  <section class="hero">
 
-    <h1>Support Side Quest</h1>
+  <!-- SUPPORT HERO -->
 
-    <p>
-      Help us build the equipment, resources, and programs needed
-      to create meaningful outdoor opportunities for young people.
-    </p>
+  <section class="support-hero">
 
-  </section>
+    <picture class="support-hero-picture">
 
+      <source
+        media="(max-width: 650px)"
+        srcset="supportusmobile.png"
+      >
 
-  <section class="section intro">
+      <img
+        src="supportus.png"
+        alt=""
+        class="support-hero-bg"
+      >
 
-    <div class="section-inner">
-
-      <div class="section-label">Help Make Adventure Accessible</div>
-
-      <h2>There Are Many Ways to Help</h2>
-
-      <p>
-        Side Quest Expeditions is building a sustainable outdoor
-        education program that can provide students with the equipment,
-        instruction, transportation, and support necessary to participate
-        in meaningful outdoor experiences.
-      </p>
-
-    </div>
-
-  </section>
+    </picture>
 
 
-  <section class="section">
+    <div class="support-hero-content">
 
-    <div class="section-inner">
-
-      <div class="support-grid">
-
-        <div class="support-card" id="donate">
-
-          <h3>Make a Donation</h3>
-
-          <p>
-            Financial contributions help cover program costs including
-            transportation, permits, insurance, food, equipment, and
-            experienced outdoor educators.
-          </p>
-
-          <a href="contact.html" class="button">
-            Donate
-          </a>
-
-        </div>
-
-
-        <div class="support-card">
-
-          <h3>Donate Equipment</h3>
-
-          <p>
-            Outdoor equipment helps us build a program fleet that
-            students can use at no cost. We welcome conversations with
-            individuals, outdoor brands, retailers, and manufacturers.
-          </p>
-
-          <a href="contact.html" class="button">
-            Donate Gear
-          </a>
-
-        </div>
-
-
-        <div class="support-card">
-
-          <h3>Become a Partner</h3>
-
-          <p>
-            Businesses, foundations, schools, outdoor organizations,
-            and community partners can help us expand the opportunities
-            available to students.
-          </p>
-
-          <a href="contact.html" class="button">
-            Partner With Us
-          </a>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <section class="section impact">
-
-    <div class="section-inner">
-
-      <div class="section-label" style="color:white;">
-        Where Your Support Goes
-      </div>
-
-      <h2>Help Build the Adventure</h2>
+      <h1>
+        Support<br>
+        Side Quest
+      </h1>
 
       <p>
-        Donations to Side Quest directly support the infrastructure
-        and resources necessary to get students outside.
+        Help us remove barriers to outdoor education
+        and create life-changing adventures for
+        San Francisco public school students.
       </p>
 
-      <div class="impact-list">
-
-        <div class="impact-item">
-          Student transportation
-        </div>
-
-        <div class="impact-item">
-          Camping and backpacking equipment
-        </div>
-
-        <div class="impact-item">
-          Rafts and river equipment
-        </div>
-
-        <div class="impact-item">
-          Kayaks and paddling equipment
-        </div>
-
-        <div class="impact-item">
-          Food and program supplies
-        </div>
-
-        <div class="impact-item">
-          Permits and campground reservations
-        </div>
-
-        <div class="impact-item">
-          Insurance and program operations
-        </div>
-
-        <div class="impact-item">
-          Experienced instructors and guides
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <section class="section equipment">
-
-    <div class="section-inner">
-
-      <div class="section-label">
-        Equipment Donations
-      </div>
-
-      <h2>Help Us Build Our Gear Library</h2>
-
-      <p>
-        One of our major startup priorities is building an equipment
-        fleet that allows students to participate without having to
-        purchase specialized outdoor gear.
-      </p>
-
-      <p>
-        We welcome new equipment as well as appropriate samples,
-        previous-generation products, discontinued inventory, and
-        lightly used gear that remains safe and suitable for program use.
-      </p>
-
-      <a href="contact.html" class="button">
-        Contact Us About Equipment
+      <a
+        href="#donate"
+        class="button"
+      >
+        Donate
       </a>
 
     </div>
@@ -452,30 +808,346 @@
   </section>
 
 
-  <section class="section final-cta">
 
-    <div class="section-inner">
+  <!-- TOPOGRAPHIC BACKGROUND -->
 
-      <h2>Let's Build This Together</h2>
-
-      <p>
-        Whether you are an individual donor, outdoor company, local
-        business, foundation, educator, or community organization,
-        we'd love to hear from you.
-      </p>
-
-      <a href="contact.html" class="button">
-        Get In Touch
-      </a>
-
-    </div>
-
-  </section>
+  <div class="topo-background">
 
 
-  <footer>
-    © 2026 Side Quest Expeditions · San Francisco, California
-  </footer>
+    <!-- WHY SUPPORT -->
+
+    <section class="section">
+
+      <div class="section-inner">
+
+        <div class="content-panel">
+
+          <div class="section-label">
+            Why It Matters
+          </div>
+
+          <h2>
+            Adventure Should Be Accessible
+          </h2>
+
+          <p class="support-intro">
+            Your support helps Side Quest Expeditions provide
+            meaningful outdoor experiences to students who may
+            otherwise face financial and structural barriers to
+            accessing camping, backpacking, rafting, and other
+            outdoor adventures.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- WAYS TO SUPPORT -->
+
+    <section class="section">
+
+      <div class="section-inner">
+
+        <div class="section-label">
+          Get Involved
+        </div>
+
+        <h2>
+          Ways To Support Side Quest
+        </h2>
+
+
+        <div class="support-grid">
+
+
+          <!-- DONATE -->
+
+          <div class="support-card" id="donate">
+
+            <h3>
+              Make A Donation
+            </h3>
+
+            <p>
+              Financial contributions help cover the real costs
+              of creating safe, high-quality outdoor programs,
+              including transportation, permits, insurance,
+              food, equipment, campsites, and professional staff.
+            </p>
+
+            <a
+              href="#"
+              class="button"
+            >
+              Donate
+            </a>
+
+          </div>
+
+
+
+          <!-- GEAR -->
+
+          <div class="support-card">
+
+            <h3>
+              Donate Gear
+            </h3>
+
+            <p>
+              Outdoor equipment helps us reduce program costs
+              while giving students access to the gear they need
+              to participate comfortably and safely.
+            </p>
+
+            <a
+              href="contact.html"
+              class="button"
+            >
+              Contact Us
+            </a>
+
+          </div>
+
+
+
+          <!-- PARTNERS -->
+
+          <div class="support-card">
+
+            <h3>
+              Become A Partner
+            </h3>
+
+            <p>
+              Businesses, foundations, community organizations,
+              and outdoor companies can help expand access through
+              sponsorships, grants, equipment, transportation,
+              services, and other forms of support.
+            </p>
+
+            <a
+              href="contact.html"
+              class="button"
+            >
+              Partner With Us
+            </a>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- IMPACT -->
+
+    <section class="section">
+
+      <div class="section-inner">
+
+        <div class="section-label">
+          Your Impact
+        </div>
+
+        <h2>
+          What Your Support Makes Possible
+        </h2>
+
+
+        <div class="impact-grid">
+
+
+          <div class="impact-item">
+
+            <h3>
+              Transportation
+            </h3>
+
+            <p>
+              Helping students reach trailheads, campsites,
+              rivers, coastlines, and public lands beyond
+              their neighborhoods.
+            </p>
+
+          </div>
+
+
+          <div class="impact-item">
+
+            <h3>
+              Equipment
+            </h3>
+
+            <p>
+              Providing tents, sleeping systems, backpacks,
+              safety equipment, paddling gear, and other
+              essential outdoor equipment.
+            </p>
+
+          </div>
+
+
+          <div class="impact-item">
+
+            <h3>
+              Professional Staff
+            </h3>
+
+            <p>
+              Supporting experienced outdoor educators and
+              guides who provide instruction, mentorship,
+              risk management, and leadership.
+            </p>
+
+          </div>
+
+
+          <div class="impact-item">
+
+            <h3>
+              Access To Wild Places
+            </h3>
+
+            <p>
+              Covering permits, campsites, food, program fees,
+              and other costs that allow students to experience
+              meaningful adventures regardless of their
+              ability to pay.
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- PARTNERSHIP -->
+
+    <section class="section">
+
+      <div class="section-inner">
+
+        <div class="content-panel">
+
+          <div class="section-label">
+            Corporate & Community Support
+          </div>
+
+          <h2>
+            Partner With Side Quest
+          </h2>
+
+          <p class="partners-text">
+            We welcome partnerships with companies,
+            foundations, outdoor brands, local businesses,
+            and community organizations that believe young
+            people deserve meaningful access to the outdoors.
+          </p>
+
+          <p class="partners-text">
+            Support can take many forms, including financial
+            contributions, equipment donations, transportation,
+            professional services, program sponsorships,
+            volunteer support, and in-kind contributions.
+          </p>
+
+          <a
+            href="contact.html"
+            class="button"
+          >
+            Start A Conversation
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- FINAL CTA -->
+
+    <section class="section cta">
+
+      <div class="section-inner">
+
+        <div class="content-panel">
+
+          <div class="section-label">
+            Join The Adventure
+          </div>
+
+          <h2>
+            Help Us Open The Outdoors
+          </h2>
+
+          <p>
+            Every contribution helps create opportunities
+            for students to explore new places, develop new
+            skills, build confidence, and discover what they
+            are capable of.
+          </p>
+
+          <a
+            href="#donate"
+            class="button"
+          >
+            Support Side Quest
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+      © 2026 Side Quest Expeditions · San Francisco, California
+    </footer>
+
+
+  </div>
+
+
+
+  <!-- MOBILE MENU -->
+
+  <script>
+
+    const menuToggle =
+      document.querySelector('.menu-toggle');
+
+    const navLinks =
+      document.querySelector('.nav-links');
+
+    menuToggle.addEventListener('click', () => {
+
+      navLinks.classList.toggle('open');
+
+    });
+
+  </script>
+
 
 </body>
+
 </html>
