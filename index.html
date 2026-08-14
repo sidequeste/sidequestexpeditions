@@ -106,6 +106,14 @@ nav {
   display: flex;
   align-items: center;
 }
+.nav-dropdown::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: -10px;
+  width: calc(100% + 20px);
+  height: 12px;
+}
 
 .dropdown-trigger {
   display: flex;
@@ -120,7 +128,7 @@ nav {
 
 .dropdown-menu {
   position: absolute;
-  top: calc(100% + 8px);
+  top: 100%;
   left: 50%;
   transform: translateX(-50%);
 
