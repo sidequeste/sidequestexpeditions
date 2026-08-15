@@ -1425,20 +1425,56 @@ nav {
 
   <script>
 
-    const menuToggle =
-      document.querySelector('.menu-toggle');
+  const menuToggle =
+    document.querySelector('.menu-toggle');
 
-    const navLinks =
-      document.querySelector('.nav-links');
+  const navLinks =
+    document.querySelector('.nav-links');
 
-    menuToggle.addEventListener('click', () => {
+  const programTrigger =
+    document.querySelector('.dropdown-trigger');
 
-      navLinks.classList.toggle('open');
+  const programDropdown =
+    document.querySelector('.nav-dropdown');
 
-    });
 
-  </script>
+  menuToggle.addEventListener('click', () => {
 
+    navLinks.classList.toggle('open');
+
+    if (!navLinks.classList.contains('open')) {
+
+      programDropdown.classList.remove('mobile-open');
+
+      programTrigger.setAttribute(
+        'aria-expanded',
+        'false'
+      );
+
+    }
+
+  });
+
+
+  programTrigger.addEventListener('click', (event) => {
+
+    event.preventDefault();
+
+    if (window.innerWidth <= 650) {
+
+      const isOpen =
+        programDropdown.classList.toggle('mobile-open');
+
+      programTrigger.setAttribute(
+        'aria-expanded',
+        isOpen ? 'true' : 'false'
+      );
+
+    }
+
+  });
+
+</script>
 
 </body>
 
