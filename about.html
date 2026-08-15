@@ -38,6 +38,7 @@
   width: 100%;
   max-width: 100%;
   overflow-x: hidden;
+  padding-top: 72px;
 }
     a {
       color: inherit;
@@ -47,83 +48,171 @@
 
     /* NAVIGATION */
 
-    header {
-      position: absolute;
-      top: 22px;
-      left: 0;
-      width: 100%;
-      z-index: 100;
-      background: transparent;
-    }
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 72px;
+  z-index: 1000;
+  background: var(--cream);
+}
 
-    nav {
-      min-height: 70px;
-      padding: 8px 4%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 30px;
-    }
+nav {
+  width: 100%;
+  height: 72px;
+  padding: 6px 4%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
 
-    .logo img {
-      width: 220px;
-      display: block;
-    }
+.logo {
+  display: flex;
+  align-items: center;
+}
 
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-      font-size: 13px;
-      font-weight: 700;
-      text-transform: uppercase;
-      color: #fff;
-    }
+.logo img {
+  width: 185px;
+  height: auto;
+  display: block;
+}
 
-    .nav-links a {
-      padding: 10px 0;
-    }
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #000;
+}
 
-    .nav-links a:hover {
-      color: #dfe8da;
-    }
+.nav-links a {
+  padding: 10px 0;
+  white-space: nowrap;
+  color: #000;
+}
 
-    .nav-links .donate-btn {
-      background: #000;
-      color: #fff;
-      padding: 12px 22px;
-      border-radius: 4px;
-    }
+.nav-links a:hover {
+  opacity: .6;
+}
 
-    .nav-links .donate-btn:hover {
-      background: #222;
-      color: #fff;
-    }
+.nav-links .donate-btn {
+  background: #000;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 4px;
+}
 
-    .menu-toggle {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 30px;
-      cursor: pointer;
-    }
+.nav-links .donate-btn:hover {
+  background: #222;
+  color: #fff;
+  opacity: 1;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #000;
+  font-size: 30px;
+  line-height: 1;
+  cursor: pointer;
+}
 
 
+/* PROGRAMS DROPDOWN */
+
+.nav-dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.nav-dropdown::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: -10px;
+  width: calc(100% + 20px);
+  height: 12px;
+}
+
+.dropdown-trigger {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dropdown-arrow {
+  font-size: 11px;
+  line-height: 1;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  min-width: 230px;
+
+  background: var(--cream);
+  border-radius: 4px;
+
+  padding: 8px 0;
+
+  box-shadow: 0 8px 24px rgba(0,0,0,.16);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    opacity .15s ease,
+    visibility .15s ease;
+
+  z-index: 2000;
+}
+
+.dropdown-menu a {
+  display: block;
+  width: 100%;
+  padding: 11px 18px;
+
+  color: #000;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  white-space: nowrap;
+}
+
+.dropdown-menu a:hover {
+  background: rgba(0,0,0,.06);
+  opacity: 1;
+}
+
+.nav-dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
 
 /* ABOUT HERO */
 
 .about-hero {
+  height: calc(100vh - 72px);
   min-height: 0;
-  aspect-ratio: 16 / 6.5;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   padding: 40px 5%;
   color: white;
-
   overflow: hidden;
-
 }
     .about-hero-picture {
   position: absolute;
@@ -496,88 +585,158 @@
 
     @media (max-width: 650px) {
 
-      header {
-        position: absolute;
-        top: -12px;
-        left: 0;
-        width: 100%;
-        background: transparent;
-        z-index: 100;
-      }
+  body {
+    padding-top: 68px;
+  }
 
-      nav {
-        min-height: auto;
-        padding: 12px 18px;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-      }
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 68px;
+    background: var(--cream);
+    z-index: 1000;
+  }
 
-      .logo {
-        width: auto;
-      }
+  nav {
+    height: 68px;
+    min-height: 0;
+    padding: 6px 18px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
 
-      .logo img {
-        width: 170px;
-        max-width: 58vw;
-        height: auto;
-      }
+  .logo {
+    width: auto;
+  }
 
-      .menu-toggle {
-        display: block;
-        background: none;
-        border: none;
-        color: #000;
-        font-size: 30px;
-        line-height: 1;
-        cursor: pointer;
-      }
+  .logo img {
+    width: 155px;
+    max-width: 58vw;
+    height: auto;
+  }
 
-      .nav-links {
-        display: none;
+  .menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    color: #000;
+    font-size: 30px;
+    line-height: 1;
+    cursor: pointer;
+  }
 
-        position: absolute;
-        top: 100%;
-        left: 0;
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
 
-        width: 100%;
+    background: var(--cream);
 
-        background: #fff;
+    flex-direction: column;
+    align-items: stretch;
 
-        flex-direction: column;
-        align-items: stretch;
+    padding: 10px 18px 18px;
 
-        padding: 10px 18px 18px;
+    color: #000;
 
-        color: #000;
+    box-shadow: 0 8px 15px rgba(0,0,0,.12);
+  }
 
-        box-shadow: 0 8px 15px rgba(0,0,0,.12);
-      }
+  .nav-links.open {
+    display: flex;
+  }
 
-      .nav-links.open {
-        display: flex;
-      }
+  .nav-links a {
+    color: #000;
+    padding: 12px 8px;
+    font-size: 13px;
+    border-bottom: 1px solid rgba(0,0,0,.08);
+  }
 
-      .nav-links a {
-        color: #000;
-        padding: 12px 8px;
-        font-size: 13px;
-        border-bottom: 1px solid rgba(0,0,0,.08);
-      }
+  .nav-links .donate-btn {
+    background: #000;
+    color: #fff;
+    text-align: center;
+    margin-top: 10px;
+    padding: 12px 16px;
+    border-bottom: none;
+  }
 
-      .nav-links .donate-btn {
-        background: #000;
-        color: #fff;
-        text-align: center;
-        margin-top: 10px;
-        padding: 12px 16px;
-        border-bottom: none;
-      }
+
+  /* MOBILE PROGRAMS DROPDOWN */
+
+  .nav-dropdown {
+    display: block;
+    width: 100%;
+  }
+
+  .nav-dropdown::after {
+    display: none;
+  }
+
+  .dropdown-trigger {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .dropdown-arrow {
+    transition: transform .2s ease;
+  }
+
+  .dropdown-menu {
+    position: static;
+    top: auto;
+    left: auto;
+    transform: none;
+
+    display: none;
+    width: 100%;
+    min-width: 0;
+
+    padding: 4px 0 8px 14px;
+
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
+
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .nav-dropdown.mobile-open .dropdown-menu {
+    display: block;
+  }
+
+  .nav-dropdown.mobile-open .dropdown-arrow {
+    transform: rotate(180deg);
+  }
+
+  .dropdown-menu a {
+    display: block;
+    width: 100%;
+    padding: 10px 8px;
+
+    color: #000;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: none;
+
+    border-bottom: 1px solid rgba(0,0,0,.06);
+  }
 
 
       .about-hero {
   width: 100%;
-  min-height: 78svh;
+  height: calc(100svh - 68px);
+  min-height: 0;
   aspect-ratio: auto;
 
   padding:
@@ -742,34 +901,67 @@
 
       <div class="nav-links">
 
-        <a href="index.html">Home</a>
+  <a href="about.html">
+    About
+  </a>
 
-        <a href="about.html">About</a>
+  <div class="nav-dropdown">
 
-        <a href="student-trips.html">
-          Student Trips
-        </a>
+    <a
+      href="#"
+      class="dropdown-trigger"
+      aria-expanded="false"
+    >
+      Programs
+      <span class="dropdown-arrow">▾</span>
+    </a>
 
-        <a href="public-trips.html">
-          Public Trips
-        </a>
+    <div class="dropdown-menu">
 
-        <a href="support.html">
-          Support Us
-        </a>
+      <a href="student-trips.html">
+        Student Expeditions
+      </a>
 
-        <a href="contact.html">
-          Contact
-        </a>
+      <a href="public-trips.html">
+        Local Tours
+      </a>
 
-        <a
-          href="support.html"
-          class="donate-btn"
-        >
-          Donate
-        </a>
+      <a href="#">
+        Wilderness Medicine
+      </a>
 
-      </div>
+      <a href="#">
+        Whitewater Guide School
+      </a>
+
+      <a href="#">
+        Outdoor Skills
+      </a>
+
+      <a href="#">
+        Custom Adventures
+      </a>
+
+    </div>
+
+  </div>
+
+  <a href="support.html">
+    Support Us
+  </a>
+
+  <a href="contact.html">
+    Contact
+  </a>
+
+  <a
+    href="support.html"
+    class="donate-btn"
+  >
+    Donate
+  </a>
+
+</div>
 
     </nav>
 
