@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Student Trips | Side Quest Expeditions</title>
+  <title>Student Expeditions | Side Quest Expeditions</title>
 
   <style>
 
@@ -25,6 +25,9 @@
 
     html {
       scroll-behavior: smooth;
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
     }
 
     body {
@@ -32,6 +35,12 @@
       color: var(--text);
       background: #fff;
       line-height: 1.6;
+
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+
+      padding-top: 72px;
     }
 
     a {
@@ -40,148 +49,305 @@
     }
 
 
-    /* NAVIGATION */
+    /* =====================================================
+       NAVIGATION
+       ===================================================== */
 
     header {
-      position: absolute;
-      top: 22px;
+      position: fixed;
+      top: 0;
       left: 0;
+
       width: 100%;
-      z-index: 100;
-      background: transparent;
+      height: 72px;
+
+      z-index: 1000;
+
+      background: var(--cream);
     }
 
     nav {
-      min-height: 70px;
-      padding: 8px 4%;
+      width: 100%;
+      height: 72px;
+
+      padding: 6px 4%;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
+
       gap: 30px;
     }
 
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
     .logo img {
-      width: 220px;
+      width: 185px;
+      height: auto;
       display: block;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
+
       gap: 28px;
+
       font-size: 13px;
       font-weight: 700;
+
       text-transform: uppercase;
-      color: #fff;
+
+      color: #000;
     }
 
     .nav-links a {
       padding: 10px 0;
+      white-space: nowrap;
+      color: #000;
     }
 
     .nav-links a:hover {
-      color: #dfe8da;
+      opacity: .6;
     }
 
     .nav-links .donate-btn {
       background: #000;
       color: #fff;
-      padding: 12px 22px;
+
+      padding: 10px 20px;
+
       border-radius: 4px;
     }
 
     .nav-links .donate-btn:hover {
       background: #222;
       color: #fff;
+      opacity: 1;
     }
 
     .menu-toggle {
       display: none;
+
       background: none;
       border: none;
+
+      color: #000;
+
       font-size: 30px;
+      line-height: 1;
+
       cursor: pointer;
     }
 
 
-    /* HERO */
+    /* =====================================================
+       PROGRAMS DROPDOWN
+       ===================================================== */
+
+    .nav-dropdown {
+      position: relative;
+
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-dropdown::after {
+      content: "";
+
+      position: absolute;
+
+      top: 100%;
+      left: -10px;
+
+      width: calc(100% + 20px);
+      height: 12px;
+    }
+
+    .dropdown-trigger {
+      display: flex;
+      align-items: center;
+
+      gap: 6px;
+    }
+
+    .dropdown-arrow {
+      font-size: 11px;
+      line-height: 1;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+
+      top: 100%;
+      left: 50%;
+
+      transform: translateX(-50%);
+
+      min-width: 230px;
+
+      padding: 8px 0;
+
+      background: var(--cream);
+
+      border-radius: 4px;
+
+      box-shadow: 0 8px 24px rgba(0,0,0,.16);
+
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+
+      transition:
+        opacity .15s ease,
+        visibility .15s ease;
+
+      z-index: 2000;
+    }
+
+    .dropdown-menu a {
+      display: block;
+
+      width: 100%;
+
+      padding: 11px 18px;
+
+      color: #000;
+
+      font-size: 12px;
+      font-weight: 700;
+
+      text-transform: uppercase;
+
+      white-space: nowrap;
+    }
+
+    .dropdown-menu a:hover {
+      background: rgba(0,0,0,.06);
+      opacity: 1;
+    }
+
+    .nav-dropdown:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+
+    /* =====================================================
+       HERO
+       ===================================================== */
 
     .hero {
+      width: 100%;
+
+      height: calc(100vh - 72px);
       min-height: 0;
-      aspect-ratio: 16 / 6.5;
+
       position: relative;
+
       display: flex;
       align-items: center;
       justify-content: flex-end;
+
       padding: 40px 5%;
+
       color: white;
 
       background:
         linear-gradient(
           90deg,
-          rgba(255, 155, 55, .28) 0%,
-          rgba(255, 185, 95, .18) 30%,
-          rgba(255, 210, 150, .05) 55%,
-          rgba(15, 20, 20, .16) 100%
+          rgba(255,155,55,.28) 0%,
+          rgba(255,185,95,.18) 30%,
+          rgba(255,210,150,.05) 55%,
+          rgba(15,20,20,.16) 100%
         ),
-       url("mcculremeadow.png");
+        url("mcculremeadow.png");
 
       background-blend-mode: screen;
-      background-size: 108% auto;
-      background-position: center 38%;
+
+      background-size: cover;
+      background-position: center center;
       background-repeat: no-repeat;
+
       overflow: hidden;
     }
 
     .hero::after {
       content: "";
+
       position: absolute;
+
       left: -5%;
       right: -5%;
       bottom: -70px;
+
       height: 170px;
+
       background: rgba(255,255,255,.035);
+
       transform: rotate(-2deg);
+
       pointer-events: none;
     }
 
     .hero-content {
       position: relative;
+
       z-index: 2;
+
       max-width: 470px;
+
       text-align: left;
+
       margin-left: auto;
       margin-right: -1%;
-      transform: translateY(-10px);
+
+      transform: translate(25px, 40px);
     }
 
     .hero h1 {
       font-size: clamp(40px, 4.5vw, 64px);
+
       line-height: .92;
+
       text-transform: uppercase;
+
       letter-spacing: -3px;
+
       margin-bottom: 25px;
     }
 
     .hero p {
       font-size: 15px;
+
       max-width: 470px;
+
       line-height: 1.5;
+
       margin-bottom: 22px;
     }
 
 
-    /* TOPO BACKGROUND */
+    /* =====================================================
+       TOPO BACKGROUND
+       ===================================================== */
 
     .topo-background {
       background-image: url("mountdarwin.jpg");
+
       background-size: 100% auto;
       background-position: center top;
       background-repeat: repeat-y;
     }
 
 
-    /* INTRO */
+    /* =====================================================
+       INTRO
+       ===================================================== */
 
     .intro {
       padding: 60px 7%;
@@ -189,36 +355,51 @@
 
     .intro-inner {
       max-width: 1000px;
+
       margin: auto;
-      background: rgba(245, 241, 232, .95);
+
+      background: rgba(245,241,232,.95);
+
       border-radius: 6px;
+
       padding: 44px;
     }
 
     .section-label {
       color: var(--green);
+
       font-size: 13px;
       font-weight: 700;
+
       letter-spacing: 2px;
+
       text-transform: uppercase;
+
       margin-bottom: 10px;
     }
 
     h2 {
       color: var(--green-dark);
+
       font-size: 36px;
+
       text-transform: uppercase;
+
       margin-bottom: 22px;
+
       line-height: 1.1;
     }
 
     .intro p {
       font-size: 18px;
+
       max-width: 850px;
     }
 
 
-    /* TRIPS */
+    /* =====================================================
+       EXPEDITIONS
+       ===================================================== */
 
     .trips {
       padding: 10px 7% 65px;
@@ -226,28 +407,38 @@
 
     .trips-inner {
       max-width: 1100px;
+
       margin: auto;
     }
 
     .trip-card {
       display: grid;
+
       grid-template-columns: 1fr 1.2fr;
+
       margin-bottom: 34px;
-      background: rgba(245, 241, 232, .97);
+
+      background: rgba(245,241,232,.97);
+
       border-radius: 6px;
+
       overflow: hidden;
     }
 
     .trip-image {
       min-height: 340px;
+
       overflow: hidden;
     }
 
     .trip-image img {
       width: 100%;
       height: 100%;
+
       min-height: 340px;
+
       object-fit: cover;
+
       display: block;
     }
 
@@ -257,31 +448,41 @@
 
     .trip-content h3 {
       color: var(--green-dark);
+
       text-transform: uppercase;
+
       font-size: 30px;
+
       margin-bottom: 8px;
     }
 
     .trip-meta {
       color: var(--green);
+
       font-weight: 700;
+
       margin-bottom: 20px;
     }
 
     .trip-content p {
       margin-bottom: 18px;
+
       font-size: 16px;
     }
 
     .trip-content h4 {
       text-transform: uppercase;
+
       color: var(--green-dark);
+
       font-size: 15px;
+
       margin-bottom: 8px;
     }
 
     .trip-content ul {
       padding-left: 20px;
+
       margin-bottom: 10px;
     }
 
@@ -290,35 +491,50 @@
     }
 
 
-    /* CTA */
+    /* =====================================================
+       CTA
+       ===================================================== */
 
     .cta {
       text-align: center;
+
       padding: 55px 7% 65px;
     }
 
     .cta-inner {
       max-width: 850px;
+
       margin: auto;
-      background: rgba(245, 241, 232, .96);
+
+      background: rgba(245,241,232,.96);
+
       border-radius: 6px;
+
       padding: 44px;
     }
 
     .cta p {
       max-width: 700px;
+
       margin: 0 auto 25px;
+
       font-size: 18px;
     }
 
     .button {
       display: inline-block;
+
       background: #000;
       color: #fff;
+
       padding: 14px 28px;
+
       border-radius: 4px;
+
       font-weight: 700;
+
       text-transform: uppercase;
+
       font-size: 13px;
     }
 
@@ -327,36 +543,44 @@
     }
 
 
-    /* FOOTER */
+    /* =====================================================
+       FOOTER
+       ===================================================== */
 
     footer {
       background: transparent;
+
       color: #111;
+
       text-align: center;
+
       padding: 28px 22px;
+
       font-size: 12px;
     }
 
 
-    /* SMALL DESKTOP */
+    /* =====================================================
+       SMALL DESKTOP
+       ===================================================== */
 
     @media (max-width: 1250px) and (min-width: 1001px) {
 
-      header {
-        top: 14px;
-      }
-
       nav {
+        height: 72px;
+
         padding: 6px 3%;
+
         gap: 18px;
       }
 
       .logo img {
-        width: 180px;
+        width: 170px;
       }
 
       .nav-links {
         gap: 17px;
+
         font-size: 11px;
       }
 
@@ -365,91 +589,135 @@
       }
 
       .nav-links .donate-btn {
-        padding: 10px 16px;
+        padding: 9px 16px;
       }
 
       .hero {
-        aspect-ratio: 16 / 7.2;
+        height: calc(100vh - 72px);
+
+        min-height: 0;
+
         padding: 90px 4% 35px;
       }
 
       .hero-content {
         max-width: 380px;
+
         margin-left: auto;
         margin-right: 1%;
-        transform: translateY(55px);
+
+        transform: translate(20px, 45px);
       }
 
       .hero h1 {
-        font-size: clamp(38px, 4.2vw, 48px);
+        font-size: clamp(38px,4.2vw,48px);
+
         line-height: .92;
+
         letter-spacing: -2px;
+
         margin-bottom: 18px;
       }
 
       .hero p {
         font-size: 13px;
+
         max-width: 380px;
+
         line-height: 1.45;
+
         margin-bottom: 18px;
       }
+
     }
 
 
-    /* TABLET */
+    /* =====================================================
+       TABLET
+       ===================================================== */
 
     @media (max-width: 1000px) and (min-width: 651px) {
 
-      header {
-        top: 12px;
-      }
-
       nav {
-        min-height: 60px;
+        height: 72px;
+        min-height: 0;
+
         padding: 6px 4%;
+
         flex-direction: row;
+
+        align-items: center;
+        justify-content: space-between;
+
         gap: 18px;
       }
 
       .logo img {
-        width: 160px;
+        width: 150px;
+
+        max-width: none;
       }
 
       .nav-links {
         flex: 1;
+
         justify-content: flex-end;
+
         gap: 13px;
+
         font-size: 10px;
       }
 
       .nav-links a {
         white-space: nowrap;
+
+        padding: 8px 0;
+      }
+
+      .nav-links .donate-btn {
+        padding: 9px 14px;
       }
 
       .hero {
-        aspect-ratio: 16 / 8;
+        width: 100%;
+
+        height: calc(100vh - 72px);
+
+        min-height: 0;
+
+        aspect-ratio: auto;
+
         padding: 90px 5% 35px;
+
         align-items: center;
       }
 
       .hero-content {
         width: 42%;
+
         max-width: 390px;
+
         margin-left: auto;
         margin-right: 0;
+
         transform: none;
       }
 
       .hero h1 {
-        font-size: clamp(36px, 5vw, 50px);
+        font-size: clamp(36px,5vw,50px);
+
         line-height: .92;
+
         letter-spacing: -2px;
+
         margin-bottom: 18px;
       }
 
       .hero p {
         font-size: 13px;
+
         line-height: 1.45;
+
         margin-bottom: 18px;
       }
 
@@ -460,26 +728,42 @@
       .trip-image {
         min-height: 300px;
       }
+
     }
 
 
-    /* MOBILE */
+    /* =====================================================
+       MOBILE
+       ===================================================== */
 
     @media (max-width: 650px) {
 
+      body {
+        padding-top: 68px;
+      }
+
       header {
-        position: absolute;
-        top: -12px;
+        position: fixed;
+
+        top: 0;
         left: 0;
+
         width: 100%;
-        background: transparent;
-        z-index: 100;
+        height: 68px;
+
+        background: var(--cream);
+
+        z-index: 1000;
       }
 
       nav {
-        min-height: auto;
-        padding: 12px 18px;
+        height: 68px;
+        min-height: 0;
+
+        padding: 6px 18px;
+
         flex-direction: row;
+
         align-items: center;
         justify-content: space-between;
       }
@@ -489,32 +773,50 @@
       }
 
       .logo img {
-        width: 170px;
+        width: 155px;
+
         max-width: 58vw;
+
         height: auto;
       }
 
       .menu-toggle {
         display: block;
+
         background: none;
         border: none;
+
         color: #000;
+
         font-size: 30px;
         line-height: 1;
+
         cursor: pointer;
       }
 
+
+      /* MOBILE NAV */
+
       .nav-links {
         display: none;
+
         position: absolute;
+
         top: 100%;
         left: 0;
+
         width: 100%;
-        background: #fff;
+
+        background: var(--cream);
+
         flex-direction: column;
+
         align-items: stretch;
+
         padding: 10px 18px 18px;
+
         color: #000;
+
         box-shadow: 0 8px 15px rgba(0,0,0,.12);
       }
 
@@ -524,69 +826,199 @@
 
       .nav-links a {
         color: #000;
+
         padding: 12px 8px;
+
         font-size: 13px;
+
         border-bottom: 1px solid rgba(0,0,0,.08);
       }
 
       .nav-links .donate-btn {
         background: #000;
+
         color: #fff;
+
         text-align: center;
+
         margin-top: 10px;
+
         padding: 12px 16px;
+
         border-bottom: none;
       }
 
-      .hero {
-        min-height: 100svh;
-        aspect-ratio: auto;
-        margin-top: 0;
-        padding: 0 24px 34px;
+
+      /* MOBILE PROGRAMS DROPDOWN */
+
+      .nav-dropdown {
+        display: block;
+
+        width: 100%;
+      }
+
+      .nav-dropdown::after {
+        display: none;
+      }
+
+      .dropdown-trigger {
+        width: 100%;
+
         display: flex;
+
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .dropdown-arrow {
+        transition: transform .2s ease;
+      }
+
+      .dropdown-menu {
+        position: static;
+
+        top: auto;
+        left: auto;
+
+        transform: none;
+
+        display: none;
+
+        width: 100%;
+        min-width: 0;
+
+        padding: 4px 0 8px 14px;
+
+        background: transparent;
+
+        border-radius: 0;
+
+        box-shadow: none;
+
+        opacity: 1;
+        visibility: visible;
+
+        pointer-events: auto;
+      }
+
+      .nav-dropdown.mobile-open .dropdown-menu {
+        display: block;
+      }
+
+      .nav-dropdown.mobile-open .dropdown-arrow {
+        transform: rotate(180deg);
+      }
+
+      .dropdown-menu a {
+        display: block;
+
+        width: 100%;
+
+        padding: 10px 8px;
+
+        color: #000;
+
+        font-size: 12px;
+        font-weight: 600;
+
+        text-transform: none;
+
+        border-bottom: 1px solid rgba(0,0,0,.06);
+      }
+
+
+      /* MOBILE HERO */
+
+      .hero {
+        width: 100%;
+
+        height: calc(100svh - 68px);
+
+        min-height: 0;
+
+        aspect-ratio: auto;
+
+        margin-top: 0;
+
+        padding:
+          0
+          24px
+          34px;
+
+        display: flex;
+
         align-items: flex-end;
         justify-content: flex-start;
+
         background-size: cover;
         background-position: 42% center;
       }
 
       .hero::before {
         content: "";
+
         position: absolute;
+
         inset: 0;
-        background: linear-gradient(
-          180deg,
-          rgba(0,0,0,.02) 20%,
-          rgba(0,0,0,.12) 48%,
-          rgba(0,0,0,.58) 100%
-        );
+
+        background:
+          linear-gradient(
+            180deg,
+            rgba(0,0,0,.02) 20%,
+            rgba(0,0,0,.12) 48%,
+            rgba(0,0,0,.58) 100%
+          );
+
         z-index: 1;
       }
 
       .hero-content {
         position: relative;
+
         z-index: 2;
+
         width: 100%;
+
         max-width: 360px;
+
         margin: 0;
+
         padding: 0;
+
         transform: none;
+
         text-align: left;
       }
 
       .hero h1 {
-        font-size: clamp(42px, 13vw, 56px);
+        font-size: clamp(40px,12vw,54px);
+
         line-height: .9;
+
         letter-spacing: -2px;
+
         margin-bottom: 20px;
-        max-width: 330px;
+
+        max-width: 340px;
       }
 
       .hero p {
         font-size: 16px;
+
         line-height: 1.45;
+
         max-width: 340px;
+
         margin-bottom: 22px;
+      }
+
+
+      /* MOBILE CONTENT */
+
+      .topo-background {
+        background-size: auto 100%;
+
+        background-position: center top;
       }
 
       .intro {
@@ -594,6 +1026,10 @@
       }
 
       .intro-inner {
+        width: 100%;
+
+        max-width: 100%;
+
         padding: 26px 22px;
       }
 
@@ -609,8 +1045,19 @@
         padding: 10px 18px 30px;
       }
 
+      .trips-inner {
+        width: 100%;
+
+        max-width: 100%;
+      }
+
       .trip-card {
+        width: 100%;
+
+        max-width: 100%;
+
         grid-template-columns: 1fr;
+
         margin-bottom: 18px;
       }
 
@@ -637,22 +1084,31 @@
       }
 
       .cta-inner {
+        width: 100%;
+
+        max-width: 100%;
+
         padding: 28px 22px;
       }
 
       footer {
         padding: 16px;
+
         font-size: 10px;
       }
+
     }
 
 
-    /* SMALL PHONES */
+    /* =====================================================
+       SMALL PHONES
+       ===================================================== */
 
     @media (max-width: 390px) {
 
       nav {
         padding-left: 14px;
+
         padding-right: 14px;
       }
 
@@ -666,50 +1122,138 @@
 
       .hero {
         padding-left: 20px;
+
         padding-right: 20px;
+
         padding-bottom: 28px;
       }
 
       .hero h1 {
-        font-size: 42px;
+        font-size: 40px;
+
         line-height: .9;
+
         letter-spacing: -1.5px;
       }
 
       .hero p {
         font-size: 15px;
+
         line-height: 1.4;
       }
+
     }
 
   </style>
+
 </head>
+
 
 <body>
 
 
-  <!-- NAVIGATION -->
+  <!-- ===================================================
+       NAVIGATION
+       =================================================== -->
 
   <header>
 
     <nav>
 
-      <a href="index.html" class="logo">
-        <img src="side-quest-logo.png" alt="Side Quest Expeditions">
+      <a
+        href="index.html"
+        class="logo"
+      >
+
+        <img
+          src="side-quest-logo.png"
+          alt="Side Quest Expeditions"
+        >
+
       </a>
 
-      <button class="menu-toggle" aria-label="Open menu">
+
+      <button
+        class="menu-toggle"
+        aria-label="Open menu"
+      >
         ☰
       </button>
 
+
       <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="student-trips.html">Student Trips</a>
-        <a href="public-trips.html">Public Trips</a>
-        <a href="support.html">Support Us</a>
-        <a href="contact.html">Contact</a>
-        <a href="support.html" class="donate-btn">Donate</a>
+
+
+        <a href="about.html">
+          About
+        </a>
+
+
+        <div class="nav-dropdown">
+
+          <a
+            href="#"
+            class="dropdown-trigger"
+            aria-expanded="false"
+          >
+            Programs
+
+            <span class="dropdown-arrow">
+              ▾
+            </span>
+
+          </a>
+
+
+          <div class="dropdown-menu">
+
+            <a href="student-trips.html">
+              Student Expeditions
+            </a>
+
+            <a href="public-trips.html">
+              Local Tours
+            </a>
+
+            <a href="#">
+              Wilderness Medicine
+            </a>
+
+            <a href="#">
+              Whitewater Guide School
+            </a>
+
+            <a href="#">
+              Outdoor Skills
+            </a>
+
+            <a href="#">
+              Custom Adventures
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <a href="support.html">
+          Support Us
+        </a>
+
+
+        <a href="contact.html">
+          Contact
+        </a>
+
+
+        <a
+          href="support.html"
+          class="donate-btn"
+        >
+          Donate
+        </a>
+
+
       </div>
 
     </nav>
@@ -718,7 +1262,9 @@
 
 
 
-  <!-- HERO -->
+  <!-- ===================================================
+       HERO
+       =================================================== -->
 
   <section class="hero">
 
@@ -726,13 +1272,14 @@
 
       <h1>
         Student<br>
-        Trips
+        Expeditions
       </h1>
 
+
       <p>
-        Side Quest Expeditions offers a range of outdoor programs
-        designed to give students meaningful, hands-on experiences
-        in wild and adventurous places.
+        Side Quest Expeditions offers a range of outdoor
+        programs designed to give students meaningful,
+        hands-on experiences in wild and adventurous places.
       </p>
 
     </div>
@@ -741,7 +1288,9 @@
 
 
 
-  <!-- TOPO BACKGROUND -->
+  <!-- ===================================================
+       TOPO BACKGROUND
+       =================================================== -->
 
   <div class="topo-background">
 
@@ -752,20 +1301,25 @@
 
       <div class="intro-inner">
 
+
         <div class="section-label">
           Explore With Us
         </div>
+
 
         <h2>
           Different Adventures. Different Skills.
         </h2>
 
+
         <p>
-          Our student trips are not designed as a required sequence.
-          Each program stands on its own and offers a different way
-          for students to build confidence, learn outdoor skills,
-          work as a team, and connect with the natural world.
+          Our student expeditions are not designed as a
+          required sequence. Each program stands on its own
+          and offers a different way for students to build
+          confidence, learn outdoor skills, work as a team,
+          and connect with the natural world.
         </p>
+
 
       </div>
 
@@ -773,42 +1327,81 @@
 
 
 
-    <!-- TRIPS -->
+    <!-- =================================================
+         STUDENT EXPEDITIONS
+         ================================================= -->
 
     <section class="trips">
 
       <div class="trips-inner">
 
 
+        <!-- KIRBY COVE -->
+
         <div class="trip-card">
 
+
           <div class="trip-image">
-            <img src="kerbycove.jpg" alt="Kirby Cove Basecamp">
+
+            <img
+              src="kerbycove.jpg"
+              alt="Kirby Cove Basecamp"
+            >
+
           </div>
+
 
           <div class="trip-content">
 
-            <h3>Kerby Cove Basecamp</h3>
+
+            <h3>
+              Kirby Cove Basecamp
+            </h3>
+
 
             <div class="trip-meta">
               Marin Headlands, California
             </div>
 
+
             <p>
-              A local overnight experience designed to introduce
-              students to camping, outdoor living, and exploration
-              in one of the Bay Area's most remarkable coastal landscapes.
+              A local overnight experience designed to
+              introduce students to camping, outdoor living,
+              and exploration in one of the Bay Area's most
+              remarkable coastal landscapes.
             </p>
 
-            <h4>Students may explore:</h4>
+
+            <h4>
+              Students may explore:
+            </h4>
+
 
             <ul>
-              <li>Camp setup and outdoor living skills</li>
-              <li>Hiking and coastal exploration</li>
-              <li>Teamwork and community building</li>
-              <li>Leave No Trace principles</li>
-              <li>Natural and cultural history of the Marin Headlands</li>
+
+              <li>
+                Camp setup and outdoor living skills
+              </li>
+
+              <li>
+                Hiking and coastal exploration
+              </li>
+
+              <li>
+                Teamwork and community building
+              </li>
+
+              <li>
+                Leave No Trace principles
+              </li>
+
+              <li>
+                Natural and cultural history of the
+                Marin Headlands
+              </li>
+
             </ul>
+
 
           </div>
 
@@ -816,37 +1409,76 @@
 
 
 
+        <!-- HIGH SIERRA -->
+
         <div class="trip-card">
 
+
           <div class="trip-image">
-            <img src="highsierra.jpg" alt="High Sierra Backpacking">
+
+            <img
+              src="highsierra.jpg"
+              alt="High Sierra Backpacking"
+            >
+
           </div>
+
 
           <div class="trip-content">
 
-            <h3>High Sierra Backpacking</h3>
+
+            <h3>
+              High Sierra Backpacking
+            </h3>
+
 
             <div class="trip-meta">
               Sierra Nevada, California
             </div>
 
+
             <p>
-              A multi-day wilderness experience that gives students
-              the opportunity to travel through the Sierra Nevada
-              while learning the skills needed to live and travel
-              responsibly in the backcountry.
+              A multi-day wilderness experience that gives
+              students the opportunity to travel through the
+              Sierra Nevada while learning the skills needed
+              to live and travel responsibly in the
+              backcountry.
             </p>
 
-            <h4>Students may explore:</h4>
+
+            <h4>
+              Students may explore:
+            </h4>
+
 
             <ul>
-              <li>Backpacking and wilderness travel</li>
-              <li>Navigation and route finding</li>
-              <li>Backcountry cooking and campcraft</li>
-              <li>Leadership and group decision-making</li>
-              <li>Resilience, independence, and teamwork</li>
-              <li>Leave No Trace ethics</li>
+
+              <li>
+                Backpacking and wilderness travel
+              </li>
+
+              <li>
+                Navigation and route finding
+              </li>
+
+              <li>
+                Backcountry cooking and campcraft
+              </li>
+
+              <li>
+                Leadership and group decision-making
+              </li>
+
+              <li>
+                Resilience, independence, and teamwork
+              </li>
+
+              <li>
+                Leave No Trace ethics
+              </li>
+
             </ul>
+
 
           </div>
 
@@ -854,35 +1486,71 @@
 
 
 
+        <!-- MORRO BAY -->
+
         <div class="trip-card">
 
+
           <div class="trip-image">
-            <img src="morrobay.jpg" alt="Morro Bay Sea Kayaking">
+
+            <img
+              src="morrobay.jpg"
+              alt="Morro Bay Sea Kayaking"
+            >
+
           </div>
+
 
           <div class="trip-content">
 
-            <h3>Morro Bay Sea Kayaking</h3>
+
+            <h3>
+              Morro Bay Sea Kayaking
+            </h3>
+
 
             <div class="trip-meta">
               Morro Bay, California
             </div>
 
+
             <p>
-              A coastal paddling experience that introduces students
-              to sea kayaking while exploring the ecology and unique
-              marine environment of Morro Bay.
+              A coastal paddling experience that introduces
+              students to sea kayaking while exploring the
+              ecology and unique marine environment of
+              Morro Bay.
             </p>
 
-            <h4>Students may explore:</h4>
+
+            <h4>
+              Students may explore:
+            </h4>
+
 
             <ul>
-              <li>Sea kayak paddling techniques</li>
-              <li>Boat handling and water safety</li>
-              <li>Navigation and weather awareness</li>
-              <li>Marine and estuary ecology</li>
-              <li>Teamwork and communication on the water</li>
+
+              <li>
+                Sea kayak paddling techniques
+              </li>
+
+              <li>
+                Boat handling and water safety
+              </li>
+
+              <li>
+                Navigation and weather awareness
+              </li>
+
+              <li>
+                Marine and estuary ecology
+              </li>
+
+              <li>
+                Teamwork and communication on the water
+              </li>
+
             </ul>
+
 
           </div>
 
@@ -890,19 +1558,33 @@
 
 
 
+        <!-- WHITEWATER GUIDE SCHOOL -->
+
         <div class="trip-card">
 
+
           <div class="trip-image">
-            <img src="whitewaterguideschool.JPG" alt="Whitewater Guide School">
+
+            <img
+              src="whitewaterguideschool.JPG"
+              alt="Whitewater Guide School"
+            >
+
           </div>
+
 
           <div class="trip-content">
 
-            <h3>Whitewater Guide School</h3>
+
+            <h3>
+              Whitewater Guide School
+            </h3>
+
 
             <div class="trip-meta">
               South Fork American River, California
             </div>
+
 
             <p>
               A hands-on introduction to the skills,
@@ -910,22 +1592,49 @@
               involved in whitewater raft guiding.
             </p>
 
+
             <p>
-              Guide school instruction is led by seasoned river guides
-              with extensive professional experience and current
-              wilderness medical and swiftwater rescue training.
+              Guide school instruction is led by seasoned
+              river guides with extensive professional
+              experience and current wilderness medical and
+              swiftwater rescue training.
             </p>
 
-            <h4>Students may explore:</h4>
+
+            <h4>
+              Students may explore:
+            </h4>
+
 
             <ul>
-              <li>Rafting fundamentals and paddle commands</li>
-              <li>Boat handling and river navigation</li>
-              <li>River safety and hazard awareness</li>
-              <li>Guide communication and leadership</li>
-              <li>Team-based problem solving</li>
-              <li>Introduction to rescue concepts and river systems</li>
+
+              <li>
+                Rafting fundamentals and paddle commands
+              </li>
+
+              <li>
+                Boat handling and river navigation
+              </li>
+
+              <li>
+                River safety and hazard awareness
+              </li>
+
+              <li>
+                Guide communication and leadership
+              </li>
+
+              <li>
+                Team-based problem solving
+              </li>
+
+              <li>
+                Introduction to rescue concepts and
+                river systems
+              </li>
+
             </ul>
+
 
           </div>
 
@@ -938,25 +1647,39 @@
 
 
 
-    <!-- CTA -->
+    <!-- =================================================
+         CTA
+         ================================================= -->
 
     <section class="cta">
 
       <div class="cta-inner">
 
+
+        <div class="section-label">
+          Student Expeditions
+        </div>
+
+
         <h2>
-          Interested in a Student Program?
+          Interested In A Student Expedition?
         </h2>
 
+
         <p>
-          We are currently developing upcoming Side Quest Expeditions
-          student programs and school partnerships. Contact us to learn
-          more about future opportunities.
+          We are currently developing upcoming Side Quest
+          Expeditions student programs and school partnerships.
+          Contact us to learn more about future opportunities.
         </p>
 
-        <a href="contact.html" class="button">
+
+        <a
+          href="contact.html"
+          class="button"
+        >
           Contact Side Quest
         </a>
+
 
       </div>
 
@@ -970,9 +1693,14 @@
       © 2026 Side Quest Expeditions · San Francisco, California
     </footer>
 
+
   </div>
 
 
+
+  <!-- ===================================================
+       MOBILE MENU SCRIPT
+       =================================================== -->
 
   <script>
 
@@ -982,8 +1710,51 @@
     const navLinks =
       document.querySelector('.nav-links');
 
+    const programTrigger =
+      document.querySelector('.dropdown-trigger');
+
+    const programDropdown =
+      document.querySelector('.nav-dropdown');
+
+
+    /* OPEN / CLOSE MOBILE MENU */
+
     menuToggle.addEventListener('click', () => {
+
       navLinks.classList.toggle('open');
+
+      if (!navLinks.classList.contains('open')) {
+
+        programDropdown.classList.remove('mobile-open');
+
+        programTrigger.setAttribute(
+          'aria-expanded',
+          'false'
+        );
+
+      }
+
+    });
+
+
+    /* OPEN / CLOSE PROGRAMS ON MOBILE */
+
+    programTrigger.addEventListener('click', (event) => {
+
+      event.preventDefault();
+
+      if (window.innerWidth <= 650) {
+
+        const isOpen =
+          programDropdown.classList.toggle('mobile-open');
+
+        programTrigger.setAttribute(
+          'aria-expanded',
+          isOpen ? 'true' : 'false'
+        );
+
+      }
+
     });
 
   </script>
