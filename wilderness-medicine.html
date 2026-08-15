@@ -1,0 +1,1656 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Wilderness Medicine | Side Quest Expeditions</title>
+
+  <style>
+
+    :root {
+      --green-dark: #203b28;
+      --green: #3f642f;
+      --cream: #f5f1e8;
+      --text: #172019;
+      --muted: #626a63;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: #fff;
+      line-height: 1.6;
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+      padding-top: 72px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+
+    /* =====================================================
+       NAVIGATION
+       ===================================================== */
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 72px;
+      z-index: 1000;
+      background: var(--cream);
+    }
+
+    nav {
+      width: 100%;
+      height: 72px;
+      padding: 6px 4%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      width: 185px;
+      height: auto;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #000;
+    }
+
+    .nav-links a {
+      padding: 10px 0;
+      white-space: nowrap;
+      color: #000;
+    }
+
+    .nav-links a:hover {
+      opacity: .6;
+    }
+
+    .nav-links .donate-btn {
+      background: #000;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 4px;
+    }
+
+    .nav-links .donate-btn:hover {
+      background: #222;
+      color: #fff;
+      opacity: 1;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: #000;
+      font-size: 30px;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+
+    /* =====================================================
+       PROGRAMS DROPDOWN
+       ===================================================== */
+
+    .nav-dropdown {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-dropdown::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: -10px;
+      width: calc(100% + 20px);
+      height: 12px;
+    }
+
+    .dropdown-trigger {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .dropdown-arrow {
+      font-size: 11px;
+      line-height: 1;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      min-width: 230px;
+      background: var(--cream);
+      border-radius: 4px;
+      padding: 8px 0;
+      box-shadow: 0 8px 24px rgba(0,0,0,.16);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition:
+        opacity .15s ease,
+        visibility .15s ease;
+      z-index: 2000;
+    }
+
+    .dropdown-menu a {
+      display: block;
+      width: 100%;
+      padding: 11px 18px;
+      color: #000;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .dropdown-menu a:hover {
+      background: rgba(0,0,0,.06);
+      opacity: 1;
+    }
+
+    .nav-dropdown:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+
+    /* =====================================================
+       WILDERNESS MEDICINE HERO
+       ===================================================== */
+
+    .medicine-hero {
+      width: 100%;
+      height: calc(100vh - 72px);
+      min-height: 0;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 40px 5%;
+      color: white;
+      overflow: hidden;
+    }
+
+    .medicine-hero-picture {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      z-index: 0;
+    }
+
+    .medicine-hero-bg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      display: block;
+    }
+
+    .medicine-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(0,0,0,.05) 0%,
+          rgba(0,0,0,.08) 45%,
+          rgba(0,0,0,.42) 100%
+        );
+      z-index: 1;
+    }
+
+    .medicine-hero::after {
+      content: "";
+      position: absolute;
+      left: -5%;
+      right: -5%;
+      bottom: -70px;
+      height: 170px;
+      background: rgba(255,255,255,.035);
+      transform: rotate(-2deg);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .medicine-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 470px;
+      text-align: left;
+      margin-left: auto;
+      margin-right: -1%;
+      transform: translate(25px, 40px);
+    }
+
+    .medicine-hero h1 {
+      font-size: clamp(40px, 4.5vw, 64px);
+      line-height: .92;
+      text-transform: uppercase;
+      letter-spacing: -3px;
+      margin-bottom: 25px;
+    }
+
+    .medicine-hero p {
+      font-size: 15px;
+      max-width: 470px;
+      line-height: 1.5;
+    }
+
+
+    /* =====================================================
+       TOPO BACKGROUND
+       ===================================================== */
+
+    .topo-background {
+      background-image: url("mountdarwin.jpg");
+      background-size: 100% auto;
+      background-position: center top;
+      background-repeat: repeat-y;
+    }
+
+
+    /* =====================================================
+       GENERAL
+       ===================================================== */
+
+    .section {
+      padding: 65px 7%;
+    }
+
+    .section-inner {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .content-panel {
+      background: rgba(245,241,232,.96);
+      border-radius: 6px;
+      padding: 48px;
+    }
+
+    .section-label {
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      color: var(--green-dark);
+      font-size: 36px;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+      line-height: 1.1;
+    }
+
+
+    /* =====================================================
+       INTRO
+       ===================================================== */
+
+    .medicine-intro {
+      font-size: 22px;
+      line-height: 1.55;
+      max-width: 900px;
+      color: var(--green-dark);
+      font-weight: 600;
+    }
+
+
+    /* =====================================================
+       COURSE CARDS
+       ===================================================== */
+
+    .course-list {
+      display: grid;
+      gap: 34px;
+    }
+
+    .course-card {
+      background: rgba(245,241,232,.97);
+      border-radius: 6px;
+      overflow: hidden;
+
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+
+      min-height: 390px;
+    }
+
+    .course-card:nth-child(even) {
+      grid-template-columns: 1fr 1.05fr;
+    }
+
+    .course-card:nth-child(even) .course-photo {
+      order: 2;
+    }
+
+    .course-card:nth-child(even) .course-content {
+      order: 1;
+    }
+
+    .course-photo {
+      min-height: 390px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .course-photo img {
+      width: 100%;
+      height: 100%;
+      min-height: 390px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .placeholder-label {
+      position: absolute;
+      left: 18px;
+      bottom: 18px;
+
+      background: rgba(0,0,0,.7);
+      color: #fff;
+
+      padding: 8px 12px;
+
+      border-radius: 3px;
+
+      font-size: 10px;
+      font-weight: 700;
+
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .course-content {
+      padding: 42px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .course-content h3 {
+      color: var(--green-dark);
+
+      text-transform: uppercase;
+
+      font-size: 30px;
+      line-height: 1.05;
+
+      margin-bottom: 16px;
+    }
+
+    .course-content p {
+      font-size: 16px;
+      margin-bottom: 18px;
+    }
+
+    .course-content h4 {
+      color: var(--green-dark);
+
+      text-transform: uppercase;
+
+      font-size: 14px;
+
+      margin-bottom: 8px;
+    }
+
+    .course-content ul {
+      padding-left: 20px;
+      margin-bottom: 22px;
+    }
+
+    .course-content li {
+      margin-bottom: 6px;
+    }
+
+    .button {
+      display: inline-block;
+      align-self: flex-start;
+
+      background: #000;
+      color: #fff;
+
+      padding: 14px 28px;
+
+      border-radius: 4px;
+
+      font-weight: 700;
+      text-transform: uppercase;
+
+      font-size: 13px;
+    }
+
+    .button:hover {
+      background: #222;
+    }
+
+
+    /* =====================================================
+       TRAINING SECTION
+       ===================================================== */
+
+    .training-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .training-card {
+      background: rgba(245,241,232,.97);
+      border-radius: 6px;
+      padding: 30px;
+    }
+
+    .training-card h3 {
+      color: var(--green-dark);
+      text-transform: uppercase;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .training-card p {
+      font-size: 15px;
+    }
+
+
+    /* =====================================================
+       CTA
+       ===================================================== */
+
+    .cta {
+      text-align: center;
+    }
+
+    .cta .content-panel {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .cta p {
+      max-width: 700px;
+      margin: 0 auto 25px;
+      font-size: 18px;
+    }
+
+
+    /* =====================================================
+       FOOTER
+       ===================================================== */
+
+    footer {
+      background: transparent;
+      color: #111;
+      text-align: center;
+      padding: 28px 22px;
+      font-size: 12px;
+    }
+
+
+    /* =====================================================
+       SMALL DESKTOP
+       ===================================================== */
+
+    @media (max-width: 1250px) and (min-width: 1001px) {
+
+      nav {
+        height: 72px;
+        padding: 6px 3%;
+        gap: 18px;
+      }
+
+      .logo img {
+        width: 170px;
+      }
+
+      .nav-links {
+        gap: 17px;
+        font-size: 11px;
+      }
+
+      .nav-links a {
+        white-space: nowrap;
+      }
+
+      .nav-links .donate-btn {
+        padding: 9px 16px;
+      }
+
+      .medicine-hero {
+        height: calc(100vh - 72px);
+        min-height: 0;
+        padding: 90px 4% 35px;
+      }
+
+      .medicine-hero-content {
+        max-width: 380px;
+        margin-right: 1%;
+        transform: translate(20px,45px);
+      }
+
+      .medicine-hero h1 {
+        font-size: clamp(38px,4.2vw,48px);
+        line-height: .92;
+        letter-spacing: -2px;
+        margin-bottom: 18px;
+      }
+
+      .medicine-hero p {
+        font-size: 13px;
+      }
+
+    }
+
+
+    /* =====================================================
+       TABLET
+       ===================================================== */
+
+    @media (max-width: 1000px) and (min-width: 651px) {
+
+      nav {
+        height: 72px;
+        min-height: 0;
+        padding: 6px 4%;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+      }
+
+      .logo img {
+        width: 150px;
+        max-width: none;
+      }
+
+      .nav-links {
+        flex: 1;
+        justify-content: flex-end;
+        gap: 13px;
+        font-size: 10px;
+      }
+
+      .nav-links a {
+        white-space: nowrap;
+        padding: 8px 0;
+      }
+
+      .nav-links .donate-btn {
+        padding: 9px 14px;
+      }
+
+      .medicine-hero {
+        width: 100%;
+        height: calc(100vh - 72px);
+        min-height: 0;
+        aspect-ratio: auto;
+        padding: 90px 5% 35px;
+        align-items: center;
+      }
+
+      .medicine-hero-content {
+        width: 42%;
+        max-width: 390px;
+        margin-left: auto;
+        margin-right: 0;
+        transform: none;
+      }
+
+      .course-card,
+      .course-card:nth-child(even) {
+        grid-template-columns: 1fr;
+      }
+
+      .course-card:nth-child(even) .course-photo,
+      .course-card:nth-child(even) .course-content {
+        order: initial;
+      }
+
+      .training-grid {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
+
+    /* =====================================================
+       MOBILE
+       ===================================================== */
+
+    @media (max-width: 650px) {
+
+      body {
+        padding-top: 68px;
+      }
+
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 68px;
+        background: var(--cream);
+        z-index: 1000;
+      }
+
+      nav {
+        height: 68px;
+        min-height: 0;
+        padding: 6px 18px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .logo {
+        width: auto;
+      }
+
+      .logo img {
+        width: 155px;
+        max-width: 58vw;
+        height: auto;
+      }
+
+      .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        color: #000;
+        font-size: 30px;
+        line-height: 1;
+        cursor: pointer;
+      }
+
+
+      /* MOBILE NAV */
+
+      .nav-links {
+        display: none;
+
+        position: absolute;
+
+        top: 100%;
+        left: 0;
+
+        width: 100%;
+
+        background: var(--cream);
+
+        flex-direction: column;
+        align-items: stretch;
+
+        padding: 10px 18px 18px;
+
+        color: #000;
+
+        box-shadow: 0 8px 15px rgba(0,0,0,.12);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        color: #000;
+
+        padding: 12px 8px;
+
+        font-size: 13px;
+
+        border-bottom: 1px solid rgba(0,0,0,.08);
+      }
+
+      .nav-links .donate-btn {
+        background: #000;
+
+        color: #fff;
+
+        text-align: center;
+
+        margin-top: 10px;
+
+        padding: 12px 16px;
+
+        border-bottom: none;
+      }
+
+
+      /* MOBILE PROGRAMS DROPDOWN */
+
+      .nav-dropdown {
+        display: block;
+        width: 100%;
+      }
+
+      .nav-dropdown::after {
+        display: none;
+      }
+
+      .dropdown-trigger {
+        width: 100%;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .dropdown-arrow {
+        transition: transform .2s ease;
+      }
+
+      .dropdown-menu {
+        position: static;
+
+        top: auto;
+        left: auto;
+
+        transform: none;
+
+        display: none;
+
+        width: 100%;
+        min-width: 0;
+
+        padding: 4px 0 8px 14px;
+
+        background: transparent;
+
+        border-radius: 0;
+        box-shadow: none;
+
+        opacity: 1;
+        visibility: visible;
+
+        pointer-events: auto;
+      }
+
+      .nav-dropdown.mobile-open .dropdown-menu {
+        display: block;
+      }
+
+      .nav-dropdown.mobile-open .dropdown-arrow {
+        transform: rotate(180deg);
+      }
+
+      .dropdown-menu a {
+        display: block;
+
+        width: 100%;
+
+        padding: 10px 8px;
+
+        color: #000;
+
+        font-size: 12px;
+        font-weight: 600;
+
+        text-transform: none;
+
+        border-bottom: 1px solid rgba(0,0,0,.06);
+      }
+
+
+      /* MOBILE HERO */
+
+      .medicine-hero {
+        width: 100%;
+
+        height: calc(100svh - 68px);
+        min-height: 0;
+
+        aspect-ratio: auto;
+
+        margin-top: 0;
+
+        padding:
+          0
+          24px
+          40px;
+
+        align-items: flex-end;
+        justify-content: flex-start;
+      }
+
+      .medicine-hero-bg {
+        object-fit: cover;
+        object-position: 42% center;
+      }
+
+      .medicine-hero-content {
+        position: relative;
+
+        z-index: 2;
+
+        width: 100%;
+        max-width: none;
+
+        margin: 0;
+        padding: 0;
+
+        transform: none;
+
+        text-align: left;
+
+        color: white;
+      }
+
+      .medicine-hero h1 {
+        font-size: 48px;
+
+        line-height: .9;
+
+        letter-spacing: -2px;
+
+        margin-bottom: 16px;
+      }
+
+      .medicine-hero p {
+        font-size: 16px;
+
+        max-width: 340px;
+      }
+
+
+      /* MOBILE CONTENT */
+
+      .section {
+        padding: 28px 18px;
+      }
+
+      .section-inner,
+      .content-panel,
+      .course-list,
+      .course-card,
+      .training-grid,
+      .training-card {
+        width: 100%;
+        max-width: 100%;
+      }
+
+      .content-panel {
+        padding: 26px 22px;
+      }
+
+      h2 {
+        font-size: 27px;
+        margin-bottom: 18px;
+      }
+
+      .medicine-intro {
+        font-size: 20px;
+      }
+
+      .course-card,
+      .course-card:nth-child(even) {
+        grid-template-columns: 1fr;
+      }
+
+      .course-card:nth-child(even) .course-photo,
+      .course-card:nth-child(even) .course-content {
+        order: initial;
+      }
+
+      .course-photo,
+      .course-photo img {
+        min-height: 260px;
+      }
+
+      .course-content {
+        padding: 26px 22px;
+      }
+
+      .course-content h3 {
+        font-size: 25px;
+      }
+
+      .course-content p,
+      .course-content li {
+        font-size: 15px;
+      }
+
+      .training-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .training-card {
+        padding: 22px;
+      }
+
+      .cta p {
+        font-size: 16px;
+      }
+
+      footer {
+        padding: 16px;
+        font-size: 10px;
+      }
+
+    }
+
+
+    /* =====================================================
+       SMALL PHONES
+       ===================================================== */
+
+    @media (max-width: 390px) {
+
+      nav {
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+
+      .logo img {
+        width: 150px;
+      }
+
+      .menu-toggle {
+        font-size: 27px;
+      }
+
+      .medicine-hero {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 28px;
+      }
+
+      .medicine-hero h1 {
+        font-size: 42px;
+      }
+
+      .medicine-hero p {
+        font-size: 15px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- ===================================================
+       NAVIGATION
+       =================================================== -->
+
+  <header>
+
+    <nav>
+
+
+      <a href="index.html" class="logo">
+
+        <img
+          src="side-quest-logo.png"
+          alt="Side Quest Expeditions"
+        >
+
+      </a>
+
+
+      <button
+        class="menu-toggle"
+        aria-label="Open menu"
+      >
+        ☰
+      </button>
+
+
+      <div class="nav-links">
+
+
+        <a href="about.html">
+          About
+        </a>
+
+
+        <div class="nav-dropdown">
+
+          <a
+            href="#"
+            class="dropdown-trigger"
+            aria-expanded="false"
+          >
+            Programs
+
+            <span class="dropdown-arrow">
+              ▾
+            </span>
+
+          </a>
+
+
+          <div class="dropdown-menu">
+
+            <a href="student-trips.html">
+              Student Expeditions
+            </a>
+
+            <a href="public-trips.html">
+              Local Tours
+            </a>
+
+            <a href="wilderness-medicine.html">
+              Wilderness Medicine
+            </a>
+
+            <a href="#">
+              Whitewater Guide School
+            </a>
+
+            <a href="#">
+              Outdoor Skills
+            </a>
+
+            <a href="#">
+              Custom Adventures
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <a href="support.html">
+          Support Us
+        </a>
+
+
+        <a href="contact.html">
+          Contact
+        </a>
+
+
+        <a
+          href="support.html"
+          class="donate-btn"
+        >
+          Donate
+        </a>
+
+
+      </div>
+
+    </nav>
+
+  </header>
+
+
+
+  <!-- ===================================================
+       WILDERNESS MEDICINE HERO
+       =================================================== -->
+
+  <section class="medicine-hero">
+
+
+    <picture class="medicine-hero-picture">
+
+      <!-- PLACEHOLDER HERO IMAGE -->
+      <img
+        src="sidequestwebsitebackground.jpg"
+        alt=""
+        class="medicine-hero-bg"
+      >
+
+    </picture>
+
+
+    <div class="medicine-hero-content">
+
+      <h1>
+        Wilderness<br>
+        Medicine
+      </h1>
+
+      <p>
+        Practical emergency skills designed to help people
+        respond with confidence when something goes wrong
+        outdoors, at work, or in the community.
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ===================================================
+       TOPOGRAPHIC BACKGROUND
+       =================================================== -->
+
+  <div class="topo-background">
+
+
+    <!-- INTRO -->
+
+    <section class="section">
+
+      <div class="section-inner">
+
+        <div class="content-panel">
+
+          <div class="section-label">
+            Learn To Respond
+          </div>
+
+          <h2>
+            Skills That Matter
+          </h2>
+
+          <p class="medicine-intro">
+            Side Quest wilderness medicine courses focus on
+            practical skills, hands-on learning, and building
+            the confidence to respond when someone is injured
+            or experiencing a medical emergency.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         COURSES
+         ================================================= -->
+
+    <section class="section">
+
+      <div class="section-inner">
+
+
+        <div class="section-label">
+          Training
+        </div>
+
+        <h2>
+          Wilderness Medicine Courses
+        </h2>
+
+
+        <div class="course-list">
+
+
+
+          <!-- WFA + CPR -->
+
+          <article class="course-card">
+
+
+            <div class="course-photo">
+
+              <!-- PLACEHOLDER IMAGE -->
+              <img
+                src="sidequestwebsitebackground.jpg"
+                alt=""
+              >
+
+              <div class="placeholder-label">
+                Course Photo Coming Soon
+              </div>
+
+            </div>
+
+
+            <div class="course-content">
+
+
+              <div class="section-label">
+                Wilderness Medicine
+              </div>
+
+
+              <h3>
+                Wilderness First Aid & CPR
+              </h3>
+
+
+              <p>
+                A hands-on introduction to managing common
+                injuries and medical problems when professional
+                medical care may be delayed or difficult to reach.
+              </p>
+
+
+              <p>
+                The course emphasizes assessment, decision-making,
+                basic treatment skills, and caring for patients
+                in outdoor and remote environments.
+              </p>
+
+
+              <h4>
+                Training may include:
+              </h4>
+
+
+              <ul>
+
+                <li>Patient assessment</li>
+                <li>Basic first aid and injury management</li>
+                <li>Environmental emergencies</li>
+                <li>Medical problems in remote settings</li>
+                <li>CPR fundamentals</li>
+                <li>Emergency planning and decision-making</li>
+
+              </ul>
+
+
+              <a
+                href="contact.html"
+                class="button"
+              >
+                Ask About This Course
+              </a>
+
+
+            </div>
+
+          </article>
+
+
+
+          <!-- CPR -->
+
+          <article class="course-card">
+
+
+            <div class="course-photo">
+
+              <!-- PLACEHOLDER IMAGE -->
+              <img
+                src="sidequestwebsitebackground.jpg"
+                alt=""
+              >
+
+              <div class="placeholder-label">
+                Course Photo Coming Soon
+              </div>
+
+            </div>
+
+
+            <div class="course-content">
+
+
+              <div class="section-label">
+                Emergency Skills
+              </div>
+
+
+              <h3>
+                CPR
+              </h3>
+
+
+              <p>
+                Learn the essential skills needed to recognize
+                a life-threatening emergency and begin care
+                while emergency medical services are on the way.
+              </p>
+
+
+              <p>
+                This course is designed around practical,
+                hands-on practice so participants leave more
+                comfortable taking action during an emergency.
+              </p>
+
+
+              <h4>
+                Training may include:
+              </h4>
+
+
+              <ul>
+
+                <li>Recognizing cardiac emergencies</li>
+                <li>High-quality CPR fundamentals</li>
+                <li>AED awareness and use</li>
+                <li>Choking response</li>
+                <li>Activating emergency medical services</li>
+
+              </ul>
+
+
+              <a
+                href="contact.html"
+                class="button"
+              >
+                Ask About This Course
+              </a>
+
+
+            </div>
+
+          </article>
+
+
+
+          <!-- STOP THE BLEED -->
+
+          <article class="course-card">
+
+
+            <div class="course-photo">
+
+              <!-- PLACEHOLDER IMAGE -->
+              <img
+                src="sidequestwebsitebackground.jpg"
+                alt=""
+              >
+
+              <div class="placeholder-label">
+                Course Photo Coming Soon
+              </div>
+
+            </div>
+
+
+            <div class="course-content">
+
+
+              <div class="section-label">
+                Emergency Skills
+              </div>
+
+
+              <h3>
+                Stop The Bleed
+              </h3>
+
+
+              <p>
+                Learn practical techniques for recognizing
+                life-threatening bleeding and taking immediate
+                action before professional medical help arrives.
+              </p>
+
+
+              <p>
+                The course focuses on simple, hands-on skills
+                that can help someone respond quickly and
+                effectively during a serious bleeding emergency.
+              </p>
+
+
+              <h4>
+                Training may include:
+              </h4>
+
+
+              <ul>
+
+                <li>Recognizing severe bleeding</li>
+                <li>Direct pressure</li>
+                <li>Wound packing concepts</li>
+                <li>Tourniquet fundamentals</li>
+                <li>Emergency response priorities</li>
+
+              </ul>
+
+
+              <a
+                href="contact.html"
+                class="button"
+              >
+                Ask About This Course
+              </a>
+
+
+            </div>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         WHY TRAIN
+         ================================================= -->
+
+    <section class="section">
+
+      <div class="section-inner">
+
+
+        <div class="section-label">
+          Preparedness
+        </div>
+
+        <h2>
+          Learn By Doing
+        </h2>
+
+
+        <div class="training-grid">
+
+
+          <div class="training-card">
+
+            <h3>
+              Practical Skills
+            </h3>
+
+            <p>
+              Training focuses on skills participants can
+              actually practice and use rather than simply
+              listening to a lecture.
+            </p>
+
+          </div>
+
+
+          <div class="training-card">
+
+            <h3>
+              Real Scenarios
+            </h3>
+
+            <p>
+              Scenario-based learning helps participants
+              practice decision-making and communication
+              under realistic conditions.
+            </p>
+
+          </div>
+
+
+          <div class="training-card">
+
+            <h3>
+              Build Confidence
+            </h3>
+
+            <p>
+              Repetition and hands-on practice help participants
+              become more comfortable responding when an
+              emergency occurs.
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         CTA
+         ================================================= -->
+
+    <section class="section cta">
+
+      <div class="section-inner">
+
+        <div class="content-panel">
+
+          <div class="section-label">
+            Wilderness Medicine
+          </div>
+
+          <h2>
+            Interested In A Course?
+          </h2>
+
+          <p>
+            Contact Side Quest to ask about upcoming training,
+            group courses, or wilderness medicine instruction
+            for your school, organization, or team.
+          </p>
+
+          <a
+            href="contact.html"
+            class="button"
+          >
+            Contact Us
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+      © 2026 Side Quest Expeditions · San Francisco, California
+    </footer>
+
+
+  </div>
+
+
+
+  <!-- ===================================================
+       MOBILE MENU
+       =================================================== -->
+
+  <script>
+
+    const menuToggle =
+      document.querySelector('.menu-toggle');
+
+    const navLinks =
+      document.querySelector('.nav-links');
+
+    const programTrigger =
+      document.querySelector('.dropdown-trigger');
+
+    const programDropdown =
+      document.querySelector('.nav-dropdown');
+
+
+    menuToggle.addEventListener('click', () => {
+
+      navLinks.classList.toggle('open');
+
+      if (!navLinks.classList.contains('open')) {
+
+        programDropdown.classList.remove('mobile-open');
+
+        programTrigger.setAttribute(
+          'aria-expanded',
+          'false'
+        );
+
+      }
+
+    });
+
+
+    programTrigger.addEventListener('click', (event) => {
+
+      event.preventDefault();
+
+      if (window.innerWidth <= 650) {
+
+        const isOpen =
+          programDropdown.classList.toggle('mobile-open');
+
+        programTrigger.setAttribute(
+          'aria-expanded',
+          isOpen ? 'true' : 'false'
+        );
+
+      }
+
+    });
+
+  </script>
+
+
+</body>
+
+</html>
