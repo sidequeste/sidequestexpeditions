@@ -38,6 +38,7 @@
       width: 100%;
       max-width: 100%;
       overflow-x: hidden;
+      padding-top: 72px;
     }
 
     a {
@@ -49,25 +50,33 @@
     /* NAVIGATION */
 
     header {
-      position: absolute;
-      top: 22px;
+      position: fixed;
+      top: 0;
       left: 0;
       width: 100%;
-      z-index: 100;
-      background: transparent;
+      height: 72px;
+      z-index: 1000;
+      background: var(--cream);
     }
 
     nav {
-      min-height: 70px;
-      padding: 8px 4%;
+      width: 100%;
+      height: 72px;
+      padding: 6px 4%;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 30px;
     }
 
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
     .logo img {
-      width: 220px;
+      width: 185px;
+      height: auto;
       display: block;
     }
 
@@ -78,44 +87,119 @@
       font-size: 13px;
       font-weight: 700;
       text-transform: uppercase;
-      color: #fff;
+      color: #000;
     }
 
     .nav-links a {
       padding: 10px 0;
       white-space: nowrap;
+      color: #000;
     }
 
     .nav-links a:hover {
-      color: #dfe8da;
+      opacity: .6;
     }
 
     .nav-links .donate-btn {
       background: #000;
       color: #fff;
-      padding: 12px 22px;
+      padding: 10px 20px;
       border-radius: 4px;
     }
 
     .nav-links .donate-btn:hover {
       background: #222;
       color: #fff;
+      opacity: 1;
     }
 
     .menu-toggle {
       display: none;
       background: none;
       border: none;
+      color: #000;
       font-size: 30px;
+      line-height: 1;
       cursor: pointer;
+    }
+
+
+    /* PROGRAMS DROPDOWN */
+
+    .nav-dropdown {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-dropdown::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: -10px;
+      width: calc(100% + 20px);
+      height: 12px;
+    }
+
+    .dropdown-trigger {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .dropdown-arrow {
+      font-size: 11px;
+      line-height: 1;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      min-width: 230px;
+      background: var(--cream);
+      border-radius: 4px;
+      padding: 8px 0;
+      box-shadow: 0 8px 24px rgba(0,0,0,.16);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition:
+        opacity .15s ease,
+        visibility .15s ease;
+      z-index: 2000;
+    }
+
+    .dropdown-menu a {
+      display: block;
+      width: 100%;
+      padding: 11px 18px;
+      color: #000;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .dropdown-menu a:hover {
+      background: rgba(0,0,0,.06);
+      opacity: 1;
+    }
+
+    .nav-dropdown:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
     }
 
 
     /* SUPPORT HERO */
 
     .support-hero {
+      width: 100%;
+      height: calc(100vh - 72px);
       min-height: 0;
-      aspect-ratio: 16 / 6.5;
       position: relative;
       display: flex;
       align-items: center;
@@ -135,12 +219,12 @@
     }
 
     .support-hero-bg {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-  display: block;
-}
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
 
     .support-hero::after {
       content: "";
@@ -161,7 +245,7 @@
       text-align: left;
       margin-left: auto;
       margin-right: -1%;
-      transform: translateY(-10px);
+      transform: translate(25px, 40px);
     }
 
     .support-hero h1 {
@@ -350,17 +434,14 @@
 
     @media (max-width: 1250px) and (min-width: 1001px) {
 
-      header {
-        top: 14px;
-      }
-
       nav {
+        height: 72px;
         padding: 6px 3%;
         gap: 18px;
       }
 
       .logo img {
-        width: 180px;
+        width: 170px;
       }
 
       .nav-links {
@@ -368,12 +449,17 @@
         font-size: 11px;
       }
 
+      .nav-links a {
+        white-space: nowrap;
+      }
+
       .nav-links .donate-btn {
-        padding: 10px 16px;
+        padding: 9px 16px;
       }
 
       .support-hero {
-        aspect-ratio: 16 / 7.2;
+        height: calc(100vh - 72px);
+        min-height: 0;
         padding: 90px 4% 35px;
       }
 
@@ -381,7 +467,7 @@
         max-width: 380px;
         margin-left: auto;
         margin-right: 1%;
-        transform: translateY(55px);
+        transform: translate(20px, 45px);
       }
 
       .support-hero h1 {
@@ -409,19 +495,19 @@
 
     @media (max-width: 1000px) and (min-width: 651px) {
 
-      header {
-        top: 12px;
-      }
-
       nav {
-        min-height: 60px;
+        height: 72px;
+        min-height: 0;
         padding: 6px 4%;
         flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
         gap: 18px;
       }
 
       .logo img {
-        width: 160px;
+        width: 150px;
+        max-width: none;
       }
 
       .nav-links {
@@ -431,8 +517,20 @@
         font-size: 10px;
       }
 
+      .nav-links a {
+        white-space: nowrap;
+        padding: 8px 0;
+      }
+
+      .nav-links .donate-btn {
+        padding: 9px 14px;
+      }
+
       .support-hero {
-        aspect-ratio: 16 / 8;
+        width: 100%;
+        height: calc(100vh - 72px);
+        min-height: 0;
+        aspect-ratio: auto;
         padding: 90px 5% 35px;
         align-items: center;
       }
@@ -472,18 +570,24 @@
 
     @media (max-width: 650px) {
 
+      body {
+        padding-top: 68px;
+      }
+
       header {
-        position: absolute;
-        top: -12px;
+        position: fixed;
+        top: 0;
         left: 0;
         width: 100%;
-        background: transparent;
-        z-index: 100;
+        height: 68px;
+        background: var(--cream);
+        z-index: 1000;
       }
 
       nav {
-        min-height: auto;
-        padding: 12px 18px;
+        height: 68px;
+        min-height: 0;
+        padding: 6px 18px;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
@@ -494,7 +598,7 @@
       }
 
       .logo img {
-        width: 170px;
+        width: 155px;
         max-width: 58vw;
         height: auto;
       }
@@ -509,13 +613,16 @@
         cursor: pointer;
       }
 
+
+      /* MOBILE NAV */
+
       .nav-links {
         display: none;
         position: absolute;
         top: 100%;
         left: 0;
         width: 100%;
-        background: #fff;
+        background: var(--cream);
         flex-direction: column;
         align-items: stretch;
         padding: 10px 18px 18px;
@@ -544,13 +651,77 @@
       }
 
 
-      /* IMPORTANT:
-         Reset desktop hero geometry on mobile */
+      /* MOBILE PROGRAMS DROPDOWN */
+
+      .nav-dropdown {
+        display: block;
+        width: 100%;
+      }
+
+      .nav-dropdown::after {
+        display: none;
+      }
+
+      .dropdown-trigger {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .dropdown-arrow {
+        transition: transform .2s ease;
+      }
+
+      .dropdown-menu {
+        position: static;
+        top: auto;
+        left: auto;
+        transform: none;
+
+        display: none;
+        width: 100%;
+        min-width: 0;
+
+        padding: 4px 0 8px 14px;
+
+        background: transparent;
+        border-radius: 0;
+        box-shadow: none;
+
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+      }
+
+      .nav-dropdown.mobile-open .dropdown-menu {
+        display: block;
+      }
+
+      .nav-dropdown.mobile-open .dropdown-arrow {
+        transform: rotate(180deg);
+      }
+
+      .dropdown-menu a {
+        display: block;
+        width: 100%;
+        padding: 10px 8px;
+        color: #000;
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: none;
+        border-bottom: 1px solid rgba(0,0,0,.06);
+      }
+
+
+      /* MOBILE HERO */
 
       .support-hero {
         width: 100%;
-        min-height: 78svh;
+        height: calc(100svh - 68px);
+        min-height: 0;
         aspect-ratio: auto;
+        margin-top: 0;
 
         padding:
           0
@@ -558,6 +729,7 @@
           40px;
 
         align-items: flex-end;
+        justify-content: flex-start;
       }
 
       .support-hero-bg {
@@ -591,6 +763,8 @@
         margin-bottom: 22px;
       }
 
+
+      /* MOBILE CONTENT */
 
       .section {
         padding: 28px 18px;
@@ -724,29 +898,64 @@
 
       <div class="nav-links">
 
-        <a href="index.html">
-          Home
-        </a>
 
         <a href="about.html">
           About
         </a>
 
-        <a href="student-trips.html">
-          Student Trips
-        </a>
 
-        <a href="public-trips.html">
-          Public Trips
-        </a>
+        <div class="nav-dropdown">
+
+          <a
+            href="#"
+            class="dropdown-trigger"
+            aria-expanded="false"
+          >
+            Programs
+            <span class="dropdown-arrow">▾</span>
+          </a>
+
+
+          <div class="dropdown-menu">
+
+            <a href="student-trips.html">
+              Student Expeditions
+            </a>
+
+            <a href="public-trips.html">
+              Local Tours
+            </a>
+
+            <a href="#">
+              Wilderness Medicine
+            </a>
+
+            <a href="#">
+              Whitewater Guide School
+            </a>
+
+            <a href="#">
+              Outdoor Skills
+            </a>
+
+            <a href="#">
+              Custom Adventures
+            </a>
+
+          </div>
+
+        </div>
+
 
         <a href="support.html">
           Support Us
         </a>
 
+
         <a href="contact.html">
           Contact
         </a>
+
 
         <a
           href="#donate"
@@ -754,6 +963,7 @@
         >
           Donate
         </a>
+
 
       </div>
 
@@ -766,6 +976,7 @@
   <!-- SUPPORT HERO -->
 
   <section class="support-hero">
+
 
     <picture class="support-hero-picture">
 
@@ -866,7 +1077,10 @@
 
           <!-- DONATE -->
 
-          <div class="support-card" id="donate">
+          <div
+            class="support-card"
+            id="donate"
+          >
 
             <h3>
               Make A Donation
@@ -1139,9 +1353,46 @@
     const navLinks =
       document.querySelector('.nav-links');
 
+    const programTrigger =
+      document.querySelector('.dropdown-trigger');
+
+    const programDropdown =
+      document.querySelector('.nav-dropdown');
+
+
     menuToggle.addEventListener('click', () => {
 
       navLinks.classList.toggle('open');
+
+      if (!navLinks.classList.contains('open')) {
+
+        programDropdown.classList.remove('mobile-open');
+
+        programTrigger.setAttribute(
+          'aria-expanded',
+          'false'
+        );
+
+      }
+
+    });
+
+
+    programTrigger.addEventListener('click', (event) => {
+
+      event.preventDefault();
+
+      if (window.innerWidth <= 650) {
+
+        const isOpen =
+          programDropdown.classList.toggle('mobile-open');
+
+        programTrigger.setAttribute(
+          'aria-expanded',
+          isOpen ? 'true' : 'false'
+        );
+
+      }
 
     });
 
