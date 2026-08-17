@@ -371,7 +371,12 @@ nav {
       object-fit: cover;
       display: block;
     }
-
+.staff-photo img.kyle-photo {
+  height: auto;
+  min-height: 0;
+  object-fit: contain;
+  object-position: center;
+}
     .staff-content {
       padding: 40px;
     }
@@ -1115,9 +1120,10 @@ nav {
           <div class="staff-photo">
 
             <img
-              src="Kyle.jpg"
-              alt="Kyle Murphy"
-            >
+  src="Kyle.jpg"
+  alt="Kyle Murphy"
+  class="kyle-photo"
+>
 
           </div>
 
