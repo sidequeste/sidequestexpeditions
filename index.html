@@ -366,14 +366,26 @@ nav {
   font-size: 16px;
   line-height: 1.7;
 }
-    /* PHILOSOPHY */
-    .values-strip {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-      padding: 22px 7%;
-      background: transparent;
-    }
+   /* WHAT GUIDES US */
+
+.values-heading {
+  padding: 20px 7% 0;
+}
+
+.values-heading h2 {
+  color: var(--green-dark);
+  text-transform: uppercase;
+  font-size: 27px;
+  margin: 0;
+}
+
+.values-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  padding: 22px 7%;
+  background: transparent;
+}
 
     .value {
       display: flex;
@@ -409,14 +421,12 @@ nav {
       line-height: 1.45;
     }
 
-    /* EXPLORE + GET INVOLVED */
+  /* EXPLORE SIDE QUEST */
     .main-section {
-      padding: 50px 7%;
-      display: grid;
-      grid-template-columns: 3fr 1fr;
-      gap: 50px;
-      background: transparent;
-    }
+  padding: 50px 7%;
+  display: block;
+  background: transparent;
+}
 
     .section-title {
       color: var(--green-dark);
@@ -1146,41 +1156,6 @@ nav {
 
   </div>
 </section>
-    <!-- PHILOSOPHY -->
-    <section class="values-strip">
-      <div class="value">
-        <img src="compass.png" alt="Compass" class="value-icon">
-        <div class="value-text">
-          <h3>Know Yourself</h3>
-          <p>
-            We challenge students to step outside their comfort zones
-            and discover their strengths and potential.
-          </p>
-        </div>
-      </div>
-
-      <div class="value">
-        <img src="campfire.png" alt="Campfire" class="value-icon">
-        <div class="value-text">
-          <h3>Know Each Other</h3>
-          <p>
-            We build community through shared experiences, respect,
-            teamwork, and time outdoors.
-          </p>
-        </div>
-      </div>
-
-      <div class="value">
-        <img src="tree.png" alt="Tree" class="value-icon">
-        <div class="value-text">
-          <h3>Know This Place</h3>
-          <p>
-            We cultivate a deeper connection to local and wild places
-            and the stories they hold.
-          </p>
-        </div>
-      </div>
-    </section>
 
     <!-- EXPLORE SIDE QUEST + GET INVOLVED -->
     <section class="main-section">
@@ -1216,41 +1191,44 @@ nav {
         </div>
       </div>
 
-      <aside class="get-involved">
-        <h2 class="section-title">Get Involved</h2>
-
-        <p>
-          Your support helps us remove barriers and create
-          life-changing outdoor opportunities for students
-          across San Francisco.
-        </p>
-
-        <div class="involve-item">
-          <div class="involve-icon">♡</div>
-          <div>
-            <h4>Donate</h4>
-            <p>Help fund student adventures.</p>
-          </div>
+    </section>
+ <!-- WHAT GUIDES US -->
+    <div class="values-heading">
+  <h2>What Guides Us</h2>
+</div>
+    <section class="values-strip">
+      <div class="value">
+        <img src="compass.png" alt="Compass" class="value-icon">
+        <div class="value-text">
+          <h3>Know Yourself</h3>
+          <p>
+            We challenge students to step outside their comfort zones
+            and discover their strengths and potential.
+          </p>
         </div>
+      </div>
 
-        <div class="involve-item">
-          <div class="involve-icon">♧</div>
-          <div>
-            <h4>Volunteer</h4>
-            <p>Share your skills and time.</p>
-          </div>
+      <div class="value">
+        <img src="campfire.png" alt="Campfire" class="value-icon">
+        <div class="value-text">
+          <h3>Know Each Other</h3>
+          <p>
+            We build community through shared experiences, respect,
+            teamwork, and time outdoors.
+          </p>
         </div>
+      </div>
 
-        <div class="involve-item">
-          <div class="involve-icon">⚙</div>
-          <div>
-            <h4>Partner</h4>
-            <p>Help us expand our impact.</p>
-          </div>
+      <div class="value">
+        <img src="tree.png" alt="Tree" class="value-icon">
+        <div class="value-text">
+          <h3>Know This Place</h3>
+          <p>
+            We cultivate a deeper connection to local and wild places
+            and the stories they hold.
+          </p>
         </div>
-
-        <a href="support.html" class="outline-button">Support Our Mission</a>
-      </aside>
+      </div>
     </section>
 
     <!-- FOOTER -->
