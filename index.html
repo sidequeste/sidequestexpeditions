@@ -342,7 +342,7 @@ nav {
   padding: 42px 55px;
   background: rgba(245, 241, 232, .94);
   border-radius: 6px;
-  text-align: center;
+  text-align: left;
 }
 
 .mission-label {
@@ -361,8 +361,8 @@ nav {
 }
 
 .mission-card p {
-  max-width: 850px;
-  margin: 0 auto;
+  max-width: 900px;
+  margin: 0;
   font-size: 16px;
   line-height: 1.7;
 }
@@ -436,10 +436,10 @@ nav {
     }
 
     .trip-pathways {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 25px;
-    }
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
 
     .pathway-card {
       background: var(--cream);
@@ -923,7 +923,13 @@ nav {
         background-size: auto 100%;
         background-position: center top;
       }
+.values-heading {
+  padding: 20px 18px 0;
+}
 
+.values-heading h2 {
+  font-size: 22px;
+}
       .values-strip {
         grid-template-columns: 1fr;
         gap: 12px;
@@ -1188,6 +1194,22 @@ nav {
               <span>Explore Public Trips →</span>
             </div>
           </a>
+          <a href="custom-adventures.html" class="pathway-card">
+  <div class="pathway-content">
+    <div class="pathway-label">For Groups</div>
+
+    <h3>Custom Programs</h3>
+
+    <p>
+      Tailored outdoor and experiential programming for schools,
+      educators, youth organizations, teams, and companies. We work
+      with groups to build experiences around their goals, needs,
+      and available time.
+    </p>
+
+    <span>Explore Custom Programs →</span>
+  </div>
+</a>
         </div>
       </div>
 
