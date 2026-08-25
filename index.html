@@ -338,9 +338,9 @@ nav {
 
 .mission-card {
   width: 100%;
-  max-width: none;
+  max-width: 1050px;
   margin: 0;
-  padding: 42px 55px;
+  padding: 38px 48px;
   background: rgba(245, 241, 232, .94);
   border-radius: 6px;
   text-align: left;
@@ -362,10 +362,10 @@ nav {
 }
 
 .mission-card p {
-  max-width: 900px;
+  max-width: 850px;
   margin: 0;
   font-size: 16px;
-  line-height: 1.7;
+  line-height: 1.65;
 }
    /* WHAT GUIDES US */
 
@@ -424,7 +424,7 @@ nav {
 
   /* EXPLORE SIDE QUEST */
     .main-section {
-  padding: 50px 7%;
+  padding: 32px 7% 48px;
   display: block;
   background: transparent;
 }
@@ -443,13 +443,22 @@ nav {
 }
 
     .pathway-card {
-      background: var(--cream);
-      border-radius: 6px;
-      padding: 38px;
-      color: inherit;
-      transition: transform .2s ease, box-shadow .2s ease;
-    }
+  background: rgba(245, 241, 232, .96);
+  border-radius: 6px;
+  padding: 32px;
+  color: inherit;
+  display: flex;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+    .pathway-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
 
+.pathway-card p {
+  flex-grow: 1;
+}
     .pathway-card:hover {
       transform: translateY(-4px);
       box-shadow: 0 8px 24px rgba(0, 0, 0, .10);
@@ -465,11 +474,12 @@ nav {
     }
 
     .pathway-card h3 {
-      color: var(--green-dark);
-      text-transform: uppercase;
-      font-size: 27px;
-      margin-bottom: 15px;
-    }
+  color: var(--green-dark);
+  text-transform: uppercase;
+  font-size: 24px;
+  margin-bottom: 14px;
+  line-height: 1.1;
+}
 
     .pathway-card p {
       margin-bottom: 22px;
@@ -954,7 +964,8 @@ nav {
       .value p { font-size: 12px; }
 
 .mission-section {
-  padding: 28px 18px 10px;
+  padding: 48px 7% 18px;
+  background: transparent;
 }
 
 .mission-card {
