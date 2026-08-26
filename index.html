@@ -570,20 +570,35 @@
 
   padding: 24px 28px;
 
+  position: relative;
+  z-index: 1;
+
+  background: transparent;
+  border: none;
+}
+.value::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+
+  top: -35px;
+  bottom: -35px;
+  left: -30px;
+  right: -30px;
+
   background: radial-gradient(
     ellipse at center,
     rgba(245, 241, 232, .97) 0%,
-    rgba(245, 241, 232, .95) 50%,
-    rgba(245, 241, 232, .82) 68%,
-    rgba(245, 241, 232, .55) 80%,
-    rgba(245, 241, 232, .25) 90%,
+    rgba(245, 241, 232, .92) 35%,
+    rgba(245, 241, 232, .72) 55%,
+    rgba(245, 241, 232, .45) 70%,
+    rgba(245, 241, 232, .20) 84%,
     rgba(245, 241, 232, 0) 100%
   );
 
-  border: none;
-  border-radius: 0;
+  pointer-events: none;
 }
-
+    
     .value-icon {
       width: 72px;
       height: 72px;
