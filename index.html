@@ -432,7 +432,33 @@
       font-size: 27px;
       margin-bottom: 20px;
     }
+/* SOFT MAP FADE BEHIND SECTION HEADINGS */
 
+.section-title {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  width: fit-content;
+}
+
+.section-title::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+
+  top: -12px;
+  bottom: -12px;
+  left: -24px;
+  right: -50px;
+
+  background: linear-gradient(
+    90deg,
+    rgba(245, 241, 232, .96) 0%,
+    rgba(245, 241, 232, .82) 65%,
+    rgba(245, 241, 232, 0) 100%
+  );
+}
+    
     .trip-pathways {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
