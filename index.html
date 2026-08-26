@@ -3,76 +3,81 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Side Quest Expeditions</title>
+
   <!-- LINK PREVIEW / SOCIAL SHARING -->
 
-<meta property="og:title" content="Side Quest Expeditions">
+  <meta property="og:title" content="Side Quest Expeditions">
 
-<meta
-  property="og:description"
-  content="Adventure With Purpose."
->
+  <meta
+    property="og:description"
+    content="Adventure With Purpose."
+  >
 
-<meta
-  property="og:type"
-  content="website"
->
+  <meta
+    property="og:type"
+    content="website"
+  >
 
-<meta
-  property="og:url"
-  content="https://sidequestexpeditions.org/"
->
+  <meta
+    property="og:url"
+    content="https://sidequestexpeditions.org/"
+  >
 
-<meta
-  property="og:image"
-  content="https://sidequestexpeditions.org/sidequest-social-preview(2).jpg"
->
+  <meta
+    property="og:image"
+    content="https://sidequestexpeditions.org/sidequest-social-preview(2).jpg"
+  >
 
-<meta
-  property="og:image:secure_url"
-  content="https://sidequestexpeditions.org/sidequest-social-preview(2).jpg"
->
+  <meta
+    property="og:image:secure_url"
+    content="https://sidequestexpeditions.org/sidequest-social-preview(2).jpg"
+  >
 
-<meta
-  property="og:image:type"
-  content="image/jpeg"
->
+  <meta
+    property="og:image:type"
+    content="image/jpeg"
+  >
 
-<meta
-  property="og:image:width"
-  content="1200"
->
+  <meta
+    property="og:image:width"
+    content="1200"
+  >
 
-<meta
-  property="og:image:height"
-  content="630"
->
+  <meta
+    property="og:image:height"
+    content="630"
+  >
 
-<meta
-  property="og:image:alt"
-  content="Side Quest Expeditions at the Golden Gate Bridge"
->
+  <meta
+    property="og:image:alt"
+    content="Side Quest Expeditions at the Golden Gate Bridge"
+  >
 
-<meta
-  name="twitter:card"
-  content="summary_large_image"
->
+  <meta
+    name="twitter:card"
+    content="summary_large_image"
+  >
 
-<meta
-  name="twitter:title"
-  content="Side Quest Expeditions"
->
+  <meta
+    name="twitter:title"
+    content="Side Quest Expeditions"
+  >
 
-<meta
-  name="twitter:description"
-  content="Adventure With Purpose."
->
+  <meta
+    name="twitter:description"
+    content="Adventure With Purpose."
+  >
 
-<meta
-  name="twitter:image"
-  content="https://sidequestexpeditions.org/sidequest-social-preview(2).jpg"
->
+  <meta
+    name="twitter:image"
+    content="https://sidequestexpeditions.org/sidequest-social-preview(2).jpg"
+  >
+
+
   <style>
+
     :root {
       --green-dark: #203b28;
       --green: #3f642f;
@@ -87,174 +92,184 @@
       padding: 0;
     }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
-  font-family: Arial, Helvetica, sans-serif;
-  color: var(--text);
-  background: #fff;
-  line-height: 1.5;
-  padding-top: 72px;
-}
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: #fff;
+      line-height: 1.5;
+      padding-top: 72px;
+    }
 
     a {
       color: inherit;
       text-decoration: none;
     }
 
-    /* NAVIGATION */
 
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 72px;
-  z-index: 1000;
-  background: var(--cream);
-}
+    /* ==============================
+       NAVIGATION
+    ============================== */
 
-nav {
-  width: 100%;
-  height: 72px;
-  padding: 6px 4%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 30px;
-}
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 72px;
+      z-index: 1000;
+      background: var(--cream);
+    }
 
-.logo {
-  display: flex;
-  align-items: center;
-}
+    nav {
+      width: 100%;
+      height: 72px;
+      padding: 6px 4%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
 
-.logo img {
-  width: 185px;
-  height: auto;
-  display: block;
-}
+    .logo {
+      display: flex;
+      align-items: center;
+    }
 
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 28px;
-  font-size: 13px;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: #000;
-}
+    .logo img {
+      width: 185px;
+      height: auto;
+      display: block;
+    }
 
-.nav-links a {
-  padding: 10px 0;
-  white-space: nowrap;
-  color: #000;
-}
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #000;
+    }
 
-.nav-links a:hover {
-  opacity: .6;
-}
+    .nav-links a {
+      padding: 10px 0;
+      white-space: nowrap;
+      color: #000;
+    }
 
-.nav-links .donate-btn {
-  background: #000;
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 4px;
-}
+    .nav-links a:hover {
+      opacity: .6;
+    }
 
-.nav-links .donate-btn:hover {
-  background: #222;
-  color: #fff;
-  opacity: 1;
-}
-/* PROGRAMS DROPDOWN */
+    .nav-links .donate-btn {
+      background: #000;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 4px;
+    }
 
-.nav-dropdown {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-.nav-dropdown::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: -10px;
-  width: calc(100% + 20px);
-  height: 12px;
-}
+    .nav-links .donate-btn:hover {
+      background: #222;
+      color: #fff;
+      opacity: 1;
+    }
 
-.dropdown-trigger {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
 
-.dropdown-arrow {
-  font-size: 11px;
-  line-height: 1;
-}
+    /* PROGRAMS DROPDOWN */
 
-.dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
+    .nav-dropdown {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
 
-  min-width: 230px;
+    .nav-dropdown::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: -10px;
+      width: calc(100% + 20px);
+      height: 12px;
+    }
 
-  background: var(--cream);
-  border-radius: 4px;
+    .dropdown-trigger {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
 
-  padding: 8px 0;
+    .dropdown-arrow {
+      font-size: 11px;
+      line-height: 1;
+    }
 
-  box-shadow: 0 8px 24px rgba(0, 0, 0, .16);
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
 
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
+      min-width: 230px;
 
-  transition:
-    opacity .15s ease,
-    visibility .15s ease;
+      background: var(--cream);
+      border-radius: 4px;
 
-  z-index: 2000;
-}
+      padding: 8px 0;
 
-.dropdown-menu a {
-  display: block;
-  width: 100%;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .16);
 
-  padding: 11px 18px;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
 
-  color: #000;
-  font-size: 12px;
-  font-weight: 700;
-  text-transform: uppercase;
+      transition:
+        opacity .15s ease,
+        visibility .15s ease;
 
-  white-space: nowrap;
-}
+      z-index: 2000;
+    }
 
-.dropdown-menu a:hover {
-  background: rgba(0, 0, 0, .06);
-  opacity: 1;
-}
+    .dropdown-menu a {
+      display: block;
+      width: 100%;
+      padding: 11px 18px;
+      color: #000;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
 
-.nav-dropdown:hover .dropdown-menu {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-}
-    
-    /* HERO */
+    .dropdown-menu a:hover {
+      background: rgba(0, 0, 0, .06);
+      opacity: 1;
+    }
+
+    .nav-dropdown:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+
+    /* ==============================
+       HERO
+    ============================== */
+
     .hero {
-    height: calc(100vh - 72px);
-    min-height: 0;
+      height: calc(100vh - 72px);
+      min-height: 0;
       position: relative;
       display: flex;
       align-items: center;
       justify-content: flex-end;
       padding: 40px 5%;
       color: white;
+
       background:
         linear-gradient(
           90deg,
@@ -264,6 +279,7 @@ nav {
           rgba(15, 20, 20, .16) 100%
         ),
         url("sidequestwebsitebackground.jpg");
+
       background-blend-mode: screen;
       background-size: 108% auto;
       background-position: center 38%;
@@ -320,80 +336,202 @@ nav {
       letter-spacing: .5px;
     }
 
-    .button:hover { background: #222; }
+    .button:hover {
+      background: #222;
+    }
 
-    /* CONTINUOUS TOPO BACKGROUND */
+
+    /* ==============================
+       CONTINUOUS TOPO BACKGROUND
+    ============================== */
+
     .topo-background {
       background-image: url("mountdarwin.jpg");
       background-size: 100% auto;
       background-position: center top;
       background-repeat: repeat-y;
     }
-/* MISSION */
 
-.mission-section {
-  padding: 55px 7% 28px;
-  background: transparent;
-}
 
-.mission-card {
-  width: 100%;
-  max-width: 1050px;
-  margin: 0;
-  padding: 38px 48px;
-  background: rgba(245, 241, 232, .94);
-  border-radius: 6px;
-  text-align: left;
-}
+    /* ==============================
+       MISSION
+    ============================== */
 
-.mission-label {
-  color: var(--green);
-  text-transform: uppercase;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  margin-bottom: 8px;
-}
+    .mission-section {
+      padding: 48px 7% 28px;
+      background: transparent;
+    }
 
-.mission-card h2 {
-  color: var(--green-dark);
-  font-size: 32px;
-  margin-bottom: 18px;
-}
+    .mission-card {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
 
-.mission-card p {
-  max-width: 850px;
-  margin: 0;
-  font-size: 16px;
-  line-height: 1.65;
-}
-   /* WHAT GUIDES US */
+      background: rgba(245, 241, 232, .96);
 
-.values-heading {
-  padding: 20px 7% 0;
-}
+      border-radius: 6px;
+      overflow: hidden;
+    }
 
-.values-heading h2 {
-  color: var(--green-dark);
-  text-transform: uppercase;
-  font-size: 27px;
-  margin: 0;
-}
+    .mission-content {
+      padding: 44px 48px;
 
-.values-strip {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-  padding: 22px 7%;
-  background: transparent;
-}
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .mission-photo {
+      width: 100%;
+      height: 100%;
+      min-height: 360px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .mission-label {
+      color: var(--green);
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+
+    .mission-card h2 {
+      color: var(--green-dark);
+      font-size: 32px;
+      margin-bottom: 18px;
+    }
+
+    .mission-card p {
+      margin: 0;
+      font-size: 16px;
+      line-height: 1.65;
+    }
+
+
+    /* ==============================
+       EXPLORE SIDE QUEST
+    ============================== */
+
+    .main-section {
+      padding: 32px 7% 48px;
+      display: block;
+      background: transparent;
+    }
+
+    .section-title {
+      color: var(--green-dark);
+      text-transform: uppercase;
+      font-size: 27px;
+      margin-bottom: 20px;
+    }
+
+    .trip-pathways {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .pathway-card {
+      background: rgba(245, 241, 232, .96);
+      border-radius: 6px;
+      overflow: hidden;
+      color: inherit;
+
+      display: flex;
+      flex-direction: column;
+
+      transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+    }
+
+    .pathway-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .10);
+    }
+
+    .pathway-image {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .pathway-content {
+      padding: 30px;
+      flex: 1;
+
+      display: flex;
+      flex-direction: column;
+    }
+
+    .pathway-label {
+      color: var(--green);
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+
+    .pathway-card h3 {
+      color: var(--green-dark);
+      text-transform: uppercase;
+      font-size: 24px;
+      line-height: 1.1;
+      margin-bottom: 14px;
+    }
+
+    .pathway-card p {
+      font-size: 15px;
+      line-height: 1.65;
+      margin-bottom: 24px;
+      flex-grow: 1;
+    }
+
+    .pathway-card span {
+      color: var(--green);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 13px;
+    }
+
+
+    /* ==============================
+       WHAT GUIDES US
+    ============================== */
+
+    .values-heading {
+      padding: 20px 7% 0;
+    }
+
+    .values-heading h2 {
+      color: var(--green-dark);
+      text-transform: uppercase;
+      font-size: 27px;
+      margin: 0;
+    }
+
+    .values-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      padding: 22px 7%;
+      background: transparent;
+    }
 
     .value {
       display: flex;
       align-items: center;
       gap: 18px;
+
       padding: 18px 22px;
+
       background: rgba(245, 241, 232, .94);
+
       border: none;
       border-radius: 4px;
     }
@@ -407,7 +545,9 @@ nav {
       background: transparent;
     }
 
-    .value-text { flex: 1; }
+    .value-text {
+      flex: 1;
+    }
 
     .value h3 {
       color: #000;
@@ -422,133 +562,11 @@ nav {
       line-height: 1.45;
     }
 
-  /* EXPLORE SIDE QUEST */
-    .main-section {
-  padding: 32px 7% 48px;
-  display: block;
-  background: transparent;
-}
 
-    .section-title {
-      color: var(--green-dark);
-      text-transform: uppercase;
-      font-size: 27px;
-      margin-bottom: 20px;
-    }
+    /* ==============================
+       FOOTER
+    ============================== */
 
-    .trip-pathways {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-}
-
-    .pathway-card {
-  background: rgba(245, 241, 232, .96);
-  border-radius: 6px;
-  padding: 32px;
-  color: inherit;
-  display: flex;
-  transition: transform .2s ease, box-shadow .2s ease;
-}
-    .pathway-content {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.pathway-card p {
-  flex-grow: 1;
-}
-    .pathway-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, .10);
-    }
-
-    .pathway-label {
-      color: var(--green);
-      text-transform: uppercase;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      margin-bottom: 10px;
-    }
-
-    .pathway-card h3 {
-  color: var(--green-dark);
-  text-transform: uppercase;
-  font-size: 24px;
-  margin-bottom: 14px;
-  line-height: 1.1;
-}
-
-    .pathway-card p {
-      margin-bottom: 22px;
-      line-height: 1.7;
-    }
-
-    .pathway-card span {
-      color: var(--green);
-      font-weight: 700;
-      text-transform: uppercase;
-      font-size: 13px;
-    }
-
-    .get-involved {
-      background: var(--cream);
-      border-radius: 6px;
-      padding: 38px;
-    }
-
-    .involve-item {
-      display: flex;
-      gap: 15px;
-      margin: 20px 0;
-      align-items: center;
-    }
-
-    .involve-icon {
-      width: 48px;
-      height: 48px;
-      min-width: 48px;
-      border-radius: 50%;
-      background: var(--green-dark);
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 21px;
-    }
-
-    .involve-item h4 {
-      text-transform: uppercase;
-      color: var(--green-dark);
-    }
-
-    .involve-item p {
-      font-size: 13px;
-      margin: 0;
-      color: var(--muted);
-    }
-
-    .outline-button {
-      display: block;
-      text-align: center;
-      border: 2px solid #000;
-      color: #000;
-      padding: 12px 20px;
-      font-weight: 700;
-      text-transform: uppercase;
-      font-size: 13px;
-      margin-top: 25px;
-      border-radius: 4px;
-    }
-
-    .outline-button:hover {
-      background: #000;
-      color: white;
-    }
-
-    /* FOOTER */
     footer {
       background: transparent;
       color: #111;
@@ -556,374 +574,454 @@ nav {
       padding: 28px 22px;
       font-size: 12px;
     }
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 30px;
-  cursor: pointer;
-}
-/* SMALL DESKTOP */
-@media (max-width: 1250px) and (min-width: 1001px) {
 
-  header {
-    top: 14px;
-  }
 
-  nav {
-    padding: 6px 3%;
-    gap: 18px;
-  }
+    /* MOBILE MENU BUTTON */
 
-  .logo img {
-    width: 180px;
-  }
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 30px;
+      cursor: pointer;
+    }
 
-  .nav-links {
-    gap: 17px;
-    font-size: 11px;
-  }
 
-  .nav-links a {
-    white-space: nowrap;
-  }
+    /* ==============================
+       SMALL DESKTOP
+    ============================== */
 
-  .nav-links .donate-btn {
-    padding: 10px 16px;
-  }
+    @media (max-width: 1250px) and (min-width: 1001px) {
 
-  .hero {
-  height: calc(100vh - 72px);
-  min-height: 0;
-  padding: 90px 4% 35px;
-}
+      header {
+        top: 14px;
+      }
 
-  .hero-content {
-  max-width: 380px;
-  margin-left: auto;
-  margin-right: 1%;
-  transform: translateY(55px);
-}
+      nav {
+        padding: 6px 3%;
+        gap: 18px;
+      }
 
-.hero h1 {
-  font-size: clamp(38px, 4.2vw, 48px);
-  line-height: .92;
-  letter-spacing: -2px;
-  margin-bottom: 18px;
-}
+      .logo img {
+        width: 180px;
+      }
 
-  .hero p {
-  font-size: 13px;
-  max-width: 380px;
-  line-height: 1.45;
-  margin-bottom: 18px;
-}
+      .nav-links {
+        gap: 17px;
+        font-size: 11px;
+      }
 
-  .values-strip {
-    padding-left: 6%;
-    padding-right: 6%;
-    gap: 14px;
-  }
+      .nav-links a {
+        white-space: nowrap;
+      }
 
-  .value {
-    padding: 16px 18px;
-    gap: 14px;
-  }
+      .nav-links .donate-btn {
+        padding: 10px 16px;
+      }
 
-  .value-icon {
-    width: 62px;
-    height: 62px;
-    min-width: 62px;
-  }
+      .hero {
+        height: calc(100vh - 72px);
+        min-height: 0;
+        padding: 90px 4% 35px;
+      }
 
-  .main-section {
-    padding-left: 6%;
-    padding-right: 6%;
-    gap: 32px;
-  }
-}
-    
-   /* TABLET */
-@media (max-width: 1000px) and (min-width: 651px) {
+      .hero-content {
+        max-width: 380px;
+        margin-left: auto;
+        margin-right: 1%;
+        transform: translateY(55px);
+      }
 
-  header {
-    top: 12px;
-  }
+      .hero h1 {
+        font-size: clamp(38px, 4.2vw, 48px);
+        line-height: .92;
+        letter-spacing: -2px;
+        margin-bottom: 18px;
+      }
 
-  nav {
-    min-height: 60px;
-    padding: 6px 4%;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 18px;
-  }
+      .hero p {
+        font-size: 13px;
+        max-width: 380px;
+        line-height: 1.45;
+        margin-bottom: 18px;
+      }
 
-  .logo img {
-    width: 160px;
-    max-width: none;
-  }
+      .mission-section,
+      .main-section {
+        padding-left: 6%;
+        padding-right: 6%;
+      }
 
-  .nav-links {
-    flex: 1;
-    flex-wrap: nowrap;
-    justify-content: flex-end;
-    gap: 13px;
-    font-size: 10px;
-  }
+      .mission-content {
+        padding: 38px 40px;
+      }
 
-  .nav-links a {
-    white-space: nowrap;
-    padding: 8px 0;
-  }
+      .pathway-image {
+        height: 210px;
+      }
 
-  .nav-links .donate-btn {
-    padding: 10px 15px;
-  }
+      .pathway-content {
+        padding: 26px;
+      }
 
-  .hero {
-  height: calc(100vh - 72px);
-  min-height: 0;
-  aspect-ratio: auto;
-  padding: 90px 5% 35px;
-  align-items: center;
-}
+      .values-strip {
+        padding-left: 6%;
+        padding-right: 6%;
+        gap: 14px;
+      }
 
-  .hero-content {
-    width: 42%;
-    max-width: 390px;
-    margin-left: auto;
-    margin-right: 0;
-    transform: none;
-  }
+      .values-heading {
+        padding-left: 6%;
+        padding-right: 6%;
+      }
 
-  .hero h1 {
-    font-size: clamp(36px, 5vw, 50px);
-    line-height: .92;
-    letter-spacing: -2px;
-    margin-bottom: 18px;
-  }
+      .value {
+        padding: 16px 18px;
+        gap: 14px;
+      }
 
-  .hero p {
-    font-size: 13px;
-    line-height: 1.45;
-    margin-bottom: 18px;
-  }
+      .value-icon {
+        width: 62px;
+        height: 62px;
+        min-width: 62px;
+      }
 
-  .values-strip {
-    grid-template-columns: 1fr;
-  }
+    }
 
-  .value {
-    border: none;
-    padding: 20px;
-  }
 
-  .main-section {
-    grid-template-columns: 1fr;
-  }
-}
+    /* ==============================
+       TABLET
+    ============================== */
 
-    /* MOBILE */
-@media (max-width: 650px) {
+    @media (max-width: 1000px) and (min-width: 651px) {
 
-body {
-  padding-top: 68px;
-}
+      header {
+        top: 12px;
+      }
 
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 68px;
-  background: var(--cream);
-  z-index: 1000;
-}
+      nav {
+        min-height: 60px;
+        padding: 6px 4%;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+      }
 
-nav {
-  height: 68px;
-  min-height: 0;
-  padding: 6px 18px;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-}
+      .logo img {
+        width: 160px;
+        max-width: none;
+      }
 
-.logo {
-  width: auto;
-}
+      .nav-links {
+        flex: 1;
+        flex-wrap: nowrap;
+        justify-content: flex-end;
+        gap: 13px;
+        font-size: 10px;
+      }
 
-.logo img {
-  width: 155px;
-  max-width: 58vw;
-  height: auto;
-}
+      .nav-links a {
+        white-space: nowrap;
+        padding: 8px 0;
+      }
 
-.menu-toggle {
-  display: block;
-  background: none;
-  border: none;
-  color: #000;
-  font-size: 30px;
-  line-height: 1;
-  cursor: pointer;
-}
+      .nav-links .donate-btn {
+        padding: 10px 15px;
+      }
 
-.nav-links {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  background: var(--cream);
-  flex-direction: column;
-  align-items: stretch;
-  padding: 10px 18px 18px;
-  color: #000;
-  box-shadow: 0 8px 15px rgba(0,0,0,.12);
-}
+      .hero {
+        height: calc(100vh - 72px);
+        min-height: 0;
+        aspect-ratio: auto;
+        padding: 90px 5% 35px;
+        align-items: center;
+      }
 
-.nav-links.open {
-  display: flex;
-}
+      .hero-content {
+        width: 42%;
+        max-width: 390px;
+        margin-left: auto;
+        margin-right: 0;
+        transform: none;
+      }
 
-.nav-links a {
-  color: #000;
-  padding: 12px 8px;
-  font-size: 13px;
-  border-bottom: 1px solid rgba(0,0,0,.08);
-}
+      .hero h1 {
+        font-size: clamp(36px, 5vw, 50px);
+        line-height: .92;
+        letter-spacing: -2px;
+        margin-bottom: 18px;
+      }
 
-.nav-links .donate-btn {
-  background: #000;
-  color: #fff;
-  text-align: center;
-  margin-top: 10px;
-  padding: 12px 16px;
-  border-bottom: none;
-}
-/* MOBILE PROGRAMS DROPDOWN */
+      .hero p {
+        font-size: 13px;
+        line-height: 1.45;
+        margin-bottom: 18px;
+      }
 
-.nav-dropdown {
-  display: block;
-  width: 100%;
-}
+      .mission-card {
+        grid-template-columns: 1fr 1fr;
+      }
 
-.nav-dropdown::after {
-  display: none;
-}
+      .mission-content {
+        padding: 34px;
+      }
 
-.dropdown-trigger {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+      .mission-card h2 {
+        font-size: 28px;
+      }
 
-.dropdown-arrow {
-  transition: transform .2s ease;
-}
+      .mission-card p {
+        font-size: 14px;
+      }
 
-.dropdown-menu {
-  position: static;
-  top: auto;
-  left: auto;
-  transform: none;
+      .mission-photo {
+        min-height: 340px;
+      }
 
-  display: none;
-  width: 100%;
-  min-width: 0;
+      .trip-pathways {
+        grid-template-columns: repeat(2, 1fr);
+      }
 
-  padding: 4px 0 8px 14px;
+      .pathway-card:last-child {
+        grid-column: 1 / -1;
+      }
 
-  background: transparent;
-  border-radius: 0;
-  box-shadow: none;
+      .values-strip {
+        grid-template-columns: 1fr;
+      }
 
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-}
+      .value {
+        border: none;
+        padding: 20px;
+      }
 
-.nav-dropdown.mobile-open .dropdown-menu {
-  display: block;
-}
+    }
 
-.nav-dropdown.mobile-open .dropdown-arrow {
-  transform: rotate(180deg);
-}
 
-.dropdown-menu a {
-  display: block;
-  width: 100%;
-  padding: 10px 8px;
+    /* ==============================
+       MOBILE
+    ============================== */
 
-  color: #000;
-  font-size: 12px;
-  font-weight: 600;
-  text-transform: none;
+    @media (max-width: 650px) {
 
-  border-bottom: 1px solid rgba(0,0,0,.06);
-}
-  
-.hero {
-  width: 100%;
-  height: calc(100svh - 68px);
-  min-height: 0;
-  aspect-ratio: auto;
-  margin-top: 0;
+      body {
+        padding-top: 68px;
+      }
 
-  padding:
-    0
-    24px
-    34px;
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 68px;
+        background: var(--cream);
+        z-index: 1000;
+      }
 
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-start;
+      nav {
+        height: 68px;
+        min-height: 0;
+        padding: 6px 18px;
 
-  background-size: cover;
-  background-position: 42% center;
-}
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(0,0,0,.02) 20%,
-    rgba(0,0,0,.12) 48%,
-    rgba(0,0,0,.58) 100%
-  );
-  z-index: 1;
-}
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
 
-.hero-content {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  max-width: 360px;
-  margin: 0;
-  padding: 0;
-  transform: none;
-  text-align: left;
-}
+      .logo {
+        width: auto;
+      }
 
-.hero h1 {
-  font-size: clamp(42px, 13vw, 56px);
-  line-height: .9;
-  letter-spacing: -2px;
-  margin-bottom: 20px;
-  max-width: 330px;
-}
+      .logo img {
+        width: 155px;
+        max-width: 58vw;
+        height: auto;
+      }
 
-.hero p {
-  font-size: 16px;
-  line-height: 1.45;
-  max-width: 340px;
-  margin-bottom: 22px;
-}
+      .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        color: #000;
+        font-size: 30px;
+        line-height: 1;
+        cursor: pointer;
+      }
+
+      .nav-links {
+        display: none;
+
+        position: absolute;
+        top: 100%;
+        left: 0;
+
+        width: 100%;
+
+        background: var(--cream);
+
+        flex-direction: column;
+        align-items: stretch;
+
+        padding: 10px 18px 18px;
+
+        color: #000;
+
+        box-shadow: 0 8px 15px rgba(0,0,0,.12);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        color: #000;
+        padding: 12px 8px;
+        font-size: 13px;
+        border-bottom: 1px solid rgba(0,0,0,.08);
+      }
+
+      .nav-links .donate-btn {
+        background: #000;
+        color: #fff;
+        text-align: center;
+        margin-top: 10px;
+        padding: 12px 16px;
+        border-bottom: none;
+      }
+
+
+      /* MOBILE PROGRAMS DROPDOWN */
+
+      .nav-dropdown {
+        display: block;
+        width: 100%;
+      }
+
+      .nav-dropdown::after {
+        display: none;
+      }
+
+      .dropdown-trigger {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .dropdown-arrow {
+        transition: transform .2s ease;
+      }
+
+      .dropdown-menu {
+        position: static;
+        top: auto;
+        left: auto;
+        transform: none;
+
+        display: none;
+
+        width: 100%;
+        min-width: 0;
+
+        padding: 4px 0 8px 14px;
+
+        background: transparent;
+        border-radius: 0;
+        box-shadow: none;
+
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+      }
+
+      .nav-dropdown.mobile-open .dropdown-menu {
+        display: block;
+      }
+
+      .nav-dropdown.mobile-open .dropdown-arrow {
+        transform: rotate(180deg);
+      }
+
+      .dropdown-menu a {
+        display: block;
+        width: 100%;
+        padding: 10px 8px;
+
+        color: #000;
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: none;
+
+        border-bottom: 1px solid rgba(0,0,0,.06);
+      }
+
+
+      /* MOBILE HERO */
+
+      .hero {
+        width: 100%;
+        height: calc(100svh - 68px);
+        min-height: 0;
+        aspect-ratio: auto;
+        margin-top: 0;
+
+        padding:
+          0
+          24px
+          34px;
+
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+
+        background-size: cover;
+        background-position: 42% center;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+
+        background: linear-gradient(
+          180deg,
+          rgba(0,0,0,.02) 20%,
+          rgba(0,0,0,.12) 48%,
+          rgba(0,0,0,.58) 100%
+        );
+
+        z-index: 1;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+
+        width: 100%;
+        max-width: 360px;
+
+        margin: 0;
+        padding: 0;
+
+        transform: none;
+        text-align: left;
+      }
+
+      .hero h1 {
+        font-size: clamp(42px, 13vw, 56px);
+        line-height: .9;
+        letter-spacing: -2px;
+        margin-bottom: 20px;
+        max-width: 330px;
+      }
+
+      .hero p {
+        font-size: 16px;
+        line-height: 1.45;
+        max-width: 340px;
+        margin-bottom: 22px;
+      }
 
       .button {
         padding: 10px 18px;
@@ -934,13 +1032,87 @@ nav {
         background-size: auto 100%;
         background-position: center top;
       }
-.values-heading {
-  padding: 20px 18px 0;
-}
 
-.values-heading h2 {
-  font-size: 22px;
-}
+
+      /* MOBILE MISSION */
+
+      .mission-section {
+        padding: 34px 18px 18px;
+      }
+
+      .mission-card {
+        grid-template-columns: 1fr;
+      }
+
+      .mission-content {
+        padding: 30px 24px;
+      }
+
+      .mission-card h2 {
+        font-size: 25px;
+      }
+
+      .mission-card p {
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      .mission-photo {
+        width: 100%;
+        height: 240px;
+        min-height: 0;
+        object-fit: cover;
+      }
+
+
+      /* MOBILE EXPLORE */
+
+      .main-section {
+        display: block;
+        padding: 30px 18px;
+      }
+
+      .section-title {
+        font-size: 22px;
+        margin-bottom: 14px;
+      }
+
+      .trip-pathways {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .pathway-card {
+        padding: 0;
+      }
+
+      .pathway-image {
+        height: 220px;
+      }
+
+      .pathway-content {
+        padding: 24px 22px;
+      }
+
+      .pathway-card h3 {
+        font-size: 22px;
+      }
+
+      .pathway-card p {
+        font-size: 13px;
+      }
+
+
+      /* MOBILE WHAT GUIDES US */
+
+      .values-heading {
+        padding: 20px 18px 0;
+      }
+
+      .values-heading h2 {
+        font-size: 22px;
+      }
+
       .values-strip {
         grid-template-columns: 1fr;
         gap: 12px;
@@ -959,181 +1131,176 @@ nav {
         min-width: 62px;
       }
 
-      .value h3 { font-size: 14px; }
-
-      .value p { font-size: 12px; }
-
-.mission-section {
-  padding: 48px 7% 18px;
-  background: transparent;
-}
-
-.mission-card {
-  padding: 28px 22px;
-}
-
-.mission-card h2 {
-  font-size: 25px;
-}
-
-.mission-card p {
-  font-size: 14px;
-  line-height: 1.6;
-}
-  
-      .main-section {
-        display: block;
-        padding: 30px 18px;
+      .value h3 {
+        font-size: 14px;
       }
 
-      .section-title {
-        font-size: 22px;
-        margin-bottom: 14px;
+      .value p {
+        font-size: 12px;
       }
-
-      .trip-pathways {
-        grid-template-columns: 1fr;
-        gap: 14px;
-      }
-
-      .pathway-card { padding: 22px; }
-
-      .pathway-card h3 { font-size: 22px; }
-
-      .pathway-card p { font-size: 13px; }
-
-      .get-involved {
-        margin-top: 16px;
-        padding: 22px;
-      }
-
-      .involve-item { margin: 14px 0; }
 
       footer {
         padding: 16px;
         font-size: 10px;
       }
+
     }
-    /* SMALL PHONES */
-@media (max-width: 390px) {
 
-  nav {
-    padding-left: 14px;
-    padding-right: 14px;
-  }
 
-  .logo img {
-    width: 150px;
-  }
+    /* ==============================
+       SMALL PHONES
+    ============================== */
 
-  .menu-toggle {
-    font-size: 27px;
-  }
+    @media (max-width: 390px) {
 
-  .hero {
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 28px;
-  }
+      nav {
+        padding-left: 14px;
+        padding-right: 14px;
+      }
 
-  .hero h1 {
-    font-size: 42px;
-    line-height: .9;
-    letter-spacing: -1.5px;
-  }
+      .logo img {
+        width: 150px;
+      }
 
-  .hero p {
-    font-size: 15px;
-    line-height: 1.4;
-  }
+      .menu-toggle {
+        font-size: 27px;
+      }
 
-  .value {
-    padding: 16px;
-    gap: 14px;
-  }
+      .hero {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 28px;
+      }
 
-  .value-icon {
-    width: 64px;
-    height: 64px;
-    min-width: 64px;
-  }
-}
+      .hero h1 {
+        font-size: 42px;
+        line-height: .9;
+        letter-spacing: -1.5px;
+      }
+
+      .hero p {
+        font-size: 15px;
+        line-height: 1.4;
+      }
+
+      .value {
+        padding: 16px;
+        gap: 14px;
+      }
+
+      .value-icon {
+        width: 64px;
+        height: 64px;
+        min-width: 64px;
+      }
+
+    }
+
   </style>
 </head>
+
+
 <body>
 
-  <!-- NAVIGATION -->
+
+  <!-- ==============================
+       NAVIGATION
+  ============================== -->
+
   <header>
+
     <nav>
+
       <a href="index.html" class="logo">
-        <img src="side-quest-logo.png" alt="Side Quest Expeditions">
+        <img
+          src="side-quest-logo.png"
+          alt="Side Quest Expeditions"
+        >
       </a>
 
-      <button class="menu-toggle" aria-label="Open menu">
-  ☰
-</button>
 
-<div class="nav-links">
-
-  <a href="about.html">
-    About
-  </a>
+      <button
+        class="menu-toggle"
+        aria-label="Open menu"
+      >
+        ☰
+      </button>
 
 
-  <div class="nav-dropdown">
+      <div class="nav-links">
 
-    <a
-  href="#"
-  class="dropdown-trigger"
-  aria-expanded="false"
->
-  Programs
-  <span class="dropdown-arrow">▾</span>
-</a>
-
-    <div class="dropdown-menu">
-
-  <a href="student-trips.html">
-    Student Expeditions
-  </a>
-
-  <a href="public-trips.html">
-    Public Adventures
-  </a>
-
-  <a href="custom-adventures.html">
-    Custom Programs
-  </a>
-
-</div>
-
-  </div>
+        <a href="about.html">
+          About
+        </a>
 
 
-  <a href="support.html">
-    Support Us
-  </a>
+        <div class="nav-dropdown">
 
-  <a href="contact.html">
-    Contact
-  </a>
+          <a
+            href="#"
+            class="dropdown-trigger"
+            aria-expanded="false"
+          >
+            Programs
+            <span class="dropdown-arrow">▾</span>
+          </a>
 
-  <a href="support.html" class="donate-btn">
-    Donate
-  </a>
 
-</div>
+          <div class="dropdown-menu">
+
+            <a href="student-trips.html">
+              Student Expeditions
+            </a>
+
+            <a href="public-trips.html">
+              Public Adventures
+            </a>
+
+            <a href="custom-adventures.html">
+              Custom Programs
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <a href="support.html">
+          Support Us
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
+        <a
+          href="support.html"
+          class="donate-btn"
+        >
+          Donate
+        </a>
+
+      </div>
+
     </nav>
+
   </header>
 
-  <!-- HERO -->
+
+
+  <!-- ==============================
+       HERO
+  ============================== -->
+
   <section class="hero">
+
     <div class="hero-content">
+
       <h1>
-  Adventure.<br>
-  Education.<br>
-  Belonging.
-</h1>
+        Adventure.<br>
+        Education.<br>
+        Belonging.
+      </h1>
 
       <p>
         We provide San Francisco public school students with
@@ -1141,161 +1308,375 @@ nav {
         leadership, and a deeper connection to the natural world.
       </p>
 
-      <a href="about.html" class="button">Learn More</a>
+      <a
+        href="about.html"
+        class="button"
+      >
+        Learn More
+      </a>
+
     </div>
+
   </section>
 
-  <!-- CONTINUOUS TOPOGRAPHIC BACKGROUND -->
+
+
+  <!-- ==============================
+       CONTINUOUS TOPOGRAPHIC BACKGROUND
+  ============================== -->
+
   <div class="topo-background">
-<!-- MISSION -->
-<section class="mission-section">
-  <div class="mission-card">
 
-    <div class="mission-label">
-      Our Mission
-    </div>
 
-    <h2>
-      Adventure With Purpose
-    </h2>
 
-    <p>
-      Side Quest Expeditions provides San Francisco public school students
-      with professionally led outdoor education designed to grow with them.
-      Through progressive cohort-based experiences, students build the skills,
-      confidence, judgment, community, and environmental stewardship needed
-      to explore the outdoors safely, responsibly, and with a lasting sense
-      of belonging.
-    </p>
+    <!-- ==============================
+         MISSION
+    ============================== -->
 
-  </div>
-</section>
+    <section class="mission-section">
 
-    <!-- EXPLORE SIDE QUEST + GET INVOLVED -->
-    <section class="main-section">
-      <div>
-        <h2 class="section-title">Explore Side Quest</h2>
+      <div class="mission-card">
 
-        <div class="trip-pathways">
-          <a href="student-trips.html" class="pathway-card">
-            <div class="pathway-content">
-              <div class="pathway-label">For Students</div>
-              <h3>Student Trips</h3>
-              <p>
-                Outdoor experiences designed for young people, from
-                camping on the California coast to backpacking in the
-                High Sierra, sea kayaking, and whitewater guide school.
-              </p>
-              <span>Explore Student Trips →</span>
-            </div>
-          </a>
+        <div class="mission-content">
 
-          <a href="public-trips.html" class="pathway-card">
-            <div class="pathway-content">
-              <div class="pathway-label">For Everyone</div>
-              <h3>Public Trips</h3>
-              <p>
-                Guided outdoor experiences for the public that explore
-                remarkable places while helping support Side Quest's
-                student programs.
-              </p>
-              <span>Explore Public Trips →</span>
-            </div>
-          </a>
-          <a href="custom-adventures.html" class="pathway-card">
-  <div class="pathway-content">
-    <div class="pathway-label">For Groups</div>
+          <div class="mission-label">
+            Our Mission
+          </div>
 
-    <h3>Custom Programs</h3>
+          <h2>
+            Adventure With Purpose
+          </h2>
 
-    <p>
-      Tailored outdoor and experiential programming for schools,
-      educators, youth organizations, teams, and companies. We work
-      with groups to build experiences around their goals, needs,
-      and available time.
-    </p>
+          <p>
+            Side Quest Expeditions provides San Francisco public school
+            students with professionally led outdoor education designed
+            to grow with them. Through progressive cohort-based experiences,
+            students build the skills, confidence, judgment, community,
+            and environmental stewardship needed to explore the outdoors
+            safely, responsibly, and with a lasting sense of belonging.
+          </p>
 
-    <span>Explore Custom Programs →</span>
-  </div>
-</a>
         </div>
+
+
+        <img
+          src="mission_homepage.jpg"
+          alt="Side Quest Expeditions outdoor education"
+          class="mission-photo"
+        >
+
       </div>
 
     </section>
- <!-- WHAT GUIDES US -->
+
+
+
+    <!-- ==============================
+         EXPLORE SIDE QUEST
+    ============================== -->
+
+    <section class="main-section">
+
+      <h2 class="section-title">
+        Explore Side Quest
+      </h2>
+
+
+      <div class="trip-pathways">
+
+
+        <!-- STUDENT EXPEDITIONS -->
+
+        <a
+          href="student-trips.html"
+          class="pathway-card"
+        >
+
+          <img
+            src="student_trips_homepage.jpg"
+            alt="Students participating in a Side Quest expedition"
+            class="pathway-image"
+          >
+
+          <div class="pathway-content">
+
+            <div class="pathway-label">
+              For Students
+            </div>
+
+            <h3>
+              Student Expeditions
+            </h3>
+
+            <p>
+              Progressive outdoor education for San Francisco public
+              school students, building skills, confidence, judgment,
+              and community through a shared cohort experience.
+            </p>
+
+            <span>
+              Explore Student Expeditions →
+            </span>
+
+          </div>
+
+        </a>
+
+
+
+        <!-- PUBLIC ADVENTURES -->
+
+        <a
+          href="public-trips.html"
+          class="pathway-card"
+        >
+
+          <img
+            src="public_trips_homepage.jpg"
+            alt="Side Quest public outdoor adventure"
+            class="pathway-image"
+          >
+
+          <div class="pathway-content">
+
+            <div class="pathway-label">
+              For Everyone
+            </div>
+
+            <h3>
+              Public Adventures
+            </h3>
+
+            <p>
+              Guided trips and outdoor courses open to the public,
+              with proceeds helping support Side Quest Student Expeditions.
+            </p>
+
+            <span>
+              Explore Public Adventures →
+            </span>
+
+          </div>
+
+        </a>
+
+
+
+        <!-- CUSTOM PROGRAMS -->
+
+        <a
+          href="custom-adventures.html"
+          class="pathway-card"
+        >
+
+          <img
+            src="custom_programs_homepage.JPG"
+            alt="Side Quest custom outdoor program"
+            class="pathway-image"
+          >
+
+          <div class="pathway-content">
+
+            <div class="pathway-label">
+              For Groups
+            </div>
+
+            <h3>
+              Custom Programs
+            </h3>
+
+            <p>
+              Tailored outdoor and experiential programs for schools,
+              youth organizations, teams, and companies—built around
+              your group's goals and needs.
+            </p>
+
+            <span>
+              Explore Custom Programs →
+            </span>
+
+          </div>
+
+        </a>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ==============================
+         WHAT GUIDES US
+    ============================== -->
+
     <div class="values-heading">
-  <h2>What Guides Us</h2>
-</div>
+
+      <h2>
+        What Guides Us
+      </h2>
+
+    </div>
+
+
     <section class="values-strip">
+
+
       <div class="value">
-        <img src="compass.png" alt="Compass" class="value-icon">
+
+        <img
+          src="compass.png"
+          alt="Compass"
+          class="value-icon"
+        >
+
         <div class="value-text">
-          <h3>Know Yourself</h3>
+
+          <h3>
+            Know Yourself
+          </h3>
+
           <p>
             We challenge students to step outside their comfort zones
             and discover their strengths and potential.
           </p>
+
         </div>
+
       </div>
 
+
+
       <div class="value">
-        <img src="campfire.png" alt="Campfire" class="value-icon">
+
+        <img
+          src="campfire.png"
+          alt="Campfire"
+          class="value-icon"
+        >
+
         <div class="value-text">
-          <h3>Know Each Other</h3>
+
+          <h3>
+            Know Each Other
+          </h3>
+
           <p>
             We build community through shared experiences, respect,
             teamwork, and time outdoors.
           </p>
+
         </div>
+
       </div>
 
+
+
       <div class="value">
-        <img src="tree.png" alt="Tree" class="value-icon">
+
+        <img
+          src="tree.png"
+          alt="Tree"
+          class="value-icon"
+        >
+
         <div class="value-text">
-          <h3>Know This Place</h3>
+
+          <h3>
+            Know This Place
+          </h3>
+
           <p>
             We cultivate a deeper connection to local and wild places
             and the stories they hold.
           </p>
+
         </div>
+
       </div>
+
+
     </section>
 
-    <!-- FOOTER -->
+
+
+    <!-- ==============================
+         FOOTER
+    ============================== -->
+
     <footer>
       © 2026 Side Quest Expeditions · San Francisco, California
     </footer>
 
+
   </div>
- <script>
-  const menuToggle = document.querySelector('.menu-toggle');
-  const navLinks = document.querySelector('.nav-links');
-  const programTrigger = document.querySelector('.dropdown-trigger');
-  const programDropdown = document.querySelector('.nav-dropdown');
 
-  /* OPEN / CLOSE MOBILE MENU */
-  menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
 
-    if (!navLinks.classList.contains('open')) {
-      programDropdown.classList.remove('mobile-open');
-      programTrigger.setAttribute('aria-expanded', 'false');
-    }
-  });
 
-  /* OPEN / CLOSE PROGRAMS ON MOBILE */
-  programTrigger.addEventListener('click', (event) => {
-    event.preventDefault();
+  <!-- ==============================
+       MOBILE NAVIGATION SCRIPT
+  ============================== -->
 
-    if (window.innerWidth <= 650) {
-      const isOpen = programDropdown.classList.toggle('mobile-open');
+  <script>
 
-      programTrigger.setAttribute(
-        'aria-expanded',
-        isOpen ? 'true' : 'false'
-      );
-    }
-  });
-</script>
+    const menuToggle =
+      document.querySelector('.menu-toggle');
+
+    const navLinks =
+      document.querySelector('.nav-links');
+
+    const programTrigger =
+      document.querySelector('.dropdown-trigger');
+
+    const programDropdown =
+      document.querySelector('.nav-dropdown');
+
+
+    /* OPEN / CLOSE MOBILE MENU */
+
+    menuToggle.addEventListener('click', () => {
+
+      navLinks.classList.toggle('open');
+
+      if (!navLinks.classList.contains('open')) {
+
+        programDropdown.classList.remove('mobile-open');
+
+        programTrigger.setAttribute(
+          'aria-expanded',
+          'false'
+        );
+
+      }
+
+    });
+
+
+    /* OPEN / CLOSE PROGRAMS ON MOBILE */
+
+    programTrigger.addEventListener(
+      'click',
+      (event) => {
+
+        event.preventDefault();
+
+        if (window.innerWidth <= 650) {
+
+          const isOpen =
+            programDropdown.classList.toggle('mobile-open');
+
+          programTrigger.setAttribute(
+            'aria-expanded',
+            isOpen ? 'true' : 'false'
+          );
+
+        }
+
+      }
+    );
+
+  </script>
+
+
 </body>
 </html>
