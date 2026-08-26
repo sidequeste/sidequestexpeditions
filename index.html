@@ -564,17 +564,25 @@
     }
 
     .value {
-      display: flex;
-      align-items: center;
-      gap: 18px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
 
-      padding: 18px 22px;
+  padding: 24px 28px;
 
-      background: rgba(245, 241, 232, .94);
+  background: radial-gradient(
+    ellipse at center,
+    rgba(245, 241, 232, .97) 0%,
+    rgba(245, 241, 232, .95) 50%,
+    rgba(245, 241, 232, .82) 68%,
+    rgba(245, 241, 232, .55) 80%,
+    rgba(245, 241, 232, .25) 90%,
+    rgba(245, 241, 232, 0) 100%
+  );
 
-      border: none;
-      border-radius: 4px;
-    }
+  border: none;
+  border-radius: 0;
+}
 
     .value-icon {
       width: 72px;
