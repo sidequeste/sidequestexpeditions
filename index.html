@@ -361,13 +361,12 @@
 }
 
 .mission-card {
-  width: 92%;
-  max-width: 1425px;
-  min-height: 480px;
+  width: 96%;
+  max-width: 1500px;
+  height: 470px;
   margin: 0 auto;
 
-  display: grid;
-  grid-template-columns: 1.15fr 1fr;
+  display: flex;
 
   background: rgba(245, 241, 232, .96);
   border-radius: 6px;
@@ -375,6 +374,7 @@
 }
 
 .mission-content {
+  flex: 1;
   padding: 48px;
   display: flex;
   flex-direction: column;
@@ -382,21 +382,17 @@
 }
 
 .mission-photo-wrap {
-  min-width: 0;
+  height: 100%;
+  flex: 0 0 auto;
   padding: 0;
-
-  display: flex;
-  align-items: stretch;
-  justify-content: flex-end;
-  overflow: hidden;
+  margin: 0;
 }
 
 .mission-photo {
   display: block;
-  width: auto;
   height: 100%;
-  max-width: none;
-  object-fit: contain;
+  width: auto;
+  margin: 0;
 }
 .mission-label {
   color: var(--green);
