@@ -363,11 +363,11 @@
 .mission-card {
   width: 85%;
   max-width: 1300px;
-  height: 420px;
+  min-height: 440px;
   margin: 0 auto;
 
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.15fr 1fr;
 
   background: rgba(245, 241, 232, .96);
   border-radius: 6px;
@@ -375,20 +375,28 @@
 }
 
 .mission-content {
-  padding: 44px 48px;
+  padding: 48px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.mission-photo {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: center;
-  display: block;
+.mission-photo-wrap {
+  min-width: 0;
+  padding: 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+.mission-photo {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 390px;
+}
 .mission-label {
   color: var(--green);
   text-transform: uppercase;
@@ -1358,11 +1366,15 @@
         </div>
 
 
-        <img
-          src="mission_homepage.jpg"
-          alt="Side Quest Expeditions outdoor education"
-          class="mission-photo"
-        >
+        <div class="mission-photo-wrap">
+
+  <img
+    src="mission_homepage.jpg"
+    alt="Side Quest Expeditions outdoor education"
+    class="mission-photo"
+  >
+
+</div>
 
       </div>
 
