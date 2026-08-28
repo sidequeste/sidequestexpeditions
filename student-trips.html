@@ -2,10 +2,18 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Student Expeditions | Side Quest Expeditions</title>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Student Expeditions | Side Quest Expeditions
+  </title>
+
 
   <style>
 
@@ -17,36 +25,47 @@
       --muted: #626a63;
     }
 
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
+
     html {
       scroll-behavior: smooth;
+
       width: 100%;
       max-width: 100%;
+
       overflow-x: hidden;
     }
 
+
     body {
       font-family: Arial, Helvetica, sans-serif;
+
       color: var(--text);
       background: #fff;
+
       line-height: 1.6;
 
       width: 100%;
       max-width: 100%;
+
       overflow-x: hidden;
 
       padding-top: 72px;
     }
 
+
     a {
       color: inherit;
+
       text-decoration: none;
     }
+
 
 
     /* =====================================================
@@ -55,6 +74,7 @@
 
     header {
       position: fixed;
+
       top: 0;
       left: 0;
 
@@ -66,6 +86,7 @@
       background: var(--cream);
     }
 
+
     nav {
       width: 100%;
       height: 72px;
@@ -73,25 +94,32 @@
       padding: 6px 4%;
 
       display: flex;
+
       align-items: center;
       justify-content: space-between;
 
       gap: 30px;
     }
 
+
     .logo {
       display: flex;
+
       align-items: center;
     }
+
 
     .logo img {
       width: 185px;
       height: auto;
+
       display: block;
     }
 
+
     .nav-links {
       display: flex;
+
       align-items: center;
 
       gap: 28px;
@@ -104,18 +132,24 @@
       color: #000;
     }
 
+
     .nav-links a {
       padding: 10px 0;
+
       white-space: nowrap;
+
       color: #000;
     }
+
 
     .nav-links a:hover {
       opacity: .6;
     }
 
+
     .nav-links .donate-btn {
       background: #000;
+
       color: #fff;
 
       padding: 10px 20px;
@@ -123,16 +157,21 @@
       border-radius: 4px;
     }
 
+
     .nav-links .donate-btn:hover {
       background: #222;
+
       color: #fff;
+
       opacity: 1;
     }
+
 
     .menu-toggle {
       display: none;
 
       background: none;
+
       border: none;
 
       color: #000;
@@ -144,6 +183,7 @@
     }
 
 
+
     /* =====================================================
        PROGRAMS DROPDOWN
        ===================================================== */
@@ -152,8 +192,10 @@
       position: relative;
 
       display: flex;
+
       align-items: center;
     }
+
 
     .nav-dropdown::after {
       content: "";
@@ -167,17 +209,21 @@
       height: 12px;
     }
 
+
     .dropdown-trigger {
       display: flex;
+
       align-items: center;
 
       gap: 6px;
     }
 
+
     .dropdown-arrow {
       font-size: 11px;
       line-height: 1;
     }
+
 
     .dropdown-menu {
       position: absolute;
@@ -199,6 +245,7 @@
 
       opacity: 0;
       visibility: hidden;
+
       pointer-events: none;
 
       transition:
@@ -207,6 +254,7 @@
 
       z-index: 2000;
     }
+
 
     .dropdown-menu a {
       display: block;
@@ -225,16 +273,21 @@
       white-space: nowrap;
     }
 
+
     .dropdown-menu a:hover {
       background: rgba(0,0,0,.06);
+
       opacity: 1;
     }
+
 
     .nav-dropdown:hover .dropdown-menu {
       opacity: 1;
       visibility: visible;
+
       pointer-events: auto;
     }
+
 
 
     /* =====================================================
@@ -250,6 +303,7 @@
       position: relative;
 
       display: flex;
+
       align-items: center;
       justify-content: flex-end;
 
@@ -276,6 +330,7 @@
       overflow: hidden;
     }
 
+
     .hero::after {
       content: "";
 
@@ -294,6 +349,7 @@
       pointer-events: none;
     }
 
+
     .hero-content {
       position: relative;
 
@@ -309,6 +365,7 @@
       transform: translate(25px, 40px);
     }
 
+
     .hero h1 {
       font-size: clamp(40px, 4.5vw, 64px);
 
@@ -321,6 +378,7 @@
       margin-bottom: 25px;
     }
 
+
     .hero p {
       font-size: 15px;
 
@@ -330,6 +388,7 @@
 
       margin-bottom: 22px;
     }
+
 
 
     /* =====================================================
@@ -345,6 +404,7 @@
     }
 
 
+
     /* =====================================================
        INTRO
        ===================================================== */
@@ -352,6 +412,7 @@
     .intro {
       padding: 60px 7%;
     }
+
 
     .intro-inner {
       max-width: 1000px;
@@ -364,6 +425,7 @@
 
       padding: 44px;
     }
+
 
     .section-label {
       color: var(--green);
@@ -378,6 +440,7 @@
       margin-bottom: 10px;
     }
 
+
     h2 {
       color: var(--green-dark);
 
@@ -390,6 +453,7 @@
       line-height: 1.1;
     }
 
+
     .intro p {
       font-size: 18px;
 
@@ -397,19 +461,22 @@
     }
 
 
+
     /* =====================================================
-       EXPEDITIONS
+       EXPEDITION PHASES
        ===================================================== */
 
     .trips {
       padding: 10px 7% 65px;
     }
 
+
     .trips-inner {
       max-width: 1100px;
 
       margin: auto;
     }
+
 
     .trip-card {
       display: grid;
@@ -425,11 +492,13 @@
       overflow: hidden;
     }
 
+
     .trip-image {
       min-height: 340px;
 
       overflow: hidden;
     }
+
 
     .trip-image img {
       width: 100%;
@@ -442,9 +511,20 @@
       display: block;
     }
 
+
+    /* Blank image area reserved for Point Reyes */
+
+    .trip-image-placeholder {
+      min-height: 340px;
+
+      background: rgba(32,59,40,.10);
+    }
+
+
     .trip-content {
       padding: 42px;
     }
+
 
     .trip-content h3 {
       color: var(--green-dark);
@@ -453,8 +533,11 @@
 
       font-size: 30px;
 
+      line-height: 1.1;
+
       margin-bottom: 8px;
     }
+
 
     .trip-meta {
       color: var(--green);
@@ -464,11 +547,13 @@
       margin-bottom: 20px;
     }
 
+
     .trip-content p {
       margin-bottom: 18px;
 
       font-size: 16px;
     }
+
 
     .trip-content h4 {
       text-transform: uppercase;
@@ -480,15 +565,18 @@
       margin-bottom: 8px;
     }
 
+
     .trip-content ul {
       padding-left: 20px;
 
       margin-bottom: 10px;
     }
 
+
     .trip-content li {
       margin-bottom: 6px;
     }
+
 
 
     /* =====================================================
@@ -500,6 +588,7 @@
 
       padding: 55px 7% 65px;
     }
+
 
     .cta-inner {
       max-width: 850px;
@@ -513,6 +602,7 @@
       padding: 44px;
     }
 
+
     .cta p {
       max-width: 700px;
 
@@ -521,10 +611,12 @@
       font-size: 18px;
     }
 
+
     .button {
       display: inline-block;
 
       background: #000;
+
       color: #fff;
 
       padding: 14px 28px;
@@ -538,9 +630,11 @@
       font-size: 13px;
     }
 
+
     .button:hover {
       background: #222;
     }
+
 
 
     /* =====================================================
@@ -559,14 +653,17 @@
       color: var(--text);
     }
 
+
     .footer-content {
       width: 100%;
+
       max-width: 1600px;
 
       margin: 0 auto;
 
       text-align: center;
     }
+
 
     .footer-name {
       margin-bottom: 8px;
@@ -577,17 +674,22 @@
       font-weight: 700;
 
       text-transform: uppercase;
+
       letter-spacing: 1px;
     }
 
+
     .footer-details {
       font-size: 12px;
+
       line-height: 1.6;
     }
+
 
     .footer-divider {
       margin: 0 7px;
     }
+
 
     .footer-copyright {
       margin-top: 8px;
@@ -596,6 +698,7 @@
 
       opacity: .7;
     }
+
 
 
     /* =====================================================
@@ -612,9 +715,11 @@
         gap: 18px;
       }
 
+
       .logo img {
         width: 170px;
       }
+
 
       .nav-links {
         gap: 17px;
@@ -622,13 +727,16 @@
         font-size: 11px;
       }
 
+
       .nav-links a {
         white-space: nowrap;
       }
 
+
       .nav-links .donate-btn {
         padding: 9px 16px;
       }
+
 
       .hero {
         height: calc(100vh - 72px);
@@ -637,6 +745,7 @@
 
         padding: 90px 4% 35px;
       }
+
 
       .hero-content {
         max-width: 380px;
@@ -647,6 +756,7 @@
         transform: translate(20px, 45px);
       }
 
+
       .hero h1 {
         font-size: clamp(38px,4.2vw,48px);
 
@@ -656,6 +766,7 @@
 
         margin-bottom: 18px;
       }
+
 
       .hero p {
         font-size: 13px;
@@ -668,6 +779,7 @@
       }
 
     }
+
 
 
     /* =====================================================
@@ -690,11 +802,13 @@
         gap: 18px;
       }
 
+
       .logo img {
         width: 150px;
 
         max-width: none;
       }
+
 
       .nav-links {
         flex: 1;
@@ -706,21 +820,23 @@
         font-size: 10px;
       }
 
+
       .nav-links a {
         white-space: nowrap;
 
         padding: 8px 0;
       }
 
+
       .nav-links .donate-btn {
         padding: 9px 14px;
       }
+
 
       .hero {
         width: 100%;
 
         height: calc(100vh - 72px);
-
         min-height: 0;
 
         aspect-ratio: auto;
@@ -729,6 +845,7 @@
 
         align-items: center;
       }
+
 
       .hero-content {
         width: 42%;
@@ -741,6 +858,7 @@
         transform: none;
       }
 
+
       .hero h1 {
         font-size: clamp(36px,5vw,50px);
 
@@ -751,6 +869,7 @@
         margin-bottom: 18px;
       }
 
+
       .hero p {
         font-size: 13px;
 
@@ -759,15 +878,23 @@
         margin-bottom: 18px;
       }
 
+
       .trip-card {
         grid-template-columns: 1fr;
       }
+
 
       .trip-image {
         min-height: 300px;
       }
 
+
+      .trip-image-placeholder {
+        min-height: 300px;
+      }
+
     }
+
 
 
     /* =====================================================
@@ -779,6 +906,7 @@
       body {
         padding-top: 68px;
       }
+
 
       header {
         position: fixed;
@@ -794,6 +922,7 @@
         z-index: 1000;
       }
 
+
       nav {
         height: 68px;
         min-height: 0;
@@ -806,9 +935,11 @@
         justify-content: space-between;
       }
 
+
       .logo {
         width: auto;
       }
+
 
       .logo img {
         width: 155px;
@@ -818,19 +949,23 @@
         height: auto;
       }
 
+
       .menu-toggle {
         display: block;
 
         background: none;
+
         border: none;
 
         color: #000;
 
         font-size: 30px;
+
         line-height: 1;
 
         cursor: pointer;
       }
+
 
 
       /* MOBILE NAV */
@@ -858,9 +993,11 @@
         box-shadow: 0 8px 15px rgba(0,0,0,.12);
       }
 
+
       .nav-links.open {
         display: flex;
       }
+
 
       .nav-links a {
         color: #000;
@@ -871,6 +1008,7 @@
 
         border-bottom: 1px solid rgba(0,0,0,.08);
       }
+
 
       .nav-links .donate-btn {
         background: #000;
@@ -887,6 +1025,7 @@
       }
 
 
+
       /* MOBILE PROGRAMS DROPDOWN */
 
       .nav-dropdown {
@@ -895,9 +1034,11 @@
         width: 100%;
       }
 
+
       .nav-dropdown::after {
         display: none;
       }
+
 
       .dropdown-trigger {
         width: 100%;
@@ -908,9 +1049,11 @@
         justify-content: space-between;
       }
 
+
       .dropdown-arrow {
         transition: transform .2s ease;
       }
+
 
       .dropdown-menu {
         position: static;
@@ -939,13 +1082,16 @@
         pointer-events: auto;
       }
 
+
       .nav-dropdown.mobile-open .dropdown-menu {
         display: block;
       }
 
+
       .nav-dropdown.mobile-open .dropdown-arrow {
         transform: rotate(180deg);
       }
+
 
       .dropdown-menu a {
         display: block;
@@ -965,13 +1111,13 @@
       }
 
 
+
       /* MOBILE HERO */
 
       .hero {
         width: 100%;
 
         height: calc(100svh - 68px);
-
         min-height: 0;
 
         aspect-ratio: auto;
@@ -992,6 +1138,7 @@
         background-position: 42% center;
       }
 
+
       .hero::before {
         content: "";
 
@@ -1009,6 +1156,7 @@
 
         z-index: 1;
       }
+
 
       .hero-content {
         position: relative;
@@ -1028,6 +1176,7 @@
         text-align: left;
       }
 
+
       .hero h1 {
         font-size: clamp(40px,12vw,54px);
 
@@ -1040,6 +1189,7 @@
         max-width: 340px;
       }
 
+
       .hero p {
         font-size: 16px;
 
@@ -1051,6 +1201,7 @@
       }
 
 
+
       /* MOBILE CONTENT */
 
       .topo-background {
@@ -1059,9 +1210,11 @@
         background-position: center top;
       }
 
+
       .intro {
         padding: 18px;
       }
+
 
       .intro-inner {
         width: 100%;
@@ -1071,23 +1224,28 @@
         padding: 26px 22px;
       }
 
+
       h2 {
         font-size: 27px;
       }
+
 
       .intro p {
         font-size: 15px;
       }
 
+
       .trips {
         padding: 10px 18px 30px;
       }
+
 
       .trips-inner {
         width: 100%;
 
         max-width: 100%;
       }
+
 
       .trip-card {
         width: 100%;
@@ -1099,27 +1257,34 @@
         margin-bottom: 18px;
       }
 
+
       .trip-image,
-      .trip-image img {
+      .trip-image img,
+      .trip-image-placeholder {
         min-height: 240px;
       }
+
 
       .trip-content {
         padding: 24px 22px;
       }
 
+
       .trip-content h3 {
         font-size: 24px;
       }
+
 
       .trip-content p,
       .trip-content li {
         font-size: 14px;
       }
 
+
       .cta {
         padding: 10px 18px 28px;
       }
+
 
       .cta-inner {
         width: 100%;
@@ -1129,15 +1294,18 @@
         padding: 28px 22px;
       }
 
+
       .site-footer {
         margin-top: 25px;
 
         padding: 28px 22px;
       }
 
+
       .footer-name {
         font-size: 15px;
       }
+
 
       .footer-details {
         max-width: 320px;
@@ -1147,15 +1315,18 @@
         font-size: 11px;
       }
 
+
       .footer-divider {
         margin: 0 4px;
       }
+
 
       .footer-copyright {
         font-size: 10px;
       }
 
     }
+
 
 
     /* =====================================================
@@ -1170,13 +1341,16 @@
         padding-right: 14px;
       }
 
+
       .logo img {
         width: 150px;
       }
 
+
       .menu-toggle {
         font-size: 27px;
       }
+
 
       .hero {
         padding-left: 20px;
@@ -1186,6 +1360,7 @@
         padding-bottom: 28px;
       }
 
+
       .hero h1 {
         font-size: 40px;
 
@@ -1193,6 +1368,7 @@
 
         letter-spacing: -1.5px;
       }
+
 
       .hero p {
         font-size: 15px;
@@ -1207,6 +1383,7 @@
 </head>
 
 
+
 <body>
 
 
@@ -1217,6 +1394,7 @@
   <header>
 
     <nav>
+
 
       <a
         href="index.html"
@@ -1231,12 +1409,14 @@
       </a>
 
 
+
       <button
         class="menu-toggle"
         aria-label="Open menu"
       >
         ☰
       </button>
+
 
 
       <div class="nav-links">
@@ -1247,6 +1427,7 @@
         </a>
 
 
+
         <div class="nav-dropdown">
 
           <a
@@ -1254,6 +1435,7 @@
             class="dropdown-trigger"
             aria-expanded="false"
           >
+
             Programs
 
             <span class="dropdown-arrow">
@@ -1282,14 +1464,17 @@
         </div>
 
 
+
         <a href="support.html">
           Support Us
         </a>
 
 
+
         <a href="contact.html">
           Contact
         </a>
+
 
 
         <a
@@ -1308,6 +1493,7 @@
 
 
 
+
   <!-- ===================================================
        HERO
        =================================================== -->
@@ -1316,6 +1502,7 @@
 
     <div class="hero-content">
 
+
       <h1>
         Student<br>
         Expeditions
@@ -1323,14 +1510,17 @@
 
 
       <p>
-        Side Quest Expeditions offers a range of outdoor
-        programs designed to give students meaningful,
-        hands-on experiences in wild and adventurous places.
+        The inaugural Side Quest Student Expedition launches
+        Summer 2027: eight program days spread across approximately
+        one month, progressing from local day hikes to base camp
+        and a culminating backpacking expedition.
       </p>
+
 
     </div>
 
   </section>
+
 
 
 
@@ -1341,7 +1531,10 @@
   <div class="topo-background">
 
 
-    <!-- INTRO -->
+
+    <!-- =================================================
+         INTRO
+         ================================================= -->
 
     <section class="intro">
 
@@ -1349,21 +1542,32 @@
 
 
         <div class="section-label">
-          Explore With Us
+          Inaugural Student Expedition · Summer 2027
         </div>
 
 
         <h2>
-          Build the foundation. Find your path.
+          One Cohort. Three Phases. One Shared Expedition.
         </h2>
 
 
         <p>
-          Our student expeditions are designed to be flexible. Each can be
-          experienced as a stand-alone course or combined into progressive
-          programming for a returning cohort—building a foundation of
-          backcountry skills and outdoor leadership before developing into
-          more specialized outdoor skills.
+          Our inaugural Student Expedition will bring 12 students
+          together for eight program days spread across approximately
+          one month. Rather than a collection of separate trips, the
+          experience is designed as one progressive journey—beginning
+          close to home, building outdoor skills step by step, and
+          culminating in a three-day, two-night backpacking expedition
+          at Point Reyes.
+        </p>
+
+
+        <p style="margin-top: 18px;">
+          Our goal is to fully fund the inaugural cohort so all 12
+          students can participate at no cost. Each phase intentionally
+          prepares students for what comes next while building
+          relationships, confidence, judgment, practical outdoor skills,
+          and leadership along the way.
         </p>
 
 
@@ -1373,8 +1577,9 @@
 
 
 
+
     <!-- =================================================
-         STUDENT EXPEDITIONS
+         2027 STUDENT EXPEDITION
          ================================================= -->
 
     <section class="trips">
@@ -1382,7 +1587,10 @@
       <div class="trips-inner">
 
 
-        <!-- KIRBY COVE -->
+
+        <!-- =================================================
+             PHASE 1
+             ================================================= -->
 
         <div class="trip-card">
 
@@ -1390,60 +1598,69 @@
           <div class="trip-image">
 
             <img
-              src="kerbycove.jpg"
-              alt="Kirby Cove Basecamp"
+              src="muirwoods.jpg"
+              alt="Muir Woods cohort hike"
             >
 
           </div>
+
 
 
           <div class="trip-content">
 
 
             <h3>
-              Kirby Cove Basecamp
+              Phase 1 — Build The Cohort
             </h3>
 
 
             <div class="trip-meta">
-              Marin Headlands, California
+              Lands End + Muir Woods
             </div>
 
 
             <p>
-              A local overnight experience designed to
-              introduce students to camping, outdoor living,
-              and exploration in one of the Bay Area's most
-              remarkable coastal landscapes.
+              The experience begins close to home with a program
+              introduction, icebreakers, group expectations, and a
+              half-day hike at Lands End. Students meet their instructors,
+              begin getting to know one another, and establish the
+              foundation for the experiences ahead.
+            </p>
+
+
+            <p>
+              The cohort then comes back together for a full-day hike
+              and team-building experience in Muir Woods focused on
+              communication, cooperation, group problem-solving, and
+              becoming comfortable traveling together outdoors.
             </p>
 
 
             <h4>
-              Students may explore:
+              Focus:
             </h4>
 
 
             <ul>
 
               <li>
-                Camp setup and outdoor living skills
+                Community and relationship building
               </li>
 
               <li>
-                Hiking and coastal exploration
+                Communication and teamwork
               </li>
 
               <li>
-                Teamwork and community building
+                Group problem-solving
               </li>
 
               <li>
-                Leave No Trace principles
+                Hiking and outdoor foundations
               </li>
 
               <li>
-                Natural and cultural history of the
-                Marin Headlands
+                Preparing for the experiences ahead
               </li>
 
             </ul>
@@ -1455,7 +1672,10 @@
 
 
 
-        <!-- HIGH SIERRA -->
+
+        <!-- =================================================
+             PHASE 2
+             ================================================= -->
 
         <div class="trip-card">
 
@@ -1463,44 +1683,154 @@
           <div class="trip-image">
 
             <img
-              src="highsierra.jpg"
-              alt="High Sierra Backpacking"
+              src="kerbycove.jpg"
+              alt="Kirby Cove base camp"
             >
 
           </div>
+
 
 
           <div class="trip-content">
 
 
             <h3>
-              High Sierra Backpacking
+              Phase 2 — Build The Skills
             </h3>
 
 
             <div class="trip-meta">
-              Sierra Nevada, California
+              Kirby Cove · Marin Headlands
             </div>
 
 
             <p>
-              A multi-day wilderness experience that gives
-              students the opportunity to travel through the
-              Sierra Nevada while learning the skills needed
-              to live and travel responsibly in the
-              backcountry.
+              The cohort progresses to a base-camp experience at
+              Kirby Cove. With a supported campsite serving as the
+              classroom, students begin learning and practicing the
+              outdoor systems they will rely on during the culminating
+              backpacking expedition.
+            </p>
+
+
+            <p>
+              Students take increasing responsibility for camp life
+              while developing the skills needed to organize gear,
+              establish camp, prepare meals outdoors, navigate, travel
+              responsibly, make decisions as a group, and care for
+              themselves and one another outside.
             </p>
 
 
             <h4>
-              Students may explore:
+              Students Will Practice:
             </h4>
 
 
             <ul>
 
               <li>
-                Backpacking and wilderness travel
+                Camp setup and outdoor living
+              </li>
+
+              <li>
+                Packing and gear organization
+              </li>
+
+              <li>
+                Outdoor cooking and camp systems
+              </li>
+
+              <li>
+                Navigation and route awareness
+              </li>
+
+              <li>
+                Leave No Trace practices
+              </li>
+
+              <li>
+                Risk management and group decision-making
+              </li>
+
+            </ul>
+
+
+          </div>
+
+        </div>
+
+
+
+
+        <!-- =================================================
+             PHASE 3
+             ================================================= -->
+
+        <div class="trip-card">
+
+
+          <!-- =================================================
+               POINT REYES IMAGE PLACEHOLDER
+
+               When you find the Point Reyes image, replace the
+               empty div below with:
+
+               <div class="trip-image">
+                 <img
+                   src="YOUR-POINT-REYES-IMAGE.jpg"
+                   alt="Point Reyes backpacking expedition"
+                 >
+               </div>
+
+               ================================================= -->
+
+          <div
+            class="trip-image trip-image-placeholder"
+            aria-label="Point Reyes expedition image placeholder"
+          ></div>
+
+
+
+          <div class="trip-content">
+
+
+            <h3>
+              Phase 3 — The Expedition
+            </h3>
+
+
+            <div class="trip-meta">
+              Point Reyes · 3 Days / 2 Nights
+            </div>
+
+
+            <p>
+              The experience culminates in a three-day, two-night
+              backpacking expedition at Point Reyes. Students carry
+              what they need, travel together as a team, establish
+              camp, prepare meals, and put the skills and systems
+              they have developed throughout the program into practice.
+            </p>
+
+
+            <p>
+              Instructors continue to provide professional supervision
+              and support while creating opportunities for students
+              to take greater ownership of responsibilities, decisions,
+              and leadership within the group.
+            </p>
+
+
+            <h4>
+              Students Will Put Into Practice:
+            </h4>
+
+
+            <ul>
+
+              <li>
+                Backpacking and backcountry travel
               </li>
 
               <li>
@@ -1508,7 +1838,7 @@
               </li>
 
               <li>
-                Backcountry cooking and campcraft
+                Campcraft and backcountry cooking
               </li>
 
               <li>
@@ -1516,7 +1846,7 @@
               </li>
 
               <li>
-                Resilience, independence, and teamwork
+                Resilience and teamwork
               </li>
 
               <li>
@@ -1532,70 +1862,60 @@
 
 
 
-        <!-- MORRO BAY -->
+
+        <!-- =================================================
+             FUTURE PROGRESSION
+             ================================================= -->
 
         <div class="trip-card">
 
 
-          <div class="trip-image">
-
-            <img
-              src="morrobay.jpg"
-              alt="Morro Bay Sea Kayaking"
-            >
-
-          </div>
+          <div
+            class="trip-content"
+            style="grid-column: 1 / -1;"
+          >
 
 
-          <div class="trip-content">
-
-
-            <h3>
-              Morro Bay Sea Kayaking
-            </h3>
-
-
-            <div class="trip-meta">
-              Morro Bay, California
+            <div class="section-label">
+              Beyond Summer 2027
             </div>
 
 
+            <h3>
+              An Experience That Can Grow With Students
+            </h3>
+
+
             <p>
-              A coastal paddling experience that introduces
-              students to sea kayaking while exploring the
-              ecology and unique marine environment of
-              Morro Bay.
+              The inaugural expedition is designed to be the beginning
+              of a longer relationship with students, not the end of one.
+              Our long-term vision is to invite members of the cohort back
+              for new experiences throughout high school.
+            </p>
+
+
+            <p>
+              As students grow, future expeditions can introduce new
+              environments, greater challenges, deeper technical skills,
+              and increasing opportunities for independence and leadership.
+              For students who choose to continue through the program,
+              that progression can culminate in a senior Apex Experience
+              that brings together the skills, judgment, confidence,
+              and relationships developed along the way.
             </p>
 
 
             <h4>
-              Students may explore:
+              Returning Is An Opportunity, Not A Requirement.
             </h4>
 
 
-            <ul>
-
-              <li>
-                Sea kayak paddling techniques
-              </li>
-
-              <li>
-                Boat handling and water safety
-              </li>
-
-              <li>
-                Navigation and weather awareness
-              </li>
-
-              <li>
-                Marine and estuary ecology
-              </li>
-
-              <li>
-                Teamwork and communication on the water
-              </li>
-
-            </ul>
+            <p>
+              Students and families participating in the inaugural
+              expedition are only committing to the 2027 program.
+              Future Side Quest experiences will be offered separately
+              as opportunities for students who want to return.
+            </p>
 
 
           </div>
@@ -1609,6 +1929,7 @@
 
 
 
+
     <!-- =================================================
          CTA
          ================================================= -->
@@ -1619,19 +1940,20 @@
 
 
         <div class="section-label">
-          Student Expeditions
+          Inaugural Cohort · Summer 2027
         </div>
 
 
         <h2>
-          Interested In A Student Expedition?
+          Interested In The 2027 Student Expedition?
         </h2>
 
 
         <p>
-          We are currently developing upcoming Side Quest
-          Expeditions student programs and school partnerships.
-          Contact us to learn more about future opportunities.
+          We are currently building the funding, partnerships, and
+          program support needed to fully fund our inaugural cohort
+          of 12 students. Students, families, educators, donors,
+          and community partners are invited to contact us to learn more.
         </p>
 
 
@@ -1649,6 +1971,7 @@
 
 
 
+
     <!-- =================================================
          FOOTER
          ================================================= -->
@@ -1657,21 +1980,35 @@
 
       <div class="footer-content">
 
+
         <div class="footer-name">
           Side Quest Expeditions
         </div>
 
+
         <div class="footer-details">
+
           California Nonprofit Public Benefit Corporation
-          <span class="footer-divider">·</span>
+
+          <span class="footer-divider">
+            ·
+          </span>
+
           San Francisco, California
-          <span class="footer-divider">·</span>
+
+          <span class="footer-divider">
+            ·
+          </span>
+
           EIN: 41-2872525
+
         </div>
+
 
         <div class="footer-copyright">
           © 2026 Side Quest Expeditions
         </div>
+
 
       </div>
 
@@ -1679,6 +2016,7 @@
 
 
   </div>
+
 
 
 
@@ -1691,14 +2029,18 @@
     const menuToggle =
       document.querySelector('.menu-toggle');
 
+
     const navLinks =
       document.querySelector('.nav-links');
+
 
     const programTrigger =
       document.querySelector('.dropdown-trigger');
 
+
     const programDropdown =
       document.querySelector('.nav-dropdown');
+
 
 
     /* OPEN / CLOSE MOBILE MENU */
@@ -1707,9 +2049,11 @@
 
       navLinks.classList.toggle('open');
 
+
       if (!navLinks.classList.contains('open')) {
 
         programDropdown.classList.remove('mobile-open');
+
 
         programTrigger.setAttribute(
           'aria-expanded',
@@ -1721,16 +2065,19 @@
     });
 
 
+
     /* OPEN / CLOSE PROGRAMS ON MOBILE */
 
     programTrigger.addEventListener('click', (event) => {
 
       event.preventDefault();
 
+
       if (window.innerWidth <= 650) {
 
         const isOpen =
           programDropdown.classList.toggle('mobile-open');
+
 
         programTrigger.setAttribute(
           'aria-expanded',
