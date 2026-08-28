@@ -547,16 +547,54 @@
        FOOTER
        ===================================================== */
 
-    footer {
-      background: transparent;
+    .site-footer {
+      width: 100%;
 
-      color: #111;
+      margin-top: 35px;
+
+      padding: 34px 7% 30px;
+
+      background: var(--cream);
+
+      color: var(--text);
+    }
+
+    .footer-content {
+      width: 100%;
+      max-width: 1600px;
+
+      margin: 0 auto;
 
       text-align: center;
+    }
 
-      padding: 28px 22px;
+    .footer-name {
+      margin-bottom: 8px;
 
+      color: var(--green-dark);
+
+      font-size: 17px;
+      font-weight: 700;
+
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .footer-details {
       font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .footer-divider {
+      margin: 0 7px;
+    }
+
+    .footer-copyright {
+      margin-top: 8px;
+
+      font-size: 11px;
+
+      opacity: .7;
     }
 
 
@@ -1091,9 +1129,29 @@
         padding: 28px 22px;
       }
 
-      footer {
-        padding: 16px;
+      .site-footer {
+        margin-top: 25px;
 
+        padding: 28px 22px;
+      }
+
+      .footer-name {
+        font-size: 15px;
+      }
+
+      .footer-details {
+        max-width: 320px;
+
+        margin: 0 auto;
+
+        font-size: 11px;
+      }
+
+      .footer-divider {
+        margin: 0 4px;
+      }
+
+      .footer-copyright {
         font-size: 10px;
       }
 
@@ -1207,23 +1265,19 @@
 
           <div class="dropdown-menu">
 
-  <a href="student-trips.html">
-    Student Expeditions
-  </a>
+            <a href="student-trips.html">
+              Student Expeditions
+            </a>
 
-<a href="whitewater-guide-school.html">
-    Whitewater Guide School
-  </a>
-            
-  <a href="public-trips.html">
-    Local Tours
-  </a>
+            <a href="public-trips.html">
+              Public Adventures
+            </a>
 
-  <a href="custom-adventures.html">
-    Custom Adventures
-  </a>
+            <a href="custom-adventures.html">
+              Custom Programs
+            </a>
 
-</div>
+          </div>
 
         </div>
 
@@ -1305,12 +1359,12 @@
 
 
         <p>
-  Our student expeditions are designed to be flexible. Each can be
-  experienced as a stand-alone course or combined into progressive
-  programming for a returning cohort—building a foundation of
-  backcountry skills and outdoor leadership before developing into
-  more specialized outdoor skills.
-</p>
+          Our student expeditions are designed to be flexible. Each can be
+          experienced as a stand-alone course or combined into progressive
+          programming for a returning cohort—building a foundation of
+          backcountry skills and outdoor leadership before developing into
+          more specialized outdoor skills.
+        </p>
 
 
       </div>
@@ -1549,10 +1603,6 @@
         </div>
 
 
-
-        
-
-
       </div>
 
     </section>
@@ -1599,10 +1649,32 @@
 
 
 
-    <!-- FOOTER -->
+    <!-- =================================================
+         FOOTER
+         ================================================= -->
 
-    <footer>
-      © 2026 Side Quest Expeditions · San Francisco, California
+    <footer class="site-footer">
+
+      <div class="footer-content">
+
+        <div class="footer-name">
+          Side Quest Expeditions
+        </div>
+
+        <div class="footer-details">
+          California Nonprofit Public Benefit Corporation
+          <span class="footer-divider">·</span>
+          San Francisco, California
+          <span class="footer-divider">·</span>
+          EIN: 41-2872525
+        </div>
+
+        <div class="footer-copyright">
+          © 2026 Side Quest Expeditions
+        </div>
+
+      </div>
+
     </footer>
 
 
