@@ -2,12 +2,22 @@
 <html lang="en">
 
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <title>About | Side Quest Expeditions</title>
 
+
   <style>
+
+    /* ========================================
+       SITE VARIABLES
+    ======================================== */
 
     :root {
       --green-dark: #203b28;
@@ -17,6 +27,11 @@
       --muted: #626a63;
     }
 
+
+    /* ========================================
+       RESET
+    ======================================== */
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -24,261 +39,347 @@
     }
 
     html {
-  scroll-behavior: smooth;
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
-}
+      width: 100%;
+      max-width: 100%;
+
+      overflow-x: hidden;
+
+      scroll-behavior: smooth;
+    }
 
     body {
-  font-family: Arial, Helvetica, sans-serif;
-  color: var(--text);
-  background: #fff;
-  line-height: 1.6;
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
-  padding-top: 72px;
-}
+      width: 100%;
+      max-width: 100%;
+
+      padding-top: 72px;
+
+      overflow-x: hidden;
+
+      color: var(--text);
+      background: #fff;
+
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
     a {
       color: inherit;
       text-decoration: none;
     }
 
 
-    /* NAVIGATION */
+    /* ========================================
+       NAVIGATION
+    ======================================== */
 
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 72px;
-  z-index: 1000;
-  background: var(--cream);
-}
+    header {
+      position: fixed;
 
-nav {
-  width: 100%;
-  height: 72px;
-  padding: 6px 4%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 30px;
-}
+      top: 0;
+      left: 0;
 
-.logo {
-  display: flex;
-  align-items: center;
-}
+      z-index: 1000;
 
-.logo img {
-  width: 185px;
-  height: auto;
-  display: block;
-}
+      width: 100%;
+      height: 72px;
 
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 28px;
-  font-size: 13px;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: #000;
-}
+      background: var(--cream);
+    }
 
-.nav-links a {
-  padding: 10px 0;
-  white-space: nowrap;
-  color: #000;
-}
+    nav {
+      width: 100%;
+      height: 72px;
 
-.nav-links a:hover {
-  opacity: .6;
-}
+      padding: 6px 4%;
 
-.nav-links .donate-btn {
-  background: #000;
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 4px;
-}
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
 
-.nav-links .donate-btn:hover {
-  background: #222;
-  color: #fff;
-  opacity: 1;
-}
+      gap: 30px;
+    }
 
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  color: #000;
-  font-size: 30px;
-  line-height: 1;
-  cursor: pointer;
-}
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      display: block;
+
+      width: 185px;
+      height: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+
+      gap: 28px;
+
+      color: #000;
+
+      font-size: 13px;
+      font-weight: 700;
+
+      text-transform: uppercase;
+    }
+
+    .nav-links a {
+      padding: 10px 0;
+
+      color: #000;
+
+      white-space: nowrap;
+    }
+
+    .nav-links a:hover {
+      opacity: .6;
+    }
+
+    .nav-links .donate-btn {
+      padding: 10px 20px;
+
+      color: #fff;
+      background: #000;
+
+      border-radius: 4px;
+    }
+
+    .nav-links .donate-btn:hover {
+      color: #fff;
+      background: #222;
+
+      opacity: 1;
+    }
+
+    .menu-toggle {
+      display: none;
+
+      color: #000;
+      background: none;
+
+      border: none;
+
+      font-size: 30px;
+      line-height: 1;
+
+      cursor: pointer;
+    }
 
 
-/* PROGRAMS DROPDOWN */
+    /* ========================================
+       PROGRAMS DROPDOWN
+    ======================================== */
 
-.nav-dropdown {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
+    .nav-dropdown {
+      position: relative;
 
-.nav-dropdown::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: -10px;
-  width: calc(100% + 20px);
-  height: 12px;
-}
+      display: flex;
+      align-items: center;
+    }
 
-.dropdown-trigger {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
+    .nav-dropdown::after {
+      content: "";
 
-.dropdown-arrow {
-  font-size: 11px;
-  line-height: 1;
-}
+      position: absolute;
 
-.dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
+      top: 100%;
+      left: -10px;
 
-  min-width: 230px;
+      width: calc(100% + 20px);
+      height: 12px;
+    }
 
-  background: var(--cream);
-  border-radius: 4px;
+    .dropdown-trigger {
+      display: flex;
+      align-items: center;
 
-  padding: 8px 0;
+      gap: 6px;
+    }
 
-  box-shadow: 0 8px 24px rgba(0,0,0,.16);
+    .dropdown-arrow {
+      font-size: 11px;
+      line-height: 1;
+    }
 
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
+    .dropdown-menu {
+      position: absolute;
 
-  transition:
-    opacity .15s ease,
-    visibility .15s ease;
+      top: 100%;
+      left: 50%;
 
-  z-index: 2000;
-}
+      z-index: 2000;
 
-.dropdown-menu a {
-  display: block;
-  width: 100%;
-  padding: 11px 18px;
+      min-width: 230px;
 
-  color: #000;
-  font-size: 12px;
-  font-weight: 700;
-  text-transform: uppercase;
+      padding: 8px 0;
 
-  white-space: nowrap;
-}
+      transform: translateX(-50%);
 
-.dropdown-menu a:hover {
-  background: rgba(0,0,0,.06);
-  opacity: 1;
-}
+      background: var(--cream);
 
-.nav-dropdown:hover .dropdown-menu {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-}
+      border-radius: 4px;
 
-/* ABOUT HERO */
+      box-shadow:
+        0 8px 24px
+        rgba(0, 0, 0, .16);
 
-.about-hero {
-  height: calc(100vh - 72px);
-  min-height: 0;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding: 40px 5%;
-  color: white;
-  overflow: hidden;
-}
+      opacity: 0;
+      visibility: hidden;
+
+      pointer-events: none;
+
+      transition:
+        opacity .15s ease,
+        visibility .15s ease;
+    }
+
+    .dropdown-menu a {
+      display: block;
+
+      width: 100%;
+
+      padding: 11px 18px;
+
+      color: #000;
+
+      font-size: 12px;
+      font-weight: 700;
+
+      text-transform: uppercase;
+
+      white-space: nowrap;
+    }
+
+    .dropdown-menu a:hover {
+      background: rgba(0, 0, 0, .06);
+
+      opacity: 1;
+    }
+
+    .nav-dropdown:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+
+      pointer-events: auto;
+    }
+
+
+    /* ========================================
+       ABOUT HERO
+    ======================================== */
+
+    .about-hero {
+      position: relative;
+
+      width: 100%;
+      height: calc(100vh - 72px);
+      min-height: 0;
+
+      padding: 40px 5%;
+
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      color: #fff;
+
+      overflow: hidden;
+    }
+
     .about-hero-picture {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  display: block;
-  z-index: 0;
-}
-    
-.about-hero-bg {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center center;
-  display: block;
-}
-    
-.about-hero::after {
-  content: "";
-  position: absolute;
-  left: -5%;
-  right: -5%;
-  bottom: -70px;
-  height: 170px;
-  background: rgba(255,255,255,.035);
-  transform: rotate(-2deg);
-  pointer-events: none;
-}
+      position: absolute;
 
-.about-hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 470px;
-  text-align: left;
-  margin-left: auto;
-  margin-right: -1%;
-  transform: translateY(-10px);
-}
+      inset: 0;
 
-.about-hero h1 {
-  font-size: clamp(40px, 4.5vw, 64px);
-  line-height: .92;
-  text-transform: uppercase;
-  letter-spacing: -3px;
-  margin-bottom: 25px;
-}
+      z-index: 0;
 
-.about-hero p {
-  font-size: 15px;
-  max-width: 470px;
-  line-height: 1.5;
-  margin-bottom: 22px;
-}
+      display: block;
 
-    /* TOPO BACKGROUND */
+      width: 100%;
+      height: 100%;
+    }
+
+    .about-hero-bg {
+      display: block;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+      object-position: center center;
+    }
+
+    .about-hero::after {
+      content: "";
+
+      position: absolute;
+
+      left: -5%;
+      right: -5%;
+      bottom: -70px;
+
+      height: 170px;
+
+      background: rgba(255, 255, 255, .035);
+
+      transform: rotate(-2deg);
+
+      pointer-events: none;
+    }
+
+    .about-hero-content {
+      position: relative;
+
+      z-index: 2;
+
+      max-width: 470px;
+
+      margin-left: auto;
+      margin-right: -1%;
+
+      transform: translateY(-10px);
+
+      text-align: left;
+    }
+
+    .about-hero h1 {
+      margin-bottom: 25px;
+
+      font-size: clamp(40px, 4.5vw, 64px);
+      line-height: .92;
+      letter-spacing: -3px;
+
+      text-transform: uppercase;
+    }
+
+    .about-hero p {
+      max-width: 470px;
+
+      margin-bottom: 22px;
+
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+
+    /* ========================================
+       TOPOGRAPHIC BACKGROUND
+    ======================================== */
 
     .topo-background {
       background-image: url("mountdarwin.jpg");
+
       background-size: 100% auto;
       background-position: center top;
       background-repeat: repeat-y;
     }
 
 
-    /* GENERAL SECTIONS */
+    /* ========================================
+       GENERAL SECTIONS
+    ======================================== */
 
     .section {
       padding: 65px 7%;
@@ -286,37 +387,51 @@ nav {
 
     .section-inner {
       max-width: 1100px;
+
       margin: auto;
     }
 
     .content-panel {
-      background: rgba(245, 241, 232, .95);
-      border-radius: 6px;
       padding: 48px;
+
+      background: rgba(245, 241, 232, .95);
+
+      border-radius: 6px;
     }
 
     .section-label {
+      margin-bottom: 10px;
+
       color: var(--green);
+
       font-size: 13px;
       font-weight: 700;
       letter-spacing: 2px;
+
       text-transform: uppercase;
-      margin-bottom: 10px;
     }
 
     h2 {
-      color: var(--green-dark);
-      font-size: 36px;
-      text-transform: uppercase;
       margin-bottom: 25px;
+
+      color: var(--green-dark);
+
+      font-size: 36px;
       line-height: 1.1;
+
+      text-transform: uppercase;
     }
 
-    /* STORY */
+
+    /* ========================================
+       STORY
+    ======================================== */
 
     .story p {
       max-width: 850px;
+
       margin-bottom: 18px;
+
       font-size: 17px;
     }
 
@@ -325,76 +440,75 @@ nav {
     }
 
 
-    /* TEAM */
+    /* ========================================
+       TEAM
+       Shared by Board + Instructors
+    ======================================== */
 
     .team-intro {
       max-width: 760px;
+
       margin-bottom: 35px;
+
       font-size: 17px;
     }
 
     .staff-card {
-      background: rgba(245, 241, 232, .97);
-
       display: grid;
+
       grid-template-columns: 320px 1fr;
 
+      width: 100%;
       max-width: 950px;
 
-      border-radius: 6px;
-      overflow: hidden;
-
       margin-bottom: 28px;
+
+      background: rgba(245, 241, 232, .97);
+
+      border-radius: 6px;
+
+      overflow: hidden;
+    }
+
+    .staff-card:last-child {
+      margin-bottom: 0;
     }
 
     .staff-photo {
       min-height: 340px;
+
       overflow: hidden;
     }
 
     .staff-photo img {
-  width: 100%;
-  height: 100%;
-  min-height: 340px;
-  object-fit: cover;
-  display: block;
-}
+      display: block;
 
-.geoff-card .staff-photo img {
-  object-position: 35% center;
-}
-.staff-photo img.kyle-photo {
-  width: 100%;
-  height: auto;
-  min-height: 0;
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-}
-    .staff-card.kyle-card .staff-content {
-  padding-top: 28px;
-  padding-bottom: 18px;
-}
-    .staff-photo:has(.kyle-photo) {
-  background: rgba(245, 241, 232, .97);
-  min-height: 0;
-  align-self: start;
-}
+      width: 100%;
+      height: 100%;
+      min-height: 340px;
+
+      object-fit: cover;
+      object-position: center;
+    }
+
     .staff-content {
       padding: 40px;
     }
 
     .staff-content h3 {
       color: var(--green-dark);
-      text-transform: uppercase;
+
       font-size: 26px;
+
+      text-transform: uppercase;
     }
 
     .staff-title {
-      color: var(--green);
-      font-weight: 700;
       margin: 4px 0 20px;
+
+      color: var(--green);
+
+      font-weight: 700;
     }
 
     .staff-content p {
@@ -406,77 +520,89 @@ nav {
     }
 
 
-    /* INSTRUCTORS */
+    /* ========================================
+       INDIVIDUAL PHOTO POSITIONING
+    ======================================== */
 
-    .instructor-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
+    .geoff-card .staff-photo img {
+      object-position: 35% center;
     }
 
-    .instructor-card {
-      background: rgba(245, 241, 232, .97);
-      border-radius: 6px;
-      overflow: hidden;
-    }
+    .staff-photo img.kyle-photo {
+      display: block;
 
-    .instructor-photo {
       width: 100%;
-      height: 300px;
+      height: auto;
+      min-height: 0;
+
+      aspect-ratio: 3 / 4;
+
       object-fit: cover;
       object-position: center;
-      display: block;
     }
 
-    .instructor-placeholder {
-      height: 300px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 30px;
+    .staff-card.kyle-card .staff-content {
+      padding-top: 28px;
+      padding-bottom: 18px;
+    }
+
+    .staff-photo:has(.kyle-photo) {
+      min-height: 0;
+
+      align-self: start;
+
       background: rgba(245, 241, 232, .97);
-      color: var(--green-dark);
-      font-weight: 700;
-    }
-
-    .instructor-content {
-      padding: 24px;
-    }
-
-    .instructor-content h3 {
-      color: var(--green-dark);
-      text-transform: uppercase;
-      font-size: 21px;
-      margin-bottom: 4px;
-    }
-
-    .instructor-title {
-      color: var(--green);
-      font-weight: 700;
-      font-size: 14px;
     }
 
 
-    /* VALUES */
+    /* ========================================
+       INSTRUCTORS
+       Uses same card system as Board
+    ======================================== */
+
+    .instructor-card .staff-photo img {
+      object-position: center;
+    }
+
+    /*
+       Individual instructor photos can be adjusted
+       later without affecting the other cards:
+
+       .james-card .staff-photo img { ... }
+       .brent-card .staff-photo img { ... }
+       .eli-card .staff-photo img { ... }
+       .anna-card .staff-photo img { ... }
+    */
+
+
+    /* ========================================
+       VALUES
+    ======================================== */
 
     .values-grid {
       display: grid;
+
       grid-template-columns: repeat(3, 1fr);
+
       gap: 22px;
     }
 
     .value {
-      background: rgba(245, 241, 232, .96);
-      border-radius: 6px;
       padding: 30px;
+
+      background: rgba(245, 241, 232, .96);
+
+      border-radius: 6px;
     }
 
     .value h3 {
-      text-transform: uppercase;
-      color: var(--green-dark);
       margin-bottom: 10px;
+
+      color: var(--green-dark);
+
       font-size: 20px;
+
+      text-transform: uppercase;
     }
 
     .value p {
@@ -484,95 +610,68 @@ nav {
     }
 
 
-   /* ========================================
-   FOOTER
-======================================== */
+    /* ========================================
+       FOOTER
+    ======================================== */
 
-.site-footer {
-  width: 100%;
-  margin-top: 35px;
-  padding: 34px 7% 30px;
+    .site-footer {
+      width: 100%;
 
-  background: #f5f1e8;
+      margin-top: 35px;
 
-  color: #172019;
-}
+      padding: 34px 7% 30px;
 
-.footer-content {
-  width: 100%;
-  max-width: 1600px;
+      color: var(--text);
+      background: var(--cream);
+    }
 
-  margin: 0 auto;
+    .footer-content {
+      width: 100%;
+      max-width: 1600px;
 
-  text-align: center;
-}
+      margin: 0 auto;
 
-.footer-name {
-  margin-bottom: 8px;
+      text-align: center;
+    }
 
-  color: #203b28;
+    .footer-name {
+      margin-bottom: 8px;
 
-  font-size: 17px;
-  font-weight: 700;
+      color: var(--green-dark);
 
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: 1px;
 
-.footer-details {
-  font-size: 12px;
-  line-height: 1.6;
-}
+      text-transform: uppercase;
+    }
 
-.footer-divider {
-  margin: 0 7px;
-}
+    .footer-details {
+      font-size: 12px;
+      line-height: 1.6;
+    }
 
-.footer-copyright {
-  margin-top: 8px;
+    .footer-divider {
+      margin: 0 7px;
+    }
 
-  font-size: 11px;
+    .footer-copyright {
+      margin-top: 8px;
 
-  opacity: .7;
-}
+      font-size: 11px;
 
-
-/* MOBILE FOOTER */
-
-@media (max-width: 650px) {
-
-  .site-footer {
-    margin-top: 25px;
-
-    padding: 28px 22px;
-  }
-
-  .footer-name {
-    font-size: 15px;
-  }
-
-  .footer-details {
-    max-width: 320px;
-
-    margin: 0 auto;
-
-    font-size: 11px;
-  }
-
-  .footer-divider {
-    margin: 0 4px;
-  }
-
-  .footer-copyright {
-    font-size: 10px;
-  }
-
-}
+      opacity: .7;
+    }
 
 
-    /* SMALL DESKTOP */
+    /* ========================================
+       SMALL DESKTOP
+    ======================================== */
 
-    @media (max-width: 1250px) and (min-width: 1001px) {
+    @media
+      (max-width: 1250px)
+      and
+      (min-width: 1001px) {
 
       header {
         top: 14px;
@@ -580,6 +679,7 @@ nav {
 
       nav {
         padding: 6px 3%;
+
         gap: 18px;
       }
 
@@ -589,6 +689,7 @@ nav {
 
       .nav-links {
         gap: 17px;
+
         font-size: 11px;
       }
 
@@ -602,6 +703,7 @@ nav {
 
       .about-hero {
         min-height: 520px;
+
         padding-left: 6%;
         padding-right: 6%;
       }
@@ -614,12 +716,18 @@ nav {
         padding-left: 6%;
         padding-right: 6%;
       }
+
     }
 
 
-    /* TABLET */
+    /* ========================================
+       TABLET
+    ======================================== */
 
-    @media (max-width: 1000px) and (min-width: 651px) {
+    @media
+      (max-width: 1000px)
+      and
+      (min-width: 651px) {
 
       header {
         top: 12px;
@@ -627,8 +735,11 @@ nav {
 
       nav {
         min-height: 60px;
+
         padding: 6px 4%;
+
         flex-direction: row;
+
         gap: 18px;
       }
 
@@ -638,8 +749,11 @@ nav {
 
       .nav-links {
         flex: 1;
+
         justify-content: flex-end;
+
         gap: 13px;
+
         font-size: 10px;
       }
 
@@ -655,209 +769,258 @@ nav {
         grid-template-columns: 230px 1fr;
       }
 
-      .instructor-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
       .values-grid {
         grid-template-columns: 1fr;
       }
+
     }
 
 
-    /* MOBILE */
+    /* ========================================
+       MOBILE
+    ======================================== */
 
     @media (max-width: 650px) {
 
-  body {
-    padding-top: 68px;
-  }
+      body {
+        padding-top: 68px;
+      }
 
-  header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 68px;
-    background: var(--cream);
-    z-index: 1000;
-  }
+      header {
+        position: fixed;
 
-  nav {
-    height: 68px;
-    min-height: 0;
-    padding: 6px 18px;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
+        top: 0;
+        left: 0;
 
-  .logo {
-    width: auto;
-  }
+        z-index: 1000;
 
-  .logo img {
-    width: 155px;
-    max-width: 58vw;
-    height: auto;
-  }
+        width: 100%;
+        height: 68px;
 
-  .menu-toggle {
-    display: block;
-    background: none;
-    border: none;
-    color: #000;
-    font-size: 30px;
-    line-height: 1;
-    cursor: pointer;
-  }
+        background: var(--cream);
+      }
 
-  .nav-links {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
+      nav {
+        height: 68px;
+        min-height: 0;
 
-    background: var(--cream);
+        padding: 6px 18px;
 
-    flex-direction: column;
-    align-items: stretch;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
 
-    padding: 10px 18px 18px;
+      .logo {
+        width: auto;
+      }
 
-    color: #000;
+      .logo img {
+        width: 155px;
+        max-width: 58vw;
+        height: auto;
+      }
 
-    box-shadow: 0 8px 15px rgba(0,0,0,.12);
-  }
+      .menu-toggle {
+        display: block;
 
-  .nav-links.open {
-    display: flex;
-  }
+        color: #000;
+        background: none;
 
-  .nav-links a {
-    color: #000;
-    padding: 12px 8px;
-    font-size: 13px;
-    border-bottom: 1px solid rgba(0,0,0,.08);
-  }
+        border: none;
 
-  .nav-links .donate-btn {
-    background: #000;
-    color: #fff;
-    text-align: center;
-    margin-top: 10px;
-    padding: 12px 16px;
-    border-bottom: none;
-  }
+        font-size: 30px;
+        line-height: 1;
+
+        cursor: pointer;
+      }
+
+      .nav-links {
+        position: absolute;
+
+        top: 100%;
+        left: 0;
+
+        display: none;
+
+        width: 100%;
+
+        padding: 10px 18px 18px;
+
+        flex-direction: column;
+        align-items: stretch;
+
+        color: #000;
+        background: var(--cream);
+
+        box-shadow:
+          0 8px 15px
+          rgba(0, 0, 0, .12);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 12px 8px;
+
+        color: #000;
+
+        font-size: 13px;
+
+        border-bottom:
+          1px solid
+          rgba(0, 0, 0, .08);
+      }
+
+      .nav-links .donate-btn {
+        margin-top: 10px;
+
+        padding: 12px 16px;
+
+        color: #fff;
+        background: #000;
+
+        text-align: center;
+
+        border-bottom: none;
+      }
 
 
-  /* MOBILE PROGRAMS DROPDOWN */
+      /* MOBILE PROGRAMS DROPDOWN */
 
-  .nav-dropdown {
-    display: block;
-    width: 100%;
-  }
+      .nav-dropdown {
+        display: block;
 
-  .nav-dropdown::after {
-    display: none;
-  }
+        width: 100%;
+      }
 
-  .dropdown-trigger {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+      .nav-dropdown::after {
+        display: none;
+      }
 
-  .dropdown-arrow {
-    transition: transform .2s ease;
-  }
+      .dropdown-trigger {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
 
-  .dropdown-menu {
-    position: static;
-    top: auto;
-    left: auto;
-    transform: none;
+        width: 100%;
+      }
 
-    display: none;
-    width: 100%;
-    min-width: 0;
+      .dropdown-arrow {
+        transition: transform .2s ease;
+      }
 
-    padding: 4px 0 8px 14px;
+      .dropdown-menu {
+        position: static;
 
-    background: transparent;
-    border-radius: 0;
-    box-shadow: none;
+        top: auto;
+        left: auto;
 
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-  }
+        display: none;
 
-  .nav-dropdown.mobile-open .dropdown-menu {
-    display: block;
-  }
+        width: 100%;
+        min-width: 0;
 
-  .nav-dropdown.mobile-open .dropdown-arrow {
-    transform: rotate(180deg);
-  }
+        padding: 4px 0 8px 14px;
 
-  .dropdown-menu a {
-    display: block;
-    width: 100%;
-    padding: 10px 8px;
+        transform: none;
 
-    color: #000;
-    font-size: 12px;
-    font-weight: 600;
-    text-transform: none;
+        background: transparent;
 
-    border-bottom: 1px solid rgba(0,0,0,.06);
-  }
+        border-radius: 0;
 
+        box-shadow: none;
+
+        opacity: 1;
+        visibility: visible;
+
+        pointer-events: auto;
+      }
+
+      .nav-dropdown.mobile-open .dropdown-menu {
+        display: block;
+      }
+
+      .nav-dropdown.mobile-open .dropdown-arrow {
+        transform: rotate(180deg);
+      }
+
+      .dropdown-menu a {
+        display: block;
+
+        width: 100%;
+
+        padding: 10px 8px;
+
+        color: #000;
+
+        font-size: 12px;
+        font-weight: 600;
+
+        text-transform: none;
+
+        border-bottom:
+          1px solid
+          rgba(0, 0, 0, .06);
+      }
+
+
+      /* MOBILE HERO */
 
       .about-hero {
-  width: 100%;
-  height: calc(100svh - 68px);
-  min-height: 0;
-  aspect-ratio: auto;
+        width: 100%;
+        height: calc(100svh - 68px);
+        min-height: 0;
 
-  padding:
-    0
-    24px
-    40px;
+        padding:
+          0
+          24px
+          40px;
 
-  align-items: flex-end;
-}
+        align-items: flex-end;
+      }
 
-.about-hero-bg {
-  object-fit: cover;
-  object-position: center center;
-}
-.about-hero-content {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  max-width: none;
-  margin: 0;
-  padding: 0;
-  transform: none;
-  text-align: left;
-  color: white;
-}        
+      .about-hero-bg {
+        object-fit: cover;
+        object-position: center center;
+      }
+
+      .about-hero-content {
+        position: relative;
+
+        z-index: 2;
+
+        width: 100%;
+        max-width: none;
+
+        margin: 0;
+        padding: 0;
+
+        transform: none;
+
+        color: #fff;
+
+        text-align: left;
+      }
+
       .about-hero h1 {
+        margin-bottom: 16px;
+
         font-size: 48px;
         line-height: .9;
         letter-spacing: -2px;
-        margin-bottom: 16px;
       }
 
       .about-hero p {
-        font-size: 16px;
         max-width: 340px;
+
+        font-size: 16px;
       }
 
+
+      /* MOBILE SECTIONS */
 
       .section {
         padding: 28px 18px;
@@ -868,19 +1031,23 @@ nav {
       }
 
       h2 {
-        font-size: 27px;
         margin-bottom: 18px;
-      }
 
+        font-size: 27px;
+      }
 
       .story p {
         font-size: 15px;
       }
 
       .team-intro {
-        font-size: 15px;
         margin-bottom: 25px;
+
+        font-size: 15px;
       }
+
+
+      /* MOBILE TEAM CARDS */
 
       .staff-card {
         grid-template-columns: 1fr;
@@ -899,12 +1066,12 @@ nav {
         font-size: 22px;
       }
 
-      .instructor-grid {
-        grid-template-columns: 1fr;
-      }
+
+      /* MOBILE VALUES */
 
       .values-grid {
         grid-template-columns: 1fr;
+
         gap: 14px;
       }
 
@@ -912,14 +1079,41 @@ nav {
         padding: 22px;
       }
 
-      footer {
-        padding: 16px;
+
+      /* MOBILE FOOTER */
+
+      .site-footer {
+        margin-top: 25px;
+
+        padding: 28px 22px;
+      }
+
+      .footer-name {
+        font-size: 15px;
+      }
+
+      .footer-details {
+        max-width: 320px;
+
+        margin: 0 auto;
+
+        font-size: 11px;
+      }
+
+      .footer-divider {
+        margin: 0 4px;
+      }
+
+      .footer-copyright {
         font-size: 10px;
       }
+
     }
 
 
-    /* SMALL PHONES */
+    /* ========================================
+       SMALL PHONES
+    ======================================== */
 
     @media (max-width: 390px) {
 
@@ -948,22 +1142,29 @@ nav {
       .about-hero p {
         font-size: 15px;
       }
+
     }
 
   </style>
+
 </head>
 
 
 <body>
 
 
-  <!-- NAVIGATION -->
+  <!-- ========================================
+       NAVIGATION
+  ======================================== -->
 
   <header>
 
     <nav>
 
-      <a href="index.html" class="logo">
+      <a
+        href="index.html"
+        class="logo"
+      >
         <img
           src="side-quest-logo.png"
           alt="Side Quest Expeditions"
@@ -981,55 +1182,60 @@ nav {
 
       <div class="nav-links">
 
-  <a href="about.html">
-    About
-  </a>
+        <a href="about.html">
+          About
+        </a>
 
-  <div class="nav-dropdown">
 
-  <a
-    href="#"
-    class="dropdown-trigger"
-    aria-expanded="false"
-  >
-    Programs
-    <span class="dropdown-arrow">▾</span>
-  </a>
+        <div class="nav-dropdown">
 
-  <div class="dropdown-menu">
+          <a
+            href="#"
+            class="dropdown-trigger"
+            aria-expanded="false"
+          >
+            Programs
+            <span class="dropdown-arrow">
+              ▾
+            </span>
+          </a>
 
-    <a href="student-trips.html">
-      Student Expeditions
-    </a>
 
-    <a href="public-trips.html">
-      Public Adventures
-    </a>
+          <div class="dropdown-menu">
 
-    <a href="custom-adventures.html">
-      Custom Programs
-    </a>
+            <a href="student-trips.html">
+              Student Expeditions
+            </a>
 
-  </div>
+            <a href="public-trips.html">
+              Public Adventures
+            </a>
 
-</div>
+            <a href="custom-adventures.html">
+              Custom Programs
+            </a>
 
-  <a href="support.html">
-    Support Us
-  </a>
+          </div>
 
-  <a href="contact.html">
-    Contact
-  </a>
+        </div>
 
-  <a
-    href="support.html"
-    class="donate-btn"
-  >
-    Donate
-  </a>
 
-</div>
+        <a href="support.html">
+          Support Us
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
+        <a
+          href="support.html"
+          class="donate-btn"
+        >
+          Donate
+        </a>
+
+      </div>
 
     </nav>
 
@@ -1037,21 +1243,29 @@ nav {
 
 
 
-  <!-- ABOUT HERO -->
+  <!-- ========================================
+       ABOUT HERO
+  ======================================== -->
 
   <section class="about-hero">
 
-  <picture class="about-hero-picture">
-  <source media="(max-width: 768px)" srcset="aboutgroup-mobile-full-quality.png">
+    <picture class="about-hero-picture">
 
-  <img
-    src="aboutgroup.png"
-    alt=""
-    class="about-hero-bg"
-  >
-</picture>
+      <source
+        media="(max-width: 768px)"
+        srcset="aboutgroup-mobile-full-quality.png"
+      >
 
-  <div class="about-hero-content">
+      <img
+        src="aboutgroup.png"
+        alt=""
+        class="about-hero-bg"
+      >
+
+    </picture>
+
+
+    <div class="about-hero-content">
 
       <h1>
         About<br>
@@ -1069,13 +1283,17 @@ nav {
 
 
 
-  <!-- TOPOGRAPHIC BACKGROUND -->
+  <!-- ========================================
+       TOPOGRAPHIC BACKGROUND
+  ======================================== -->
 
   <div class="topo-background">
 
 
 
-    <!-- OUR STORY -->
+    <!-- ========================================
+         OUR STORY
+    ======================================== -->
 
     <section class="section story">
 
@@ -1122,7 +1340,9 @@ nav {
 
 
 
-    <!-- LEADERSHIP & BOARD -->
+    <!-- ========================================
+         LEADERSHIP & BOARD
+    ======================================== -->
 
     <section class="section team">
 
@@ -1148,14 +1368,13 @@ nav {
 
         <div class="staff-card kyle-card">
 
-
           <div class="staff-photo">
 
             <img
-  src="Kyle.jpg"
-  alt="Kyle Murphy"
-  class="kyle-photo"
->
+              src="Kyle.jpg"
+              alt="Kyle Murphy"
+              class="kyle-photo"
+            >
 
           </div>
 
@@ -1203,47 +1422,46 @@ nav {
 
         <div class="staff-card geoff-card">
 
-  <div class="staff-photo">
+          <div class="staff-photo">
 
-    <img
-      src="Geoff.jpeg"
-      alt="Geoffrey Luoma"
-    >
+            <img
+              src="Geoff.jpeg"
+              alt="Geoffrey Luoma"
+            >
 
-  </div>
+          </div>
 
 
-  <div class="staff-content">
+          <div class="staff-content">
 
-    <h3>
-      Geoffrey Luoma
-    </h3>
+            <h3>
+              Geoffrey Luoma
+            </h3>
 
-    <div class="staff-title">
-      Vice Chair
-    </div>
+            <div class="staff-title">
+              Vice Chair
+            </div>
 
-    <p>
-      Geoff is an outdoor educator and lifelong climber with a background
-      spanning environmental science, experiential education, challenge
-      course facilitation, team building, wilderness guiding, and trail
-      and climbing-area development.
-    </p>
+            <p>
+              Geoff is an outdoor educator and lifelong climber with a background
+              spanning environmental science, experiential education, challenge
+              course facilitation, team building, wilderness guiding, and trail
+              and climbing-area development.
+            </p>
 
-    <p>
-      He is passionate about helping people build meaningful connections
-      with themselves, with others, and with the outdoors.
-    </p>
+            <p>
+              He is passionate about helping people build meaningful connections
+              with themselves, with others, and with the outdoors.
+            </p>
 
-    <p>
-      Rumor has it he travels with a hacky sack at all times—just in case
-      civilization breaks out.
-    </p>
+            <p>
+              Rumor has it he travels with a hacky sack at all times—just in case
+              civilization breaks out.
+            </p>
 
-  </div>
+          </div>
 
-</div>
-
+        </div>
 
 
 
@@ -1281,138 +1499,205 @@ nav {
 
         </div>
 
+
       </div>
 
     </section>
 
 
 
-    <!-- INSTRUCTORS -->
+    <!-- ========================================
+         INSTRUCTORS
+    ======================================== -->
 
-<section class="section">
+    <section class="section team">
 
-  <div class="section-inner">
+      <div class="section-inner">
 
-    <div class="section-label">
-      Program Team
-    </div>
+        <div class="section-label">
+          Program Team
+        </div>
 
-    <h2>
-      Our Instructors
-    </h2>
+        <h2>
+          Our Instructors
+        </h2>
 
-    <p class="team-intro">
-      Our programs are led by experienced outdoor educators
-      and guides who bring technical outdoor skills,
-      risk management experience, and a commitment to
-      creating supportive learning environments.
-    </p>
-
-
-    <div class="instructor-grid">
+        <p class="team-intro">
+          Our programs are led by experienced outdoor educators
+          and guides who bring technical outdoor skills,
+          risk management experience, and a commitment to
+          creating supportive learning environments.
+        </p>
 
 
-      <div class="instructor-card">
 
-        <img
-          src="james.jpg"
-          alt="James Damiani"
-          class="instructor-photo"
-        >
+        <!-- JAMES -->
 
-        <div class="instructor-content">
+        <div class="staff-card instructor-card james-card">
 
-          <h3>
-            James Damiani
-          </h3>
+          <div class="staff-photo">
 
-          <div class="instructor-title">
-            Instructor
+            <img
+              src="james.jpg"
+              alt="James Damiani"
+            >
+
           </div>
 
-          <p>
-            James has worked in youth development for over a decade and is an
-            experienced practitioner of Qigong. He brings a thoughtful, grounded
-            approach to outdoor education, helping young people build confidence,
-            connection, and a deeper awareness of themselves and the world around them.
-          </p>
+
+          <div class="staff-content">
+
+            <h3>
+              James Damiani
+            </h3>
+
+            <div class="staff-title">
+              Instructor
+            </div>
+
+            <p>
+              James has worked in youth development for over a decade and is an
+              experienced practitioner of Qigong. He brings a thoughtful, grounded
+              approach to outdoor education, helping young people build confidence,
+              connection, and a deeper awareness of themselves and the world around them.
+            </p>
+
+          </div>
 
         </div>
 
-      </div>
 
 
-      <div class="instructor-card">
+        <!-- BRENT -->
 
-        <img
-          src="Brent.jpg"
-          alt="Brent Klava"
-          class="instructor-photo"
-        >
+        <div class="staff-card instructor-card brent-card">
 
-        <div class="instructor-content">
+          <div class="staff-photo">
 
-          <h3>
-            Brent Klava
-          </h3>
+            <img
+              src="Brent.jpg"
+              alt="Brent Klava"
+            >
 
-          <div class="instructor-title">
-            Instructor
           </div>
 
-          <p>
-            Brent is an experienced outdoor educator and guide who brings a
-            passion for adventure, mentorship, and hands-on learning to Side
-            Quest Expeditions. He helps create supportive experiences where
-            students can challenge themselves and grow in the outdoors.
-          </p>
+
+          <div class="staff-content">
+
+            <h3>
+              Brent Klava
+            </h3>
+
+            <div class="staff-title">
+              Instructor
+            </div>
+
+            <p>
+              Brent is an experienced outdoor educator and guide who brings a
+              passion for adventure, mentorship, and hands-on learning to Side
+              Quest Expeditions. He helps create supportive experiences where
+              students can challenge themselves and grow in the outdoors.
+            </p>
+
+          </div>
 
         </div>
 
-      </div>
 
 
-      <div class="instructor-card">
+        <!-- ELI -->
 
-        <img
-  src="eli.jpg"
-  alt="Eli Baum"
-  class="instructor-photo"
->
+        <div class="staff-card instructor-card eli-card">
 
-        <div class="instructor-content">
+          <div class="staff-photo">
 
-          <h3>
-            Eli Baum
-          </h3>
+            <img
+              src="eli.jpg"
+              alt="Eli Baum"
+            >
 
-          <div class="instructor-title">
-            Instructor
           </div>
 
-          <p>
-            Eli is an outdoor educator with more than a decade of experience
-            working in outdoor and experiential education. He joins Side Quest
-            Expeditions as an instructor, helping students learn, explore, and
-            build meaningful connections through outdoor experiences.
-          </p>
+
+          <div class="staff-content">
+
+            <h3>
+              Eli Baum
+            </h3>
+
+            <div class="staff-title">
+              Instructor
+            </div>
+
+            <p>
+              Eli is an outdoor educator with more than a decade of experience
+              working in outdoor and experiential education. He joins Side Quest
+              Expeditions as an instructor, helping students learn, explore, and
+              build meaningful connections through outdoor experiences.
+            </p>
+
+          </div>
 
         </div>
 
+
+
+        <!-- ANNA -->
+
+        <div class="staff-card instructor-card anna-card">
+
+          <div class="staff-photo">
+
+            <img
+              src="annag.JPG"
+              alt="Anna Greenberg"
+            >
+
+          </div>
+
+
+          <div class="staff-content">
+
+            <h3>
+              Anna Greenberg
+            </h3>
+
+            <div class="staff-title">
+              Instructor
+            </div>
+
+            <p>
+              Anna was born and raised in Washington, DC, but comes from a large
+              California family and spent her childhood summers exploring the
+              Sierra Nevada. She led her first backpacking trip in college and
+              has guided a wide variety of programs ever since.
+            </p>
+
+            <p>
+              She has worked with people of all ages and backgrounds, from sea
+              kayaking in the San Juan Islands to trekking in the Grand Canyon.
+              Facilitating experiences where participants can connect with others,
+              nature, and themselves has become Anna's life mission.
+            </p>
+
+            <p>
+              In her spare time, Anna loves to travel, cook, sing, and practice yoga.
+            </p>
+
+          </div>
+
+        </div>
+
+
       </div>
 
-
-    </div>
-
-  </div>
-
-</section>
+    </section>
 
 
-<!-- VALUES -->
 
-
-    <!-- VALUES -->
+    <!-- ========================================
+         VALUES
+    ======================================== -->
 
     <section class="section">
 
@@ -1480,90 +1765,111 @@ nav {
     </section>
 
 
-
-   <!-- ========================================
-     FOOTER
-======================================== -->
-
-<footer class="site-footer">
-
-  <div class="footer-content">
-
-    <div class="footer-name">
-      Side Quest Expeditions
-    </div>
-
-    <div class="footer-details">
-      California Nonprofit Public Benefit Corporation
-      <span class="footer-divider">·</span>
-      San Francisco, California
-      <span class="footer-divider">·</span>
-      EIN: 41-2872525
-    </div>
-
-    <div class="footer-copyright">
-      © 2026 Side Quest Expeditions
-    </div>
-
   </div>
 
-</footer>
 
 
-  <!-- MOBILE MENU -->
+  <!-- ========================================
+       FOOTER
+  ======================================== -->
+
+  <footer class="site-footer">
+
+    <div class="footer-content">
+
+      <div class="footer-name">
+        Side Quest Expeditions
+      </div>
+
+      <div class="footer-details">
+        California Nonprofit Public Benefit Corporation
+        <span class="footer-divider">·</span>
+        San Francisco, California
+        <span class="footer-divider">·</span>
+        EIN: 41-2872525
+      </div>
+
+      <div class="footer-copyright">
+        © 2026 Side Quest Expeditions
+      </div>
+
+    </div>
+
+  </footer>
+
+
+
+  <!-- ========================================
+       MOBILE MENU
+  ======================================== -->
 
   <script>
 
-  const menuToggle =
-    document.querySelector('.menu-toggle');
+    const menuToggle =
+      document.querySelector('.menu-toggle');
 
-  const navLinks =
-    document.querySelector('.nav-links');
+    const navLinks =
+      document.querySelector('.nav-links');
 
-  const programTrigger =
-    document.querySelector('.dropdown-trigger');
+    const programTrigger =
+      document.querySelector('.dropdown-trigger');
 
-  const programDropdown =
-    document.querySelector('.nav-dropdown');
-
-
-  menuToggle.addEventListener('click', () => {
-
-    navLinks.classList.toggle('open');
-
-    if (!navLinks.classList.contains('open')) {
-
-      programDropdown.classList.remove('mobile-open');
-
-      programTrigger.setAttribute(
-        'aria-expanded',
-        'false'
-      );
-
-    }
-
-  });
+    const programDropdown =
+      document.querySelector('.nav-dropdown');
 
 
-  programTrigger.addEventListener('click', (event) => {
+    menuToggle.addEventListener(
+      'click',
+      () => {
 
-    event.preventDefault();
+        navLinks.classList.toggle('open');
 
-    if (window.innerWidth <= 650) {
+        if (
+          !navLinks.classList.contains('open')
+        ) {
 
-      const isOpen =
-        programDropdown.classList.toggle('mobile-open');
+          programDropdown.classList.remove(
+            'mobile-open'
+          );
 
-      programTrigger.setAttribute(
-        'aria-expanded',
-        isOpen ? 'true' : 'false'
-      );
+          programTrigger.setAttribute(
+            'aria-expanded',
+            'false'
+          );
 
-    }
+        }
 
-  });
+      }
+    );
 
-</script>
+
+    programTrigger.addEventListener(
+      'click',
+      (event) => {
+
+        event.preventDefault();
+
+        if (
+          window.innerWidth <= 650
+        ) {
+
+          const isOpen =
+            programDropdown.classList.toggle(
+              'mobile-open'
+            );
+
+          programTrigger.setAttribute(
+            'aria-expanded',
+            isOpen ? 'true' : 'false'
+          );
+
+        }
+
+      }
+    );
+
+  </script>
+
 
 </body>
 
