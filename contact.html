@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Contact | Side Quest Expeditions</title>
+  <title>Contact Side Quest Expeditions | San Francisco Nonprofit</title>
 
   <style>
 
@@ -381,6 +381,35 @@
 
 
     /* =====================================================
+       ORGANIZATION INFORMATION
+       ===================================================== */
+
+    .organization-info {
+      margin-top: 30px;
+      padding-top: 26px;
+      border-top: 1px solid rgba(32, 59, 40, .18);
+    }
+
+    .organization-info h4 {
+      color: var(--green-dark);
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      margin-bottom: 12px;
+    }
+
+    .organization-detail {
+      margin-bottom: 8px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .organization-detail strong {
+      color: var(--green-dark);
+    }
+
+
+    /* =====================================================
        FORM
        ===================================================== */
 
@@ -452,6 +481,34 @@
       background: #222;
     }
 
+    .button:disabled {
+      opacity: .6;
+      cursor: not-allowed;
+    }
+
+    .form-status {
+      display: none;
+      margin-top: 18px;
+      padding: 14px 16px;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .form-status.success {
+      display: block;
+      background: rgba(63, 100, 47, .12);
+      color: var(--green-dark);
+      border: 1px solid rgba(63, 100, 47, .25);
+    }
+
+    .form-status.error {
+      display: block;
+      background: rgba(150, 40, 40, .08);
+      color: #7a2222;
+      border: 1px solid rgba(150, 40, 40, .22);
+    }
+
 
     /* =====================================================
        OTHER INQUIRIES
@@ -493,12 +550,43 @@
        FOOTER
        ===================================================== */
 
-    footer {
-      background: transparent;
-      color: #111;
+    .site-footer {
+      width: 100%;
+      margin-top: 35px;
+      padding: 34px 7% 30px;
+      background: var(--cream);
+      color: var(--text);
+    }
+
+    .footer-content {
+      width: 100%;
+      max-width: 1600px;
+      margin: 0 auto;
       text-align: center;
-      padding: 28px 22px;
+    }
+
+    .footer-name {
+      margin-bottom: 8px;
+      color: var(--green-dark);
+      font-size: 17px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .footer-details {
       font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .footer-divider {
+      margin: 0 7px;
+    }
+
+    .footer-copyright {
+      margin-top: 8px;
+      font-size: 11px;
+      opacity: .7;
     }
 
 
@@ -876,8 +964,26 @@
         padding: 22px;
       }
 
-      footer {
-        padding: 16px;
+      .site-footer {
+        margin-top: 25px;
+        padding: 28px 22px;
+      }
+
+      .footer-name {
+        font-size: 15px;
+      }
+
+      .footer-details {
+        max-width: 320px;
+        margin: 0 auto;
+        font-size: 11px;
+      }
+
+      .footer-divider {
+        margin: 0 4px;
+      }
+
+      .footer-copyright {
         font-size: 10px;
       }
 
@@ -980,24 +1086,20 @@
 
           <div class="dropdown-menu">
 
-  <a href="student-trips.html">
-    Student Expeditions
-  </a>
+            <a href="student-trips.html">
+              Student Expeditions
+            </a>
 
-<a href="whitewater-guide-school.html">
-    Whitewater Guide School
-  </a>
-            
-  <a href="public-trips.html">
-    Local Tours
-  </a>
-            
+            <a href="public-trips.html">
+              Public Adventures
+            </a>
 
-  <a href="custom-adventures.html">
-    Custom Adventures
-  </a>
+            <a href="custom-adventures.html">
+              Custom Programs
+            </a>
 
-</div>
+          </div>
+
         </div>
 
 
@@ -1080,7 +1182,7 @@
         <div class="content-panel">
 
           <div class="section-label">
-            Contact Side Quest
+            Contact Side Quest Expeditions
           </div>
 
           <h2>
@@ -1127,7 +1229,8 @@
             </h3>
 
             <p>
-              Based in San Francisco, California,
+              Side Quest Expeditions is a California nonprofit
+              public benefit corporation based in San Francisco
               and serving San Francisco public school students.
             </p>
 
@@ -1139,8 +1242,8 @@
               </strong>
 
               <a href="mailto:kyle@sidequestexpeditions.org">
-  kyle@sidequestexpeditions.org
-</a>
+                kyle@sidequestexpeditions.org
+              </a>
 
             </div>
 
@@ -1171,6 +1274,42 @@
 
             </div>
 
+
+            <!-- ORGANIZATION INFORMATION -->
+
+            <div class="organization-info">
+
+              <h4>
+                Organization Information
+              </h4>
+
+              <div class="organization-detail">
+                <strong>Legal Name:</strong>
+                Side Quest Expeditions
+              </div>
+
+              <div class="organization-detail">
+                <strong>Organization Type:</strong>
+                California Nonprofit Public Benefit Corporation
+              </div>
+
+              <div class="organization-detail">
+                <strong>Location:</strong>
+                San Francisco, California
+              </div>
+
+              <div class="organization-detail">
+                <strong>EIN:</strong>
+                41-2872525
+              </div>
+
+              <div class="organization-detail">
+                <strong>Official Website:</strong>
+                sidequestexpeditions.org
+              </div>
+
+            </div>
+
           </div>
 
 
@@ -1178,10 +1317,10 @@
           <!-- CONTACT FORM -->
 
           <form
+            id="contact-form"
             class="contact-form"
-            action="mailto:kyle@sidequestexpeditions.org"
-            method="post"
-            enctype="text/plain"
+            action="https://formspree.io/f/mbgjjwbd"
+            method="POST"
           >
 
             <div class="section-label">
@@ -1203,6 +1342,7 @@
                 type="text"
                 id="name"
                 name="name"
+                autocomplete="name"
                 required
               >
 
@@ -1219,6 +1359,7 @@
                 type="email"
                 id="email"
                 name="email"
+                autocomplete="email"
                 required
               >
 
@@ -1234,53 +1375,42 @@
               <select
                 id="interest"
                 name="interest"
+                required
               >
 
                 <option value="">
                   Select one
                 </option>
 
-                <option>
+                <option value="Student Expeditions">
                   Student Expeditions
                 </option>
 
-                <option>
-                  Local Tours
+                <option value="Public Adventures">
+                  Public Adventures
                 </option>
 
-                <option>
-                  Wilderness Medicine
+                <option value="Custom Programs">
+                  Custom Programs
                 </option>
 
-                <option>
-                  Whitewater Guide School
-                </option>
-
-                <option>
-                  Outdoor Skills
-                </option>
-
-                <option>
-                  Custom Adventures
-                </option>
-
-                <option>
+                <option value="Donating">
                   Donating
                 </option>
 
-                <option>
+                <option value="Gear Donation">
                   Gear Donation
                 </option>
 
-                <option>
-                  Corporate Partnership
+                <option value="Partnership">
+                  Partnership
                 </option>
 
-                <option>
+                <option value="Volunteering">
                   Volunteering
                 </option>
 
-                <option>
+                <option value="General Question">
                   General Question
                 </option>
 
@@ -1304,12 +1434,30 @@
             </div>
 
 
+            <!-- Formspree email subject -->
+
+            <input
+              type="hidden"
+              name="_subject"
+              value="New Side Quest Website Inquiry"
+            >
+
+
             <button
               type="submit"
               class="button"
+              id="submit-button"
             >
               Send Message
             </button>
+
+
+            <div
+              id="form-status"
+              class="form-status"
+              role="status"
+              aria-live="polite"
+            ></div>
 
           </form>
 
@@ -1408,8 +1556,28 @@
 
     <!-- FOOTER -->
 
-    <footer>
-      © 2026 Side Quest Expeditions · San Francisco, California
+    <footer class="site-footer">
+
+      <div class="footer-content">
+
+        <div class="footer-name">
+          Side Quest Expeditions
+        </div>
+
+        <div class="footer-details">
+          California Nonprofit Public Benefit Corporation
+          <span class="footer-divider">·</span>
+          San Francisco, California
+          <span class="footer-divider">·</span>
+          EIN: 41-2872525
+        </div>
+
+        <div class="footer-copyright">
+          © 2026 Side Quest Expeditions
+        </div>
+
+      </div>
+
     </footer>
 
 
@@ -1469,6 +1637,88 @@
         );
 
       }
+
+    });
+
+
+
+    /* ===================================================
+       CONTACT FORM
+       =================================================== */
+
+    const contactForm =
+      document.getElementById('contact-form');
+
+    const formStatus =
+      document.getElementById('form-status');
+
+    const submitButton =
+      document.getElementById('submit-button');
+
+
+    contactForm.addEventListener('submit', async (event) => {
+
+      event.preventDefault();
+
+      formStatus.className = 'form-status';
+      formStatus.textContent = '';
+
+      submitButton.disabled = true;
+      submitButton.textContent = 'Sending...';
+
+
+      try {
+
+        const formData =
+          new FormData(contactForm);
+
+        const response =
+          await fetch(contactForm.action, {
+
+            method: contactForm.method,
+
+            body: formData,
+
+            headers: {
+              'Accept': 'application/json'
+            }
+
+          });
+
+
+        if (response.ok) {
+
+          formStatus.className =
+            'form-status success';
+
+          formStatus.textContent =
+            'Message sent! Thanks for reaching out. We’ll get back to you soon.';
+
+          contactForm.reset();
+
+        } else {
+
+          formStatus.className =
+            'form-status error';
+
+          formStatus.textContent =
+            'Something went wrong while sending your message. Please try again or email kyle@sidequestexpeditions.org directly.';
+
+        }
+
+      } catch (error) {
+
+        formStatus.className =
+          'form-status error';
+
+        formStatus.textContent =
+          'Something went wrong while sending your message. Please try again or email kyle@sidequestexpeditions.org directly.';
+
+      }
+
+
+      submitButton.disabled = false;
+      submitButton.textContent = 'Send Message';
 
     });
 
