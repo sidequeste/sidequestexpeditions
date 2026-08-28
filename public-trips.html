@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Local Tours | Side Quest Expeditions</title>
+  <title>Public Adventures | Side Quest Expeditions</title>
 
   <style>
 
@@ -194,7 +194,7 @@
     }
 
 
-    /* LOCAL TOURS HERO */
+    /* PUBLIC ADVENTURES HERO */
 
     .tours-hero {
       width: 100%;
@@ -249,21 +249,22 @@
     }
 
     .tours-hero h1 {
-  font-size: clamp(40px, 4.5vw, 64px);
-  line-height: .92;
-  text-transform: uppercase;
-  letter-spacing: -3px;
-  margin-bottom: 25px;
-  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.82);
-}
+      font-size: clamp(40px, 4.5vw, 64px);
+      line-height: .92;
+      text-transform: uppercase;
+      letter-spacing: -3px;
+      margin-bottom: 25px;
+      text-shadow: 0 4px 10px rgba(0, 0, 0, 0.82);
+    }
 
-.tours-hero p {
-  font-size: 15px;
-  max-width: 470px;
-  line-height: 1.5;
-  margin-bottom: 22px;
-  text-shadow: 0 3px 7px rgba(0, 0, 0, 0.82);
-}
+    .tours-hero p {
+      font-size: 15px;
+      max-width: 470px;
+      line-height: 1.5;
+      margin-bottom: 22px;
+      text-shadow: 0 3px 7px rgba(0, 0, 0, 0.82);
+    }
+
 
     /* TOPO BACKGROUND */
 
@@ -466,12 +467,43 @@
 
     /* FOOTER */
 
-    footer {
-      background: transparent;
-      color: #111;
+    .site-footer {
+      width: 100%;
+      margin-top: 35px;
+      padding: 34px 7% 30px;
+      background: var(--cream);
+      color: var(--text);
+    }
+
+    .footer-content {
+      width: 100%;
+      max-width: 1600px;
+      margin: 0 auto;
       text-align: center;
-      padding: 28px 22px;
+    }
+
+    .footer-name {
+      margin-bottom: 8px;
+      color: var(--green-dark);
+      font-size: 17px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .footer-details {
       font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .footer-divider {
+      margin: 0 7px;
+    }
+
+    .footer-copyright {
+      margin-top: 8px;
+      font-size: 11px;
+      opacity: .7;
     }
 
 
@@ -706,17 +738,13 @@
         top: auto;
         left: auto;
         transform: none;
-
         display: none;
         width: 100%;
         min-width: 0;
-
         padding: 4px 0 8px 14px;
-
         background: transparent;
         border-radius: 0;
         box-shadow: none;
-
         opacity: 1;
         visibility: visible;
         pointer-events: auto;
@@ -861,8 +889,26 @@
         font-size: 16px;
       }
 
-      footer {
-        padding: 16px;
+      .site-footer {
+        margin-top: 25px;
+        padding: 28px 22px;
+      }
+
+      .footer-name {
+        font-size: 15px;
+      }
+
+      .footer-details {
+        max-width: 320px;
+        margin: 0 auto;
+        font-size: 11px;
+      }
+
+      .footer-divider {
+        margin: 0 4px;
+      }
+
+      .footer-copyright {
         font-size: 10px;
       }
     }
@@ -949,25 +995,19 @@
 
           <div class="dropdown-menu">
 
-  <a href="student-trips.html">
-    Student Expeditions
-  </a>
+            <a href="student-trips.html">
+              Student Expeditions
+            </a>
 
- <a href="whitewater-guide-school.html">
-    Whitewater Guide School
-  </a>
-        
+            <a href="public-trips.html">
+              Public Adventures
+            </a>
 
-  <a href="public-trips.html">
-    Local Tours
-  </a>
+            <a href="custom-adventures.html">
+              Custom Programs
+            </a>
 
-
-  <a href="custom-adventures.html">
-    Custom Adventures
-  </a>
-
-</div>
+          </div>
 
         </div>
 
@@ -995,7 +1035,7 @@
 
 
 
-  <!-- LOCAL TOURS HERO -->
+  <!-- PUBLIC ADVENTURES HERO -->
 
   <section class="tours-hero">
 
@@ -1046,18 +1086,19 @@
           </div>
 
           <h2>
-  Adventure Close To Home
-</h2>
+            Adventure Close To Home
+          </h2>
 
-<p class="tours-intro">
-  Explore the landscapes that make the San Francisco
-  Bay Area extraordinary. Our local tours combine
-  outdoor adventure, natural history, storytelling,
-  and a deeper connection to place. Revenue from these
-  tours directly supports our mission by helping fund
-  outdoor expeditions for San Francisco public school
-  students.
-</p>
+          <p class="tours-intro">
+            Explore the landscapes that make the San Francisco
+            Bay Area extraordinary. Our local tours combine
+            outdoor adventure, natural history, storytelling,
+            and a deeper connection to place. Revenue from these
+            tours directly supports our mission by helping fund
+            outdoor expeditions for San Francisco public school
+            students.
+          </p>
+
         </div>
 
       </div>
@@ -1428,8 +1469,28 @@
 
     <!-- FOOTER -->
 
-    <footer>
-      © 2026 Side Quest Expeditions · San Francisco, California
+    <footer class="site-footer">
+
+      <div class="footer-content">
+
+        <div class="footer-name">
+          Side Quest Expeditions
+        </div>
+
+        <div class="footer-details">
+          California Nonprofit Public Benefit Corporation
+          <span class="footer-divider">·</span>
+          San Francisco, California
+          <span class="footer-divider">·</span>
+          EIN: 41-2872525
+        </div>
+
+        <div class="footer-copyright">
+          © 2026 Side Quest Expeditions
+        </div>
+
+      </div>
+
     </footer>
 
 
