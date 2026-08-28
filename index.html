@@ -13,7 +13,9 @@
   <title>Side Quest Expeditions</title>
 
 
-  <!-- LINK PREVIEW / SOCIAL SHARING -->
+  <!-- ========================================
+       LINK PREVIEW / SOCIAL SHARING
+  ======================================== -->
 
   <meta
     property="og:title"
@@ -112,23 +114,22 @@
     }
 
     html {
-      scroll-behavior: smooth;
       width: 100%;
       overflow-x: hidden;
+      scroll-behavior: smooth;
     }
 
     body {
       width: 100%;
       overflow-x: hidden;
 
-      font-family: Arial, Helvetica, sans-serif;
+      padding-top: 72px;
 
       color: var(--text);
       background: #fff;
 
+      font-family: Arial, Helvetica, sans-serif;
       line-height: 1.5;
-
-      padding-top: 72px;
     }
 
     a {
@@ -139,7 +140,6 @@
 
     /* ========================================
        NAVIGATION
-       ONLY HARD CREAM BAND ON PAGE
     ======================================== */
 
     header {
@@ -148,10 +148,10 @@
       top: 0;
       left: 0;
 
+      z-index: 1000;
+
       width: 100%;
       height: 72px;
-
-      z-index: 1000;
 
       background: var(--cream);
     }
@@ -177,10 +177,10 @@
     }
 
     .logo img {
+      display: block;
+
       width: 185px;
       height: auto;
-
-      display: block;
     }
 
     .nav-links {
@@ -267,11 +267,13 @@
       top: 100%;
       left: 50%;
 
-      transform: translateX(-50%);
+      z-index: 2000;
 
       min-width: 230px;
 
       padding: 8px 0;
+
+      transform: translateX(-50%);
 
       background: var(--cream);
 
@@ -289,8 +291,6 @@
       transition:
         opacity .15s ease,
         visibility .15s ease;
-
-      z-index: 2000;
     }
 
     .dropdown-menu a {
@@ -311,8 +311,7 @@
     }
 
     .dropdown-menu a:hover {
-      background:
-        rgba(0, 0, 0, .06);
+      background: rgba(0, 0, 0, .06);
 
       opacity: 1;
     }
@@ -332,10 +331,10 @@
     .menu-toggle {
       display: none;
 
-      background: none;
-      border: none;
-
       color: #000;
+      background: none;
+
+      border: none;
 
       font-size: 30px;
       line-height: 1;
@@ -352,14 +351,13 @@
       position: relative;
 
       width: 100%;
-
       height: calc(100vh - 72px);
+
+      padding: 40px 5%;
 
       display: flex;
       align-items: center;
       justify-content: flex-end;
-
-      padding: 40px 5%;
 
       color: #fff;
 
@@ -393,8 +391,7 @@
 
       height: 170px;
 
-      background:
-        rgba(255, 255, 255, .035);
+      background: rgba(255, 255, 255, .035);
 
       transform: rotate(-2deg);
 
@@ -413,18 +410,14 @@
 
       text-align: left;
 
-      transform:
-        translate(25px, 40px);
+      transform: translate(25px, 40px);
     }
 
     .hero h1 {
       margin-bottom: 25px;
 
-      font-size:
-        clamp(40px, 4.5vw, 64px);
-
+      font-size: clamp(40px, 4.5vw, 64px);
       line-height: .92;
-
       letter-spacing: -3px;
 
       text-transform: uppercase;
@@ -436,7 +429,6 @@
       margin-bottom: 22px;
 
       font-size: 15px;
-
       line-height: 1.5;
     }
 
@@ -452,7 +444,6 @@
 
       font-size: 13px;
       font-weight: 700;
-
       letter-spacing: .5px;
 
       text-transform: uppercase;
@@ -468,8 +459,7 @@
     ======================================== */
 
     .topo-background {
-      background-image:
-        url("mountdarwin.jpg");
+      background-image: url("mountdarwin.jpg");
 
       background-size: 100% auto;
       background-position: center top;
@@ -478,7 +468,8 @@
 
 
     /* ========================================
-       SHARED SECTION HEADING FADE
+       STANDALONE SECTION TITLE FADE
+       Only titles outside cards use this
     ======================================== */
 
     .section-title {
@@ -514,7 +505,6 @@
       background:
         radial-gradient(
           ellipse at center,
-
           rgba(245, 241, 232, .98) 0%,
           rgba(245, 241, 232, .90) 35%,
           rgba(245, 241, 232, .65) 55%,
@@ -540,23 +530,20 @@
     .mission-card {
       width: 96%;
       max-width: 1500px;
-
       height: 470px;
 
       margin: 0 auto;
 
       display: flex;
 
-      background: transparent;
+      background: var(--cream);
 
-      overflow: visible;
+      border-radius: 6px;
+
+      overflow: hidden;
     }
 
     .mission-content {
-      position: relative;
-
-      z-index: 1;
-
       flex: 1;
 
       padding: 52px 48px;
@@ -564,33 +551,8 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-    }
 
-    .mission-content::before {
-      content: "";
-
-      position: absolute;
-
-      z-index: -1;
-
-      top: -45px;
-      right: -85px;
-      bottom: -45px;
-      left: -45px;
-
-      background:
-        radial-gradient(
-          ellipse at center,
-
-          rgba(245, 241, 232, .98) 0%,
-          rgba(245, 241, 232, .96) 42%,
-          rgba(245, 241, 232, .82) 62%,
-          rgba(245, 241, 232, .52) 78%,
-          rgba(245, 241, 232, .22) 90%,
-          rgba(245, 241, 232, 0) 100%
-        );
-
-      pointer-events: none;
+      background: var(--cream);
     }
 
     .mission-label {
@@ -600,7 +562,6 @@
 
       font-size: 16px;
       font-weight: 700;
-
       letter-spacing: 2px;
 
       text-transform: uppercase;
@@ -612,7 +573,6 @@
       color: var(--green-dark);
 
       font-size: 44px;
-
       line-height: 1.1;
     }
 
@@ -622,7 +582,6 @@
       margin: 0;
 
       font-size: 20px;
-
       line-height: 1.6;
     }
 
@@ -631,9 +590,9 @@
 
       z-index: 2;
 
-      height: 100%;
-
       flex: 0 0 auto;
+
+      height: 100%;
 
       padding: 0;
       margin: 0;
@@ -669,38 +628,30 @@
     .trip-pathways {
       display: grid;
 
-      grid-template-columns:
-        repeat(3, 1fr);
+      grid-template-columns: repeat(3, 1fr);
 
       gap: 18px;
     }
 
     .pathway-card {
-      position: relative;
-
       display: flex;
       flex-direction: column;
 
       color: inherit;
+      background: var(--cream);
 
-      background: transparent;
+      border-radius: 6px;
 
-      overflow: visible;
+      overflow: hidden;
 
-      transition:
-        transform .2s ease;
+      transition: transform .2s ease;
     }
 
     .pathway-card:hover {
-      transform:
-        translateY(-4px);
+      transform: translateY(-4px);
     }
 
     .pathway-image {
-      position: relative;
-
-      z-index: 2;
-
       width: 100%;
       height: 300px;
 
@@ -708,16 +659,9 @@
 
       object-fit: cover;
       object-position: center;
-
-      border-radius:
-        6px 6px 0 0;
     }
 
     .pathway-content {
-      position: relative;
-
-      z-index: 1;
-
       flex: 1;
 
       padding: 30px;
@@ -725,34 +669,7 @@
       display: flex;
       flex-direction: column;
 
-      background: transparent;
-    }
-
-    .pathway-content::before {
-      content: "";
-
-      position: absolute;
-
-      z-index: -1;
-
-      top: -18px;
-      right: -32px;
-      bottom: -42px;
-      left: -32px;
-
-      background:
-        radial-gradient(
-          ellipse at center,
-
-          rgba(245, 241, 232, .98) 0%,
-          rgba(245, 241, 232, .95) 44%,
-          rgba(245, 241, 232, .78) 64%,
-          rgba(245, 241, 232, .48) 79%,
-          rgba(245, 241, 232, .20) 90%,
-          rgba(245, 241, 232, 0) 100%
-        );
-
-      pointer-events: none;
+      background: var(--cream);
     }
 
     .pathway-label {
@@ -762,7 +679,6 @@
 
       font-size: 12px;
       font-weight: 700;
-
       letter-spacing: 2px;
 
       text-transform: uppercase;
@@ -774,7 +690,6 @@
       color: var(--green-dark);
 
       font-size: 24px;
-
       line-height: 1.1;
 
       text-transform: uppercase;
@@ -786,7 +701,6 @@
       margin-bottom: 24px;
 
       font-size: 15px;
-
       line-height: 1.65;
     }
 
@@ -809,8 +723,7 @@
 
       margin: 0;
 
-      padding:
-        20px 7% 0;
+      padding: 20px 7% 0;
     }
 
     .values-heading h2 {
@@ -820,68 +733,34 @@
     .values-strip {
       display: grid;
 
-      grid-template-columns:
-        repeat(3, 1fr);
+      grid-template-columns: repeat(3, 1fr);
 
       gap: 18px;
 
-      padding:
-        22px 7%;
+      padding: 22px 7%;
 
       background: transparent;
     }
 
     .value {
-      position: relative;
-
-      z-index: 1;
-
       display: flex;
       align-items: center;
 
       gap: 18px;
 
-      padding:
-        24px 28px;
+      padding: 24px 28px;
 
-      background: transparent;
+      background: var(--cream);
 
-      border: none;
-    }
-
-    .value::before {
-      content: "";
-
-      position: absolute;
-
-      z-index: -1;
-
-      top: -35px;
-      right: -30px;
-      bottom: -35px;
-      left: -30px;
-
-      background:
-        radial-gradient(
-          ellipse at center,
-
-          rgba(245, 241, 232, .97) 0%,
-          rgba(245, 241, 232, .92) 35%,
-          rgba(245, 241, 232, .72) 55%,
-          rgba(245, 241, 232, .45) 70%,
-          rgba(245, 241, 232, .20) 84%,
-          rgba(245, 241, 232, 0) 100%
-        );
-
-      pointer-events: none;
+      border-radius: 6px;
     }
 
     .value-icon {
+      display: block;
+
       width: 72px;
       height: 72px;
       min-width: 72px;
-
-      display: block;
 
       object-fit: contain;
 
@@ -908,95 +787,63 @@
       color: #000;
 
       font-size: 13px;
-
       line-height: 1.45;
     }
 
 
     /* ========================================
-   FOOTER
-======================================== */
+       FOOTER
+    ======================================== */
 
-.site-footer {
-  width: 100%;
-  margin-top: 35px;
-  padding: 34px 7% 30px;
+    .site-footer {
+      width: 100%;
 
-  background: #f5f1e8;
+      margin-top: 35px;
 
-  color: #172019;
-}
+      padding: 34px 7% 30px;
 
-.footer-content {
-  width: 100%;
-  max-width: 1600px;
+      color: var(--text);
+      background: var(--cream);
+    }
 
-  margin: 0 auto;
+    .footer-content {
+      width: 100%;
+      max-width: 1600px;
 
-  text-align: center;
-}
+      margin: 0 auto;
 
-.footer-name {
-  margin-bottom: 8px;
+      text-align: center;
+    }
 
-  color: #203b28;
+    .footer-name {
+      margin-bottom: 8px;
 
-  font-size: 17px;
-  font-weight: 700;
+      color: var(--green-dark);
 
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: 1px;
 
-.footer-details {
-  font-size: 12px;
-  line-height: 1.6;
-}
+      text-transform: uppercase;
+    }
 
-.footer-divider {
-  margin: 0 7px;
-}
+    .footer-details {
+      font-size: 12px;
+      line-height: 1.6;
+    }
 
-.footer-copyright {
-  margin-top: 8px;
+    .footer-divider {
+      margin: 0 7px;
+    }
 
-  font-size: 11px;
+    .footer-copyright {
+      margin-top: 8px;
 
-  opacity: .7;
-}
+      font-size: 11px;
 
+      opacity: .7;
+    }
 
-/* MOBILE FOOTER */
-
-@media (max-width: 650px) {
-
-  .site-footer {
-    margin-top: 25px;
-
-    padding: 28px 22px;
-  }
-
-  .footer-name {
-    font-size: 15px;
-  }
-
-  .footer-details {
-    max-width: 320px;
-
-    margin: 0 auto;
-
-    font-size: 11px;
-  }
-
-  .footer-divider {
-    margin: 0 4px;
-  }
-
-  .footer-copyright {
-    font-size: 10px;
-  }
-
-}
 
     /* ========================================
        SMALL DESKTOP
@@ -1024,13 +871,11 @@
       }
 
       .nav-links .donate-btn {
-        padding:
-          10px 16px;
+        padding: 10px 16px;
       }
 
       .hero {
-        padding:
-          90px 4% 35px;
+        padding: 90px 4% 35px;
       }
 
       .hero-content {
@@ -1038,16 +883,13 @@
 
         margin-right: 1%;
 
-        transform:
-          translateY(55px);
+        transform: translateY(55px);
       }
 
       .hero h1 {
         margin-bottom: 18px;
 
-        font-size:
-          clamp(38px, 4.2vw, 48px);
-
+        font-size: clamp(38px, 4.2vw, 48px);
         letter-spacing: -2px;
       }
 
@@ -1057,7 +899,6 @@
         margin-bottom: 18px;
 
         font-size: 13px;
-
         line-height: 1.45;
       }
 
@@ -1067,8 +908,7 @@
       }
 
       .mission-content {
-        padding:
-          42px 38px;
+        padding: 42px 38px;
       }
 
       .mission-card h2 {
@@ -1090,8 +930,7 @@
       .value {
         gap: 14px;
 
-        padding:
-          20px 22px;
+        padding: 20px 22px;
       }
 
       .value-icon {
@@ -1133,18 +972,15 @@
       }
 
       .nav-links .donate-btn {
-        padding:
-          10px 15px;
+        padding: 10px 15px;
       }
 
       .hero {
-        padding:
-          90px 5% 35px;
+        padding: 90px 5% 35px;
       }
 
       .hero-content {
         width: 42%;
-
         max-width: 390px;
 
         margin-left: auto;
@@ -1156,9 +992,7 @@
       .hero h1 {
         margin-bottom: 18px;
 
-        font-size:
-          clamp(36px, 5vw, 50px);
-
+        font-size: clamp(36px, 5vw, 50px);
         letter-spacing: -2px;
       }
 
@@ -1166,7 +1000,6 @@
         margin-bottom: 18px;
 
         font-size: 13px;
-
         line-height: 1.45;
       }
 
@@ -1178,8 +1011,7 @@
       }
 
       .mission-content {
-        padding:
-          40px 36px;
+        padding: 40px 36px;
       }
 
       .mission-card h2 {
@@ -1203,18 +1035,15 @@
       }
 
       .trip-pathways {
-        grid-template-columns:
-          repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
       }
 
       .pathway-card:last-child {
-        grid-column:
-          1 / -1;
+        grid-column: 1 / -1;
       }
 
       .values-strip {
-        grid-template-columns:
-          1fr;
+        grid-template-columns: 1fr;
       }
 
     }
@@ -1237,8 +1066,7 @@
       nav {
         height: 68px;
 
-        padding:
-          6px 18px;
+        padding: 6px 18px;
 
         flex-direction: row;
         align-items: center;
@@ -1247,7 +1075,6 @@
 
       .logo img {
         width: 155px;
-
         max-width: 58vw;
       }
 
@@ -1265,8 +1092,7 @@
 
         width: 100%;
 
-        padding:
-          10px 18px 18px;
+        padding: 10px 18px 18px;
 
         flex-direction: column;
         align-items: stretch;
@@ -1283,8 +1109,7 @@
       }
 
       .nav-links a {
-        padding:
-          12px 8px;
+        padding: 12px 8px;
 
         color: #000;
 
@@ -1298,8 +1123,7 @@
       .nav-links .donate-btn {
         margin-top: 10px;
 
-        padding:
-          12px 16px;
+        padding: 12px 16px;
 
         color: #fff;
         background: #000;
@@ -1325,13 +1149,11 @@
       .dropdown-trigger {
         width: 100%;
 
-        justify-content:
-          space-between;
+        justify-content: space-between;
       }
 
       .dropdown-arrow {
-        transition:
-          transform .2s ease;
+        transition: transform .2s ease;
       }
 
       .dropdown-menu {
@@ -1342,8 +1164,7 @@
         width: 100%;
         min-width: 0;
 
-        padding:
-          4px 0 8px 14px;
+        padding: 4px 0 8px 14px;
 
         transform: none;
 
@@ -1359,20 +1180,16 @@
         pointer-events: auto;
       }
 
-      .nav-dropdown.mobile-open
-      .dropdown-menu {
+      .nav-dropdown.mobile-open .dropdown-menu {
         display: block;
       }
 
-      .nav-dropdown.mobile-open
-      .dropdown-arrow {
-        transform:
-          rotate(180deg);
+      .nav-dropdown.mobile-open .dropdown-arrow {
+        transform: rotate(180deg);
       }
 
       .dropdown-menu a {
-        padding:
-          10px 8px;
+        padding: 10px 8px;
 
         font-size: 12px;
         font-weight: 600;
@@ -1388,19 +1205,15 @@
       /* MOBILE HERO */
 
       .hero {
-        height:
-          calc(100svh - 68px);
+        height: calc(100svh - 68px);
 
-        padding:
-          0 24px 34px;
+        padding: 0 24px 34px;
 
         align-items: flex-end;
         justify-content: flex-start;
 
         background-size: cover;
-
-        background-position:
-          42% center;
+        background-position: 42% center;
       }
 
       .hero::before {
@@ -1415,7 +1228,6 @@
         background:
           linear-gradient(
             180deg,
-
             rgba(0, 0, 0, .02) 20%,
             rgba(0, 0, 0, .12) 48%,
             rgba(0, 0, 0, .58) 100%
@@ -1424,7 +1236,6 @@
 
       .hero-content {
         width: 100%;
-
         max-width: 360px;
 
         margin: 0;
@@ -1438,11 +1249,8 @@
 
         margin-bottom: 20px;
 
-        font-size:
-          clamp(42px, 13vw, 56px);
-
+        font-size: clamp(42px, 13vw, 56px);
         line-height: .9;
-
         letter-spacing: -2px;
       }
 
@@ -1452,31 +1260,25 @@
         margin-bottom: 22px;
 
         font-size: 16px;
-
         line-height: 1.45;
       }
 
       .button {
-        padding:
-          10px 18px;
+        padding: 10px 18px;
 
         font-size: 10px;
       }
 
       .topo-background {
-        background-size:
-          auto 100%;
-
-        background-position:
-          center top;
+        background-size: auto 100%;
+        background-position: center top;
       }
 
 
       /* MOBILE MISSION */
 
       .mission-section {
-        padding:
-          34px 18px 22px;
+        padding: 34px 18px 22px;
       }
 
       .mission-card {
@@ -1484,20 +1286,10 @@
         height: auto;
 
         flex-direction: column;
-
-        overflow: visible;
       }
 
       .mission-content {
-        padding:
-          34px 26px;
-      }
-
-      .mission-content::before {
-        top: -28px;
-        right: -25px;
-        bottom: -28px;
-        left: -25px;
+        padding: 34px 26px;
       }
 
       .mission-label {
@@ -1512,7 +1304,6 @@
 
       .mission-card p {
         font-size: 15px;
-
         line-height: 1.6;
       }
 
@@ -1532,8 +1323,7 @@
       .main-section {
         width: 100%;
 
-        padding:
-          30px 18px;
+        padding: 30px 18px;
       }
 
       .section-title {
@@ -1543,8 +1333,7 @@
       }
 
       .trip-pathways {
-        grid-template-columns:
-          1fr;
+        grid-template-columns: 1fr;
 
         gap: 26px;
       }
@@ -1554,15 +1343,7 @@
       }
 
       .pathway-content {
-        padding:
-          26px 22px;
-      }
-
-      .pathway-content::before {
-        top: -8px;
-        right: -20px;
-        bottom: -30px;
-        left: -20px;
+        padding: 26px 22px;
       }
 
       .pathway-card h3 {
@@ -1577,32 +1358,21 @@
       /* MOBILE WHAT GUIDES US */
 
       .values-heading {
-        padding:
-          24px 18px 0;
+        padding: 24px 18px 0;
       }
 
       .values-strip {
-        grid-template-columns:
-          1fr;
+        grid-template-columns: 1fr;
 
         gap: 18px;
 
-        padding:
-          22px 18px;
+        padding: 22px 18px;
       }
 
       .value {
         gap: 15px;
 
-        padding:
-          20px 18px;
-      }
-
-      .value::before {
-        top: -25px;
-        right: -18px;
-        bottom: -25px;
-        left: -18px;
+        padding: 20px 18px;
       }
 
       .value-icon {
@@ -1619,9 +1389,29 @@
         font-size: 12px;
       }
 
-      footer {
-        padding: 16px;
+      .site-footer {
+        margin-top: 25px;
 
+        padding: 28px 22px;
+      }
+
+      .footer-name {
+        font-size: 15px;
+      }
+
+      .footer-details {
+        max-width: 320px;
+
+        margin: 0 auto;
+
+        font-size: 11px;
+      }
+
+      .footer-divider {
+        margin: 0 4px;
+      }
+
+      .footer-copyright {
         font-size: 10px;
       }
 
@@ -1661,13 +1451,11 @@
 
       .hero p {
         font-size: 15px;
-
         line-height: 1.4;
       }
 
       .mission-content {
-        padding:
-          30px 22px;
+        padding: 30px 22px;
       }
 
       .pathway-image {
@@ -1675,8 +1463,7 @@
       }
 
       .value {
-        padding:
-          18px 14px;
+        padding: 18px 14px;
       }
 
     }
@@ -1824,7 +1611,6 @@
   <div class="topo-background">
 
 
-
     <!-- ========================================
          MISSION
     ======================================== -->
@@ -1845,21 +1631,21 @@
           </h2>
 
           <p>
-  Side Quest Expeditions provides San Francisco public school students
-  with professionally led, progressive outdoor education that builds
-  skills, confidence, and community through meaningful experiences
-  outside. We help students carry those experiences forward through
-  continued learning and mentorship, while creating pathways to outdoor
-  employment for those who choose to pursue it. Our public adventures
-  help fund student programming and support a sustainable model for
-  reaching more young people, while helping create an outdoor community
-  that better reflects the communities it serves.
-  <br><br>
-  <strong>
-    Side Quest Expeditions is a California nonprofit public benefit
-    corporation serving San Francisco public school students.
-  </strong>
-</p>
+            Side Quest Expeditions provides San Francisco public school students
+            with professionally led, progressive outdoor education that builds
+            skills, confidence, and community through meaningful experiences
+            outside. We help students carry those experiences forward through
+            continued learning and mentorship, while creating pathways to outdoor
+            employment for those who choose to pursue it. Our public adventures
+            help fund student programming and support a sustainable model for
+            reaching more young people, while helping create an outdoor community
+            that better reflects the communities it serves.
+            <br><br>
+            <strong>
+              Side Quest Expeditions is a California nonprofit public benefit
+              corporation serving San Francisco public school students.
+            </strong>
+          </p>
 
         </div>
 
@@ -1894,7 +1680,6 @@
 
 
       <div class="trip-pathways">
-
 
 
         <!-- STUDENT EXPEDITIONS -->
@@ -2111,34 +1896,38 @@
     </section>
 
 
-
-   <!-- ========================================
-     FOOTER
-======================================== -->
-
-<footer class="site-footer">
-
-  <div class="footer-content">
-
-    <div class="footer-name">
-      Side Quest Expeditions
-    </div>
-
-    <div class="footer-details">
-      California Nonprofit Public Benefit Corporation
-      <span class="footer-divider">·</span>
-      San Francisco, California
-      <span class="footer-divider">·</span>
-      EIN: 41-2872525
-    </div>
-
-    <div class="footer-copyright">
-      © 2026 Side Quest Expeditions
-    </div>
-
   </div>
 
-</footer>
+
+
+  <!-- ========================================
+       FOOTER
+  ======================================== -->
+
+  <footer class="site-footer">
+
+    <div class="footer-content">
+
+      <div class="footer-name">
+        Side Quest Expeditions
+      </div>
+
+      <div class="footer-details">
+        California Nonprofit Public Benefit Corporation
+        <span class="footer-divider">·</span>
+        San Francisco, California
+        <span class="footer-divider">·</span>
+        EIN: 41-2872525
+      </div>
+
+      <div class="footer-copyright">
+        © 2026 Side Quest Expeditions
+      </div>
+
+    </div>
+
+  </footer>
+
 
 
   <!-- ========================================
