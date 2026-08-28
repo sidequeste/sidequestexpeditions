@@ -47,7 +47,9 @@
     }
 
 
-    /* NAVIGATION */
+    /* ========================================
+       NAVIGATION
+    ======================================== */
 
     header {
       position: fixed;
@@ -124,7 +126,9 @@
     }
 
 
-    /* PROGRAMS DROPDOWN */
+    /* ========================================
+       PROGRAMS DROPDOWN
+    ======================================== */
 
     .nav-dropdown {
       position: relative;
@@ -194,7 +198,9 @@
     }
 
 
-    /* SUPPORT HERO */
+    /* ========================================
+       SUPPORT HERO
+    ======================================== */
 
     .support-hero {
       width: 100%;
@@ -219,12 +225,12 @@
     }
 
     .support-hero-bg {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 72%;
-  display: block;
-}
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 72%;
+      display: block;
+    }
 
     .support-hero::after {
       content: "";
@@ -254,7 +260,7 @@
       text-transform: uppercase;
       letter-spacing: -3px;
       margin-bottom: 25px;
-      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.45);
+      text-shadow: 0 2px 5px rgba(0,0,0,.45);
     }
 
     .support-hero p {
@@ -262,7 +268,7 @@
       max-width: 470px;
       line-height: 1.5;
       margin-bottom: 22px;
-      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.55);
+      text-shadow: 0 1px 3px rgba(0,0,0,.55);
     }
 
     .button {
@@ -281,7 +287,9 @@
     }
 
 
-    /* TOPO BACKGROUND */
+    /* ========================================
+       TOPO BACKGROUND
+    ======================================== */
 
     .topo-background {
       background-image: url("mountdarwin.jpg");
@@ -291,7 +299,9 @@
     }
 
 
-    /* GENERAL SECTIONS */
+    /* ========================================
+       GENERAL SECTIONS
+    ======================================== */
 
     .section {
       padding: 65px 7%;
@@ -326,7 +336,9 @@
     }
 
 
-    /* INTRO */
+    /* ========================================
+       INTRO
+    ======================================== */
 
     .support-intro {
       font-size: 24px;
@@ -337,7 +349,9 @@
     }
 
 
-    /* SUPPORT OPTIONS */
+    /* ========================================
+       SUPPORT OPTIONS
+    ======================================== */
 
     .support-grid {
       display: grid;
@@ -368,7 +382,9 @@
     }
 
 
-    /* WHAT SUPPORT MAKES POSSIBLE */
+    /* ========================================
+       WHAT SUPPORT MAKES POSSIBLE
+    ======================================== */
 
     .impact-grid {
       display: grid;
@@ -394,7 +410,9 @@
     }
 
 
-    /* PARTNERS */
+    /* ========================================
+       PARTNERS
+    ======================================== */
 
     .partners-text {
       max-width: 850px;
@@ -403,7 +421,9 @@
     }
 
 
-    /* CTA */
+    /* ========================================
+       CTA
+    ======================================== */
 
     .cta {
       text-align: center;
@@ -421,18 +441,53 @@
     }
 
 
-    /* FOOTER */
+    /* ========================================
+       FOOTER
+    ======================================== */
 
-    footer {
-      background: transparent;
-      color: #111;
+    .site-footer {
+      width: 100%;
+      margin-top: 35px;
+      padding: 34px 7% 30px;
+      background: #f5f1e8;
+      color: #172019;
+    }
+
+    .footer-content {
+      width: 100%;
+      max-width: 1600px;
+      margin: 0 auto;
       text-align: center;
-      padding: 28px 22px;
+    }
+
+    .footer-name {
+      margin-bottom: 8px;
+      color: #203b28;
+      font-size: 17px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .footer-details {
       font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .footer-divider {
+      margin: 0 7px;
+    }
+
+    .footer-copyright {
+      margin-top: 8px;
+      font-size: 11px;
+      opacity: .7;
     }
 
 
-    /* SMALL DESKTOP */
+    /* ========================================
+       SMALL DESKTOP
+    ======================================== */
 
     @media (max-width: 1250px) and (min-width: 1001px) {
 
@@ -490,10 +545,13 @@
         padding-left: 6%;
         padding-right: 6%;
       }
+
     }
 
 
-    /* TABLET */
+    /* ========================================
+       TABLET
+    ======================================== */
 
     @media (max-width: 1000px) and (min-width: 651px) {
 
@@ -565,10 +623,13 @@
       .impact-grid {
         grid-template-columns: 1fr;
       }
+
     }
 
 
-    /* MOBILE */
+    /* ========================================
+       MOBILE
+    ======================================== */
 
     @media (max-width: 650px) {
 
@@ -680,17 +741,13 @@
         top: auto;
         left: auto;
         transform: none;
-
         display: none;
         width: 100%;
         min-width: 0;
-
         padding: 4px 0 8px 14px;
-
         background: transparent;
         border-radius: 0;
         box-shadow: none;
-
         opacity: 1;
         visibility: visible;
         pointer-events: auto;
@@ -724,12 +781,7 @@
         min-height: 0;
         aspect-ratio: auto;
         margin-top: 0;
-
-        padding:
-          0
-          24px
-          40px;
-
+        padding: 0 24px 40px;
         align-items: flex-end;
         justify-content: flex-start;
       }
@@ -830,14 +882,38 @@
         font-size: 16px;
       }
 
-      footer {
-        padding: 16px;
+
+      /* MOBILE FOOTER */
+
+      .site-footer {
+        margin-top: 25px;
+        padding: 28px 22px;
+      }
+
+      .footer-name {
+        font-size: 15px;
+      }
+
+      .footer-details {
+        max-width: 320px;
+        margin: 0 auto;
+        font-size: 11px;
+      }
+
+      .footer-divider {
+        margin: 0 4px;
+      }
+
+      .footer-copyright {
         font-size: 10px;
       }
+
     }
 
 
-    /* SMALL PHONES */
+    /* ========================================
+       SMALL PHONES
+    ======================================== */
 
     @media (max-width: 390px) {
 
@@ -867,6 +943,7 @@
       .support-hero p {
         font-size: 15px;
       }
+
     }
 
   </style>
@@ -876,7 +953,9 @@
 <body>
 
 
-  <!-- NAVIGATION -->
+  <!-- ========================================
+       NAVIGATION
+  ======================================== -->
 
   <header>
 
@@ -900,7 +979,6 @@
 
       <div class="nav-links">
 
-
         <a href="about.html">
           About
         </a>
@@ -917,25 +995,21 @@
             <span class="dropdown-arrow">▾</span>
           </a>
 
-
           <div class="dropdown-menu">
 
-  <a href="student-trips.html">
-    Student Expeditions
-  </a>
+            <a href="student-trips.html">
+              Student Expeditions
+            </a>
 
-<a href="whitewater-guide-school.html">
-    Whitewater Guide School
-  </a>            
-  <a href="public-trips.html">
-    Local Tours
-  </a>
+            <a href="public-trips.html">
+              Public Adventures
+            </a>
 
-  <a href="custom-adventures.html">
-    Custom Adventures
-  </a>
+            <a href="custom-adventures.html">
+              Custom Programs
+            </a>
 
-</div>
+          </div>
 
         </div>
 
@@ -951,13 +1025,13 @@
 
 
         <a
-  href="https://www.zeffy.com/en-US/donation-form/help-launch-side-quest-expeditions"
-  class="donate-btn"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  Donate
-</a>
+          href="https://www.zeffy.com/en-US/donation-form/help-launch-side-quest-expeditions"
+          class="donate-btn"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Donate
+        </a>
 
       </div>
 
@@ -967,10 +1041,11 @@
 
 
 
-  <!-- SUPPORT HERO -->
+  <!-- ========================================
+       SUPPORT HERO
+  ======================================== -->
 
   <section class="support-hero">
-
 
     <picture class="support-hero-picture">
 
@@ -979,11 +1054,12 @@
         srcset="supportusmobile.png"
       >
 
-     <img
-  src="sidequest-support-hero-4k.jpg"
-  alt="Side Quest Expeditions"
-  class="support-hero-bg"
->
+      <img
+        src="sidequest-support-hero-4k.jpg"
+        alt="Side Quest Expeditions"
+        class="support-hero-bg"
+      >
+
     </picture>
 
 
@@ -1001,13 +1077,13 @@
       </p>
 
       <a
-  href="https://www.zeffy.com/en-US/donation-form/help-launch-side-quest-expeditions"
-  class="button"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  Donate
-</a>
+        href="https://www.zeffy.com/en-US/donation-form/help-launch-side-quest-expeditions"
+        class="button"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Donate
+      </a>
 
     </div>
 
@@ -1015,12 +1091,17 @@
 
 
 
-  <!-- TOPOGRAPHIC BACKGROUND -->
+  <!-- ========================================
+       TOPOGRAPHIC BACKGROUND
+  ======================================== -->
 
   <div class="topo-background">
 
 
-    <!-- WHY SUPPORT -->
+
+    <!-- ========================================
+         WHY SUPPORT
+    ======================================== -->
 
     <section class="section">
 
@@ -1052,7 +1133,9 @@
 
 
 
-    <!-- WAYS TO SUPPORT -->
+    <!-- ========================================
+         WAYS TO SUPPORT
+    ======================================== -->
 
     <section class="section">
 
@@ -1089,13 +1172,13 @@
             </p>
 
             <a
-  href="https://www.zeffy.com/en-US/donation-form/help-launch-side-quest-expeditions"
-  class="button"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  Donate
-</a>
+              href="https://www.zeffy.com/en-US/donation-form/help-launch-side-quest-expeditions"
+              class="button"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Donate
+            </a>
 
           </div>
 
@@ -1159,7 +1242,9 @@
 
 
 
-    <!-- IMPACT -->
+    <!-- ========================================
+         IMPACT
+    ======================================== -->
 
     <section class="section">
 
@@ -1246,7 +1331,9 @@
 
 
 
-    <!-- PARTNERSHIP -->
+    <!-- ========================================
+         PARTNERSHIP
+    ======================================== -->
 
     <section class="section">
 
@@ -1255,7 +1342,7 @@
         <div class="content-panel">
 
           <div class="section-label">
-            Corporate & Community Support
+            Corporate &amp; Community Support
           </div>
 
           <h2>
@@ -1291,7 +1378,9 @@
 
 
 
-    <!-- FINAL CTA -->
+    <!-- ========================================
+         FINAL CTA
+    ======================================== -->
 
     <section class="section cta">
 
@@ -1315,13 +1404,13 @@
           </p>
 
           <a
-  href="https://www.zeffy.com/en-US/donation-form/help-launch-side-quest-expeditions"
-  class="button"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  Support Side Quest
-</a>
+            href="https://www.zeffy.com/en-US/donation-form/help-launch-side-quest-expeditions"
+            class="button"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Support Side Quest
+          </a>
 
         </div>
 
@@ -1331,10 +1420,32 @@
 
 
 
-    <!-- FOOTER -->
+    <!-- ========================================
+         FOOTER
+    ======================================== -->
 
-    <footer>
-      © 2026 Side Quest Expeditions · San Francisco, California
+    <footer class="site-footer">
+
+      <div class="footer-content">
+
+        <div class="footer-name">
+          Side Quest Expeditions
+        </div>
+
+        <div class="footer-details">
+          California Nonprofit Public Benefit Corporation
+          <span class="footer-divider">·</span>
+          San Francisco, California
+          <span class="footer-divider">·</span>
+          EIN: 41-2872525
+        </div>
+
+        <div class="footer-copyright">
+          © 2026 Side Quest Expeditions
+        </div>
+
+      </div>
+
     </footer>
 
 
@@ -1342,7 +1453,9 @@
 
 
 
-  <!-- MOBILE MENU -->
+  <!-- ========================================
+       MOBILE MENU
+  ======================================== -->
 
   <script>
 
