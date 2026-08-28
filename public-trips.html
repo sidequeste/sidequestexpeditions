@@ -2,10 +2,16 @@
 <html lang="en">
 
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <title>Public Adventures | Side Quest Expeditions</title>
+
 
   <style>
 
@@ -17,619 +23,1058 @@
       --muted: #626a63;
     }
 
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
+
     html {
       scroll-behavior: smooth;
+
       width: 100%;
       max-width: 100%;
+
       overflow-x: hidden;
     }
+
 
     body {
       font-family: Arial, Helvetica, sans-serif;
+
       color: var(--text);
+
       background: #fff;
+
       line-height: 1.6;
+
       width: 100%;
       max-width: 100%;
+
       overflow-x: hidden;
+
       padding-top: 72px;
     }
 
+
     a {
       color: inherit;
+
       text-decoration: none;
     }
 
 
-    /* NAVIGATION */
+
+    /* =====================================================
+       NAVIGATION
+       ===================================================== */
 
     header {
       position: fixed;
+
       top: 0;
       left: 0;
+
       width: 100%;
       height: 72px;
+
       z-index: 1000;
+
       background: var(--cream);
     }
+
 
     nav {
       width: 100%;
       height: 72px;
+
       padding: 6px 4%;
+
       display: flex;
+
       align-items: center;
       justify-content: space-between;
+
       gap: 30px;
     }
 
+
     .logo {
       display: flex;
+
       align-items: center;
     }
+
 
     .logo img {
       width: 185px;
       height: auto;
+
       display: block;
     }
 
+
     .nav-links {
       display: flex;
+
       align-items: center;
+
       gap: 28px;
+
       font-size: 13px;
       font-weight: 700;
+
       text-transform: uppercase;
+
       color: #000;
     }
 
+
     .nav-links a {
       padding: 10px 0;
+
       white-space: nowrap;
+
       color: #000;
     }
+
 
     .nav-links a:hover {
       opacity: .6;
     }
 
+
     .nav-links .donate-btn {
       background: #000;
+
       color: #fff;
+
       padding: 10px 20px;
+
       border-radius: 4px;
     }
 
+
     .nav-links .donate-btn:hover {
       background: #222;
+
       color: #fff;
+
       opacity: 1;
     }
 
+
     .menu-toggle {
       display: none;
+
       background: none;
+
       border: none;
+
       color: #000;
+
       font-size: 30px;
       line-height: 1;
+
       cursor: pointer;
     }
 
 
-    /* PROGRAMS DROPDOWN */
+
+    /* =====================================================
+       PROGRAMS DROPDOWN
+       ===================================================== */
 
     .nav-dropdown {
       position: relative;
+
       display: flex;
+
       align-items: center;
     }
 
+
     .nav-dropdown::after {
       content: "";
+
       position: absolute;
+
       top: 100%;
       left: -10px;
+
       width: calc(100% + 20px);
       height: 12px;
     }
 
+
     .dropdown-trigger {
       display: flex;
+
       align-items: center;
+
       gap: 6px;
     }
 
+
     .dropdown-arrow {
       font-size: 11px;
+
       line-height: 1;
     }
 
+
     .dropdown-menu {
       position: absolute;
+
       top: 100%;
       left: 50%;
+
       transform: translateX(-50%);
+
       min-width: 230px;
+
       background: var(--cream);
+
       border-radius: 4px;
+
       padding: 8px 0;
+
       box-shadow: 0 8px 24px rgba(0,0,0,.16);
+
       opacity: 0;
       visibility: hidden;
+
       pointer-events: none;
+
       transition:
         opacity .15s ease,
         visibility .15s ease;
+
       z-index: 2000;
     }
 
+
     .dropdown-menu a {
       display: block;
+
       width: 100%;
+
       padding: 11px 18px;
+
       color: #000;
+
       font-size: 12px;
       font-weight: 700;
+
       text-transform: uppercase;
+
       white-space: nowrap;
     }
 
+
     .dropdown-menu a:hover {
       background: rgba(0,0,0,.06);
+
       opacity: 1;
     }
+
 
     .nav-dropdown:hover .dropdown-menu {
       opacity: 1;
       visibility: visible;
+
       pointer-events: auto;
     }
 
 
-    /* PUBLIC ADVENTURES HERO */
+
+    /* =====================================================
+       HERO
+       ===================================================== */
 
     .tours-hero {
       width: 100%;
+
       height: calc(100vh - 72px);
       min-height: 0;
+
       position: relative;
+
       display: flex;
+
       align-items: center;
       justify-content: flex-end;
+
       padding: 40px 5%;
+
       color: white;
+
       overflow: hidden;
     }
 
+
     .tours-hero-picture {
       position: absolute;
+
       inset: 0;
+
       width: 100%;
       height: 100%;
+
       display: block;
+
       z-index: 0;
     }
+
 
     .tours-hero-bg {
       width: 100%;
       height: 100%;
+
       object-fit: cover;
+
       object-position: center center;
+
       display: block;
     }
 
+
+    .tours-hero::before {
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(0,0,0,.02) 0%,
+          rgba(0,0,0,.05) 45%,
+          rgba(0,0,0,.35) 100%
+        );
+
+      z-index: 1;
+    }
+
+
     .tours-hero::after {
       content: "";
+
       position: absolute;
+
       left: -5%;
       right: -5%;
       bottom: -70px;
+
       height: 170px;
+
       background: rgba(255,255,255,.035);
+
       transform: rotate(-2deg);
+
       pointer-events: none;
+
+      z-index: 1;
     }
+
 
     .tours-hero-content {
       position: relative;
+
       z-index: 2;
-      max-width: 470px;
+
+      max-width: 560px;
+
       text-align: left;
+
       margin-left: auto;
       margin-right: -1%;
+
       transform: translate(25px, 40px);
     }
 
+
     .tours-hero h1 {
-      font-size: clamp(40px, 4.5vw, 64px);
-      line-height: .92;
+      font-size: clamp(42px, 5vw, 70px);
+
+      line-height: .9;
+
       text-transform: uppercase;
+
       letter-spacing: -3px;
-      margin-bottom: 25px;
-      text-shadow: 0 4px 10px rgba(0, 0, 0, 0.82);
-    }
 
-    .tours-hero p {
-      font-size: 15px;
-      max-width: 470px;
-      line-height: 1.5;
-      margin-bottom: 22px;
-      text-shadow: 0 3px 7px rgba(0, 0, 0, 0.82);
+      margin-bottom: 0;
+
+      text-shadow: 0 4px 10px rgba(0,0,0,.82);
     }
 
 
-    /* TOPO BACKGROUND */
+
+    /* =====================================================
+       TOPOGRAPHIC BACKGROUND
+       ===================================================== */
 
     .topo-background {
       background-image: url("mountdarwin.jpg");
+
       background-size: 100% auto;
       background-position: center top;
       background-repeat: repeat-y;
     }
 
 
-    /* GENERAL SECTIONS */
+
+    /* =====================================================
+       GENERAL SECTIONS
+       ===================================================== */
 
     .section {
       padding: 65px 7%;
     }
 
+
     .section-inner {
       max-width: 1100px;
+
       margin: auto;
     }
 
+
     .content-panel {
-      background: rgba(245, 241, 232, .96);
+      background: rgba(245,241,232,.96);
+
       border-radius: 6px;
+
       padding: 48px;
     }
 
+
     .section-label {
       color: var(--green);
+
       font-size: 13px;
       font-weight: 700;
+
       letter-spacing: 2px;
+
       text-transform: uppercase;
+
       margin-bottom: 10px;
     }
 
+
     h2 {
       color: var(--green-dark);
+
       font-size: 36px;
+
       text-transform: uppercase;
+
       margin-bottom: 25px;
+
       line-height: 1.1;
     }
 
 
-    /* INTRO */
+    .public-intro {
+      font-size: 22px;
 
-    .tours-intro {
-      font-size: 24px;
       line-height: 1.55;
+
       color: var(--green-dark);
+
       max-width: 900px;
+
       font-weight: 600;
     }
 
 
-    /* TOUR CARDS */
+    .public-intro + .public-intro {
+      margin-top: 20px;
+    }
 
-    .tour-list {
+
+
+    /* =====================================================
+       ADVENTURE CARDS
+       ===================================================== */
+
+    .adventure-list {
       display: grid;
+
       gap: 34px;
     }
 
-    .tour-card {
-      background: rgba(245, 241, 232, .97);
+
+    .adventure-card {
+      background: rgba(245,241,232,.97);
+
       border-radius: 6px;
+
       overflow: hidden;
+
       display: grid;
+
       grid-template-columns: 1.05fr 1fr;
+
       min-height: 390px;
     }
 
-    .tour-card:nth-child(even) {
+
+    .adventure-card:nth-child(even) {
       grid-template-columns: 1fr 1.05fr;
     }
 
-    .tour-card:nth-child(even) .tour-photo {
+
+    .adventure-card:nth-child(even) .adventure-photo {
       order: 2;
     }
 
-    .tour-card:nth-child(even) .tour-content {
+
+    .adventure-card:nth-child(even) .adventure-content {
       order: 1;
     }
 
-    .tour-photo {
+
+    .adventure-photo {
       min-height: 390px;
+
       overflow: hidden;
     }
 
-    .tour-photo img {
+
+    .adventure-photo img {
       width: 100%;
       height: 100%;
+
       min-height: 390px;
+
       object-fit: cover;
+
       display: block;
     }
 
-    .tour-content {
+
+    .adventure-content {
       padding: 42px;
+
       display: flex;
+
       flex-direction: column;
+
       justify-content: center;
     }
 
-    .tour-content h3 {
+
+    .adventure-content h3 {
       color: var(--green-dark);
+
       text-transform: uppercase;
+
       font-size: 30px;
+
       line-height: 1.05;
-      margin-bottom: 16px;
+
+      margin-bottom: 12px;
     }
 
-    .tour-content p {
+
+    .adventure-content p {
       font-size: 16px;
+
       margin-bottom: 18px;
     }
 
+
+    .adventure-content h4 {
+      color: var(--green-dark);
+
+      text-transform: uppercase;
+
+      font-size: 14px;
+
+      margin-bottom: 8px;
+    }
+
+
+    .adventure-content ul {
+      padding-left: 20px;
+
+      margin-bottom: 22px;
+    }
+
+
+    .adventure-content li {
+      margin-bottom: 6px;
+    }
+
+
+    .age-label {
+      color: var(--green);
+
+      font-size: 13px;
+      font-weight: 700;
+
+      text-transform: uppercase;
+
+      letter-spacing: 1px;
+
+      margin-bottom: 18px;
+    }
+
+
+
+    /* =====================================================
+       LOCAL ADVENTURE META
+       ===================================================== */
+
     .tour-meta {
       display: grid;
+
       grid-template-columns: repeat(2, 1fr);
+
       gap: 14px 24px;
+
       margin: 6px 0 24px;
     }
 
+
     .tour-meta-item strong {
       display: block;
+
       color: var(--green);
+
       font-size: 11px;
+
       letter-spacing: 1px;
+
       text-transform: uppercase;
+
       margin-bottom: 3px;
     }
 
+
     .tour-meta-item span {
       font-size: 14px;
+
       color: var(--text);
     }
 
+
+
+    /* =====================================================
+       BUTTON
+       ===================================================== */
+
     .button {
       display: inline-block;
+
       align-self: flex-start;
+
       background: #000;
+
       color: #fff;
+
       padding: 14px 28px;
+
       border-radius: 4px;
+
       font-weight: 700;
+
       text-transform: uppercase;
+
       font-size: 13px;
     }
+
 
     .button:hover {
       background: #222;
     }
 
 
-    /* WHY TOUR WITH US */
+
+    /* =====================================================
+       WHITEWATER TRANSITION
+       ===================================================== */
+
+    .river-panel {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      background: rgba(245,241,232,.97);
+
+      border-radius: 6px;
+
+      overflow: hidden;
+    }
+
+
+    .river-panel-image {
+      min-height: 420px;
+
+      overflow: hidden;
+    }
+
+
+    .river-panel-image img {
+      width: 100%;
+      height: 100%;
+
+      min-height: 420px;
+
+      object-fit: cover;
+
+      display: block;
+    }
+
+
+    .river-panel-content {
+      padding: 48px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: center;
+    }
+
+
+    .river-panel-content h2 {
+      margin-bottom: 20px;
+    }
+
+
+    .river-panel-content p {
+      font-size: 17px;
+
+      margin-bottom: 18px;
+    }
+
+
+
+    /* =====================================================
+       SIDE QUEST DIFFERENCE
+       ===================================================== */
 
     .benefit-grid {
       display: grid;
+
       grid-template-columns: repeat(3, 1fr);
+
       gap: 22px;
     }
 
+
     .benefit-card {
-      background: rgba(245, 241, 232, .97);
+      background: rgba(245,241,232,.97);
+
       border-radius: 6px;
+
       padding: 30px;
     }
 
+
     .benefit-card h3 {
       color: var(--green-dark);
+
       text-transform: uppercase;
+
       font-size: 20px;
+
       margin-bottom: 10px;
     }
+
 
     .benefit-card p {
       font-size: 15px;
     }
 
 
-    /* CTA */
+
+    /* =====================================================
+       CTA
+       ===================================================== */
 
     .cta {
       text-align: center;
     }
 
+
     .cta .content-panel {
       max-width: 850px;
+
       margin: auto;
     }
 
+
     .cta p {
       max-width: 700px;
+
       margin: 0 auto 25px;
+
       font-size: 18px;
     }
 
 
-    /* FOOTER */
+    .cta .button {
+      align-self: auto;
+    }
+
+
+
+    /* =====================================================
+       FOOTER
+       ===================================================== */
 
     .site-footer {
       width: 100%;
+
       margin-top: 35px;
+
       padding: 34px 7% 30px;
+
       background: var(--cream);
+
       color: var(--text);
     }
 
+
     .footer-content {
       width: 100%;
+
       max-width: 1600px;
+
       margin: 0 auto;
+
       text-align: center;
     }
 
+
     .footer-name {
       margin-bottom: 8px;
+
       color: var(--green-dark);
+
       font-size: 17px;
       font-weight: 700;
+
       text-transform: uppercase;
+
       letter-spacing: 1px;
     }
 
+
     .footer-details {
       font-size: 12px;
+
       line-height: 1.6;
     }
+
 
     .footer-divider {
       margin: 0 7px;
     }
 
+
     .footer-copyright {
       margin-top: 8px;
+
       font-size: 11px;
+
       opacity: .7;
     }
 
 
-    /* SMALL DESKTOP */
+
+    /* =====================================================
+       SMALL DESKTOP
+       ===================================================== */
 
     @media (max-width: 1250px) and (min-width: 1001px) {
 
       nav {
         height: 72px;
+
         padding: 6px 3%;
+
         gap: 18px;
       }
+
 
       .logo img {
         width: 170px;
       }
 
+
       .nav-links {
         gap: 17px;
+
         font-size: 11px;
       }
+
 
       .nav-links a {
         white-space: nowrap;
       }
 
+
       .nav-links .donate-btn {
         padding: 9px 16px;
       }
 
+
       .tours-hero {
         height: calc(100vh - 72px);
+
         min-height: 0;
+
         padding: 90px 4% 35px;
       }
 
+
       .tours-hero-content {
-        max-width: 380px;
+        max-width: 470px;
+
         margin-right: 1%;
-        transform: translate(20px, 45px);
+
+        transform: translate(20px,45px);
       }
+
 
       .tours-hero h1 {
-        font-size: 48px;
+        font-size: 54px;
       }
 
-      .tours-hero p {
-        font-size: 13px;
-      }
 
       .section {
         padding-left: 6%;
         padding-right: 6%;
       }
+
     }
 
 
-    /* TABLET */
+
+    /* =====================================================
+       TABLET
+       ===================================================== */
 
     @media (max-width: 1000px) and (min-width: 651px) {
 
       nav {
         height: 72px;
         min-height: 0;
+
         padding: 6px 4%;
+
         flex-direction: row;
+
         align-items: center;
         justify-content: space-between;
+
         gap: 18px;
       }
 
+
       .logo img {
         width: 150px;
+
         max-width: none;
       }
 
+
       .nav-links {
         flex: 1;
+
         justify-content: flex-end;
+
         gap: 13px;
+
         font-size: 10px;
       }
 
+
       .nav-links a {
         white-space: nowrap;
+
         padding: 8px 0;
       }
+
 
       .nav-links .donate-btn {
         padding: 9px 14px;
       }
 
+
       .tours-hero {
         width: 100%;
+
         height: calc(100vh - 72px);
+
         min-height: 0;
+
         aspect-ratio: auto;
+
         padding: 90px 5% 35px;
+
         align-items: center;
       }
 
+
       .tours-hero-content {
-        width: 42%;
-        max-width: 390px;
+        width: 48%;
+
+        max-width: 430px;
+
         margin-left: auto;
         margin-right: 0;
+
         transform: none;
       }
 
-      .tour-card,
-      .tour-card:nth-child(even) {
+
+      .tours-hero h1 {
+        font-size: 48px;
+      }
+
+
+      .adventure-card,
+      .adventure-card:nth-child(even) {
         grid-template-columns: 1fr;
       }
 
-      .tour-card:nth-child(even) .tour-photo,
-      .tour-card:nth-child(even) .tour-content {
+
+      .adventure-card:nth-child(even) .adventure-photo,
+      .adventure-card:nth-child(even) .adventure-content {
         order: initial;
       }
+
+
+      .river-panel {
+        grid-template-columns: 1fr;
+      }
+
+
+      .river-panel-image {
+        min-height: 340px;
+      }
+
 
       .benefit-grid {
         grid-template-columns: 1fr;
       }
+
     }
 
 
-    /* MOBILE */
+
+    /* =====================================================
+       MOBILE
+       ===================================================== */
 
     @media (max-width: 650px) {
 
@@ -637,146 +1082,223 @@
         padding-top: 68px;
       }
 
+
       header {
         position: fixed;
+
         top: 0;
         left: 0;
+
         width: 100%;
         height: 68px;
+
         background: var(--cream);
+
         z-index: 1000;
       }
 
+
       nav {
         height: 68px;
+
         min-height: 0;
+
         padding: 6px 18px;
+
         flex-direction: row;
+
         align-items: center;
         justify-content: space-between;
       }
+
 
       .logo {
         width: auto;
       }
 
+
       .logo img {
         width: 155px;
+
         max-width: 58vw;
+
         height: auto;
       }
 
+
       .menu-toggle {
         display: block;
+
         background: none;
+
         border: none;
+
         color: #000;
+
         font-size: 30px;
+
         line-height: 1;
+
         cursor: pointer;
       }
 
+
+
+      /* MOBILE NAV */
+
       .nav-links {
         display: none;
+
         position: absolute;
+
         top: 100%;
         left: 0;
+
         width: 100%;
+
         background: var(--cream);
+
         flex-direction: column;
+
         align-items: stretch;
+
         padding: 10px 18px 18px;
+
         color: #000;
+
         box-shadow: 0 8px 15px rgba(0,0,0,.12);
       }
+
 
       .nav-links.open {
         display: flex;
       }
 
+
       .nav-links a {
         color: #000;
+
         padding: 12px 8px;
+
         font-size: 13px;
+
         border-bottom: 1px solid rgba(0,0,0,.08);
       }
 
+
       .nav-links .donate-btn {
         background: #000;
+
         color: #fff;
+
         text-align: center;
+
         margin-top: 10px;
+
         padding: 12px 16px;
+
         border-bottom: none;
       }
+
 
 
       /* MOBILE PROGRAMS DROPDOWN */
 
       .nav-dropdown {
         display: block;
+
         width: 100%;
       }
+
 
       .nav-dropdown::after {
         display: none;
       }
 
+
       .dropdown-trigger {
         width: 100%;
+
         display: flex;
+
         align-items: center;
         justify-content: space-between;
       }
+
 
       .dropdown-arrow {
         transition: transform .2s ease;
       }
 
+
       .dropdown-menu {
         position: static;
+
         top: auto;
         left: auto;
+
         transform: none;
+
         display: none;
+
         width: 100%;
         min-width: 0;
+
         padding: 4px 0 8px 14px;
+
         background: transparent;
+
         border-radius: 0;
+
         box-shadow: none;
+
         opacity: 1;
         visibility: visible;
+
         pointer-events: auto;
       }
+
 
       .nav-dropdown.mobile-open .dropdown-menu {
         display: block;
       }
 
+
       .nav-dropdown.mobile-open .dropdown-arrow {
         transform: rotate(180deg);
       }
 
+
       .dropdown-menu a {
         display: block;
+
         width: 100%;
+
         padding: 10px 8px;
+
         color: #000;
+
         font-size: 12px;
         font-weight: 600;
+
         text-transform: none;
+
         border-bottom: 1px solid rgba(0,0,0,.06);
       }
+
 
 
       /* MOBILE HERO */
 
       .tours-hero {
         width: 100%;
+
         height: calc(100svh - 68px);
+
         min-height: 0;
+
         aspect-ratio: auto;
+
         margin-top: 0;
 
         padding:
@@ -785,185 +1307,281 @@
           40px;
 
         align-items: flex-end;
+
         justify-content: flex-start;
       }
 
+
       .tours-hero-bg {
         object-fit: cover;
+
         object-position: center center;
       }
 
+
+      .tours-hero::before {
+        background:
+          linear-gradient(
+            180deg,
+            rgba(0,0,0,.02) 20%,
+            rgba(0,0,0,.12) 48%,
+            rgba(0,0,0,.58) 100%
+          );
+      }
+
+
       .tours-hero-content {
         position: relative;
+
         z-index: 2;
+
         width: 100%;
+
         max-width: none;
+
         margin: 0;
+
         padding: 0;
+
         transform: none;
+
         text-align: left;
+
         color: white;
       }
 
+
       .tours-hero h1 {
         font-size: 48px;
+
         line-height: .9;
+
         letter-spacing: -2px;
-        margin-bottom: 16px;
+
+        max-width: 360px;
       }
 
-      .tours-hero p {
-        font-size: 16px;
-        max-width: 340px;
-      }
+
+
+      /* MOBILE CONTENT */
 
       .section {
         padding: 28px 18px;
       }
 
+
       .section-inner,
       .content-panel,
-      .tour-list,
-      .tour-card,
+      .adventure-list,
+      .adventure-card,
       .benefit-grid,
-      .benefit-card {
+      .benefit-card,
+      .river-panel {
         width: 100%;
+
         max-width: 100%;
       }
+
 
       .content-panel {
         padding: 26px 22px;
       }
 
+
       h2 {
         font-size: 27px;
+
         margin-bottom: 18px;
       }
 
-      .tours-intro {
-        font-size: 20px;
+
+      .public-intro {
+        font-size: 19px;
       }
 
-      .tour-card,
-      .tour-card:nth-child(even) {
+
+      .adventure-card,
+      .adventure-card:nth-child(even) {
         grid-template-columns: 1fr;
       }
 
-      .tour-card:nth-child(even) .tour-photo,
-      .tour-card:nth-child(even) .tour-content {
+
+      .adventure-card:nth-child(even) .adventure-photo,
+      .adventure-card:nth-child(even) .adventure-content {
         order: initial;
       }
 
-      .tour-photo,
-      .tour-photo img {
+
+      .adventure-photo,
+      .adventure-photo img {
         min-height: 260px;
       }
 
-      .tour-content {
+
+      .adventure-content {
         padding: 26px 22px;
       }
 
-      .tour-content h3 {
+
+      .adventure-content h3 {
         font-size: 25px;
       }
 
-      .tour-content p {
+
+      .adventure-content p,
+      .adventure-content li {
         font-size: 15px;
       }
 
+
       .tour-meta {
         grid-template-columns: 1fr;
+
         gap: 10px;
       }
 
+
+      .river-panel {
+        grid-template-columns: 1fr;
+      }
+
+
+      .river-panel-image,
+      .river-panel-image img {
+        min-height: 260px;
+      }
+
+
+      .river-panel-content {
+        padding: 28px 22px;
+      }
+
+
+      .river-panel-content p {
+        font-size: 15px;
+      }
+
+
       .benefit-grid {
         grid-template-columns: 1fr;
+
         gap: 14px;
       }
+
 
       .benefit-card {
         padding: 22px;
       }
 
+
       .cta p {
         font-size: 16px;
       }
 
+
       .site-footer {
         margin-top: 25px;
+
         padding: 28px 22px;
       }
+
 
       .footer-name {
         font-size: 15px;
       }
 
+
       .footer-details {
         max-width: 320px;
+
         margin: 0 auto;
+
         font-size: 11px;
       }
+
 
       .footer-divider {
         margin: 0 4px;
       }
 
+
       .footer-copyright {
         font-size: 10px;
       }
+
     }
 
 
-    /* SMALL PHONES */
+
+    /* =====================================================
+       SMALL PHONES
+       ===================================================== */
 
     @media (max-width: 390px) {
 
       nav {
         padding-left: 14px;
+
         padding-right: 14px;
       }
+
 
       .logo img {
         width: 150px;
       }
 
+
       .menu-toggle {
         font-size: 27px;
       }
 
+
       .tours-hero {
         padding-left: 20px;
+
         padding-right: 20px;
+
+        padding-bottom: 28px;
       }
+
 
       .tours-hero h1 {
         font-size: 42px;
       }
 
-      .tours-hero p {
-        font-size: 15px;
-      }
     }
 
   </style>
+
 </head>
+
 
 
 <body>
 
 
-  <!-- NAVIGATION -->
+
+  <!-- ===================================================
+       NAVIGATION
+       =================================================== -->
 
   <header>
 
     <nav>
 
-      <a href="index.html" class="logo">
+
+      <a
+        href="index.html"
+        class="logo"
+      >
+
         <img
           src="side-quest-logo.png"
           alt="Side Quest Expeditions"
         >
+
       </a>
+
 
 
       <button
@@ -974,11 +1592,14 @@
       </button>
 
 
+
       <div class="nav-links">
+
 
         <a href="about.html">
           About
         </a>
+
 
 
         <div class="nav-dropdown">
@@ -988,8 +1609,13 @@
             class="dropdown-trigger"
             aria-expanded="false"
           >
+
             Programs
-            <span class="dropdown-arrow">▾</span>
+
+            <span class="dropdown-arrow">
+              ▾
+            </span>
+
           </a>
 
 
@@ -1012,13 +1638,16 @@
         </div>
 
 
+
         <a href="support.html">
           Support Us
         </a>
 
+
         <a href="contact.html">
           Contact
         </a>
+
 
         <a
           href="support.html"
@@ -1026,6 +1655,7 @@
         >
           Donate
         </a>
+
 
       </div>
 
@@ -1035,9 +1665,13 @@
 
 
 
-  <!-- PUBLIC ADVENTURES HERO -->
+
+  <!-- ===================================================
+       HERO
+       =================================================== -->
 
   <section class="tours-hero">
+
 
     <picture class="tours-hero-picture">
 
@@ -1053,27 +1687,30 @@
     <div class="tours-hero-content">
 
       <h1>
-        Explore<br>
-        San Francisco
+        Will You Say Yes<br>
+        To A Side Quest?
       </h1>
 
-      <p>
-        Discover some of the Bay Area's most remarkable
-        landscapes through locally guided outdoor experiences.
-      </p>
-
     </div>
+
 
   </section>
 
 
 
-  <!-- TOPOGRAPHIC BACKGROUND -->
+
+  <!-- ===================================================
+       TOPOGRAPHIC BACKGROUND
+       =================================================== -->
 
   <div class="topo-background">
 
 
-    <!-- INTRO -->
+
+
+    <!-- =================================================
+         PUBLIC ADVENTURES INTRO
+         ================================================= -->
 
     <section class="section">
 
@@ -1081,23 +1718,34 @@
 
         <div class="content-panel">
 
+
           <div class="section-label">
-            Local Tours
+            Public Adventures
           </div>
 
+
           <h2>
-            Adventure Close To Home
+            Your Side Quest Starts Here.
           </h2>
 
-          <p class="tours-intro">
-            Explore the landscapes that make the San Francisco
-            Bay Area extraordinary. Our local tours combine
-            outdoor adventure, natural history, storytelling,
-            and a deeper connection to place. Revenue from these
-            tours directly supports our mission by helping fund
-            outdoor expeditions for San Francisco public school
-            students.
+
+          <p class="public-intro">
+            Side Quest Public Adventures are opportunities to
+            explore, learn, and try something new outside.
+            Hike the coast in San Francisco, walk beneath the
+            redwoods, explore the Marin Headlands, or take the
+            guide's seat on the American River.
           </p>
+
+
+          <p class="public-intro">
+            Some adventures are about discovering a place.
+            Others are about developing a new skill. All of them
+            are professionally led outdoor experiences—and revenue
+            from Public Adventures helps fund Side Quest Student
+            Expeditions for San Francisco public school students.
+          </p>
+
 
         </div>
 
@@ -1107,29 +1755,40 @@
 
 
 
-    <!-- TOURS -->
+
+    <!-- =================================================
+         LOCAL ADVENTURES
+         ================================================= -->
 
     <section class="section">
 
       <div class="section-inner">
 
+
         <div class="section-label">
-          Explore With Us
+          Explore Close To Home
         </div>
 
+
         <h2>
-          Local Tours
+          Guided Bay Area Adventures
         </h2>
 
 
-        <div class="tour-list">
+
+        <div class="adventure-list">
 
 
-          <!-- LANDS END -->
 
-          <article class="tour-card">
 
-            <div class="tour-photo">
+          <!-- =================================================
+               LANDS END
+               ================================================= -->
+
+          <article class="adventure-card">
+
+
+            <div class="adventure-photo">
 
               <img
                 src="landsend.jpg"
@@ -1139,21 +1798,26 @@
             </div>
 
 
-            <div class="tour-content">
+
+            <div class="adventure-content">
+
 
               <div class="section-label">
                 San Francisco
               </div>
 
+
               <h3>
                 Lands End
               </h3>
+
 
               <p>
                 Explore one of San Francisco's most dramatic
                 coastal landscapes along the cliffs and trails
                 of Lands End.
               </p>
+
 
               <p>
                 This guided experience combines sweeping views
@@ -1163,49 +1827,90 @@
               </p>
 
 
+
               <div class="tour-meta">
 
-                <div class="tour-meta-item">
-                  <strong>Location</strong>
-                  <span>San Francisco</span>
-                </div>
 
                 <div class="tour-meta-item">
-                  <strong>Experience</strong>
-                  <span>Coastal Hiking</span>
+
+                  <strong>
+                    Location
+                  </strong>
+
+                  <span>
+                    San Francisco
+                  </span>
+
                 </div>
 
-                <div class="tour-meta-item">
-                  <strong>Difficulty</strong>
-                  <span>Moderate</span>
-                </div>
 
                 <div class="tour-meta-item">
-                  <strong>Best For</strong>
-                  <span>Visitors & Locals</span>
+
+                  <strong>
+                    Experience
+                  </strong>
+
+                  <span>
+                    Coastal Hiking
+                  </span>
+
                 </div>
+
+
+                <div class="tour-meta-item">
+
+                  <strong>
+                    Difficulty
+                  </strong>
+
+                  <span>
+                    Moderate
+                  </span>
+
+                </div>
+
+
+                <div class="tour-meta-item">
+
+                  <strong>
+                    Best For
+                  </strong>
+
+                  <span>
+                    Visitors & Locals
+                  </span>
+
+                </div>
+
 
               </div>
+
 
 
               <a
                 href="contact.html"
                 class="button"
               >
-                Ask About This Tour
+                Ask About This Adventure
               </a>
 
+
             </div>
+
 
           </article>
 
 
 
-          <!-- MARIN HEADLANDS -->
 
-          <article class="tour-card">
+          <!-- =================================================
+               MARIN HEADLANDS
+               ================================================= -->
 
-            <div class="tour-photo">
+          <article class="adventure-card">
+
+
+            <div class="adventure-photo">
 
               <img
                 src="marinheadlands.jpg"
@@ -1215,21 +1920,26 @@
             </div>
 
 
-            <div class="tour-content">
+
+            <div class="adventure-content">
+
 
               <div class="section-label">
                 Golden Gate National Recreation Area
               </div>
 
+
               <h3>
                 Marin Headlands
               </h3>
+
 
               <p>
                 Cross the Golden Gate and step into the rugged
                 hills, coastal trails, and expansive viewpoints
                 of the Marin Headlands.
               </p>
+
 
               <p>
                 Explore the natural and human history of this
@@ -1238,49 +1948,90 @@
               </p>
 
 
+
               <div class="tour-meta">
 
-                <div class="tour-meta-item">
-                  <strong>Location</strong>
-                  <span>Marin County</span>
-                </div>
 
                 <div class="tour-meta-item">
-                  <strong>Experience</strong>
-                  <span>Hiking & Exploration</span>
+
+                  <strong>
+                    Location
+                  </strong>
+
+                  <span>
+                    Marin County
+                  </span>
+
                 </div>
 
-                <div class="tour-meta-item">
-                  <strong>Difficulty</strong>
-                  <span>Moderate</span>
-                </div>
 
                 <div class="tour-meta-item">
-                  <strong>Highlights</strong>
-                  <span>Coast, History & Views</span>
+
+                  <strong>
+                    Experience
+                  </strong>
+
+                  <span>
+                    Hiking & Exploration
+                  </span>
+
                 </div>
+
+
+                <div class="tour-meta-item">
+
+                  <strong>
+                    Difficulty
+                  </strong>
+
+                  <span>
+                    Moderate
+                  </span>
+
+                </div>
+
+
+                <div class="tour-meta-item">
+
+                  <strong>
+                    Highlights
+                  </strong>
+
+                  <span>
+                    Coast, History & Views
+                  </span>
+
+                </div>
+
 
               </div>
+
 
 
               <a
                 href="contact.html"
                 class="button"
               >
-                Ask About This Tour
+                Ask About This Adventure
               </a>
 
+
             </div>
+
 
           </article>
 
 
 
-          <!-- MUIR WOODS -->
 
-          <article class="tour-card">
+          <!-- =================================================
+               MUIR WOODS
+               ================================================= -->
 
-            <div class="tour-photo">
+          <article class="adventure-card">
+
+
+            <div class="adventure-photo">
 
               <img
                 src="muirwoods.jpg"
@@ -1290,21 +2041,26 @@
             </div>
 
 
-            <div class="tour-content">
+
+            <div class="adventure-content">
+
 
               <div class="section-label">
                 Redwood Forest
               </div>
 
+
               <h3>
                 Muir Woods
               </h3>
+
 
               <p>
                 Walk beneath towering coast redwoods and
                 experience one of the Bay Area's most
                 extraordinary forest ecosystems.
               </p>
+
 
               <p>
                 This guided experience explores redwood ecology,
@@ -1314,39 +2070,76 @@
               </p>
 
 
+
               <div class="tour-meta">
 
-                <div class="tour-meta-item">
-                  <strong>Location</strong>
-                  <span>Marin County</span>
-                </div>
 
                 <div class="tour-meta-item">
-                  <strong>Experience</strong>
-                  <span>Redwood Walk</span>
+
+                  <strong>
+                    Location
+                  </strong>
+
+                  <span>
+                    Marin County
+                  </span>
+
                 </div>
 
-                <div class="tour-meta-item">
-                  <strong>Difficulty</strong>
-                  <span>Easy to Moderate</span>
-                </div>
 
                 <div class="tour-meta-item">
-                  <strong>Highlights</strong>
-                  <span>Ancient Redwoods</span>
+
+                  <strong>
+                    Experience
+                  </strong>
+
+                  <span>
+                    Redwood Walk
+                  </span>
+
                 </div>
+
+
+                <div class="tour-meta-item">
+
+                  <strong>
+                    Difficulty
+                  </strong>
+
+                  <span>
+                    Easy to Moderate
+                  </span>
+
+                </div>
+
+
+                <div class="tour-meta-item">
+
+                  <strong>
+                    Highlights
+                  </strong>
+
+                  <span>
+                    Ancient Redwoods
+                  </span>
+
+                </div>
+
 
               </div>
+
 
 
               <a
                 href="contact.html"
                 class="button"
               >
-                Ask About This Tour
+                Ask About This Adventure
               </a>
 
+
             </div>
+
 
           </article>
 
@@ -1359,63 +2152,476 @@
 
 
 
-    <!-- WHY SIDE QUEST -->
+
+    <!-- =================================================
+         RIVER TRANSITION
+         ================================================= -->
 
     <section class="section">
 
       <div class="section-inner">
 
+
+        <div class="river-panel">
+
+
+          <div class="river-panel-image">
+
+            <img
+              src="rr-chili-bar-rafting-4k-hero (1).jpg"
+              alt="Whitewater rafting on the South Fork of the American River"
+            >
+
+          </div>
+
+
+
+          <div class="river-panel-content">
+
+
+            <div class="section-label">
+              Take Your Side Quest To The River
+            </div>
+
+
+            <h2>
+              Learn The River
+            </h2>
+
+
+            <p>
+              Ready for something a little bigger? Side Quest
+              also offers hands-on whitewater instruction in
+              partnership with River Runners USA on the American River.
+            </p>
+
+
+            <p>
+              These experiences move beyond a traditional rafting trip.
+              Participants learn from skilled river professionals while
+              developing boat-handling skills, river awareness,
+              communication, judgment, teamwork, and leadership through
+              direct practice on the water.
+            </p>
+
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+
+    <!-- =================================================
+         WHITEWATER PROGRAMS
+         ================================================= -->
+
+    <section class="section">
+
+      <div class="section-inner">
+
+
+        <div class="section-label">
+          Whitewater Adventures
+        </div>
+
+
+        <h2>
+          Take The Guide's Seat
+        </h2>
+
+
+
+        <div class="adventure-list">
+
+
+
+
+          <!-- =================================================
+               YOUTH GUIDE SCHOOL
+               ================================================= -->
+
+          <article class="adventure-card">
+
+
+            <div class="adventure-photo">
+
+              <img
+                src="whitewaterguideschool.JPG"
+                alt="Youth Whitewater Guide School"
+              >
+
+            </div>
+
+
+
+            <div class="adventure-content">
+
+
+              <div class="section-label">
+                Youth Program
+              </div>
+
+
+              <h3>
+                Youth Guide School
+              </h3>
+
+
+              <div class="age-label">
+                Ages 10–17
+              </div>
+
+
+              <p>
+                A youth-focused introduction to whitewater
+                rafting and guide skills designed to build
+                confidence, teamwork, leadership, and comfort
+                on the river.
+              </p>
+
+
+              <p>
+                Participants learn through active practice both
+                on and around the water while developing an
+                understanding of how rafting teams communicate,
+                make decisions, and work together.
+              </p>
+
+
+              <h4>
+                Participants May Explore:
+              </h4>
+
+
+              <ul>
+
+                <li>
+                  Rafting fundamentals and paddle commands
+                </li>
+
+                <li>
+                  River terminology and awareness
+                </li>
+
+                <li>
+                  Boat control and basic maneuvering
+                </li>
+
+                <li>
+                  Team communication
+                </li>
+
+                <li>
+                  River safety concepts
+                </li>
+
+                <li>
+                  Leadership and decision-making
+                </li>
+
+              </ul>
+
+
+
+              <a
+                href="contact.html"
+                class="button"
+              >
+                Ask About Youth Guide School
+              </a>
+
+
+            </div>
+
+
+          </article>
+
+
+
+
+          <!-- =================================================
+               ADULT GUIDE SCHOOL
+               ================================================= -->
+
+          <article class="adventure-card">
+
+
+            <div class="adventure-photo">
+
+              <img
+                src="adultguideschool.JPG"
+                alt="Adult Whitewater Guide School"
+              >
+
+            </div>
+
+
+
+            <div class="adventure-content">
+
+
+              <div class="section-label">
+                Adult Program
+              </div>
+
+
+              <h3>
+                Adult Guide School
+              </h3>
+
+
+              <div class="age-label">
+                Ages 18+
+              </div>
+
+
+              <p>
+                A hands-on introduction to the technical,
+                leadership, and decision-making skills involved
+                in guiding a paddle raft through moving water.
+              </p>
+
+
+              <p>
+                The course is designed for adults who want to
+                become stronger river runners, learn the
+                fundamentals of raft guiding, or gain a deeper
+                understanding of whitewater systems.
+              </p>
+
+
+              <h4>
+                Participants May Explore:
+              </h4>
+
+
+              <ul>
+
+                <li>
+                  Paddle raft guiding fundamentals
+                </li>
+
+                <li>
+                  Boat angles and river positioning
+                </li>
+
+                <li>
+                  Reading current and identifying hazards
+                </li>
+
+                <li>
+                  Paddle commands and crew management
+                </li>
+
+                <li>
+                  River communication
+                </li>
+
+                <li>
+                  Basic rescue and safety concepts
+                </li>
+
+              </ul>
+
+
+
+              <a
+                href="contact.html"
+                class="button"
+              >
+                Ask About Adult Guide School
+              </a>
+
+
+            </div>
+
+
+          </article>
+
+
+
+
+          <!-- =================================================
+               ROWING SCHOOL
+               ================================================= -->
+
+          <article class="adventure-card">
+
+
+            <div class="adventure-photo">
+
+              <img
+                src="rowing.jpg"
+                alt="Whitewater Rowing School"
+              >
+
+            </div>
+
+
+
+            <div class="adventure-content">
+
+
+              <div class="section-label">
+                Oar Rafting
+              </div>
+
+
+              <h3>
+                Rowing School
+              </h3>
+
+
+              <div class="age-label">
+                Ages 18+
+              </div>
+
+
+              <p>
+                A practical introduction to maneuvering an
+                oar-powered raft and understanding the
+                fundamentals of rowing in moving water.
+              </p>
+
+
+              <p>
+                This course is intended for adults interested
+                in becoming more capable private boaters,
+                preparing for multi-day river trips, or adding
+                rowing skills to their whitewater experience.
+              </p>
+
+
+              <h4>
+                Participants May Explore:
+              </h4>
+
+
+              <ul>
+
+                <li>
+                  Oar setup and rowing position
+                </li>
+
+                <li>
+                  Basic strokes and boat control
+                </li>
+
+                <li>
+                  Entering and leaving current
+                </li>
+
+                <li>
+                  Ferry angles and positioning
+                </li>
+
+                <li>
+                  Reading water and choosing lines
+                </li>
+
+                <li>
+                  River safety and trip planning concepts
+                </li>
+
+              </ul>
+
+
+
+              <a
+                href="contact.html"
+                class="button"
+              >
+                Ask About Rowing School
+              </a>
+
+
+            </div>
+
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+
+    <!-- =================================================
+         THE SIDE QUEST DIFFERENCE
+         ================================================= -->
+
+    <section class="section">
+
+      <div class="section-inner">
+
+
         <div class="section-label">
           The Side Quest Difference
         </div>
 
+
         <h2>
-          More Than A Walking Tour
+          Adventure With Purpose
         </h2>
+
 
 
         <div class="benefit-grid">
 
 
+
           <div class="benefit-card">
 
             <h3>
-              Explore The Landscape
+              Explore
             </h3>
 
             <p>
-              Experience remarkable local trails, forests,
-              coastlines, and public lands with an experienced
-              outdoor educator and guide.
+              Experience remarkable trails, forests, coastlines,
+              rivers, and public lands with experienced outdoor
+              professionals.
             </p>
 
           </div>
 
 
+
           <div class="benefit-card">
 
             <h3>
-              Know The Story
+              Learn
             </h3>
 
             <p>
-              Learn about the ecology, history, communities,
-              and natural forces that have shaped the places
-              we explore.
+              Our adventures go beyond simply getting outside.
+              Depending on the experience, you'll learn about the
+              landscape, its story, or the technical skills needed
+              to move through it.
             </p>
 
           </div>
 
 
+
           <div class="benefit-card">
 
             <h3>
-              Support The Mission
+              Give Back
             </h3>
 
             <p>
-              Revenue generated through local tours helps
-              Side Quest expand outdoor opportunities for
+              Revenue generated through Public Adventures helps
+              fund professionally led outdoor education for
               San Francisco public school students.
             </p>
 
@@ -1430,34 +2636,44 @@
 
 
 
-    <!-- CTA -->
+
+    <!-- =================================================
+         CTA
+         ================================================= -->
 
     <section class="section cta">
 
       <div class="section-inner">
 
+
         <div class="content-panel">
+
 
           <div class="section-label">
             Plan Your Side Quest
           </div>
 
+
           <h2>
-            Explore The Bay Area
+            What Will You Say Yes To?
           </h2>
 
+
           <p>
-            Interested in one of our local experiences,
-            a private tour, or a custom outing? Reach out
-            and we'll help you find the right adventure.
+            Whether you're looking for a guided hike, a day
+            beneath the redwoods, or the chance to learn how
+            to run a raft, we'll help you find the right
+            Side Quest.
           </p>
+
 
           <a
             href="contact.html"
             class="button"
           >
-            Contact Us
+            Contact Side Quest
           </a>
+
 
         </div>
 
@@ -1467,27 +2683,44 @@
 
 
 
-    <!-- FOOTER -->
+
+    <!-- =================================================
+         FOOTER
+         ================================================= -->
 
     <footer class="site-footer">
 
       <div class="footer-content">
 
+
         <div class="footer-name">
           Side Quest Expeditions
         </div>
 
+
         <div class="footer-details">
+
           California Nonprofit Public Benefit Corporation
-          <span class="footer-divider">·</span>
+
+          <span class="footer-divider">
+            ·
+          </span>
+
           San Francisco, California
-          <span class="footer-divider">·</span>
+
+          <span class="footer-divider">
+            ·
+          </span>
+
           EIN: 41-2872525
+
         </div>
+
 
         <div class="footer-copyright">
           © 2026 Side Quest Expeditions
         </div>
+
 
       </div>
 
@@ -1498,30 +2731,41 @@
 
 
 
-  <!-- MOBILE MENU -->
+
+  <!-- ===================================================
+       MOBILE MENU SCRIPT
+       =================================================== -->
 
   <script>
 
     const menuToggle =
       document.querySelector('.menu-toggle');
 
+
     const navLinks =
       document.querySelector('.nav-links');
 
+
     const programTrigger =
       document.querySelector('.dropdown-trigger');
+
 
     const programDropdown =
       document.querySelector('.nav-dropdown');
 
 
+
+    /* OPEN / CLOSE MOBILE MENU */
+
     menuToggle.addEventListener('click', () => {
 
       navLinks.classList.toggle('open');
 
+
       if (!navLinks.classList.contains('open')) {
 
         programDropdown.classList.remove('mobile-open');
+
 
         programTrigger.setAttribute(
           'aria-expanded',
@@ -1533,14 +2777,19 @@
     });
 
 
+
+    /* OPEN / CLOSE PROGRAMS ON MOBILE */
+
     programTrigger.addEventListener('click', (event) => {
 
       event.preventDefault();
+
 
       if (window.innerWidth <= 650) {
 
         const isOpen =
           programDropdown.classList.toggle('mobile-open');
+
 
         programTrigger.setAttribute(
           'aria-expanded',
