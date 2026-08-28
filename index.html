@@ -914,21 +914,89 @@
 
 
     /* ========================================
-       FOOTER
-    ======================================== */
+   FOOTER
+======================================== */
 
-    footer {
-      padding: 28px 22px;
+.site-footer {
+  width: 100%;
+  margin-top: 35px;
+  padding: 34px 7% 30px;
 
-      color: #111;
+  background: #f5f1e8;
 
-      background: transparent;
+  color: #172019;
+}
 
-      text-align: center;
+.footer-content {
+  width: 100%;
+  max-width: 1600px;
 
-      font-size: 12px;
-    }
+  margin: 0 auto;
 
+  text-align: center;
+}
+
+.footer-name {
+  margin-bottom: 8px;
+
+  color: #203b28;
+
+  font-size: 17px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.footer-details {
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.footer-divider {
+  margin: 0 7px;
+}
+
+.footer-copyright {
+  margin-top: 8px;
+
+  font-size: 11px;
+
+  opacity: .7;
+}
+
+
+/* MOBILE FOOTER */
+
+@media (max-width: 650px) {
+
+  .site-footer {
+    margin-top: 25px;
+
+    padding: 28px 22px;
+  }
+
+  .footer-name {
+    font-size: 15px;
+  }
+
+  .footer-details {
+    max-width: 320px;
+
+    margin: 0 auto;
+
+    font-size: 11px;
+  }
+
+  .footer-divider {
+    margin: 0 4px;
+  }
+
+  .footer-copyright {
+    font-size: 10px;
+  }
+
+}
 
     /* ========================================
        SMALL DESKTOP
@@ -2039,17 +2107,33 @@
 
 
 
-    <!-- ========================================
-         FOOTER
-    ======================================== -->
+   <!-- ========================================
+     FOOTER
+======================================== -->
 
-    <footer>
-      © 2026 Side Quest Expeditions · San Francisco, California
-    </footer>
+<footer class="site-footer">
 
+  <div class="footer-content">
+
+    <div class="footer-name">
+      Side Quest Expeditions
+    </div>
+
+    <div class="footer-details">
+      California Nonprofit Public Benefit Corporation
+      <span class="footer-divider">·</span>
+      San Francisco, California
+      <span class="footer-divider">·</span>
+      EIN: 41-2872525
+    </div>
+
+    <div class="footer-copyright">
+      © 2026 Side Quest Expeditions
+    </div>
 
   </div>
 
+</footer>
 
 
   <!-- ========================================
