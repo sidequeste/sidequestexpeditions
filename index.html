@@ -88,6 +88,18 @@
   >
 
 
+  <!-- ========================================
+       PERFORMANCE: PRELOAD HERO IMAGE
+  ======================================== -->
+
+  <link
+    rel="preload"
+    as="image"
+    href="sidequestwebsitebackground.jpg"
+    fetchpriority="high"
+  >
+
+
   <style>
 
     /* ========================================
@@ -796,15 +808,16 @@
     ======================================== */
 
     .site-footer {
-  width: 100%;
+      width: 100%;
 
-  margin-top: 0;
+      margin-top: 0;
 
-  padding: 34px 7% 30px;
+      padding: 34px 7% 30px;
 
-  color: var(--text);
-  background: var(--cream);
-}
+      color: var(--text);
+      background: var(--cream);
+    }
+
     .footer-content {
       width: 100%;
       max-width: 1600px;
@@ -1389,10 +1402,10 @@
       }
 
       .site-footer {
-  margin-top: 0;
+        margin-top: 0;
 
-  padding: 28px 22px;
-}
+        padding: 28px 22px;
+      }
 
       .footer-name {
         font-size: 15px;
@@ -1653,6 +1666,8 @@
 
           <img
             src="mission_homepage.jpg"
+            loading="lazy"
+            decoding="async"
             alt="Side Quest Expeditions outdoor education"
             class="mission-photo"
           >
@@ -1690,6 +1705,8 @@
 
           <img
             src="student_trips_homepage.jpg"
+            loading="lazy"
+            decoding="async"
             alt="Students participating in a Side Quest expedition"
             class="pathway-image"
           >
@@ -1729,6 +1746,8 @@
 
           <img
             src="public_trips_homepage.jpg"
+            loading="lazy"
+            decoding="async"
             alt="Side Quest public outdoor adventure"
             class="pathway-image"
           >
@@ -1767,6 +1786,8 @@
 
           <img
             src="custom_programs_homepage.JPG"
+            loading="lazy"
+            decoding="async"
             alt="Side Quest custom outdoor program"
             class="pathway-image"
           >
@@ -1822,6 +1843,8 @@
 
         <img
           src="compass.png"
+          loading="lazy"
+          decoding="async"
           alt="Compass"
           class="value-icon"
         >
@@ -1847,6 +1870,8 @@
 
         <img
           src="campfire.png"
+          loading="lazy"
+          decoding="async"
           alt="Campfire"
           class="value-icon"
         >
@@ -1872,6 +1897,8 @@
 
         <img
           src="tree.png"
+          loading="lazy"
+          decoding="async"
           alt="Tree"
           class="value-icon"
         >
