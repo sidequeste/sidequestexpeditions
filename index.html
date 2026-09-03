@@ -373,6 +373,45 @@
 
       color: #fff;
 
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+
+    /* Hero image is now a real image instead of
+       a CSS background so the browser can discover,
+       prioritize, decode, and paint it immediately. */
+
+    .hero-bg {
+      position: absolute;
+
+      z-index: 0;
+
+      top: 0;
+      left: 50%;
+
+      width: 108%;
+      height: 100%;
+
+      display: block;
+
+      transform: translateX(-50%);
+
+      object-fit: cover;
+      object-position: center 38%;
+    }
+
+
+    /* Warm overlay recreates the original
+       desktop background gradient treatment. */
+
+    .hero-warm-overlay {
+      position: absolute;
+
+      z-index: 1;
+
+      inset: 0;
+
       background:
         linear-gradient(
           90deg,
@@ -380,22 +419,20 @@
           rgba(255, 185, 95, .18) 30%,
           rgba(255, 210, 150, .05) 55%,
           rgba(15, 20, 20, .16) 100%
-        ),
-        url("sidequestwebsitebackground.jpg");
+        );
 
-      background-blend-mode: screen;
+      mix-blend-mode: screen;
 
-      background-size: 108% auto;
-      background-position: center 38%;
-      background-repeat: no-repeat;
-
-      overflow: hidden;
+      pointer-events: none;
     }
+
 
     .hero::after {
       content: "";
 
       position: absolute;
+
+      z-index: 2;
 
       left: -5%;
       right: -5%;
@@ -413,7 +450,7 @@
     .hero-content {
       position: relative;
 
-      z-index: 2;
+      z-index: 3;
 
       max-width: 470px;
 
@@ -481,7 +518,6 @@
 
     /* ========================================
        STANDALONE SECTION TITLE FADE
-       Only titles outside cards use this
     ======================================== */
 
     .section-title {
@@ -1223,10 +1259,23 @@
 
         align-items: flex-end;
         justify-content: flex-start;
-
-        background-size: cover;
-        background-position: 42% center;
       }
+
+      .hero-bg {
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+
+        transform: none;
+
+        object-fit: cover;
+        object-position: 42% center;
+      }
+
+
+      /* Mobile darkening overlay */
 
       .hero::before {
         content: "";
@@ -1235,7 +1284,7 @@
 
         inset: 0;
 
-        z-index: 1;
+        z-index: 2;
 
         background:
           linear-gradient(
@@ -1244,6 +1293,8 @@
             rgba(0, 0, 0, .12) 48%,
             rgba(0, 0, 0, .58) 100%
           );
+
+        pointer-events: none;
       }
 
       .hero-content {
@@ -1254,6 +1305,8 @@
         padding: 0;
 
         transform: none;
+
+        z-index: 3;
       }
 
       .hero h1 {
@@ -1588,6 +1641,38 @@
   ======================================== -->
 
   <section class="hero">
+
+
+    <!--
+      CRITICAL LCP IMAGE
+
+      This is intentionally:
+      - a real IMG element
+      - eager loaded
+      - high fetch priority
+      - given intrinsic dimensions
+      - decoded asynchronously
+
+      Do NOT add loading="lazy" to this image.
+    -->
+
+    <img
+      src="sidequestwebsitebackground.jpg"
+      alt=""
+      class="hero-bg"
+      width="2048"
+      height="1152"
+      loading="eager"
+      fetchpriority="high"
+      decoding="async"
+    >
+
+
+    <div
+      class="hero-warm-overlay"
+      aria-hidden="true"
+    ></div>
+
 
     <div class="hero-content">
 
